@@ -1,17 +1,77 @@
-	<div id='logo-kumbia'><?php echo Html::img('default/kumbia.png','KumbiaPHP logo') ?></div>
-    <div id='info'>
-		<h1>KumbiaPHP está listo para usarse</h1>
-        <p><strong>Bienvenido a KumbiaPHP Framework</strong>. El framework ya está listo para desarrollar aplicaciones web con PHP, rápida y fácilmente
-       , sin tener que reinventar la rueda, y preocupandose por lo más importante, la lógica de su aplicación.</p>
-         <h2>Como empezar</h2>
-        <p>En nuestra <a href="http://wiki.kumbiaphp.com/">wiki</a> podrás encontrar información actualizada sobre el uso del framework,
-        si estas comenzando con <em>KumbiaPHP</em> deberías realizar  la
-        <strong><a href="http://wiki.kumbiaphp.com/Hola_Mundo_KumbiaPHP_Framework">Aplicación Hola Mundo</a></strong>
-        tambien puede interesarte saber sobre:</p>
-		<ul>
-			<li><h3><a href="http://wiki.kumbiaphp.com/Beta2_CRUD_en_KumbiaPHP_Framework">Creacion de CRUD(Create, Read, Update, Delete)</a></h3></li>
-			<li><h3><a href="http://wiki.kumbiaphp.com/Como_Usar_los_Modelos_en_KumbiaPHP">Uso de modelos</a></h3></li>
-			<li><h3><a href="http://wiki.kumbiaphp.com/KumbiaPHP_Framework_Versi%C3%B3n_1.0_Spirit#databases.ini">Configurar conexiones a bases de datos</a></h3></li>
-		</ul>
-		<p>Estos son solo algunos ejemplos puedes ver más en la <a href="http://wiki.kumbiaphp.com/Categor%C3%ADa:Tutoriales_KumbiaPHP" title="Tutoriales KumbiaPHP">sección de tutoriales de la wiki</a></p>
+<div id="dv_slider">
+    <ul id="ul_slider">
+        <li>
+            <a href="#slide1" onclick="return false;">
+                <img src="img/slider/image-1.jpg">
+            </a>
+        </li>
+        <li>
+            <a href="#slide2" onclick="return false;">
+                <img src="img/slider/image-2.jpg">
+            </a>
+        </li>
+        <li>
+            <a href="#slide3" onclick="return false;">
+                <img src="img/slider/image-3.jpg">
+            </a>
+        </li>
+    </ul>
+</div>
+<div id="dv_contenido">
+    <div id="dv_texto">
+        La calidad de la educativa esta en el alcance de las competencias laborales a través de habilidades, destrezas, actitudes, aptitudes, conocimientos y el ser como persona con valores para desempeñarse en el medio productivo.
     </div>
+    <div class="contenedor_pilares">
+        <div id="dv_pilareducacion" class="contenedor_pilar">
+            <span>EDUCACIÓN</span>
+            <div>La educación dentro de un contexto físico, social, afectivo propio de la situación de aprendizaje, establecido por el INSTITUTO TECNOLOGICO SUR COLOMBIANO, con calidad y compromiso social que deberá alcanzar el estudiante.</div>
+        </div>
+        <div id="dv_pilartecnologia" class="contenedor_pilar">
+            <span>TECNOLOGÍA</span>
+            <div>La Tecnologías en la parte educativa permite globalizar al mundo de la información, facilitando la comunicación entre las personas e instituciones no solo a nivel de la comunidad o el estado sino que también a nivel mundial.</div>
+        </div>
+        <div id="dv_pilarcompetencias" class="contenedor_pilar">
+            <span>COMPETENCIAS</span>
+            <div>Las competencias laborales, abarca el rol y la situación laboral /técnica que nos lleva ha capacitar con procesos de formación para alcanzar el logro de las competencias Laborales, así como sus componentes (alumno – profesor – contenido – metodología – recursos didácticos – actividades y TIC´s).</div>
+        </div>
+    </div>
+</div>
+
+<script type="text/javascript">
+    require([
+        window.public_path+'javascript/slippry.min.js'
+    ],function(){
+        jQuery('#ul_slider').slippry({
+            slippryWrapper: '<div class="sy-box ul_slider" />',
+            //adaptiveHeight: false,
+            useCSS: false,
+            autoHover: false,
+            transition: 'fade',
+            captions: false,
+            preload: 'all',
+            controls: false,
+            //speed: 2000,
+            
+            auto: false
+        });
+    });
+    
+    /*var he = $('#dv_pilareducacion').height(),
+        ht = $('#dv_pilartecnologia').height(),
+        hc = $('#dv_pilarcompetencias').height(),
+        height = 0;
+    
+    if(he >= ht){
+        if(ht >= hc){
+            height = he;
+        }else{
+            if(he >= hc) height = he; else height = hc;
+        }
+    }else{
+        if(ht >= hc) height = ht; else height = hc;
+    }
+    
+    console.log("Height = " + height);
+    
+    $('.contenedor_pilar').css({height: (height + 30)});*/
+</script>

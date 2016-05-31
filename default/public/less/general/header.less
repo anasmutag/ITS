@@ -1,0 +1,130 @@
+@import "../variables.less";
+@import "../funciones.less";
+
+header {
+    #dv_fechahora {
+        padding: 0 30px;
+        color: @base;
+        background-color: @blanco;
+        
+        .dimensions;
+        .flexBox(@justify-content:flex-end);
+        //.textShadow;
+    }
+    #dv_logo {
+        width: 25%;
+        
+        .flexBox;
+        
+        div {
+            background-color: green;
+            
+            /*.dimensiones(60%);*/
+            .dimensions(120px;120px);
+            .flexBox;
+        }
+    }
+    #dv_instituto {
+        width: 75%;
+    }
+    #dv_navegacion {
+        min-height: 40px;
+        margin: 0;
+        padding: 0;
+        overflow: hidden;
+        color: @blanco;
+        background-color: @base;
+        
+        .dimensions(@height:40px);
+        .flexBox;
+    }
+    #dv_navegacionsec {
+        padding: 0 30px;
+        
+        .dimensions(@height:40px);
+    }
+    #sp_inicio {
+        background-color: @base;
+        cursor: pointer;
+        
+        .dimensions(20px;20px);
+    }
+    #sp_institucion, #sp_institucionopc, #sp_programas, #sp_programa {
+        cursor: default;
+    }
+    .contenedor_navegacionsec {
+        .flexBox(@justify-content:flex-start);
+    }
+    .navsecactive {
+        color: @grisnav;
+    }
+    .navsecnoactive {
+        color: @base;
+    }
+    .etiqueta_next {
+        background-color: @base;
+
+        .dimensions(20px;20px);
+    }
+    .contendor_navegacionsecdn {
+        display: none;
+    }
+    .btn {
+        .dimensions(120px;100%);
+        .flexBox;
+    }
+    .dropbtn {
+        color: @blanco;
+        text-decoration: none;
+        cursor: pointer;
+        
+        .dimensions(100%;100%);
+        .flexBox;
+    }
+    .btn:hover .dropbtn {
+        color: @base;
+        background-color: @blanco;
+    }
+    .dropdown-content {
+        width: 180px;
+        position: absolute;
+        background-color: @blanco;
+        z-index: 100;
+        
+        .flexBox;
+        .boxShadow(0px;5px;10px;0px;rgba(0, 0, 0, 0.4));
+        
+        display: none;
+    }
+    /*.dropdown-content-programs {
+        width: 250px;
+    }*/
+    .dropdown-content span, .dropdown-content a {
+        min-height: 40px;
+        color: @base;
+        text-decoration: none;
+        cursor: pointer;
+        
+        .dimensions(100%;40px);
+        .flexBox;
+    }
+    .dropdown-content span:hover, .dropdown-content a:hover {
+        background-color: #f0f0f0;
+    }
+    
+    /*nav {
+        min-height: 40px;
+        
+        .dimensiones(@height:45px);
+        .flexBox;
+        
+        .opciones_navegacion{
+            .dimensiones(125px;100%);
+            .flexBox;
+            
+            &:hover {
+                background-color: green;
+            }
+        }
+    }*/
+}

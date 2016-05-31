@@ -1,0 +1,95 @@
+@import "variables.less";
+@import "funciones.less";
+
+#dv_slider {
+    .dimensions;
+}
+#dv_contenido {
+    padding: 25px 30px;
+    
+    .dimensions;
+    
+    /*div {
+        .flexBox;
+        .borderRadius(8px);
+    }*/
+    #dv_texto {
+        padding: 15px;
+        color: #00529B;
+        background-color: #ffffff;
+
+        .flexBox;
+        .borderRadius(8px);
+        .boxShadow(0;0;5px;2px;rgba(0, 0, 0, 0.2));
+    }
+    /*#dv_pilares {
+        justify-content: space-between;
+        padding: 15px 0 0 0;
+        
+        .contenedor_pilar {
+            padding: 15px 0;
+            color: #00529B;
+            background-color: #ffffff;
+            
+            .boxShadow(0;0;5px;2px;rgba(0, 0, 0, 0.2));
+            .dimensions(@width:30%);
+            
+            span {
+                .dimensions;
+            }
+            div {
+                    padding: 15px 15px 0 15px;
+            }
+        }
+    }*/
+}
+#dv_institucion {
+    padding: 25px 30px;
+    
+    .dimensions;
+}
+#dv_visitanos {
+    padding: 25px 30px;
+    
+    .dimensions;
+    .flexBox;
+    
+    div {
+        padding: 15px;
+        background-color: @blanco;
+        
+        .boxShadow(0;0;5px;2px;rgba(0, 0, 0, 0.2));
+        .dimensions(@width:75%);
+        .borderRadius(8px);
+        .flexBox;
+    }
+}
+.contenedor_pilares {
+    padding: 15px 0 0 0;
+    
+    .flexBox(@justify-content: space-between);
+
+    .contenedor_pilar {
+        padding: 15px 0;
+        color: #00529B;
+        background-color: #ffffff;
+
+        .boxShadow(0;0;5px;2px;rgba(0, 0, 0, 0.2));
+        .dimensions(@width:30%);
+        .borderRadius(8px);
+
+        span {
+            .dimensions;
+        }
+        div {
+            padding: 15px 15px 0 15px;
+        }
+    }
+}
+.contenedor_institucion {
+    justify-content: space-around;
+    
+    .contenedor_pilar {
+        width: 40%;
+    }
+}

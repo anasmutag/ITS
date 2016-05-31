@@ -1,0 +1,195 @@
+<div id="dv_fechahora">
+    Pasto, Nariño
+</div>
+<div id="dv_logo">
+    <div>LOGO</div>
+</div>
+<div id="dv_instituto">INSTITUTO TÉCNICO SURCOOMBIANO</div>
+<div id="dv_navegacion">
+    <div class="btn">
+        <a class="dropbtn" href="<?= PUBLIC_PATH?>" style="position: relative;">Inicio</a>
+    </div>
+    <div class="btn dropdown">
+        <span class="dropbtn active">Institución</span>
+        <div class="dropdown-content">
+            <span id="sp_institucionmv">Misión | Visión</span>
+            <span id="sp_institucionv">Visítanos</span>
+        </div>
+    </div>
+    <div class="btn dropdown">
+        <!--a id="sp_programas1" class="dropbtn" href="<?= PUBLIC_PATH?>program/programas/" style="position: relative;">Programas</a-->
+        <span class="dropbtn">Programas</span>
+        <div id="prueba" class="dropdown-content">
+            <? if($banProgramas > 0): ?>
+                <span id="sp_teclab">Técnico Laborales</span>
+                <span id="sp_inglesniv">Ingles Por Niveles</span>
+            <? else: ?>
+                <!--a href="<?= PUBLIC_PATH?>program/tecnicos/<?= ($banProgramas>0)?1:0;?>">Técnico Laborales</a>
+                <a href="<?= PUBLIC_PATH?>program/ingles/<?= ($banProgramas>0)?1:0;?>">Ingles Por Niveles</a-->
+                <a href="<?= PUBLIC_PATH?>program/programas/1">Técnico Laborales</a>
+                <a href="<?= PUBLIC_PATH?>program/programas/7">Ingles Por Niveles</a>
+            <? endif; ?>
+                        
+            <!--span>Técnico Laboral en Administración de Gestión del Talento Humano</span>
+            <span>Técnico Laboral en Gestión Contable y Financiero</span>
+            <span>Técnico Laboral en Preparación Física y Entrenamiento Deportivo</span>
+            <span>Técnico Laboral en Sistemas</span>
+            <span>Técnico Laboral en Vigilancia, Seguridad y Control de Instalaciones</span-->
+        </div>
+    </div>
+    <div class="btn">
+        <a class="dropbtn" href="#" style="position: relative;">Campus Virtual</a>
+    </div>
+    <div class="btn">
+        <span class="dropbtn">Preinscripción</span>
+    </div>
+</div>
+<div id="dv_navegacionsec" class="contenedor_navegacionsec contendor_navegacionsecdn">
+    <!--span id="sp_inicio" class="contendor_navegacionsecdn navsecnoactive">Inicio</span-->
+    <span id="sp_inicio" class="contendor_navegacionsecdn icon_home"></span>
+    <span class="icon_next etiqueta_next contendor_navegacionsecdn"></span>
+    <span id="sp_institucion" class="contendor_navegacionsecdn navsecnoactive">Institución</span>
+    <span class="icon_next etiqueta_next contendor_navegacionsecdn"></span>
+    <span id="sp_institucionopc" class="contendor_navegacionsecdn navsecactive"></span>
+    <span id="sp_programas" class="contendor_navegacionsecdn navsecnoactive">Programas</span>
+    <span class="icon_next etiqueta_next contendor_navegacionsecdn"></span>
+    <span id="sp_programa" class="contendor_navegacionsecdn navsecactive"></span>
+</div>
+
+<script type="text/javascript">
+    $('.dropdown').on('mouseover', function (){
+        var top = $(this).offset().top,
+            left = $(this).offset().left;
+        
+        /*if($(this).find('#prueba')){
+            console.log("True");
+        }else{
+            console.log("False");
+        }*/
+        
+        $(this).find('.dropdown-content').css({display: 'flex', top: top + 40, left: left - 30});
+    });
+    
+    $('.dropdown').on('mouseout', function (){
+        $(this).find('.dropdown-content').css({display: 'none'});
+    });
+    
+    $('#sp_institucionmv').on('click', function (){
+        $.ajax({
+            type: 'POST',
+            url: window.public_path + "index/institucion/",
+            data: {},
+            beforeSend: function(){
+
+            },
+            success: function(data){
+                $('#dv_navegacionsec').removeClass('contendor_navegacionsecdn');
+                $('#sp_inicio').removeClass('contendor_navegacionsecdn').next('span').removeClass('contendor_navegacionsecdn');
+                $('#sp_institucion').removeClass('contendor_navegacionsecdn').next('span').removeClass('contendor_navegacionsecdn');
+                $('#sp_institucionopc').text('Misión | Visión').removeClass('contendor_navegacionsecdn');
+                $('#sp_institucionmv').parent().css({display: 'none'});
+                $('#sec_contenido').html(data);
+            },
+            error: function(){
+                console.log('Error');
+            }
+        }).always(function(){
+
+        });
+    });
+    
+    $('#sp_institucionv').on('click', function (){
+        $.ajax({
+            type: 'POST',
+            url: window.public_path + "index/visitanos/",
+            data: {},
+            beforeSend: function(){
+
+            },
+            success: function(data){
+                $('#dv_navegacionsec').removeClass('contendor_navegacionsecdn');
+                $('#sp_inicio').removeClass('contendor_navegacionsecdn').next('span').removeClass('contendor_navegacionsecdn');
+                $('#sp_institucion').removeClass('contendor_navegacionsecdn').next('span').removeClass('contendor_navegacionsecdn');
+                $('#sp_institucionopc').text('Visítanos').removeClass('contendor_navegacionsecdn');
+                $('#sp_institucionv').parent().css({display: 'none'});
+                $('#sec_contenido').html(data);
+            },
+            error: function(){
+                console.log('Error');
+            }
+        }).always(function(){
+
+        });
+    });
+    
+    $('#sp_teclab').on('click', function (){
+        $.ajax({
+            type: 'POST',
+            //url: window.public_path + "program/tecnicos/1",
+            url: window.public_path + "program/programas/1",
+            data: {
+                'tipoProg': 1
+            },
+            beforeSend: function(){
+
+            },
+            success: function(data){
+                $('#sp_teclab').parent().css({display: 'none'});
+                $('#sec_contenido').html(data);
+            },
+            error: function(){
+                console.log('Error');
+            }
+        }).always(function(){
+
+        });
+    });
+    
+    $('#sp_inglesniv').on('click', function (){
+        $.ajax({
+            type: 'POST',
+            //url: window.public_path + "program/ingles/1",
+            url: window.public_path + "program/programas/7",
+            data: {
+                'tipoProg': 7
+            },
+            beforeSend: function(){
+
+            },
+            success: function(data){
+                $('#sp_inglesniv').parent().css({display: 'none'});
+                $('#sec_contenido').html(data);
+            },
+            error: function(){
+                console.log('Error');
+            }
+        }).always(function(){
+
+        });
+    });
+    
+    $('#sp_inicio').on('click', function (){
+        $.ajax({
+            type: 'POST',
+            url: window.public_path + "index/index/",
+            data: {
+                'banInicio': 1
+            },
+            beforeSend: function(){
+
+            },
+            success: function(data){
+                $('#dv_navegacionsec').addClass('contendor_navegacionsecdn');
+                
+                $('#sp_institucionmv').parent().css({display: 'none'});
+                
+                $('#sec_contenido').html(data);
+            },
+            error: function(){
+                console.log('Error');
+            }
+        }).always(function(){
+
+        });
+    });
+</script>
