@@ -19,11 +19,14 @@
         window.public_path = '<?= PUBLIC_PATH?>';
     </script>
     
-    <? (isset($programas))?$banProgramas = $programas:$banProgramas = 0; ?>
+    <? (isset($programas))?$banProgramas = $programas:$banProgramas = 0;
+    (isset($tipoProg))?$tipoPrograma = $tipoProg:$tipoPrograma = 0;
+    (isset($institucion))?$banInstitucion = $institucion:$banInstitucion = 0;
+    (isset($tipoIns))?$tipoInstitucion = $tipoIns:$tipoInstitucion = 0; ?>
 </head>
 <body>
     <header>
-        <? View::partial("header", false, array('banProgramas'=>$banProgramas)) ?>
+        <? View::partial("header", false, array('banProgramas'=>$banProgramas, 'tipoPrograma'=>$tipoPrograma, 'banInstitucion'=>$banInstitucion, 'tipoInstitucion'=>$tipoInstitucion)) ?>
     </header>
     <section id="sec_contenido">
         <? View::content(); ?>
@@ -32,9 +35,11 @@
         <? View::partial("footer") ?>
     </footer>
     
-    <!--script type="text/javascript">
+    <script type="text/javascript">
         //alert(<?= (isset($programas))?$programas:0;?>);
         //alert(<?= $banProgramas;?>);
-    </script-->
+        console.log('banProgramas: ' + <?= $banProgramas;?>);
+        console.log('banInstitucion: ' + <?= $banInstitucion;?>);
+    </script>
 </body>
 </html>

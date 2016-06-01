@@ -15,7 +15,7 @@ class ProgramController extends AppController {
             6 -> Vigilancia, Seguridad y Control de Instalaciones
             7 -> Ingles Por Niveles */
         
-        $this->tipo = $tipo;
+        $this->tipoProg = $tipo;
         
         if($programas > 0){
             View::template(NULL);
