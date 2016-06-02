@@ -1,3 +1,19 @@
+<div id="dv_contenidoprograma">
+    <div id="dv_programa"></div>
+    <div id="dv_navprograma">
+        <div>
+            <span class="etiqueta_programas">Programas</span>
+            <span class="etiqueta_tipprog">Técnico Laborales</span>
+            <span class="etiqueta_nomprograma">En Administración de Gestión del Talento Humano</span>
+            <span class="etiqueta_nomprograma">En Gestión Contable y Financiero</span>
+            <span class="etiqueta_nomprograma">En Preparación Física y Entrenamiento Deportivo</span>
+            <span class="etiqueta_nomprograma">En Sistemas</span>
+            <span class="etiqueta_nomprograma">En Vigilancia, Seguridad y Control de Instalaciones</span>
+            <span class="etiqueta_tipprograma">Ingles Por Niveles</span>
+        </div>
+    </div>
+</div>
+
 <script type="text/javascript">
     <? switch($tipoProg):
         case 1: ?>
@@ -9,7 +25,8 @@
 
                 },
                 success: function(data){
-                    $('#sec_contenido').html(data);
+                    //$('#sec_contenido').html(data);
+                    $('#dv_programa').html(data);
                 },
                 error: function(){
                     console.log('Error');
@@ -28,7 +45,8 @@
 
                 },
                 success: function(data){
-                    $('#sec_contenido').html(data);
+                    //$('#sec_contenido').html(data);
+                    $('#dv_programa').html(data);
                 },
                 error: function(){
                     console.log('Error');
