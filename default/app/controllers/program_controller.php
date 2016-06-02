@@ -22,19 +22,11 @@ class ProgramController extends AppController {
         }
     }
     
-    public function tecnicos($banTecnicos = 0) {
-        $this->programas = 1;
-        
-        if($banTecnicos > 0){
-            View::template(NULL);
-        }
+    public function tecnicos() {
+        View::template(NULL);
     }
     
-    public function ingles($banIngles = 0) {
-        $this->programas = 1;
-        
-        if($banIngles > 0){
-            View::template(NULL);
-        }
+    public function ingles() {
+        View::template(NULL);
     }
 }

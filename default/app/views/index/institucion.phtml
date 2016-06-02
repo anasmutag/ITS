@@ -1,10 +1,44 @@
-<div id="dv_institucion" class="contenedor_pilares contenedor_institucion">
-    <div id="dv_mision" class="contenedor_pilar">
-        <span>MISIÓN</span>
-        <div>El Instituto Técnico Surcolombiano es una institución técnica laboral, fundamentada en principios y valores; para contribuir al trabajo y desarrollo humano, social formando personas competentes a través de programas técnicos laborales en las diferentes áreas de tecnología, informática, contable entre otras</div>
-    </div>
-    <div id="dv_vision" class="contenedor_pilar">
-        <span>VISIÓN</span>
-        <div>El Instituto, será en 2018 una institución de educación técnica, posicionada en la región con la educación presencial y educación virtual nacional y mundial con experiencia académica, la calidad en sus procesos y la pertinencia social de sus programas</div>
-    </div>
-</div>
+<script type="text/javascript">
+    <? switch($tipoIns):
+        case 1: ?>
+            $.ajax({
+                type: 'POST',
+                url: window.public_path + "index/informacion/",
+                data: {},
+                beforeSend: function(){
+
+                },
+                success: function(data){
+                    $('#sec_contenido').html(data);
+                },
+                error: function(){
+                    console.log('Error');
+                }
+            }).always(function(){
+
+            });
+            
+            <? break;
+        case 2: ?>
+            $.ajax({
+                type: 'POST',
+                url: window.public_path + "index/visitanos/",
+                data: {},
+                beforeSend: function(){
+
+                },
+                success: function(data){
+                    $('#sec_contenido').html(data);
+                },
+                error: function(){
+                    console.log('Error');
+                }
+            }).always(function(){
+
+            });
+            
+            <? break;
+        default:
+            break;
+    endswitch; ?>
+</script>

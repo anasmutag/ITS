@@ -1,1 +1,44 @@
-<div style="font-size: 40px">Aqui es... <?= $tipoProg?></div>
+<script type="text/javascript">
+    <? switch($tipoProg):
+        case 1: ?>
+            $.ajax({
+                type: 'POST',
+                url: window.public_path + "program/tecnicos/",
+                data: {},
+                beforeSend: function(){
+
+                },
+                success: function(data){
+                    $('#sec_contenido').html(data);
+                },
+                error: function(){
+                    console.log('Error');
+                }
+            }).always(function(){
+
+            });
+            
+            <? break;
+        case 7: ?>
+            $.ajax({
+                type: 'POST',
+                url: window.public_path + "program/ingles/",
+                data: {},
+                beforeSend: function(){
+
+                },
+                success: function(data){
+                    $('#sec_contenido').html(data);
+                },
+                error: function(){
+                    console.log('Error');
+                }
+            }).always(function(){
+
+            });
+            
+            <? break;
+        default:
+            break;
+    endswitch; ?>
+</script>
