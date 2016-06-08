@@ -1,0 +1,194 @@
+@font-face {
+  font-family: 'RobotoBold';
+  src: url(../font/Roboto-Bold.ttf) format('truetype');
+}
+@font-face {
+  font-family: 'RobotoBoldItalic';
+  src: url(../font/Roboto-BoldItalic.ttf) format('truetype');
+}
+@font-face {
+  font-family: 'RobotoLightItalic';
+  src: url(../font/Roboto-LightItalic.ttf) format('truetype');
+}
+@font-face {
+  font-family: 'RobotoMedium';
+  src: url(../font/Roboto-Medium.ttf) format('truetype');
+}
+@font-face {
+  font-family: 'RobotoRegular';
+  src: url(../font/Roboto-Regular.ttf) format('truetype');
+}
+@font-face {
+  font-family: 'RobotoItalic';
+  src: url(../font/Roboto-Italic.ttf) format('truetype');
+}
+@font-face {
+  font-family: 'Roboto-Black';
+  src: url(../font/Roboto-Black.ttf) format('truetype');
+}
+@font-face {
+  font-family: 'Roboto-Light';
+  src: url(../font/Roboto-Light.ttf) format('truetype');
+}
+@font-face {
+  font-family: 'Roboto-Thin';
+  src: url(../font/Roboto-Thin.ttf) format('truetype');
+}
+/*
+@font-face {
+    font-family: 'ralewaybold';
+    src: url('raleway-bold-webfont.eot');
+    src: url('raleway-bold-webfont.eot?#iefix') format('embedded-opentype'),
+         url('raleway-bold-webfont.woff') format('woff'),
+         url('raleway-bold-webfont.ttf') format('truetype'),
+         url('raleway-bold-webfont.svg#ralewaybold') format('svg');
+    font-weight: normal;
+    font-style: normal;
+}
+*/
+/*@colorw: #FFFFFF;   //blanco
+@colorn: #000000;   //negro
+@coloro: #FF3E00;   //naranja
+@colorv: #80016B;   //morado
+@colorg: #958F88;   //gris
+@colorgl: #443B3E;  //gris linea separadora
+@colorgm: #7C7471;  //gris borde miniaturas
+@colorgcc: #DBDAD4; //gris totales carrito de compra
+@colora: #28539F;   //azul
+@colorcc: #EEEFEC;  //gris tabla carrito de compras
+@colorgn: #BCBEC0; //Gris universal para todo contenedor
+@colorglt: #59585A; //Gris letras superior header
+@colorglb: #CFD0D2;
+@colorggen: #E4E3E3; //Gris universal fondos*/
+/*.borderRadiusCompleto(
+    @radio: 5px
+){
+    border-radius: @radio;
+    -moz-border-radius: @radio;
+    -o-border-radius: @radio;
+    -ms-border-radius: @radio;
+    -khtml-border-radius: @radio;
+    -webkit-border-radius: @radio;
+}
+
+.borderRadiusParcial(
+    @rtl;
+    @rtr;
+    @rbr;
+    @rbl
+){
+    border-radius: @arguments;
+    -moz-border-radius: @arguments;
+    -o-border-radius: @arguments;
+    -ms-border-radius: @arguments;
+    -khtml-border-radius: @arguments;
+    -webkit-border-radius: @arguments;
+}
+
+.button(
+    @width: 215px;
+    @height: 55px;
+    @font-family: @robotoregular;
+    @font-size: 18px;
+    @color: @colorn;
+    @border-width: 2px;
+    @border-color: @coloro;
+    @background-color: transparent
+){
+    width: @width;
+    min-width: 120px;
+    height: @height;
+    min-height: 35px;
+    font-family: @font-family;
+    font-size: @font-size;
+    color: @color;
+    border: @border-width solid @border-color;
+    background-color: @background-color;
+    padding: 0;
+    .borderRadiusCompleto;
+}
+
+.hoverButton(@border-color) when(@border-color = #FFFFFF){
+    color: @colorv;
+    background-color: @border-color;
+}
+
+.hoverButton(@border-color) when(@border-color = #000000){
+    color: @colorw;
+    background-color: @border-color;
+}
+
+.hoverButton(@border-color) when(@border-color = #FF3E00){
+    color: @colorw;
+    border-color: @border-color;
+    background-color: @border-color;
+}
+
+.hoverButton(@border-color) when(@border-color = #7C7471){
+    color: @colorw;
+    background-color: @border-color;
+}
+
+.hoverButton(@border-color) when(@border-color = #80016B){
+    color: @border-color;
+    border-color: @colorw;
+    background-color: @colorw;
+}
+
+.icon(
+    @width;
+    @height;
+    @bpy;
+    @bpx: 0px
+){
+    width: @width;
+    height: @height;
+    background-position: @bpx @bpy;
+}*/
+#dv_preinscripcion {
+  padding: 15px;
+  background-color: #ffffff;
+  -webkit-box-shadow: 0 0 5px 2px rgba(0, 0, 0, 0.2);
+  -moz-box-shadow: 0 0 5px 2px rgba(0, 0, 0, 0.2);
+  box-shadow: 0 0 5px 2px rgba(0, 0, 0, 0.2);
+  width: 75%;
+  height: auto;
+  border-radius: 8px;
+  -moz-border-radius: 8px;
+  -o-border-radius: 8px;
+  -ms-border-radius: 8px;
+  -khtml-border-radius: 8px;
+  -webkit-border-radius: 8px;
+  display: -webkit-box;
+  display: -moz-box;
+  display: -ms-flexbox;
+  display: -ms-box;
+  display: -webkit-flex;
+  display: flex;
+  -webkit-box-pack: center;
+  -moz-box-pack: center;
+  -webkit-justify-content: center;
+  justify-content: center;
+  -webkit-box-align: center;
+  -moz-box-align: center;
+  -webkit-align-items: center;
+  -ms-flex-align: center;
+  align-items: center;
+  -webkit-align-content: center;
+  -ms-flex-pack: center;
+  align-content: center;
+  -webkit-flex-wrap: wrap;
+  -ms-flex-wrap: wrap;
+  flex-wrap: wrap;
+  -webkit-flex-direction: row;
+  -moz-flex-direction: row;
+  -ms-flex-direction: row;
+  -o-flex-direction: row;
+  flex-direction: row;
+  /*-webkit-box-ordinal-group: 2;
+    -moz-box-ordinal-group: 2;
+    -ms-flex-order: 2;
+    -webkit-order: 2;
+    order: 2;*/
+}
+/*# sourceMappingURL=preinscripcion.css.map */

@@ -48,12 +48,12 @@
         <a class="dropbtn" href="#" style="position: relative;">Campus Virtual</a>
     </div>
     <div class="btn">
-        <span class="dropbtn">Preinscripción</span>
+        <a class="dropbtn" href="<?= PUBLIC_PATH?>registration/preinscripcion/" style="position: relative;">Preinscripción</a>
     </div>
 </div>
 <div id="dv_navegacionsec" class="contenedor_navegacionsec contendor_navegacionsecdn">
-    <!--span id="sp_inicio" class="contendor_navegacionsecdn navsecnoactive">Inicio</span-->
-    <span id="sp_inicio" class="contendor_navegacionsecdn icon_home"></span>
+    <!--span id="sp_iniciox" class="contendor_navegacionsecdn navsecnoactive">Inicio</span-->
+    <a id="lnk_inicio" href="<?= PUBLIC_PATH?>"><span id="sp_inicio" class="contendor_navegacionsecdn icon_home"></span></a>
     <span class="icon_next etiqueta_next contendor_navegacionsecdn"></span>
     <span id="sp_institucion" class="contendor_navegacionsecdn navsecnoactive">Institución</span>
     <span class="icon_next etiqueta_next contendor_navegacionsecdn"></span>
@@ -67,7 +67,9 @@
     $(window).load(function(){
         <? if($banInstitucion > 0): ?>
             $('#dv_navegacionsec').removeClass('contendor_navegacionsecdn');
-            $('#sp_inicio').removeClass('contendor_navegacionsecdn').next('span').removeClass('contendor_navegacionsecdn');
+            //$('#sp_inicio').removeClass('contendor_navegacionsecdn').next('span').removeClass('contendor_navegacionsecdn');
+            $('#sp_inicio').removeClass('contendor_navegacionsecdn');
+            $('#lnk_inicio').next('span').removeClass('contendor_navegacionsecdn');
             $('#sp_institucion').removeClass('contendor_navegacionsecdn').next('span').removeClass('contendor_navegacionsecdn');
             
             <? if($tipoInstitucion === 1): ?>
@@ -77,7 +79,9 @@
             <? endif; ?>
         <? elseif($banProgramas > 0): ?>
             $('#dv_navegacionsec').removeClass('contendor_navegacionsecdn');
-            $('#sp_inicio').removeClass('contendor_navegacionsecdn').next('span').removeClass('contendor_navegacionsecdn');
+            //$('#sp_inicio').removeClass('contendor_navegacionsecdn').next('span').removeClass('contendor_navegacionsecdn');
+            $('#sp_inicio').removeClass('contendor_navegacionsecdn');
+            $('#lnk_inicio').next('span').removeClass('contendor_navegacionsecdn');
             $('#sp_programas').removeClass('contendor_navegacionsecdn').next('span').removeClass('contendor_navegacionsecdn');
             
             <? switch($tipoPrograma):
@@ -125,7 +129,9 @@
             },
             success: function(data){
                 $('#dv_navegacionsec').removeClass('contendor_navegacionsecdn');
-                $('#sp_inicio').removeClass('contendor_navegacionsecdn').next('span').removeClass('contendor_navegacionsecdn');
+                //$('#sp_inicio').removeClass('contendor_navegacionsecdn').next('span').removeClass('contendor_navegacionsecdn');
+                $('#sp_inicio').removeClass('contendor_navegacionsecdn');
+                $('#lnk_inicio').next('span').removeClass('contendor_navegacionsecdn');
                 $('#sp_institucion').removeClass('contendor_navegacionsecdn').next('span').removeClass('contendor_navegacionsecdn');
                 $('#sp_institucionopc').text('Misión | Visión').removeClass('contendor_navegacionsecdn');
                 $('#sp_institucionmv').parent().css({display: 'none'});
@@ -152,7 +158,9 @@
             },
             success: function(data){
                 $('#dv_navegacionsec').removeClass('contendor_navegacionsecdn');
-                $('#sp_inicio').removeClass('contendor_navegacionsecdn').next('span').removeClass('contendor_navegacionsecdn');
+                //$('#sp_inicio').removeClass('contendor_navegacionsecdn').next('span').removeClass('contendor_navegacionsecdn');
+                $('#sp_inicio').removeClass('contendor_navegacionsecdn');
+                $('#lnk_inicio').next('span').removeClass('contendor_navegacionsecdn');
                 $('#sp_institucion').removeClass('contendor_navegacionsecdn').next('span').removeClass('contendor_navegacionsecdn');
                 $('#sp_institucionopc').text('Visítanos').removeClass('contendor_navegacionsecdn');
                 $('#sp_institucionv').parent().css({display: 'none'});
@@ -179,7 +187,9 @@
             },
             success: function(data){
                 $('#dv_navegacionsec').removeClass('contendor_navegacionsecdn');
-                $('#sp_inicio').removeClass('contendor_navegacionsecdn').next('span').removeClass('contendor_navegacionsecdn');
+                //$('#sp_inicio').removeClass('contendor_navegacionsecdn').next('span').removeClass('contendor_navegacionsecdn');
+                $('#sp_inicio').removeClass('contendor_navegacionsecdn');
+                $('#lnk_inicio').next('span').removeClass('contendor_navegacionsecdn');
                 $('#sp_programas').removeClass('contendor_navegacionsecdn').next('span').removeClass('contendor_navegacionsecdn');
                 $('#sp_programa').text('Técnico Laborales').removeClass('contendor_navegacionsecdn');
                 $('#sp_teclab').parent().css({display: 'none'});
@@ -206,7 +216,9 @@
             },
             success: function(data){
                 $('#dv_navegacionsec').removeClass('contendor_navegacionsecdn');
-                $('#sp_inicio').removeClass('contendor_navegacionsecdn').next('span').removeClass('contendor_navegacionsecdn');
+                //$('#sp_inicio').removeClass('contendor_navegacionsecdn').next('span').removeClass('contendor_navegacionsecdn');
+                $('#sp_inicio').removeClass('contendor_navegacionsecdn');
+                $('#lnk_inicio').next('span').removeClass('contendor_navegacionsecdn');
                 $('#sp_programas').removeClass('contendor_navegacionsecdn').next('span').removeClass('contendor_navegacionsecdn');
                 $('#sp_programa').text('Ingles Por Niveles').removeClass('contendor_navegacionsecdn');
                 $('#sp_inglesniv').parent().css({display: 'none'});
@@ -220,7 +232,7 @@
         });
     });
     
-    $('#sp_inicio').on('click', function (){
+    /*$('#sp_inicio').on('click', function (){
         $.ajax({
             type: 'POST',
             url: window.public_path + "index/index/",
@@ -239,5 +251,5 @@
         }).always(function(){
 
         });
-    });
+    });*/
 </script>

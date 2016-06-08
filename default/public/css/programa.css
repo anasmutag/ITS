@@ -239,7 +239,7 @@
   -khtml-border-radius: 8px 8px 0 0;
   -webkit-border-radius: 8px 8px 0 0;
 }
-#dv_programa .contenddor_programa {
+#dv_programa .contenedor_programa {
   padding: 30px;
   width: 100%;
   height: auto;
@@ -282,16 +282,17 @@
   -khtml-border-radius: 0 0 8px 8px;
   -webkit-border-radius: 0 0 8px 8px;
 }
-#dv_programa .contenddor_programa .etiqueta_titprog {
+#dv_programa .contenedor_programa .etiqueta_titprog {
+  text-align: left;
   font-size: 20px;
   margin-bottom: 10px;
   cursor: default;
 }
-#dv_programa .contenddor_programa .etiqueta_nomprog {
+#dv_programa .contenedor_programa .etiqueta_nomprog {
   padding: 5px 0;
   cursor: pointer;
 }
-#dv_programa .contenddor_programa .etiqueta_nomprog:hover {
+#dv_programa .contenedor_programa .etiqueta_nomprog:hover {
   color: #bcafa9;
 }
 #dv_navprograma {

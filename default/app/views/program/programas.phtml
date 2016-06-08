@@ -4,12 +4,12 @@
         <div>
             <span class="etiqueta_programas">Programas</span>
             <span class="etiqueta_tipprog">Técnico Laborales</span>
-            <span class="etiqueta_nomprograma">En Administración de Gestión del Talento Humano</span>
-            <span class="etiqueta_nomprograma">En Gestión Contable y Financiero</span>
-            <span class="etiqueta_nomprograma">En Preparación Física y Entrenamiento Deportivo</span>
-            <span class="etiqueta_nomprograma">En Sistemas</span>
-            <span class="etiqueta_nomprograma">En Vigilancia, Seguridad y Control de Instalaciones</span>
-            <span class="etiqueta_tipprograma">Ingles Por Niveles</span>
+            <span class="etiqueta_nomprograma" data-programa="2">En Administración de Gestión del Talento Humano</span>
+            <span class="etiqueta_nomprograma" data-programa="3">En Gestión Contable y Financiero</span>
+            <span class="etiqueta_nomprograma" data-programa="4">En Preparación Física y Entrenamiento Deportivo</span>
+            <span class="etiqueta_nomprograma" data-programa="5">En Sistemas</span>
+            <span class="etiqueta_nomprograma" data-programa="6">En Vigilancia, Seguridad y Control de Instalaciones</span>
+            <span class="etiqueta_tipprograma" data-programa="7">Ingles Por Niveles</span>
         </div>
     </div>
 </div>
@@ -59,4 +59,36 @@
         default:
             break;
     endswitch; ?>
+    
+    $('.etiqueta_nomprograma').on('click', function (){
+        var idPrograma = $(this).data('programa'),
+            str = $(this).text(),
+            res = str.replace("En", "en"),
+            nomPrograma = "Técnico Laboral " + res;
+            //nomPrograma = "Técnico Laboral " + $(this).text();
+        
+        $.ajax({
+            type: 'POST',
+            url: window.public_path + "program/detallePrograma/",
+            data: {
+                'idPrograma': idPrograma,
+                'nomPrograma': nomPrograma
+            },
+            beforeSend: function(){
+
+            },
+            success: function(data){
+                $('#dv_navegacionsec').removeClass('contendor_navegacionsecdn');
+                $('#sp_inicio').removeClass('contendor_navegacionsecdn').next('span').removeClass('contendor_navegacionsecdn');
+                $('#sp_programas').removeClass('contendor_navegacionsecdn').next('span').removeClass('contendor_navegacionsecdn');
+                $('#sp_programa').text('Técnico Laboral en ' + nomPrograma).removeClass('contendor_navegacionsecdn');
+                $('#dv_programa').html(data);
+            },
+            error: function(){
+                console.log('Error');
+            }
+        }).always(function(){
+
+        });
+    });
 </script>
