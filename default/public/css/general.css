@@ -1196,21 +1196,45 @@ header {
     -webkit-order: 2;
     order: 2;*/
 }
+.icon_menu {
+  mask: url(../../ITS/img/icon/ic_menu_white_48px.svg) no-repeat 50% 50%;
+  -webkit-mask: url(../../ITS/img/icon/ic_menu_white_48px.svg) no-repeat 50% 50%;
+  mask-size: cover;
+  -webkit-mask-size: cover;
+}
 .icon_home {
-  mask: url(../../ITS/img/ic_home_black_48px.svg) no-repeat 50% 50%;
-  -webkit-mask: url(../../ITS/img/ic_home_black_48px.svg) no-repeat 50% 50%;
+  mask: url(../../ITS/img/icon/ic_home_black_48px.svg) no-repeat 50% 50%;
+  -webkit-mask: url(../../ITS/img/icon/ic_home_black_48px.svg) no-repeat 50% 50%;
   mask-size: cover;
   -webkit-mask-size: cover;
 }
 .icon_before {
-  mask: url(../../ITS/img/ic_navigate_before_black_48px.svg) no-repeat 50% 50%;
-  -webkit-mask: url(../../ITS/img/ic_navigate_before_black_48px.svg) no-repeat 50% 50%;
+  mask: url(../../ITS/img/icon/ic_navigate_before_black_48px.svg) no-repeat 50% 50%;
+  -webkit-mask: url(../../ITS/img/icon/ic_navigate_before_black_48px.svg) no-repeat 50% 50%;
   mask-size: cover;
   -webkit-mask-size: cover;
 }
 .icon_next {
-  mask: url(../../ITS/img/ic_navigate_next_black_48px.svg) no-repeat 50% 50%;
-  -webkit-mask: url(../../ITS/img/ic_navigate_next_black_48px.svg) no-repeat 50% 50%;
+  mask: url(../../ITS/img/icon/ic_navigate_next_black_48px.svg) no-repeat 50% 50%;
+  -webkit-mask: url(../../ITS/img/icon/ic_navigate_next_black_48px.svg) no-repeat 50% 50%;
+  mask-size: cover;
+  -webkit-mask-size: cover;
+}
+.icon_up {
+  mask: url(../../ITS/img/icon/ic_keyboard_arrow_up_black_48px.svg) no-repeat 50% 50%;
+  -webkit-mask: url(../../ITS/img/icon/ic_keyboard_arrow_up_black_48px.svg) no-repeat 50% 50%;
+  mask-size: cover;
+  -webkit-mask-size: cover;
+}
+.icon_down {
+  mask: url(../../ITS/img/icon/ic_keyboard_arrow_down_black_48px.svg) no-repeat 50% 50%;
+  -webkit-mask: url(../../ITS/img/icon/ic_keyboard_arrow_down_black_48px.svg) no-repeat 50% 50%;
+  mask-size: cover;
+  -webkit-mask-size: cover;
+}
+.icon_location {
+  mask: url(../../ITS/img/icon/ic_location_on_black_48px.svg) no-repeat 50% 50%;
+  -webkit-mask: url(../../ITS/img/icon/ic_location_on_black_48px.svg) no-repeat 50% 50%;
   mask-size: cover;
   -webkit-mask-size: cover;
 }
