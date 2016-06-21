@@ -1,10 +1,16 @@
-<?/*= $tipoPrograma*/?>
+<?//= $tipoPrograma?>
+<?//= var_dump($tipoInstitucion)?>
 
 <div id="dv_fechahora">
-    Pasto, Nariño
+    <? $dia = date("j");
+    $anio = date("Y");
+    $meses = array("Enero", "Febrero", "Marzo", "Abril", "Mayo", "Junio", "Julio", "Agosto", "Septiembre", "Octubre", "Noviembre", "Diciembre"); ?>
+    
+    San Juan de Pasto, <?= $meses[date('n')-1] . ' ' . $dia . ' del ' . $anio?>
 </div>
 <div id="dv_logo">
-    <div>LOGO</div>
+    <!--div>LOGO</div-->
+    <img src="<?= PUBLIC_PATH?>img/logo.png">
 </div>
 <div id="dv_instituto">INSTITUTO TÉCNICO SURCOOMBIANO</div>
 <div id="dv_navegacion">
@@ -12,7 +18,11 @@
         <a class="dropbtn" href="<?= PUBLIC_PATH?>" style="position: relative;">Inicio</a>
     </div>
     <div class="btn dropdown">
-        <span class="dropbtn active">Institución</span>
+        <? if($banInstitucion > 0): ?>
+            <span id="sp_instituciong" class="dropbtn active">Institución</span>
+        <? else: ?>
+            <a class="dropbtn" href="<?= PUBLIC_PATH?>index/institucion/3" style="position: relative;">Institución</a>
+        <? endif; ?>
         <div class="dropdown-content">
             <? if($banInstitucion > 0): ?>
                 <span id="sp_institucionmv">Misión | Visión</span>
@@ -70,12 +80,22 @@
             //$('#sp_inicio').removeClass('contendor_navegacionsecdn').next('span').removeClass('contendor_navegacionsecdn');
             $('#sp_inicio').removeClass('contendor_navegacionsecdn');
             $('#lnk_inicio').next('span').removeClass('contendor_navegacionsecdn');
-            $('#sp_institucion').removeClass('contendor_navegacionsecdn').next('span').removeClass('contendor_navegacionsecdn');
+            //$('#sp_institucion').removeClass('contendor_navegacionsecdn').next('span').removeClass('contendor_navegacionsecdn');
             
-            <? if($tipoInstitucion === 1): ?>
+            <? if($tipoInstitucion === '1'): ?>
+                $('#sp_institucion').addClass('etiqueta_institucion');
+                $('#sp_institucion').removeClass('navsecactive').addClass('navsecnoactive');
+                $('#sp_institucion').removeClass('contendor_navegacionsecdn').next('span').removeClass('contendor_navegacionsecdn');
                 $('#sp_institucionopc').text('Misión | Visión').removeClass('contendor_navegacionsecdn');
-            <? else: ?>
+            <? elseif($tipoInstitucion === '2'): ?>
+                $('#sp_institucion').addClass('etiqueta_institucion');
+                $('#sp_institucion').removeClass('navsecactive').addClass('navsecnoactive');
+                $('#sp_institucion').removeClass('contendor_navegacionsecdn').next('span').removeClass('contendor_navegacionsecdn');
                 $('#sp_institucionopc').text('Visítanos').removeClass('contendor_navegacionsecdn');
+            <? else: ?>
+                $('#sp_institucion').removeClass('etiqueta_institucion');
+                $('#sp_institucion').removeClass('navsecnoactive');
+                $('#sp_institucion').removeClass('contendor_navegacionsecdn').addClass('navsecactive');
             <? endif; ?>
         <? elseif($banProgramas > 0): ?>
             $('#dv_navegacionsec').removeClass('contendor_navegacionsecdn');
@@ -116,6 +136,35 @@
         $(this).find('.dropdown-content').css({display: 'none'});
     });
     
+    $('#sp_instituciong, #sp_institucion').on('click', function (){
+        $.ajax({
+            type: 'POST',
+            url: window.public_path + "index/institucion/3",
+            data: {
+                'tipoIns': 3
+            },
+            beforeSend: function(){
+
+            },
+            success: function(data){
+                $('#dv_navegacionsec').removeClass('contendor_navegacionsecdn');
+                $('#sp_inicio').removeClass('contendor_navegacionsecdn');
+                $('#lnk_inicio').next('span').removeClass('contendor_navegacionsecdn');
+                $('#sp_institucion').removeClass('etiqueta_institucion');
+                $('#sp_institucion').removeClass('navsecnoactive').addClass('navsecactive');
+                $('#sp_institucion').removeClass('contendor_navegacionsecdn').next('span').addClass('contendor_navegacionsecdn');
+                $('#sp_institucionopc').addClass('contendor_navegacionsecdn');
+                $('#sp_institucionmv').parent().css({display: 'none'});
+                $('#sec_contenido').html(data);
+            },
+            error: function(){
+                console.log('Error');
+            }
+        }).always(function(){
+
+        });
+    });
+    
     $('#sp_institucionmv').on('click', function (){
         $.ajax({
             type: 'POST',
@@ -132,6 +181,8 @@
                 //$('#sp_inicio').removeClass('contendor_navegacionsecdn').next('span').removeClass('contendor_navegacionsecdn');
                 $('#sp_inicio').removeClass('contendor_navegacionsecdn');
                 $('#lnk_inicio').next('span').removeClass('contendor_navegacionsecdn');
+                $('#sp_institucion').addClass('etiqueta_institucion');
+                $('#sp_institucion').removeClass('navsecactive').addClass('navsecnoactive');
                 $('#sp_institucion').removeClass('contendor_navegacionsecdn').next('span').removeClass('contendor_navegacionsecdn');
                 $('#sp_institucionopc').text('Misión | Visión').removeClass('contendor_navegacionsecdn');
                 $('#sp_institucionmv').parent().css({display: 'none'});
@@ -161,6 +212,8 @@
                 //$('#sp_inicio').removeClass('contendor_navegacionsecdn').next('span').removeClass('contendor_navegacionsecdn');
                 $('#sp_inicio').removeClass('contendor_navegacionsecdn');
                 $('#lnk_inicio').next('span').removeClass('contendor_navegacionsecdn');
+                $('#sp_institucion').addClass('etiqueta_institucion');
+                $('#sp_institucion').removeClass('navsecactive').addClass('navsecnoactive');
                 $('#sp_institucion').removeClass('contendor_navegacionsecdn').next('span').removeClass('contendor_navegacionsecdn');
                 $('#sp_institucionopc').text('Visítanos').removeClass('contendor_navegacionsecdn');
                 $('#sp_institucionv').parent().css({display: 'none'});

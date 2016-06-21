@@ -21,6 +21,7 @@
         .flexBox;
         .borderRadius(8px);
         .boxShadow(0;0;5px;2px;rgba(0, 0, 0, 0.2));
+        .font(@robotoregular;16px);
     }
     /*#dv_pilares {
         justify-content: space-between;
@@ -43,6 +44,26 @@
         }
     }*/
 }
+#dv_informaciongeneral {
+    .contenedor_pilar {
+        margin: 0 0 30px 0;
+        
+        .dimensions(85%);
+        
+        div .etiqueta_objetivoestrategico {
+            margin: 10px 0;
+            
+            .dimensions;
+            .flexBox;
+        }
+        div .etiqueta_objetivoestrategico:nth-child(1) {
+            margin-top: 0;
+        }
+        div .etiqueta_objetivoestrategico:nth-last-child(1) {
+            margin-bottom: 0;
+        }
+    }
+}
 #dv_institucion {
     padding: 25px 30px;
     
@@ -54,37 +75,102 @@
     .dimensions;
     .flexBox;
     
-    div {
-        padding: 15px;
+    #dv_contenidomapa {
+        padding: 0 0 30px 0;
         background-color: @blanco;
+        color: @base;
         
         .boxShadow(0;0;5px;2px;rgba(0, 0, 0, 0.2));
+        /*.dimensions(@width:75%;360px);*/
         .dimensions(@width:75%);
         .borderRadius(8px);
         .flexBox;
+        
+        .etiqueta_localizacion:nth-of-type(1) {
+            padding: 10px 0;
+            color: @blanco;
+            
+            background: @base;
+            background: -moz-linear-gradient(top, @base 0%, #2989d8 100%, #207cca 100%, #7db9e8 100%);
+            background: -webkit-linear-gradient(top, @base 0%,#2989d8 100%,#207cca 100%,#7db9e8 100%);
+            background: linear-gradient(to bottom, @base 0%,#2989d8 100%,#207cca 100%,#7db9e8 100%);
+            filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='@base', endColorstr='#7db9e8',GradientType=0 );
+            
+            .dimensions;
+            .flexBox;
+            .font(@robotobold;18px);
+            .borderRadius(8px;8px;100%;100%);
+        }
+        .etiqueta_localizacion:nth-of-type(2) {
+            padding: 15px 30px 0 30px;
+            
+            .dimensions;
+            .flexBox;
+            .font(@robotomedium;16px);
+        }
+        .etiqueta_localizacion:nth-of-type(3) {
+            padding: 0 30px 15px 30px;
+            
+            .dimensions;
+            .flexBox;
+            .font(@robotomedium;16px);
+        }
+        #dv_seccionmapa {
+            padding: 0 30px;
+            
+            .dimensions(100%;360px);
+            /*.dimensions(100%;580px);*/
+            
+            #dv_mapa {
+                .dimensions(100%;100%);
+                /*.dimensions(100%;50%);*/
+            }
+            /*#dv_streetview {
+                .dimensions(100%;50%);
+            }*/
+        }
     }
 }
 .contenedor_pilares {
-    padding: 15px 0 0 0;
+    margin: 25px 0 0 0;
     
     .flexBox(@justify-content: space-between);
 
     .contenedor_pilar {
-        padding: 15px 0;
+        padding: 0 0 15px 0;
         color: #00529B;
         background-color: #ffffff;
 
         .boxShadow(0;0;5px;2px;rgba(0, 0, 0, 0.2));
         .dimensions(@width:30%);
+        .flexBox;
+        .font(@robotomedium;16px);
         .borderRadius(8px);
 
         span {
+            padding: 10px 0;
+            /*font-size: 18px;*/
+            /*background-color: @base;*/
+            color: @blanco;
+            
+            background: @base;
+            background: -moz-linear-gradient(top, @base 0%, #2989d8 100%, #207cca 100%, #7db9e8 100%);
+            background: -webkit-linear-gradient(top, @base 0%,#2989d8 100%,#207cca 100%,#7db9e8 100%);
+            background: linear-gradient(to bottom, @base 0%,#2989d8 100%,#207cca 100%,#7db9e8 100%);
+            filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='@base', endColorstr='#7db9e8',GradientType=0 );
+            
             .dimensions;
+            .borderRadius(8px;8px;100%;100%);
+            .font(@robotobold;18px);
         }
         div {
             padding: 15px 15px 0 15px;
         }
     }
+}
+.contenedor_informaciongeneral {
+    .dimensions;
+    .flexBox;
 }
 .contenedor_institucion {
     justify-content: space-around;
@@ -92,4 +178,7 @@
     .contenedor_pilar {
         width: 40%;
     }
+}
+.displaynone {
+    display: none;
 }

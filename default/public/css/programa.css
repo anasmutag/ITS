@@ -1,3 +1,5 @@
+/*@html: #006369;
+@html: #589abb;*/
 @font-face {
   font-family: 'RobotoBold';
   src: url(../font/Roboto-Bold.ttf) format('truetype');
@@ -232,12 +234,97 @@
   background-color: green;
   width: 100%;
   height: 180px;
+  display: -webkit-box;
+  display: -moz-box;
+  display: -ms-flexbox;
+  display: -ms-box;
+  display: -webkit-flex;
+  display: flex;
+  -webkit-box-pack: center;
+  -moz-box-pack: center;
+  -webkit-justify-content: center;
+  justify-content: center;
+  -webkit-box-align: flex-start;
+  -moz-box-align: flex-start;
+  -webkit-align-items: flex-start;
+  -ms-flex-align: flex-start;
+  align-items: flex-start;
+  -webkit-align-content: center;
+  -ms-flex-pack: center;
+  align-content: center;
+  -webkit-flex-wrap: wrap;
+  -ms-flex-wrap: wrap;
+  flex-wrap: wrap;
+  -webkit-flex-direction: row;
+  -moz-flex-direction: row;
+  -ms-flex-direction: row;
+  -o-flex-direction: row;
+  flex-direction: row;
+  /*-webkit-box-ordinal-group: 2;
+    -moz-box-ordinal-group: 2;
+    -ms-flex-order: 2;
+    -webkit-order: 2;
+    order: 2;*/
   border-radius: 8px 8px 0 0;
   -moz-border-radius: 8px 8px 0 0;
   -o-border-radius: 8px 8px 0 0;
   -ms-border-radius: 8px 8px 0 0;
   -khtml-border-radius: 8px 8px 0 0;
   -webkit-border-radius: 8px 8px 0 0;
+}
+#dv_programa .contenedor_imgprograma div {
+  padding: 10px 0;
+  color: #ffffff;
+  background: #00529B;
+  background: -moz-linear-gradient(top, #00529B 0%, #2989d8 100%, #207cca 100%, #7db9e8 100%);
+  background: -webkit-linear-gradient(top, #00529B 0%, #2989d8 100%, #207cca 100%, #7db9e8 100%);
+  background: linear-gradient(to bottom, #00529B 0%, #2989d8 100%, #207cca 100%, #7db9e8 100%);
+  filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='@base', endColorstr='#7db9e8', GradientType=0);
+  width: 100%;
+  height: auto;
+  display: -webkit-box;
+  display: -moz-box;
+  display: -ms-flexbox;
+  display: -ms-box;
+  display: -webkit-flex;
+  display: flex;
+  -webkit-box-pack: center;
+  -moz-box-pack: center;
+  -webkit-justify-content: center;
+  justify-content: center;
+  -webkit-box-align: center;
+  -moz-box-align: center;
+  -webkit-align-items: center;
+  -ms-flex-align: center;
+  align-items: center;
+  -webkit-align-content: center;
+  -ms-flex-pack: center;
+  align-content: center;
+  -webkit-flex-wrap: wrap;
+  -ms-flex-wrap: wrap;
+  flex-wrap: wrap;
+  -webkit-flex-direction: row;
+  -moz-flex-direction: row;
+  -ms-flex-direction: row;
+  -o-flex-direction: row;
+  flex-direction: row;
+  /*-webkit-box-ordinal-group: 2;
+    -moz-box-ordinal-group: 2;
+    -ms-flex-order: 2;
+    -webkit-order: 2;
+    order: 2;*/
+  border-radius: 8px 8px 100% 100%;
+  -moz-border-radius: 8px 8px 100% 100%;
+  -o-border-radius: 8px 8px 100% 100%;
+  -ms-border-radius: 8px 8px 100% 100%;
+  -khtml-border-radius: 8px 8px 100% 100%;
+  -webkit-border-radius: 8px 8px 100% 100%;
+}
+#dv_programa .contenedor_imgprograma div .etiqueta_titprog {
+  width: 75%;
+  height: auto;
+  font-family: 'RobotoBold';
+  font-size: 18px;
 }
 #dv_programa .contenedor_programa {
   padding: 30px;

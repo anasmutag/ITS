@@ -1,3 +1,44 @@
 <div id="dv_visitanos" style="font-size: 40px">
-    <div>Aqui es...</div>
+    <div id="dv_contenidomapa">
+        <span class="etiqueta_localizacion">Localización</span>
+        <span class="etiqueta_localizacion">San Juan de Pasto, Nariño, Colombia</span>
+        <span class="etiqueta_localizacion">Calle 21 No. 23-90</span>
+        <div id="dv_seccionmapa">
+            <div id="dv_mapa"></div>
+            <!--div id="dv_streetview"></div-->
+        </div>
+    </div>
 </div>
+
+<script type="text/javascript">
+    var myLatLng, map, market;
+    
+    function initMap() {
+        myLatLng = {lat: 1.2149208, lng: -77.2759726};
+
+        map = new google.maps.Map(document.getElementById('dv_mapa'), {
+            center: myLatLng,
+            scrollwheel: false,
+            zoom: 18
+        });
+
+        marker = new google.maps.Marker({
+            map: map,
+            position: myLatLng,
+            title: 'Instituto Técnico Surcolombiano'
+        });
+
+        /*panorama = new google.maps.StreetViewPanorama(document.getElementById('dv_streetview'), {
+            position: myLatLng,
+            pov: {
+                heading: 30,
+                pitch: 10,
+                zoom: 0.5
+            }
+        });
+
+        map.setStreetView(panorama);*/
+    }
+</script>
+<script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBYXHhoAbijaDCTdv98TsW_oucwePlcnD4&callback=initMap" async defer>
+</script>

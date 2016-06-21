@@ -3,17 +3,60 @@
 
 footer {
     #dv_enlacesinteres {
+        min-height: 100px;
         background-color: @blanco;
         border-top: 1px solid @base;
         
-        .dimensions(@height:100px);
+        .dimensions;
         .flexBox;
+        
+        .contenedor_enlacesinteres {
+            .dimensions;
+            .flexBox;
+        }
+        .contenedor_enlacesinteres:nth-child(1) {
+            margin: 30px 0 15px 0;
+            
+            #dv_infoenlacesinteres {
+                .dimensions;
+                .flexBox;
+            }
+        }
+        .contenedor_enlacesinteres:nth-child(2) {
+            margin: 15px 0 30px 0;
+            
+            #dv_imgenlacesinteres {
+                .dimensions;
+                .flexBox;
+                
+                .contenedor_imgenlacesinteres {
+                    min-height: 50px;
+                    margin: 0 12.5px;
+                    
+                    .dimensions(200px);
+                    .flexBox;
+                    
+                    img {
+                        width: 100%;
+                        max-width: 100%;
+                        /*min-height: 50px;*/
+                        max-height: 100%;
+                    }
+                }
+            }
+        }
     }
     #dv_informacion_instituto {
         padding: 10px 0;
-        font-size: 12px;
+        font-size: 10px;
         color: @blanco;
-        background-color: @base;
+        /*background-color: @base;*/
+        
+        background: @base;
+        background: -moz-linear-gradient(top, @base 0%, #2989d8 100%, #207cca 100%, #7db9e8 100%);
+        background: -webkit-linear-gradient(top, @base 0%,#2989d8 100%,#207cca 100%,#7db9e8 100%);
+        background: linear-gradient(to bottom, @base 0%,#2989d8 100%,#207cca 100%,#7db9e8 100%);
+        filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='@base', endColorstr='#7db9e8',GradientType=0 );
         
         .dimensions;
         .flexBox;

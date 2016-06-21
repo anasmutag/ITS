@@ -1,3 +1,22 @@
+<?// if($tipoIns === 0): ?>
+    <div id="dv_informaciongeneral" class="contenedor_informaciongeneral contenedor_pilares displaynone">
+        <div class="contenedor_pilar">
+            <span>POLÍTICA DE GESTIÓN DE CALIDAD</span>
+            <div>Es política de calidad del INSTITUTO TÉCNICO SURCOLOMBIANO, satisfacer las necesidades, expectativas y requerimientos de los estudiantes; prestando un servicio eficiente, amable, tecnológico y de amplia cobertura académica, teniendo en cuenta el aprendizaje del ser humano basado en competencias laborales; fortaleciendo la educación con valores y el respeto por la vida y la acción social; garantizando el desarrollo y bienestar de los estudiantes; basados en el cumplimiento de los requisitos legales y el en principio del mejoramiento continuo</div>
+        </div>
+        <div class="contenedor_pilar">
+            <span>OBJETIVOS ESTRATÉGICOS</span>
+            <div>
+                <label class="etiqueta_objetivoestrategico">Satisfacer las necesidades, expectativas y requerimientos de los estudiantes.</label>
+                <label class="etiqueta_objetivoestrategico">Prestar un servicio eficiente, amable, tecnológico y de amplia cobertura académica, teniendo en cuenta el aprendizaje del humano basado en competencias laborales.</label>
+                <label class="etiqueta_objetivoestrategico">Fortalecer los valores institucionales, el respeto por la vida, por la comunidad estudiantil y el compromiso social.</label>
+                <label class="etiqueta_objetivoestrategico">Crear un clima organizacional satisfactorio a través de un programa de bienestar para los colaboradores y estudiantes pertenecientes a la institución.</label>
+                <label class="etiqueta_objetivoestrategico">Garantizar el cumplimiento de los requisitos legales y la aplicación del principio del mejoramiento continuo en todos los procesos de la institución.</label>
+            </div>
+        </div>
+    </div>
+<?// endif; ?>
+
 <script type="text/javascript">
     <? switch($tipoIns):
         case 1: ?>
@@ -36,6 +55,10 @@
             }).always(function(){
 
             });
+            
+            <? break;
+        case 3: ?>
+            $('#dv_informaciongeneral').removeClass('displaynone');
             
             <? break;
         default:

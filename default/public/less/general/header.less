@@ -4,6 +4,7 @@
 header {
     #dv_fechahora {
         padding: 0 30px;
+        font-size: 12px;
         color: @base;
         background-color: @blanco;
         
@@ -16,16 +17,35 @@ header {
         
         .flexBox;
         
-        div {
+        /*div {
+            margin: 5px 0;
             background-color: green;
             
-            /*.dimensiones(60%);*/
-            .dimensions(120px;120px);
+            .dimensions(150px;150px);
             .flexBox;
+            .borderRadius(100%);
+        }*/
+        img {
+            margin: 5px 0;
+            max-width: 150px;
+            max-height: 150px;
+            
+            .dimensions(150px;150px);
+            .borderRadius(100%);
+            .boxShadow(-8px;0;16px;-2px);
         }
     }
     #dv_instituto {
         width: 75%;
+        color: @its;
+        text-shadow:
+            -2px -2px 0 @blanco,
+            2px -2px 0 @blanco,
+            -2px 2px 0 @blanco,
+            2px 2px 0 @blanco;
+        letter-spacing: 4px;
+        
+        .font(@robotoblack;45px);
     }
     #dv_navegacion {
         min-height: 40px;
@@ -33,12 +53,19 @@ header {
         padding: 0;
         overflow: hidden;
         color: @blanco;
-        background-color: @base;
+        /*background-color: @base;*/
+        
+        background: @base;
+        background: -moz-linear-gradient(top, @base 0%, #2989d8 100%, #207cca 100%, #7db9e8 100%);
+        background: -webkit-linear-gradient(top, @base 0%,#2989d8 100%,#207cca 100%,#7db9e8 100%);
+        background: linear-gradient(to bottom, @base 0%,#2989d8 100%,#207cca 100%,#7db9e8 100%);
+        filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='@base', endColorstr='#7db9e8',GradientType=0 );
         
         .dimensions(@height:40px);
         .flexBox;
     }
     #dv_navegacionsec {
+        background-color: @fondo;
         padding: 0 30px;
         
         .dimensions(@height:40px);
@@ -54,8 +81,11 @@ header {
         //.dimensions(20px;20px);
         .dimensions(100%;100%);
     }
-    #sp_institucion, #sp_institucionopc, #sp_programas, #sp_programa {
+    #sp_institucionopc, #sp_programas, #sp_programa {
         cursor: default;
+    }
+    .etiqueta_institucion {
+        cursor: pointer;
     }
     .contenedor_navegacionsec {
         .flexBox(@justify-content:flex-start);

@@ -10,9 +10,10 @@ class IndexController extends AppController {
         $institucion = Input::request('tipoIns');
         
         /* Tipos 
-            0 -> General
+            0 -> Defecto
             1 -> Misión y Visión
-            2 -> Visítanos */
+            2 -> Visítanos
+            3 -> General */
         
         $this->tipoIns = $tipo;
         

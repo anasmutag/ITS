@@ -7,7 +7,15 @@
 .reset();
 
 html {
-    background-color: #589abb;
+    background-image: url(../img/fondo.png);
+    /*background-position: center;*/
+    background-repeat: no-repeat;
+    background-size: cover;
+    
+    /*background: linear-gradient(to bottom right, #006369, #00abb6);*/
+    /*background: linear-gradient(to bottom right, #006369 0%, #007b83 100%, #00939c 100%, #00abb6 100%);*/
+    
+    .font(@robotoregular;14px);
 }
 body {
     text-align: center;
@@ -21,6 +29,13 @@ body {
 header, footer {
     .dimensions;
     .flexBox;
+}
+header {
+    background: @base;
+    background: -webkit-linear-gradient(left, @base, @blanco, @base);
+    background: -o-linear-gradient(right, @base, @blanco, @base);
+    background: -moz-linear-gradient(right, @base, @blanco, @base);
+    background: linear-gradient(to right, @base, @blanco, @base);
 }
 #sec_contenido {
     min-height: 350px;

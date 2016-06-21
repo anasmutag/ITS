@@ -1,3 +1,5 @@
+/*@html: #006369;
+@html: #589abb;*/
 @font-face {
   font-family: 'RobotoBold';
   src: url(../font/Roboto-Bold.ttf) format('truetype');
@@ -167,6 +169,7 @@ header {
 }
 header #dv_fechahora {
   padding: 0 30px;
+  font-size: 12px;
   color: #00529B;
   background-color: #ffffff;
   width: 100%;
@@ -237,46 +240,38 @@ header #dv_logo {
     -ms-flex-order: 2;
     -webkit-order: 2;
     order: 2;*/
+  /*div {
+            margin: 5px 0;
+            background-color: green;
+            
+            .dimensions(150px;150px);
+            .flexBox;
+            .borderRadius(100%);
+        }*/
 }
-header #dv_logo div {
-  background-color: green;
-  /*.dimensiones(60%);*/
-  width: 120px;
-  height: 120px;
-  display: -webkit-box;
-  display: -moz-box;
-  display: -ms-flexbox;
-  display: -ms-box;
-  display: -webkit-flex;
-  display: flex;
-  -webkit-box-pack: center;
-  -moz-box-pack: center;
-  -webkit-justify-content: center;
-  justify-content: center;
-  -webkit-box-align: center;
-  -moz-box-align: center;
-  -webkit-align-items: center;
-  -ms-flex-align: center;
-  align-items: center;
-  -webkit-align-content: center;
-  -ms-flex-pack: center;
-  align-content: center;
-  -webkit-flex-wrap: wrap;
-  -ms-flex-wrap: wrap;
-  flex-wrap: wrap;
-  -webkit-flex-direction: row;
-  -moz-flex-direction: row;
-  -ms-flex-direction: row;
-  -o-flex-direction: row;
-  flex-direction: row;
-  /*-webkit-box-ordinal-group: 2;
-    -moz-box-ordinal-group: 2;
-    -ms-flex-order: 2;
-    -webkit-order: 2;
-    order: 2;*/
+header #dv_logo img {
+  margin: 5px 0;
+  max-width: 150px;
+  max-height: 150px;
+  width: 150px;
+  height: 150px;
+  border-radius: 100%;
+  -moz-border-radius: 100%;
+  -o-border-radius: 100%;
+  -ms-border-radius: 100%;
+  -khtml-border-radius: 100%;
+  -webkit-border-radius: 100%;
+  -webkit-box-shadow: -8px 0 16px -2px #000000;
+  -moz-box-shadow: -8px 0 16px -2px #000000;
+  box-shadow: -8px 0 16px -2px #000000;
 }
 header #dv_instituto {
   width: 75%;
+  color: #2d0c67;
+  text-shadow: -2px -2px 0 #ffffff, 2px -2px 0 #ffffff, -2px 2px 0 #ffffff, 2px 2px 0 #ffffff;
+  letter-spacing: 4px;
+  font-family: 'Roboto-Black';
+  font-size: 45px;
 }
 header #dv_navegacion {
   min-height: 40px;
@@ -284,7 +279,12 @@ header #dv_navegacion {
   padding: 0;
   overflow: hidden;
   color: #ffffff;
-  background-color: #00529B;
+  /*background-color: @base;*/
+  background: #00529B;
+  background: -moz-linear-gradient(top, #00529B 0%, #2989d8 100%, #207cca 100%, #7db9e8 100%);
+  background: -webkit-linear-gradient(top, #00529B 0%, #2989d8 100%, #207cca 100%, #7db9e8 100%);
+  background: linear-gradient(to bottom, #00529B 0%, #2989d8 100%, #207cca 100%, #7db9e8 100%);
+  filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='@base', endColorstr='#7db9e8', GradientType=0);
   width: 100%;
   height: 40px;
   display: -webkit-box;
@@ -320,6 +320,7 @@ header #dv_navegacion {
     order: 2;*/
 }
 header #dv_navegacionsec {
+  background-color: #e2edf3;
   padding: 0 30px;
   width: 100%;
   height: 40px;
@@ -364,11 +365,13 @@ header #sp_inicio {
   width: 100%;
   height: 100%;
 }
-header #sp_institucion,
 header #sp_institucionopc,
 header #sp_programas,
 header #sp_programa {
   cursor: default;
+}
+header .etiqueta_institucion {
+  cursor: pointer;
 }
 header .contenedor_navegacionsec {
   display: -webkit-box;

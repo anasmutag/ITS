@@ -1,4 +1,4 @@
-<div id="dv_slider">
+<div id="dv_slider" class="displaynone">
     <ul id="ul_slider">
         <li>
             <a href="#slide1" onclick="return false;">
@@ -38,6 +38,10 @@
 </div>
 
 <script type="text/javascript">
+    $(window).load(function(){
+        $('#dv_slider').removeClass('displaynone');
+    });
+    
     require([
         window.public_path+'javascript/slippry.min.js'
     ],function(){
@@ -48,14 +52,14 @@
             autoHover: false,
             transition: 'fade',
             captions: false,
-            preload: 'all',
+            //preload: 'all',
             controls: false,
             //speed: 2000,
             
             auto: false
         });
     });
-    
+
     /*var he = $('#dv_pilareducacion').height(),
         ht = $('#dv_pilartecnologia').height(),
         hc = $('#dv_pilarcompetencias').height(),

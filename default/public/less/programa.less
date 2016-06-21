@@ -20,7 +20,27 @@
         background-color: green;
         
         .dimensions(@height:180px);
+        .flexBox(@align-items:flex-start);
         .borderRadius(8px;8px;0;0);
+        
+        div {
+            padding: 10px 0;
+            color: @blanco;
+            background: @base;
+            background: -moz-linear-gradient(top, @base 0%, #2989d8 100%, #207cca 100%, #7db9e8 100%);
+            background: -webkit-linear-gradient(top, @base 0%,#2989d8 100%,#207cca 100%,#7db9e8 100%);
+            background: linear-gradient(to bottom, @base 0%,#2989d8 100%,#207cca 100%,#7db9e8 100%);
+            filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='@base', endColorstr='#7db9e8',GradientType=0 );
+            
+            .dimensions;
+            .flexBox;
+            .borderRadius(8px;8px;100%;100%);
+            
+            .etiqueta_titprog {
+                .dimensions(75%);
+                .font(@robotobold;18px);
+            }
+        }
     }
     .contenedor_programa {
         padding: 30px;
