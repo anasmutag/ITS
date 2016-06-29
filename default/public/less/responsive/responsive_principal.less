@@ -1,0 +1,78 @@
+@import "../variables.less";
+@import "../funciones.less";
+
+@media only screen and (max-width: 768px) {
+    #dv_contenido {
+        padding: 0;
+        
+        #dv_texto {
+            padding: 25px;
+            font-size: 18px;
+            border-radius: 0;
+            box-shadow: none;
+        }
+    }
+    .contenedor_pilares {
+        margin: 0;
+
+        .contenedor_pilar {
+            width: 100%;
+            padding: 0;
+            border-radius: 0;
+
+            span {
+                padding: 12.5px 0;
+                border-radius: 0;
+                font-size: 20px;
+            }
+            div {
+                padding: 20px;
+                font-size: 18px;
+            }
+        }
+    }
+    .sy-slides-wrap {
+        height: 240px;
+    }
+    .sy-slide {
+        height: 100%;
+    }
+    .sy-slide > a {
+        height: 100%;
+    }
+    .sy-slide > a > img {
+        height: 100%;
+    }
+    .sy-filler {
+        padding-top: 240px;
+    }
+}
+
+@media only screen and (max-width: 554px) {
+    #dv_contenido {
+        #dv_texto {
+            padding: 20px;
+        }
+    }
+    .sy-slides-wrap {
+        height: 165px;
+    }
+    /*.sy-slide {
+        height: 100%;
+    }
+    .sy-slide > a {
+        height: 100%;
+    }
+    .sy-slide > a > img {
+        height: 100%;
+    }*/
+    .sy-filler {
+        padding-top: 165px;
+    }
+}
+
+@media only screen and (min-width: 769px) and (max-width: 1024px) {}
+
+@media only screen and (min-width: 769px) and (max-width: 896px) {}
+
+@media only screen and (min-width: 1025px) {}

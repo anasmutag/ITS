@@ -1,12 +1,134 @@
 @import "../variables.less";
 @import "../funciones.less";
 
-@media only screen and (max-width: 768px) {}
+@media only screen and (max-width: 768px) {
+    header {
+        #dv_fechahora {
+            padding: 5px 15px;
+            font-size: 12.5px;
+            
+            .flexBox;
+        }
+        #dv_logo {
+            width: 20%;
+            
+            #sp_menu {
+                margin: 0 2.5px 0 0;
+                
+                .flexBox;
+            }
+            img {
+                display: none;
+                margin: 5px 0 5px 2.5px;
 
-@media only screen and (max-width: 554px) {}
+                .dimensions(60px;60px);
+                .boxShadow(-8px;0;16px;-8px);
+            }
+        }
+        #dv_instituto {
+            margin: 5px 0;
+            width: 80%;
+            letter-spacing: 0;
+            font-size: 25px;
+        }
+        #dv_navegacion {
+            display: none;
+        }
+    }
+    footer {
+        #dv_enlacesinteres {
+            .contenedor_enlacesinteres:nth-child(1) {
+                #dv_certificaciones {
+                    #dv_certificacioncalidad {
+                        width: 100%;
+                        
+                        #sp_certificacioncalidad {
+                            margin: 0 0 20px 0;
+                            font-size: 25px;
+                        }
+                        .etiqueta_certificacioncalidad {
+                            .flexBox;
+                        }
+                        #dv_contenidocertificacioncalidad {
+                            display: none;
+                        }
+                    }
+                    #dv_iconoscertificacioncalidad {
+                        width: 100%;
+                    }
+                }
+            }
+            
+            .contenedor_enlacesinteres:nth-child(2) {
+                margin-bottom: 15px;
 
-@media only screen and (min-width: 769px) and (max-width: 1000px) {}
+                #dv_imgenlacesinteres {
+                    -webkit-flex-direction: column;
+                    -moz-flex-direction: column;
+                    -ms-flex-direction: column;
+                    -o-flex-direction: column;
+                    flex-direction: column;
 
-@media only screen and (min-width: 769px) and (max-width: 885px) {}
+                    .contenedor_imgenlacesinteres {
+                        width: 220px;
+                        margin: 0 0 15px 0;
+                    }
+                }
+            }
+        }
+        #dv_informacion_instituto {
+            font-size: 12.5px;
+            
+            div {
+                span {
+                    width: 100%;
+                    margin: 1.5px 0;
+                }
+            }
+            div:nth-of-type(1) {
+                span:nth-of-type(2), span:nth-of-type(4) {
+                    display: none;
+                }
+            }
+            div:nth-of-type(2) {
+                margin-top: 7px;
+                
+                span:nth-of-type(2) {
+                    display: none;
+                }
+            }
+        }
+    }
+}
 
-@media only screen and (min-width: 1001px) {}
+@media only screen and (max-width: 554px) {
+    footer {
+        #dv_enlacesinteres {
+            .contenedor_enlacesinteres:nth-child(1) {
+                #dv_certificaciones {
+                    #dv_iconoscertificacioncalidad {
+                        div:nth-last-of-type(2) {
+                            margin-right: 0;
+                        }
+                        div:nth-last-of-type(1) {
+                            margin-top: 10px;
+                            margin-left: 0;
+
+                            .dimensions(100%;90px);
+
+                            img {
+                                width: 90px;
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
+
+@media only screen and (min-width: 769px) and (max-width: 1024px) {}
+
+@media only screen and (min-width: 769px) and (max-width: 896px) {}
+
+@media only screen and (min-width: 1025px) {}

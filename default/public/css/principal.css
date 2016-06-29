@@ -227,6 +227,30 @@
   font-family: 'RobotoRegular';
   font-size: 16px;
 }
+/*#dv_certificaciones {
+    margin: 25px 0 5px 0;
+    
+    .dimensions;
+    .flexBox;
+    
+    div {
+        margin: 0 7.5px;
+        
+        .dimensions(80px);
+        .flexBox;
+        
+        img {
+            width: 100%;
+        }
+    }
+    div:nth-of-type(1) {
+        margin-left: 0;
+    }
+    div:nth-last-of-type(1) {
+        width: 110px;
+        margin-right: 0;
+    }
+}*/
 #dv_informaciongeneral .contenedor_pilar {
   margin: 0 0 30px 0;
   width: 85%;

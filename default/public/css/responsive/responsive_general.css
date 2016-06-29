@@ -147,4 +147,187 @@
     height: @height;
     background-position: @bpx @bpy;
 }*/
+@media only screen and (max-width: 768px) {
+  header #dv_fechahora {
+    padding: 5px 15px;
+    font-size: 12.5px;
+    display: -webkit-box;
+    display: -moz-box;
+    display: -ms-flexbox;
+    display: -ms-box;
+    display: -webkit-flex;
+    display: flex;
+    -webkit-box-pack: center;
+    -moz-box-pack: center;
+    -webkit-justify-content: center;
+    justify-content: center;
+    -webkit-box-align: center;
+    -moz-box-align: center;
+    -webkit-align-items: center;
+    -ms-flex-align: center;
+    align-items: center;
+    -webkit-align-content: center;
+    -ms-flex-pack: center;
+    align-content: center;
+    -webkit-flex-wrap: wrap;
+    -ms-flex-wrap: wrap;
+    flex-wrap: wrap;
+    -webkit-flex-direction: row;
+    -moz-flex-direction: row;
+    -ms-flex-direction: row;
+    -o-flex-direction: row;
+    flex-direction: row;
+    /*-webkit-box-ordinal-group: 2;
+    -moz-box-ordinal-group: 2;
+    -ms-flex-order: 2;
+    -webkit-order: 2;
+    order: 2;*/
+  }
+  header #dv_logo {
+    width: 20%;
+  }
+  header #dv_logo #sp_menu {
+    margin: 0 2.5px 0 0;
+    display: -webkit-box;
+    display: -moz-box;
+    display: -ms-flexbox;
+    display: -ms-box;
+    display: -webkit-flex;
+    display: flex;
+    -webkit-box-pack: center;
+    -moz-box-pack: center;
+    -webkit-justify-content: center;
+    justify-content: center;
+    -webkit-box-align: center;
+    -moz-box-align: center;
+    -webkit-align-items: center;
+    -ms-flex-align: center;
+    align-items: center;
+    -webkit-align-content: center;
+    -ms-flex-pack: center;
+    align-content: center;
+    -webkit-flex-wrap: wrap;
+    -ms-flex-wrap: wrap;
+    flex-wrap: wrap;
+    -webkit-flex-direction: row;
+    -moz-flex-direction: row;
+    -ms-flex-direction: row;
+    -o-flex-direction: row;
+    flex-direction: row;
+    /*-webkit-box-ordinal-group: 2;
+    -moz-box-ordinal-group: 2;
+    -ms-flex-order: 2;
+    -webkit-order: 2;
+    order: 2;*/
+  }
+  header #dv_logo img {
+    display: none;
+    margin: 5px 0 5px 2.5px;
+    width: 60px;
+    height: 60px;
+    -webkit-box-shadow: -8px 0 16px -8px #000000;
+    -moz-box-shadow: -8px 0 16px -8px #000000;
+    box-shadow: -8px 0 16px -8px #000000;
+  }
+  header #dv_instituto {
+    margin: 5px 0;
+    width: 80%;
+    letter-spacing: 0;
+    font-size: 25px;
+  }
+  header #dv_navegacion {
+    display: none;
+  }
+  footer #dv_enlacesinteres .contenedor_enlacesinteres:nth-child(1) #dv_certificaciones #dv_certificacioncalidad {
+    width: 100%;
+  }
+  footer #dv_enlacesinteres .contenedor_enlacesinteres:nth-child(1) #dv_certificaciones #dv_certificacioncalidad #sp_certificacioncalidad {
+    margin: 0 0 20px 0;
+    font-size: 25px;
+  }
+  footer #dv_enlacesinteres .contenedor_enlacesinteres:nth-child(1) #dv_certificaciones #dv_certificacioncalidad .etiqueta_certificacioncalidad {
+    display: -webkit-box;
+    display: -moz-box;
+    display: -ms-flexbox;
+    display: -ms-box;
+    display: -webkit-flex;
+    display: flex;
+    -webkit-box-pack: center;
+    -moz-box-pack: center;
+    -webkit-justify-content: center;
+    justify-content: center;
+    -webkit-box-align: center;
+    -moz-box-align: center;
+    -webkit-align-items: center;
+    -ms-flex-align: center;
+    align-items: center;
+    -webkit-align-content: center;
+    -ms-flex-pack: center;
+    align-content: center;
+    -webkit-flex-wrap: wrap;
+    -ms-flex-wrap: wrap;
+    flex-wrap: wrap;
+    -webkit-flex-direction: row;
+    -moz-flex-direction: row;
+    -ms-flex-direction: row;
+    -o-flex-direction: row;
+    flex-direction: row;
+    /*-webkit-box-ordinal-group: 2;
+    -moz-box-ordinal-group: 2;
+    -ms-flex-order: 2;
+    -webkit-order: 2;
+    order: 2;*/
+  }
+  footer #dv_enlacesinteres .contenedor_enlacesinteres:nth-child(1) #dv_certificaciones #dv_certificacioncalidad #dv_contenidocertificacioncalidad {
+    display: none;
+  }
+  footer #dv_enlacesinteres .contenedor_enlacesinteres:nth-child(1) #dv_certificaciones #dv_iconoscertificacioncalidad {
+    width: 100%;
+  }
+  footer #dv_enlacesinteres .contenedor_enlacesinteres:nth-child(2) {
+    margin-bottom: 15px;
+  }
+  footer #dv_enlacesinteres .contenedor_enlacesinteres:nth-child(2) #dv_imgenlacesinteres {
+    -webkit-flex-direction: column;
+    -moz-flex-direction: column;
+    -ms-flex-direction: column;
+    -o-flex-direction: column;
+    flex-direction: column;
+  }
+  footer #dv_enlacesinteres .contenedor_enlacesinteres:nth-child(2) #dv_imgenlacesinteres .contenedor_imgenlacesinteres {
+    width: 220px;
+    margin: 0 0 15px 0;
+  }
+  footer #dv_informacion_instituto {
+    font-size: 12.5px;
+  }
+  footer #dv_informacion_instituto div span {
+    width: 100%;
+    margin: 1.5px 0;
+  }
+  footer #dv_informacion_instituto div:nth-of-type(1) span:nth-of-type(2),
+  footer #dv_informacion_instituto div:nth-of-type(1) span:nth-of-type(4) {
+    display: none;
+  }
+  footer #dv_informacion_instituto div:nth-of-type(2) {
+    margin-top: 7px;
+  }
+  footer #dv_informacion_instituto div:nth-of-type(2) span:nth-of-type(2) {
+    display: none;
+  }
+}
+@media only screen and (max-width: 554px) {
+  footer #dv_enlacesinteres .contenedor_enlacesinteres:nth-child(1) #dv_certificaciones #dv_iconoscertificacioncalidad div:nth-last-of-type(2) {
+    margin-right: 0;
+  }
+  footer #dv_enlacesinteres .contenedor_enlacesinteres:nth-child(1) #dv_certificaciones #dv_iconoscertificacioncalidad div:nth-last-of-type(1) {
+    margin-top: 10px;
+    margin-left: 0;
+    width: 100%;
+    height: 90px;
+  }
+  footer #dv_enlacesinteres .contenedor_enlacesinteres:nth-child(1) #dv_certificaciones #dv_iconoscertificacioncalidad div:nth-last-of-type(1) img {
+    width: 90px;
+  }
+}
 /*# sourceMappingURL=responsive_general.css.map */

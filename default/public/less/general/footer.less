@@ -21,6 +21,65 @@ footer {
                 .dimensions;
                 .flexBox;
             }
+            #dv_certificaciones {
+                .dimensions;
+                .flexBox;
+                
+                #dv_certificacioncalidad {
+                    .dimensions(@width:50%);
+                    .flexBox;
+                    
+                    #sp_certificacioncalidad {
+                        color: @base;
+                        
+                        .dimensions;
+                        .font(@robotobold;20px);
+                    }
+                    .etiqueta_certificacioncalidad {
+                        display: none;
+                    }
+                    #dv_contenidocertificacioncalidad {
+                        padding: 15px 30px;
+                        border: 2px solid @base;
+                        color: @base;
+                        
+                        .borderRadius(16px);
+                        
+                        div {
+                            .dimensions;
+                            .flexBox();
+                        }
+                        #sp_certificaciones {
+                            .font(@robotomedium;30px);
+                        }
+                        #sp_calidad {
+                            .font(@robotobold;40px);
+                        }
+                    }
+                }
+                #dv_iconoscertificacioncalidad {
+                    .dimensions(@width:50%);
+                    .flexBox;
+                    
+                    div {
+                        margin: 0 7.5px;
+
+                        .dimensions(65px);
+                        .flexBox;
+
+                        img {
+                            width: 100%;
+                        }
+                    }
+                    div:nth-of-type(1) {
+                        margin-left: 0;
+                    }
+                    div:nth-last-of-type(1) {
+                        width: 90px;
+                        margin-right: 0;
+                    }
+                }
+            }
         }
         .contenedor_enlacesinteres:nth-child(2) {
             margin: 15px 0 30px 0;
@@ -61,8 +120,12 @@ footer {
         .dimensions;
         .flexBox;
         
-        span {
-            width: 100%;
+        div {
+            .dimensions;
+            .flexBox;
         }
+        /*span {
+            width: 100%;
+        }*/
     }
 }

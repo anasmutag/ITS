@@ -7,7 +7,7 @@
 .reset();
 
 html {
-    background-image: url(../img/fondo.png);
+    background-image: url(../img/fondo_02.jpg);
     /*background-position: center;*/
     background-repeat: no-repeat;
     background-size: cover;
@@ -20,8 +20,10 @@ html {
 body {
     text-align: center;
     margin: auto;
-    min-width: 340px;
-    max-width: 1000px;
+    /*min-width: 340px;*/
+    min-width: 320px;
+    /*max-width: 1000px;*/
+    max-width: 1024px;
     background-color: @fondo;
     
     .boxShadow(0;0;10px;2px;rgba(0, 0, 0, 0.5));
@@ -43,10 +45,16 @@ header {
     .flexBox;
 }
 .icon_menu {
-    mask: url(../../ITS/img/icon/ic_menu_white_48px.svg) no-repeat 50% 50%;
+    /*mask: url(../../ITS/img/icon/ic_menu_white_48px.svg) no-repeat 50% 50%;
     -webkit-mask: url(../../ITS/img/icon/ic_menu_white_48px.svg) no-repeat 50% 50%;
     mask-size: cover;
     -webkit-mask-size: cover;
+    
+    background-color: @blanco;*/
+    
+    background: url("../../ITS/img/icon/ic_menu_white_48dp_2x.png") no-repeat center;
+    background-size: cover;
+    cursor: pointer;
 }
 .icon_home {
     mask: url(../../ITS/img/icon/ic_home_black_48px.svg) no-repeat 50% 50%;
@@ -83,4 +91,29 @@ header {
     -webkit-mask: url(../../ITS/img/icon/ic_location_on_black_48px.svg) no-repeat 50% 50%;
     mask-size: cover;
     -webkit-mask-size: cover;
+}
+.icon_home_white {
+    background: url("../../ITS/img/icon/ic_home_white_48dp_2x.png") no-repeat center;
+    background-size: 40px;
+    cursor: pointer;
+}
+.icon_institucion {
+    background: url("../../ITS/img/icon/ic_location_city_white_48dp_2x.png") no-repeat center;
+    background-size: 40px;
+    cursor: pointer;
+}
+.icon_programs {
+    background: url("../../ITS/img/icon/ic_school_white_48dp_2x.png") no-repeat center;
+    background-size: 40px;
+    cursor: pointer;
+}
+.icon_campus {
+    background: url("../../ITS/img/icon/ic_cloud_white_48dp_2x.png") no-repeat center;
+    background-size: 40px;
+    cursor: pointer;
+}
+.icon_contact {
+    background: url("../../ITS/img/icon/ic_account_box_white_48dp_2x.png") no-repeat center;
+    background-size: 40px;
+    cursor: pointer;
 }

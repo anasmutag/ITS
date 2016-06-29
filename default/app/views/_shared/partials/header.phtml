@@ -1,6 +1,33 @@
 <?//= $tipoPrograma?>
 <?//= var_dump($tipoInstitucion)?>
 
+<div id="dv_menu" class="contenedor_opcionesmenu">
+    <div id="dv_opcionesmenu">
+        <div class="contenedor_opcionmenu">
+            <span class="sp_iconopcionmenu icon_home_white"></span>
+            <span class="sp_tituloopcionmenu">Inicio</span>
+        </div>
+        <div class="contenedor_opcionmenu">
+            <span class="sp_iconopcionmenu icon_institucion"></span>
+            <span class="sp_tituloopcionmenu">Institución</span>
+        </div>
+        <div class="contenedor_opcionmenu">
+            <span class="sp_iconopcionmenu icon_programs"></span>
+            <span class="sp_tituloopcionmenu">Programas</span>
+        </div>
+        <div class="contenedor_opcionmenu">
+            <span class="sp_iconopcionmenu icon_campus"></span>
+            <span class="sp_tituloopcionmenu">Campus Virtual</span>
+        </div>
+        <div class="contenedor_opcionmenu">
+            <span class="sp_iconopcionmenu icon_contact"></span>
+            <span class="sp_tituloopcionmenu">Preinscripción</span>
+        </div>
+        <div id="dv_noopcionmenu"><div></div></div>
+    </div>
+    <div id="dv_backmenu"></div>
+</div>
+
 <div id="dv_fechahora">
     <? $dia = date("j");
     $anio = date("Y");
@@ -9,7 +36,7 @@
     San Juan de Pasto, <?= $meses[date('n')-1] . ' ' . $dia . ' del ' . $anio?>
 </div>
 <div id="dv_logo">
-    <!--div>LOGO</div-->
+    <span id="sp_menu" class="icon_menu"></span>
     <img src="<?= PUBLIC_PATH?>img/logo.png">
 </div>
 <div id="dv_instituto">INSTITUTO TÉCNICO SURCOOMBIANO</div>
@@ -305,4 +332,43 @@
 
         });
     });*/
+    
+    var $menu = $('#sp_menu'),
+        $drawer = $('#dv_menu'),
+        $back = $('#dv_backmenu');
+    
+    $drawer.on('click',function(e){
+        //e.stopPropagation();
+    });
+    
+    $menu.on('click', function(e) {
+        e.stopPropagation();
+        
+        var altura = $('#dv_opcionesmenu').height() - 305;
+        
+        $('body').addClass('menuopen');
+        
+        if(altura > 0){
+            $('#dv_noopcionmenu').css({width: '100%', height: altura});
+            $('#dv_noopcionmenu div').css({width: '60px', height: '100%', 'background-color': '#00529B'});
+        }
+        
+        $drawer.toggleClass('opcionesmenuopen');
+    });
+    
+    $back.on('click', function() {
+        $('body').removeClass('menuopen');
+        $drawer.removeClass('opcionesmenuopen');
+    });
+    
+    $(window).resize(function(){
+        var altura = $('#dv_opcionesmenu').height() - 305;
+        
+        if(altura > 0){
+            $('#dv_noopcionmenu').css({width: '100%', height: altura});
+            $('#dv_noopcionmenu div').css({width: '60px', height: '100%', 'background-color': '#00529B'});
+        }else{
+            $('#dv_noopcionmenu').css({width: '100%', height: '0'});
+        }
+    });
 </script>
