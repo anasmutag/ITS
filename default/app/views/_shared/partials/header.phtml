@@ -4,26 +4,51 @@
 <div id="dv_menu" class="contenedor_opcionesmenu">
     <div id="dv_opcionesmenu">
         <div class="contenedor_opcionmenu">
-            <span class="sp_iconopcionmenu icon_home_white"></span>
-            <span class="sp_tituloopcionmenu">Inicio</span>
+            <span class="etiqueta_iconopcionmenu icon_home_white"></span>
+            <span class="etiqueta_tituloopcionmenu">Inicio</span>
+        </div>
+        <div id="dv_institucionopcionmenu" class="contenedor_opcionmenu">
+            <span class="etiqueta_iconopcionmenu icon_institucion"></span>
+            <span class="etiqueta_tituloopcionmenu">Institución</span>
+            <span id="sp_institucionicondown" class="etiqueta_icondown icon_down"></span>
+        </div>
+        <div id="dv_institucionopcionesmenu" class="contenedor_opcionmenu contenedor_institucionopcionmenu">
+            <div>
+                <span class="etiqueta_iconopcionmenu"></span>
+                <span class="etiqueta_instituciontituloopcionmenu">Misión | Visión</span>
+            </div>
+            <div>
+                <span class="etiqueta_iconopcionmenu"></span>
+                <span class="etiqueta_instituciontituloopcionmenu">Visítanos</span>
+            </div>
+        </div>
+        <div id="dv_programasopcionmenu" class="contenedor_opcionmenu">
+            <span class="etiqueta_iconopcionmenu icon_programs"></span>
+            <span class="etiqueta_tituloopcionmenu">Programas</span>
+            <span  id="sp_programasicondown" class="etiqueta_icondown icon_down"></span>
+        </div>
+        <div id="dv_programasopcionesmenu" class="contenedor_opcionmenu contenedor_institucionopcionmenu">
+            <div>
+                <span class="etiqueta_iconopcionmenu"></span>
+                <span class="etiqueta_instituciontituloopcionmenu">Técnico Laborales</span>
+            </div>
+            <div>
+                <span class="etiqueta_iconopcionmenu"></span>
+                <span class="etiqueta_instituciontituloopcionmenu">Ingles Por Niveles</span>
+            </div>
         </div>
         <div class="contenedor_opcionmenu">
-            <span class="sp_iconopcionmenu icon_institucion"></span>
-            <span class="sp_tituloopcionmenu">Institución</span>
+            <span class="etiqueta_iconopcionmenu icon_campus"></span>
+            <span class="etiqueta_tituloopcionmenu">Campus Virtual</span>
         </div>
         <div class="contenedor_opcionmenu">
-            <span class="sp_iconopcionmenu icon_programs"></span>
-            <span class="sp_tituloopcionmenu">Programas</span>
-        </div>
-        <div class="contenedor_opcionmenu">
-            <span class="sp_iconopcionmenu icon_campus"></span>
-            <span class="sp_tituloopcionmenu">Campus Virtual</span>
-        </div>
-        <div class="contenedor_opcionmenu">
-            <span class="sp_iconopcionmenu icon_contact"></span>
-            <span class="sp_tituloopcionmenu">Preinscripción</span>
+            <span class="etiqueta_iconopcionmenu icon_contact"></span>
+            <span class="etiqueta_tituloopcionmenu">Preinscripción</span>
         </div>
         <div id="dv_noopcionmenu"><div></div></div>
+    </div>
+    <div id="dv_cerrarmenu">
+        <span id="sp_cerrarmenu" class="icon_cerrarmenu"></span>
     </div>
     <div id="dv_backmenu"></div>
 </div>
@@ -335,7 +360,8 @@
     
     var $menu = $('#sp_menu'),
         $drawer = $('#dv_menu'),
-        $back = $('#dv_backmenu');
+        $back = $('#dv_cerrarmenu');
+        //$back = $('#dv_backmenu);
     
     $drawer.on('click',function(e){
         //e.stopPropagation();
@@ -370,5 +396,17 @@
         }else{
             $('#dv_noopcionmenu').css({width: '100%', height: '0'});
         }
+    });
+    
+    $('#dv_institucionopcionmenu').on('click', function(){
+        $('#dv_institucionopcionesmenu').slideToggle();
+        $('#sp_institucionicondown').toggleClass('icon_up');
+        $('#dv_institucionopcionmenu').toggleClass('contenedor_opcionmenuseleccionada');
+    });
+    
+    $('#dv_programasopcionmenu').on('click', function(){
+        $('#dv_programasopcionesmenu').slideToggle();
+        $('#sp_programasicondown').toggleClass('icon_up');
+        $('#dv_programasopcionmenu').toggleClass('contenedor_opcionmenuseleccionada');
     });
 </script>

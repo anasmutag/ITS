@@ -317,17 +317,91 @@
   }
 }
 @media only screen and (max-width: 554px) {
-  footer #dv_enlacesinteres .contenedor_enlacesinteres:nth-child(1) #dv_certificaciones #dv_iconoscertificacioncalidad div:nth-last-of-type(2) {
-    margin-right: 0;
+  footer #dv_enlacesinteres .contenedor_enlacesinteres:nth-child(1) #dv_certificaciones #dv_iconoscertificacioncalidad .contenedor_logocalidad:nth-of-type(1) {
+    margin-left: 40px;
   }
-  footer #dv_enlacesinteres .contenedor_enlacesinteres:nth-child(1) #dv_certificaciones #dv_iconoscertificacioncalidad div:nth-last-of-type(1) {
-    margin-top: 10px;
+  footer #dv_enlacesinteres .contenedor_enlacesinteres:nth-child(1) #dv_certificaciones #dv_iconoscertificacioncalidad .contenedor_logocalidad:nth-last-of-type(3) {
+    margin-right: 40px;
+  }
+  footer #dv_enlacesinteres .contenedor_enlacesinteres:nth-child(1) #dv_certificaciones #dv_iconoscertificacioncalidad .contenedor_logocalidad:nth-last-of-type(2) {
     margin-left: 0;
-    width: 100%;
+    width: 45%;
     height: 90px;
+    display: -webkit-box;
+    display: -moz-box;
+    display: -ms-flexbox;
+    display: -ms-box;
+    display: -webkit-flex;
+    display: flex;
+    -webkit-box-pack: flex-end;
+    -moz-box-pack: flex-end;
+    -webkit-justify-content: flex-end;
+    -ms-flex-pack: flex-end;
+    justify-content: flex-end;
+    -webkit-box-align: center;
+    -moz-box-align: center;
+    -webkit-align-items: center;
+    -ms-flex-align: center;
+    align-items: center;
+    -webkit-align-content: center;
+    -ms-flex-pack: center;
+    align-content: center;
+    -webkit-flex-wrap: wrap;
+    -ms-flex-wrap: wrap;
+    flex-wrap: wrap;
+    -webkit-flex-direction: row;
+    -moz-flex-direction: row;
+    -ms-flex-direction: row;
+    -o-flex-direction: row;
+    flex-direction: row;
+    /*-webkit-box-ordinal-group: 2;
+    -moz-box-ordinal-group: 2;
+    -ms-flex-order: 2;
+    -webkit-order: 2;
+    order: 2;*/
   }
-  footer #dv_enlacesinteres .contenedor_enlacesinteres:nth-child(1) #dv_certificaciones #dv_iconoscertificacioncalidad div:nth-last-of-type(1) img {
+  footer #dv_enlacesinteres .contenedor_enlacesinteres:nth-child(1) #dv_certificaciones #dv_iconoscertificacioncalidad .contenedor_logocalidad:nth-last-of-type(2) img {
     width: 90px;
+    margin-right: 7.5px;
+  }
+  footer #dv_enlacesinteres .contenedor_enlacesinteres:nth-child(1) #dv_certificaciones #dv_iconoscertificacioncalidad .contenedor_logocalidad:nth-last-of-type(1) {
+    width: 55%;
+    display: -webkit-box;
+    display: -moz-box;
+    display: -ms-flexbox;
+    display: -ms-box;
+    display: -webkit-flex;
+    display: flex;
+    -webkit-box-pack: flex-start;
+    -moz-box-pack: flex-start;
+    -webkit-justify-content: flex-start;
+    -ms-flex-pack: flex-start;
+    justify-content: flex-start;
+    -webkit-box-align: center;
+    -moz-box-align: center;
+    -webkit-align-items: center;
+    -ms-flex-align: center;
+    align-items: center;
+    -webkit-align-content: center;
+    -ms-flex-pack: center;
+    align-content: center;
+    -webkit-flex-wrap: wrap;
+    -ms-flex-wrap: wrap;
+    flex-wrap: wrap;
+    -webkit-flex-direction: row;
+    -moz-flex-direction: row;
+    -ms-flex-direction: row;
+    -o-flex-direction: row;
+    flex-direction: row;
+    /*-webkit-box-ordinal-group: 2;
+    -moz-box-ordinal-group: 2;
+    -ms-flex-order: 2;
+    -webkit-order: 2;
+    order: 2;*/
+  }
+  footer #dv_enlacesinteres .contenedor_enlacesinteres:nth-child(1) #dv_certificaciones #dv_iconoscertificacioncalidad .contenedor_logocalidad:nth-last-of-type(1) div {
+    width: 140px;
+    margin-left: 7.5px;
   }
 }
 @media only screen and (max-width: 768px) {

@@ -216,14 +216,47 @@ header {
         .flexBox(@justify-content:flex-start);
         .font(@robotobold;15px);
         
-        .sp_iconopcionmenu {
+        .etiqueta_iconopcionmenu {
             background-color: @base;
             
             .dimensions(60px;60px);
         }
-        .sp_tituloopcionmenu {
+        .etiqueta_tituloopcionmenu {
             margin-left: 15px;
         }
+        .etiqueta_icondown {
+            position: absolute;
+            right: 0;
+            
+            .dimensions(45px;60px);
+        }
+    }
+    .contenedor_opcionmenuseleccionada {
+        background-color: @base;
+        color: @blanco;
+    }
+    .contenedor_institucionopcionmenu {
+        height: 120px;
+        border: 0;
+        
+        div {
+            border-bottom: 1px solid @base;
+            
+            .dimensions(100%;60px);
+            .flexBox(@justify-content:flex-start);
+            
+            .etiqueta_iconopcionmenu {
+                background-color: @base;
+
+                .dimensions(60px;60px);
+            }
+            .etiqueta_instituciontituloopcionmenu {
+                margin-left: 15px;
+            }
+        }
+    }
+    #dv_institucionopcionesmenu, #dv_programasopcionesmenu {
+        display: none;
     }
     /*#dv_noopcionmenu {
         .dimensions(100%;100%);
@@ -234,6 +267,19 @@ header {
             .dimensions(60px;100%);
         }
     }*/
+}
+#dv_cerrarmenu {
+    position: absolute;
+    background-color: @base;
+    
+    .dimensions(60px;60px);
+    
+    #sp_cerrarmenu {
+        position: absolute;
+        left: 0;
+        
+        .dimensions(60px;60px);
+    }
 }
 #dv_backmenu{
     background-color: rgba(6, 5, 6, 0.4);
