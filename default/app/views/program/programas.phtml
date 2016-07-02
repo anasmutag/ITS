@@ -40,7 +40,10 @@
             $.ajax({
                 type: 'POST',
                 url: window.public_path + "program/ingles/",
-                data: {},
+                data: {
+                    'idPrograma': 7,
+                    'nomPrograma': 'Ingles Por Niveles'
+                },
                 beforeSend: function(){
 
                 },
@@ -63,8 +66,9 @@
     $('.etiqueta_nomprograma').on('click', function (){
         var idPrograma = $(this).data('programa'),
             str = $(this).text(),
-            res = str.replace("En", "en"),
-            nomPrograma = "Técnico Laboral " + res;
+            nomPrograma = str.replace("En ", ""),
+            res = str.replace("En ", "en"),
+            programa = "Técnico Laboral " + res;
             //nomPrograma = "Técnico Laboral " + $(this).text();
         
         $.ajax({
@@ -72,7 +76,7 @@
             url: window.public_path + "program/detallePrograma/",
             data: {
                 'idPrograma': idPrograma,
-                'nomPrograma': nomPrograma
+                'nomPrograma': programa
             },
             beforeSend: function(){
 
@@ -81,7 +85,10 @@
                 $('#dv_navegacionsec').removeClass('contendor_navegacionsecdn');
                 $('#sp_inicio').removeClass('contendor_navegacionsecdn').next('span').removeClass('contendor_navegacionsecdn');
                 $('#sp_programas').removeClass('contendor_navegacionsecdn').next('span').removeClass('contendor_navegacionsecdn');
-                $('#sp_programa').text(nomPrograma).removeClass('contendor_navegacionsecdn');
+                $('#sp_programa').text('Técnico Laborales').addClass('navsecnoactive').removeClass('contendor_navegacionsecdn');
+                $('#sp_programa').next('span').removeClass('contendor_navegacionsecdn');
+                //$('#sp_programateclab').text(nomPrograma).removeClass('contendor_navegacionsecdn');
+                $('#sp_programateclab').text(nomPrograma).removeClass('contendor_navegacionsecdn');
                 $('#dv_programa').html(data);
             },
             error: function(){
@@ -110,7 +117,8 @@
                 $('#dv_navegacionsec').removeClass('contendor_navegacionsecdn');
                 $('#sp_inicio').removeClass('contendor_navegacionsecdn').next('span').removeClass('contendor_navegacionsecdn');
                 $('#sp_programas').removeClass('contendor_navegacionsecdn').next('span').removeClass('contendor_navegacionsecdn');
-                $('#sp_programa').text(nomPrograma).removeClass('contendor_navegacionsecdn');
+                $('#sp_programa').addClass('contendor_navegacionsecdn').next('span').addClass('contendor_navegacionsecdn');
+                $('#sp_programateclab').text(nomPrograma).removeClass('contendor_navegacionsecdn');
                 $('#dv_programa').html(data);
             },
             error: function(){

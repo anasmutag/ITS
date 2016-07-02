@@ -1,0 +1,99 @@
+@import "../variables.less";
+@import "../funciones.less";
+
+@media only screen and (max-width: 768px) {
+    #dv_contenidoprograma {
+        padding: 0;
+
+        /*.dimensions(@height:100%);
+        .flexBox(@justify-content:space-between;@align-items:flex-start;@align-content:flex-start);*/
+    }
+    #dv_programa {
+        width: 100%;
+        box-shadow: none;
+        border-radius: 0;
+        
+        /*color: #00529B;
+        background-color: #ffffff;
+
+        .dimensions(@width:65%);
+        .flexBox;
+        .borderRadius(8px);
+        .boxShadow(0;0;5px;2px;rgba(0, 0, 0, 0.2));*/
+
+        .contenedor_imgprograma {
+            border-radius: 0;
+            
+            /*background-color: green;
+
+            .dimensions(@height:180px);
+            .flexBox(@align-items:flex-start);
+            .borderRadius(8px;8px;0;0);*/
+
+            div {
+                padding: 12.5px 0;
+                border-radius: 0;
+                
+                /*padding: 10px 0;
+                color: @blanco;
+                background: @base;
+                background: -moz-linear-gradient(top, @base 0%, #2989d8 100%, #207cca 100%, #7db9e8 100%);
+                background: -webkit-linear-gradient(top, @base 0%,#2989d8 100%,#207cca 100%,#7db9e8 100%);
+                background: linear-gradient(to bottom, @base 0%,#2989d8 100%,#207cca 100%,#7db9e8 100%);
+                filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='@base', endColorstr='#7db9e8',GradientType=0 );
+
+                .dimensions;
+                .flexBox;
+                .borderRadius(8px;8px;100%;100%);*/
+
+                .etiqueta_titprog {
+                    width: 90%;
+                    font-size: 20px;
+                    
+                    /*.dimensions(75%);
+                    .font(@robotobold;18px);*/
+                }
+            }
+        }
+        .contenedor_programa {
+            padding: 20px;
+            border-radius: 0;
+            
+            /*padding: 30px;
+
+            .dimensions;
+            .flexBox(@align-items:flex-start;@align-content:flex-start;@flex-direction:column);
+            .borderRadius(0;0;8px;8px);
+
+            .etiqueta_titprog {
+                text-align: left;
+                font-size: 20px;
+                margin-bottom: 10px;
+                cursor: default;
+            }*/
+            .etiqueta_nomprog {
+                padding: 7.5px 0;
+                text-align: left;
+                font-size: 16px;
+                
+                /*padding: 5px 0;
+                cursor: pointer;
+
+                &:hover {
+                    color: @grisnav;
+                }*/
+            }
+        }
+    }
+    #dv_navprograma {
+        display: none;
+    }
+}
+
+@media only screen and (max-width: 554px) {}
+
+@media only screen and (min-width: 769px) and (max-width: 1024px) {}
+
+@media only screen and (min-width: 769px) and (max-width: 896px) {}
+
+@media only screen and (min-width: 1025px) {}

@@ -148,6 +148,9 @@
     background-position: @bpx @bpy;
 }*/
 @media only screen and (max-width: 768px) {
+  html {
+    background: #e2edf3;
+  }
   header #dv_fechahora {
     padding: 5px 15px;
     font-size: 12.5px;
@@ -238,6 +241,18 @@
   header #dv_navegacion {
     display: none;
   }
+  header #dv_navegacionsec {
+    height: 60px;
+    padding: 0 15px;
+    font-size: 15px;
+  }
+  header #lnk_inicio {
+    width: 30px;
+    height: 30px;
+  }
+  header .etiqueta_next {
+    height: 30px;
+  }
   footer #dv_enlacesinteres .contenedor_enlacesinteres:nth-child(1) #dv_certificaciones #dv_certificacioncalidad {
     width: 100%;
   }
@@ -314,6 +329,16 @@
   }
   footer #dv_informacion_instituto div:nth-of-type(2) span:nth-of-type(2) {
     display: none;
+  }
+  #sec_contenido {
+    min-height: 280px;
+  }
+}
+@media only screen and (max-width: 660px) {
+  header #sp_programateclab {
+    width: 100%;
+    margin: 5px 0 0 0;
+    text-align: left;
   }
 }
 @media only screen and (max-width: 554px) {
@@ -402,6 +427,11 @@
   footer #dv_enlacesinteres .contenedor_enlacesinteres:nth-child(1) #dv_certificaciones #dv_iconoscertificacioncalidad .contenedor_logocalidad:nth-last-of-type(1) div {
     width: 140px;
     margin-left: 7.5px;
+  }
+}
+@media only screen and (max-width: 320px) {
+  header #sp_programateclab {
+    font-size: 12.5px;
   }
 }
 /*# sourceMappingURL=responsive_general.css.map */

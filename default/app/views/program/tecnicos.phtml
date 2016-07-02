@@ -11,14 +11,15 @@
 <script type="text/javascript">
     $('.etiqueta_nomprog').on('click', function (){
         var idPrograma = $(this).data('programa'),
-            nomPrograma = $(this).text();
+            programa = $(this).text(),
+            nomPrograma = programa.replace("Técnico Laboral en ", "");
         
         $.ajax({
             type: 'POST',
             url: window.public_path + "program/detallePrograma/",
             data: {
                 'idPrograma': idPrograma,
-                'nomPrograma': nomPrograma
+                'nomPrograma': programa
             },
             beforeSend: function(){
 
@@ -27,7 +28,10 @@
                 $('#dv_navegacionsec').removeClass('contendor_navegacionsecdn');
                 $('#sp_inicio').removeClass('contendor_navegacionsecdn').next('span').removeClass('contendor_navegacionsecdn');
                 $('#sp_programas').removeClass('contendor_navegacionsecdn').next('span').removeClass('contendor_navegacionsecdn');
-                $('#sp_programa').text(nomPrograma).removeClass('contendor_navegacionsecdn');
+                $('#sp_programa').text('Técnico Laborales').addClass('navsecnoactive').removeClass('contendor_navegacionsecdn');
+                $('#sp_programa').next('span').removeClass('contendor_navegacionsecdn');
+                //$('#sp_programateclab').text(nomPrograma).removeClass('contendor_navegacionsecdn');
+                $('#sp_programateclab').text(nomPrograma).removeClass('contendor_navegacionsecdn');
                 $('#dv_programa').html(data);
             },
             error: function(){

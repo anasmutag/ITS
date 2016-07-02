@@ -2,6 +2,9 @@
 @import "../funciones.less";
 
 @media only screen and (max-width: 768px) {
+    html {
+        background: @fondo;
+    }
     header {
         #dv_fechahora {
             padding: 5px 15px;
@@ -33,6 +36,17 @@
         }
         #dv_navegacion {
             display: none;
+        }
+        #dv_navegacionsec {
+            height: 60px;
+            padding: 0 15px;
+            font-size: 15px;
+        }
+        #lnk_inicio {
+            .dimensions(30px;30px);
+        }
+        .etiqueta_next {
+            height: 30px;
         }
     }
     footer {
@@ -99,6 +113,19 @@
             }
         }
     }
+    #sec_contenido {
+        min-height: 280px;
+    }
+}
+
+@media only screen and (max-width: 660px) {
+    header {
+        #sp_programateclab {
+            width: 100%;
+            margin: 5px 0 0 0;
+            text-align: left;
+        }
+    }
 }
 
 @media only screen and (max-width: 554px) {
@@ -137,6 +164,14 @@
                     }
                 }
             }
+        }
+    }
+}
+
+@media only screen and (max-width: 320px) {
+    header {
+        #sp_programateclab {
+            font-size: 12.5px;
         }
     }
 }

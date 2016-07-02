@@ -28,6 +28,9 @@ class ProgramController extends AppController {
     
     public function ingles() {
         View::template(NULL);
+        
+        $this->idPrograma = Input::request('idPrograma');
+        $this->nomPrograma = Input::request('nomPrograma');
     }
     
     public function detallePrograma() {

@@ -148,6 +148,9 @@
     background-position: @bpx @bpy;
 }*/
 @media only screen and (max-width: 768px) {
+  html {
+    background: #e2edf3;
+  }
   header #dv_fechahora {
     padding: 5px 15px;
     font-size: 12.5px;
@@ -238,6 +241,18 @@
   header #dv_navegacion {
     display: none;
   }
+  header #dv_navegacionsec {
+    height: 60px;
+    padding: 0 15px;
+    font-size: 15px;
+  }
+  header #lnk_inicio {
+    width: 30px;
+    height: 30px;
+  }
+  header .etiqueta_next {
+    height: 30px;
+  }
   footer #dv_enlacesinteres .contenedor_enlacesinteres:nth-child(1) #dv_certificaciones #dv_certificacioncalidad {
     width: 100%;
   }
@@ -314,6 +329,16 @@
   }
   footer #dv_informacion_instituto div:nth-of-type(2) span:nth-of-type(2) {
     display: none;
+  }
+  #sec_contenido {
+    min-height: 280px;
+  }
+}
+@media only screen and (max-width: 660px) {
+  header #sp_programateclab {
+    width: 100%;
+    margin: 5px 0 0 0;
+    text-align: left;
   }
 }
 @media only screen and (max-width: 554px) {
@@ -404,6 +429,11 @@
     margin-left: 7.5px;
   }
 }
+@media only screen and (max-width: 320px) {
+  header #sp_programateclab {
+    font-size: 12.5px;
+  }
+}
 @media only screen and (max-width: 768px) {
   #dv_contenido {
     padding: 0;
@@ -413,6 +443,37 @@
     font-size: 18px;
     border-radius: 0;
     box-shadow: none;
+  }
+  #dv_informaciongeneral .contenedor_pilar {
+    width: 100%;
+    margin: 0;
+  }
+  #dv_institucion {
+    padding: 0;
+  }
+  #dv_visitanos {
+    padding: 0;
+  }
+  #dv_visitanos #dv_contenidomapa {
+    width: 100%;
+    padding: 0;
+    box-shadow: none;
+    border-radius: 0;
+  }
+  #dv_visitanos #dv_contenidomapa .etiqueta_localizacion:nth-of-type(1) {
+    padding: 12.5px 0;
+    border-radius: 0;
+    font-size: 20px;
+  }
+  #dv_visitanos #dv_contenidomapa .etiqueta_localizacion:nth-of-type(2) {
+    padding: 15px 0 0 0;
+    font-size: 18px;
+  }
+  #dv_visitanos #dv_contenidomapa .etiqueta_localizacion:nth-of-type(3) {
+    font-size: 18px;
+  }
+  #dv_visitanos #dv_contenidomapa #dv_seccionmapa {
+    padding: 0;
   }
   .contenedor_pilares {
     margin: 0;
@@ -446,10 +507,17 @@
   .sy-filler {
     padding-top: 240px;
   }
+  .sy-pager li {
+    width: 22px;
+    height: 22px;
+  }
 }
 @media only screen and (max-width: 554px) {
   #dv_contenido #dv_texto {
     padding: 20px;
+  }
+  #dv_visitanos #dv_contenidomapa #dv_seccionmapa {
+    height: 300px;
   }
   .sy-slides-wrap {
     height: 165px;
@@ -465,6 +533,92 @@
     }*/
   .sy-filler {
     padding-top: 165px;
+  }
+}
+@media only screen and (max-width: 768px) {
+  #dv_contenidoprograma {
+    padding: 0;
+    /*.dimensions(@height:100%);
+        .flexBox(@justify-content:space-between;@align-items:flex-start;@align-content:flex-start);*/
+  }
+  #dv_programa {
+    width: 100%;
+    box-shadow: none;
+    border-radius: 0;
+    /*color: #00529B;
+        background-color: #ffffff;
+
+        .dimensions(@width:65%);
+        .flexBox;
+        .borderRadius(8px);
+        .boxShadow(0;0;5px;2px;rgba(0, 0, 0, 0.2));*/
+  }
+  #dv_programa .contenedor_imgprograma {
+    border-radius: 0;
+    /*background-color: green;
+
+            .dimensions(@height:180px);
+            .flexBox(@align-items:flex-start);
+            .borderRadius(8px;8px;0;0);*/
+  }
+  #dv_programa .contenedor_imgprograma div {
+    padding: 12.5px 0;
+    border-radius: 0;
+    /*padding: 10px 0;
+                color: @blanco;
+                background: @base;
+                background: -moz-linear-gradient(top, @base 0%, #2989d8 100%, #207cca 100%, #7db9e8 100%);
+                background: -webkit-linear-gradient(top, @base 0%,#2989d8 100%,#207cca 100%,#7db9e8 100%);
+                background: linear-gradient(to bottom, @base 0%,#2989d8 100%,#207cca 100%,#7db9e8 100%);
+                filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='@base', endColorstr='#7db9e8',GradientType=0 );
+
+                .dimensions;
+                .flexBox;
+                .borderRadius(8px;8px;100%;100%);*/
+  }
+  #dv_programa .contenedor_imgprograma div .etiqueta_titprog {
+    width: 90%;
+    font-size: 20px;
+    /*.dimensions(75%);
+                    .font(@robotobold;18px);*/
+  }
+  #dv_programa .contenedor_programa {
+    padding: 20px;
+    border-radius: 0;
+    /*padding: 30px;
+
+            .dimensions;
+            .flexBox(@align-items:flex-start;@align-content:flex-start;@flex-direction:column);
+            .borderRadius(0;0;8px;8px);
+
+            .etiqueta_titprog {
+                text-align: left;
+                font-size: 20px;
+                margin-bottom: 10px;
+                cursor: default;
+            }*/
+  }
+  #dv_programa .contenedor_programa .etiqueta_nomprog {
+    padding: 7.5px 0;
+    text-align: left;
+    font-size: 16px;
+    /*padding: 5px 0;
+                cursor: pointer;
+
+                &:hover {
+                    color: @grisnav;
+                }*/
+  }
+  #dv_navprograma {
+    display: none;
+  }
+}
+@media only screen and (max-width: 768px) {
+  #dv_preinscripcion {
+    width: 100%;
+    padding: 30px;
+    box-shadow: none;
+    border-radius: 0;
   }
 }
 /*# sourceMappingURL=responsive.css.map */

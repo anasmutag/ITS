@@ -209,8 +209,8 @@ header {
     .contenedor_opcionmenu{
         position: relative;
         border-bottom: 1px solid @base;
-        /*padding-left: 20.5%;*/
         cursor: pointer;
+        text-decoration: none;
         
         .dimensions(100%;60px);
         .flexBox(@justify-content:flex-start);
@@ -223,6 +223,11 @@ header {
         }
         .etiqueta_tituloopcionmenu {
             margin-left: 15px;
+            text-decoration: none;
+            color: @base;
+        }
+        .etiqueta_tituloopcionmenuseleccionada {
+            color: @blanco;
         }
         .etiqueta_icondown {
             position: absolute;
@@ -251,7 +256,12 @@ header {
                 .dimensions(60px;60px);
             }
             .etiqueta_instituciontituloopcionmenu {
-                margin-left: 15px;
+                padding-left: 15px;
+                text-decoration: none;
+                color: @base;
+                
+                .dimensions(185px;60px);
+                .flexBox(@justify-content:flex-start);
             }
         }
     }
