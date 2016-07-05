@@ -263,6 +263,9 @@
   }
 }
 @media only screen and (min-width: 769px) and (max-width: 896px) {
+  .contenedor_pilares .contenedor_pilar {
+    min-height: 240px;
+  }
   .sy-slides-wrap {
     height: 300px;
   }

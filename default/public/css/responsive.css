@@ -438,6 +438,11 @@
     font-size: 12.5px;
   }
 }
+@media only screen and (min-width: 769px) and (max-width: 896px) {
+  footer #dv_enlacesinteres .contenedor_enlacesinteres:nth-child(2) #dv_imgenlacesinteres {
+    padding: 0 10%;
+  }
+}
 @media only screen and (max-width: 768px) {
   .etiqueta_titprogslider {
     margin: 0;
@@ -554,6 +559,9 @@
   }
 }
 @media only screen and (min-width: 769px) and (max-width: 896px) {
+  .contenedor_pilares .contenedor_pilar {
+    min-height: 240px;
+  }
   .sy-slides-wrap {
     height: 300px;
   }

@@ -438,4 +438,9 @@
     font-size: 12.5px;
   }
 }
+@media only screen and (min-width: 769px) and (max-width: 896px) {
+  footer #dv_enlacesinteres .contenedor_enlacesinteres:nth-child(2) #dv_imgenlacesinteres {
+    padding: 0 10%;
+  }
+}
 /*# sourceMappingURL=responsive_general.css.map */

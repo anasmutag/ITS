@@ -86,11 +86,12 @@
         <a class="dropbtn" href="<?= PUBLIC_PATH?>" style="position: relative;">Inicio</a>
     </div>
     <div class="btn dropdown">
-        <? if($banInstitucion > 0): ?>
+        <span id="sp_instituciong" class="dropbtn active">Institución</span>
+        <?/* if($banInstitucion > 0): ?>
             <span id="sp_instituciong" class="dropbtn active">Institución</span>
         <? else: ?>
             <a class="dropbtn" href="<?= PUBLIC_PATH?>index/institucion/3" style="position: relative;">Institución</a>
-        <? endif; ?>
+        <? endif; */?>
         <div class="dropdown-content">
             <? if($banInstitucion > 0): ?>
                 <span id="sp_institucionmv">Misión | Visión</span>
@@ -206,7 +207,8 @@
         $(this).find('.dropdown-content').css({display: 'none'});
     });
     
-    $('#sp_instituciong, #sp_institucion').on('click', function (){
+    /*$('#sp_instituciong, #sp_institucion').on('click', function (){*/
+    $('#sp_institucion').on('click', function (){
         $.ajax({
             type: 'POST',
             url: window.public_path + "index/institucion/3",
