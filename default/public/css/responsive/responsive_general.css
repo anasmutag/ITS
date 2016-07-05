@@ -303,31 +303,29 @@
     margin-bottom: 15px;
   }
   footer #dv_enlacesinteres .contenedor_enlacesinteres:nth-child(2) #dv_imgenlacesinteres {
-    -webkit-flex-direction: column;
-    -moz-flex-direction: column;
-    -ms-flex-direction: column;
-    -o-flex-direction: column;
-    flex-direction: column;
+    padding: 0 5%;
   }
-  footer #dv_enlacesinteres .contenedor_enlacesinteres:nth-child(2) #dv_imgenlacesinteres .contenedor_imgenlacesinteres {
-    width: 220px;
-    margin: 0 0 15px 0;
+  footer #dv_enlacesinteres .contenedor_enlacesinteres:nth-child(2) #dv_imgenlacesinteres .contenedor_imgenlacesinteres:nth-of-type(3),
+  footer #dv_enlacesinteres .contenedor_enlacesinteres:nth-child(2) #dv_imgenlacesinteres .contenedor_imgenlacesinteres:nth-of-type(4),
+  footer #dv_enlacesinteres .contenedor_enlacesinteres:nth-child(2) #dv_imgenlacesinteres .contenedor_imgenlacesinteres:nth-of-type(5),
+  footer #dv_enlacesinteres .contenedor_enlacesinteres:nth-child(2) #dv_imgenlacesinteres .contenedor_imgenlacesinteres:nth-of-type(6) {
+    margin-bottom: 15px;
   }
-  footer #dv_informacion_instituto {
+  footer #dv_informacion_instituto #dv_contenido_informacion_instituto {
     font-size: 12.5px;
   }
-  footer #dv_informacion_instituto div span {
+  footer #dv_informacion_instituto #dv_contenido_informacion_instituto div span {
     width: 100%;
     margin: 1.5px 0;
   }
-  footer #dv_informacion_instituto div:nth-of-type(1) span:nth-of-type(2),
-  footer #dv_informacion_instituto div:nth-of-type(1) span:nth-of-type(4) {
+  footer #dv_informacion_instituto #dv_contenido_informacion_instituto div:nth-of-type(1) span:nth-of-type(2),
+  footer #dv_informacion_instituto #dv_contenido_informacion_instituto div:nth-of-type(1) span:nth-of-type(4) {
     display: none;
   }
-  footer #dv_informacion_instituto div:nth-of-type(2) {
+  footer #dv_informacion_instituto #dv_contenido_informacion_instituto div:nth-of-type(2) {
     margin-top: 7px;
   }
-  footer #dv_informacion_instituto div:nth-of-type(2) span:nth-of-type(2) {
+  footer #dv_informacion_instituto #dv_contenido_informacion_instituto div:nth-of-type(2) span:nth-of-type(2) {
     display: none;
   }
   #sec_contenido {
@@ -427,6 +425,12 @@
   footer #dv_enlacesinteres .contenedor_enlacesinteres:nth-child(1) #dv_certificaciones #dv_iconoscertificacioncalidad .contenedor_logocalidad:nth-last-of-type(1) div {
     width: 140px;
     margin-left: 7.5px;
+  }
+  footer #dv_enlacesinteres .contenedor_enlacesinteres:nth-child(2) {
+    margin-bottom: 15px;
+  }
+  footer #dv_enlacesinteres .contenedor_enlacesinteres:nth-child(2) #dv_imgenlacesinteres {
+    padding: 0;
   }
 }
 @media only screen and (max-width: 320px) {

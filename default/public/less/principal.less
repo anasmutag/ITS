@@ -4,8 +4,12 @@
 #dv_slider {
     .dimensions;
 }
+.etiqueta_titprogslider {
+    display: block;
+    margin: 0 30px 0 0;
+}
 #dv_contenido {
-    padding: 25px 30px;
+    padding: 25px 30px 35px 30px;
     
     .dimensions;
     
@@ -161,7 +165,9 @@
     .flexBox(@justify-content: space-between);
 
     .contenedor_pilar {
-        padding: 0 0 15px 0;
+        min-height: 200px;
+        position: relative;
+        /*padding: 0 0 15px 0;*/
         color: #00529B;
         background-color: #ffffff;
 
@@ -172,6 +178,9 @@
         .borderRadius(8px);
 
         span {
+            position: absolute;
+            top: 0;
+            left: 0;
             padding: 10px 0;
             /*font-size: 18px;*/
             /*background-color: @base;*/
@@ -188,7 +197,7 @@
             .font(@robotobold;18px);
         }
         div {
-            padding: 15px 15px 0 15px;
+            padding: 30px 15px 0 15px;
         }
     }
 }

@@ -100,6 +100,8 @@ footer {
             border-top: 1px solid @base;
             
             #dv_imgenlacesinteres {
+                padding: 0 15%;
+                
                 .dimensions;
                 .flexBox;
                 
@@ -107,7 +109,6 @@ footer {
                     min-height: 50px;
                     margin: 0 12.5px;
                     
-                    .dimensions(200px);
                     .flexBox;
                     
                     img {
@@ -117,30 +118,55 @@ footer {
                         max-height: 100%;
                     }
                 }
+                .contenedor_imgenlacesinteres:nth-of-type(1), .contenedor_imgenlacesinteres:nth-of-type(2) {
+                    margin: 0 12.5px 15px 12.5px;
+                    
+                    .dimensions(250px);
+                }
+                .contenedor_imgenlacesinteres:nth-of-type(3) {
+                    .dimensions(200px);
+                }
+                .contenedor_imgenlacesinteres:nth-of-type(4) {
+                    .dimensions(80px);
+                }
+                .contenedor_imgenlacesinteres:nth-of-type(5) {
+                    .dimensions(50px);
+                }
+                .contenedor_imgenlacesinteres:nth-of-type(6) {
+                    .dimensions(125px);
+                }
             }
         }
     }
     #dv_informacion_instituto {
-        padding: 10px 0;
-        font-size: 10px;
-        color: @blanco;
-        /*background-color: @base;*/
-        
-        background: @base;
-        background: -moz-linear-gradient(top, @base 0%, #2989d8 100%, #207cca 100%, #7db9e8 100%);
-        background: -webkit-linear-gradient(top, @base 0%,#2989d8 100%,#207cca 100%,#7db9e8 100%);
-        background: linear-gradient(to bottom, @base 0%,#2989d8 100%,#207cca 100%,#7db9e8 100%);
-        filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='@base', endColorstr='#7db9e8',GradientType=0 );
+        background-color: @amarillo;
         
         .dimensions;
         .flexBox;
         
-        div {
+        #dv_contenido_informacion_instituto {
+            padding: 10px 0;
+            font-size: 10px;
+            color: @blanco;
+            /*background-color: @base;*/
+
+            background: @base;
+            background: -moz-linear-gradient(top, @base 0%, #2989d8 100%, #207cca 100%, #7db9e8 100%);
+            background: -webkit-linear-gradient(top, @base 0%,#2989d8 100%,#207cca 100%,#7db9e8 100%);
+            background: linear-gradient(to bottom, @base 0%,#2989d8 100%,#207cca 100%,#7db9e8 100%);
+            filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='@base', endColorstr='#7db9e8',GradientType=0 );
+
             .dimensions;
             .flexBox;
+            .borderRadius(0;0;100%;100%);
+
+            div {
+                .dimensions;
+                .flexBox;
+            }
+            /*span {
+                width: 100%;
+            }*/
         }
-        /*span {
-            width: 100%;
-        }*/
     }
 }

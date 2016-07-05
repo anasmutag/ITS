@@ -610,6 +610,7 @@ header .dropdown-content a:hover {
   -moz-transform: translate(0, 0);
   -ms-transform: translate(0, 0);
   transform: translate(0, 0);
+  left: 0;
 }
 #dv_opcionesmenu {
   width: 260px;
@@ -688,6 +689,7 @@ header .dropdown-content a:hover {
 }
 #dv_opcionesmenu .contenedor_opcionmenu .etiqueta_icondown {
   position: absolute;
+  top: 0;
   right: 0;
   width: 45px;
   height: 60px;

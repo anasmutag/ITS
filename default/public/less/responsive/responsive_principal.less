@@ -2,6 +2,9 @@
 @import "../funciones.less";
 
 @media only screen and (max-width: 768px) {
+    .etiqueta_titprogslider {
+        margin: 0;
+    }
     #dv_contenido {
         padding: 0;
         
@@ -52,10 +55,13 @@
 
         .contenedor_pilar {
             width: 100%;
+            min-height: initial;
+            position: initial;
             padding: 0;
             border-radius: 0;
 
             span {
+                position: initial;
                 padding: 12.5px 0;
                 border-radius: 0;
                 font-size: 20px;
@@ -67,9 +73,9 @@
         }
     }
     .sy-slides-wrap {
-        height: 240px;
+        height: 260px;
     }
-    .sy-slide {
+    /*.sy-slide {
         height: 100%;
     }
     .sy-slide > a {
@@ -77,12 +83,16 @@
     }
     .sy-slide > a > img {
         height: 100%;
-    }
+    }*/
     .sy-filler {
-        padding-top: 240px;
+        padding-top: 260px;
     }
     .sy-pager li {
         .dimensions(22px;22px);
+    }
+    .sy-caption-wrap .sy-caption {
+        text-align: center;
+        font-size: 24px;
     }
 }
 
@@ -114,10 +124,30 @@
     .sy-filler {
         padding-top: 165px;
     }
+    .sy-caption-wrap .sy-caption {
+        letter-spacing: 0;
+        font-size: 18px;
+    }
 }
 
 @media only screen and (min-width: 769px) and (max-width: 1024px) {}
 
-@media only screen and (min-width: 769px) and (max-width: 896px) {}
+@media only screen and (min-width: 769px) and (max-width: 896px) {
+    .sy-slides-wrap {
+        height: 300px;
+    }
+    /*.sy-slide {
+        height: 100%;
+    }
+    .sy-slide > a {
+        height: 100%;
+    }
+    .sy-slide > a > img {
+        height: 100%;
+    }*/
+    .sy-filler {
+        padding-top: 300px;
+    }
+}
 
 @media only screen and (min-width: 1025px) {}

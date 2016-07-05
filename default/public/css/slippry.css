@@ -114,8 +114,8 @@
 /* element that wraps the slides */
 .sy-slides-wrap {
   position: relative;
-  height: 100%;
-  /*height: 300px;*/
+  /*height: 100%;*/
+  height: 350px;
   width: 100%; }
   .sy-slides-wrap:hover .sy-controls {
     display: block; }
@@ -150,6 +150,7 @@
 .sy-slide {
   position: absolute;
   width: 100%;
+  height: 100%;
   z-index: 2; }
   .sy-slide.kenburns {
     width: 140%;
@@ -190,12 +191,14 @@
     padding: 0;
     display: block;
     width: 100%;
+    height: 100%;
     cursor: default; }
     .sy-slide > a > img {
       margin: 0;
       padding: 0;
       display: block;
       width: 100%;
+      height: 100%;
       border: 0; }
 
 /* next/ prev buttons, with arrows and clickable area a lot larger than the visible buttons */
@@ -267,26 +270,35 @@
 
 /* captions, styled fo the overlay variant */
 .sy-caption-wrap {
+  width: 100%;
   position: absolute;
-  bottom: 2em;
+  bottom: 0;
   z-index: 12;
-  left: 50%; }
+  right: 0;
+  /*left: 50%;*/ }
   .sy-caption-wrap .sy-caption {
-    position: relative;
+    /*position: relative;
     left: -50%;
     background-color: rgba(0, 0, 0, 0.54);
-    color: #fff;
-    padding: 0.4em 1em;
-    -moz-border-radius: 1.2em;
+    color: #fff;*/
+    width: 100%;
+    color: #fff200;
+    padding: 20px 0;
+    text-align: right;
+    text-shadow: -2px -2px 0 #00529B, 2px -2px 0 #00529B, -2px 2px 0 #00529B, 2px 2px 0 #00529B;
+    letter-spacing: 3px;
+    font-family: 'Roboto-Black';
+    font-size: 28px;
+    /*-moz-border-radius: 1.2em;
     -webkit-border-radius: 1.2em;
-    border-radius: 1.2em; }
+    border-radius: 1.2em;*/ }
     .sy-caption-wrap .sy-caption a:link, .sy-caption-wrap .sy-caption a:visited {
       color: #e24b70;
       font-weight: 600;
       text-decoration: none; }
     .sy-caption-wrap .sy-caption a:hover, .sy-caption-wrap .sy-caption a:focus {
       text-decoration: underline; }
-  @media only screen and (max-device-width: 600px), screen and (max-width: 600px) {
+  /*@media only screen and (max-device-width: 600px), screen and (max-width: 600px) {
     .sy-caption-wrap {
       left: 0;
       bottom: 0.4em; }
@@ -296,7 +308,7 @@
         font-size: 0.92em;
         -moz-border-radius: 0;
         -webkit-border-radius: 0;
-        border-radius: 0; } }
+        border-radius: 0; } }*/
 
 /* pager bubbles */
 .sy-pager {
@@ -339,7 +351,8 @@
 /* element to "keep/ fill" the space of the content, gets intrinsic height via js */
 .sy-filler {
   width: 100%;
-  padding-top: 30%;
+  padding-top: 350px;
+  /*padding-top: 30%;*/
 }
   .sy-filler.ready {
     -moz-transition: padding 600ms ease;
