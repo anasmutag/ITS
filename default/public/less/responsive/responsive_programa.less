@@ -22,6 +22,7 @@
         .boxShadow(0;0;5px;2px;rgba(0, 0, 0, 0.2));*/
 
         .contenedor_imgprograma {
+            height: 280px;
             border-radius: 0;
             
             /*background-color: green;
@@ -56,7 +57,7 @@
             }
         }
         .contenedor_programa {
-            padding: 20px;
+            padding: 25px;
             border-radius: 0;
             
             /*padding: 30px;
@@ -84,13 +85,32 @@
                 }*/
             }
         }
+        .contenedor_detalleprograma {
+            padding: 40px 50px;
+        }
     }
     #dv_navprograma {
         display: none;
     }
 }
 
-@media only screen and (max-width: 554px) {}
+@media only screen and (max-width: 554px) {
+    #dv_programa {
+        .contenedor_imgprograma {
+            height: 250px;
+            
+            div {
+                .etiqueta_titprog {
+                    width: 95%;
+                    font-size: 18px;
+                }
+            }
+        }
+        .contenedor_detalleprograma {
+            padding: 25px;
+        }
+    }
+}
 
 @media only screen and (min-width: 769px) and (max-width: 1024px) {}
 

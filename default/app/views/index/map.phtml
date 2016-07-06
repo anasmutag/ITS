@@ -1,0 +1,50 @@
+<div id="dv_mapa"></div>
+<!--div id="dv_streetview"></div-->
+
+<script type="text/javascript">
+    var myLatLng, map, market;
+    
+    //function initMap() {
+        <? if($sede == 0): ?>
+            myLatLng = {lat: 1.2149208, lng: -77.2759726};
+        <? else: ?>
+            myLatLng = {lat: 0.8276849, lng: -77.6368448};
+        <? endif; ?>
+        
+        //myLatLng = {lat: 1.2149208, lng: -77.2759726};
+        //myLatLng = {lat: 0.8276849, lng: -77.6368448};
+
+        map = new google.maps.Map(document.getElementById('dv_mapa'), {
+            center: myLatLng,
+            scrollwheel: false,
+            zoom: 18
+        });
+
+        marker = new google.maps.Marker({
+            map: map,
+            position: myLatLng,
+            title: 'Instituto Técnico Surcolombiano'
+        });
+
+        /*panorama = new google.maps.StreetViewPanorama(document.getElementById('dv_streetview'), {
+            position: myLatLng,
+            pov: {
+                heading: 30,
+                pitch: 10,
+                zoom: 0.5
+            }
+        });
+
+        map.setStreetView(panorama);*/
+        
+        google.maps.event.addDomListener(window, "resize", function() {
+            var center = map.getCenter();
+            
+            google.maps.event.trigger(map, "resize");
+            map.setCenter(center); 
+        });
+    //}
+</script>
+
+<!--script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBYXHhoAbijaDCTdv98TsW_oucwePlcnD4&callback=initMap" async defer>
+</script-->

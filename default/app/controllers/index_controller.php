@@ -43,4 +43,10 @@ class IndexController extends AppController {
             View::template(NULL);
         }*/
     }
+    
+    public function map() {
+        View::template(NULL);
+        
+        $this->sede = Input::request('sede');
+    }
 }

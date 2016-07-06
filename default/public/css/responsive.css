@@ -435,10 +435,14 @@
 }
 @media only screen and (max-width: 320px) {
   header #sp_programateclab {
-    font-size: 12.5px;
+    font-size: 13.5px;
   }
 }
 @media only screen and (min-width: 769px) and (max-width: 896px) {
+  header #dv_logo img {
+    width: 120px;
+    height: 120px;
+  }
   footer #dv_enlacesinteres .contenedor_enlacesinteres:nth-child(2) #dv_imgenlacesinteres {
     padding: 0 10%;
   }
@@ -451,6 +455,7 @@
     padding: 0;
   }
   #dv_contenido #dv_texto {
+    margin: 0;
     padding: 25px;
     font-size: 18px;
     border-radius: 0;
@@ -471,17 +476,29 @@
     padding: 0;
     box-shadow: none;
     border-radius: 0;
+    /*.etiqueta_localizacion:nth-of-type(1) {
+                padding: 12.5px 0;
+                border-radius: 0;
+                font-size: 20px;
+            }*/
+  }
+  #dv_visitanos #dv_contenidomapa #dv_tabsmap {
+    font-size: 20px;
+    border-radius: 0;
+  }
+  #dv_visitanos #dv_contenidomapa #dv_tabsmap span {
+    height: 45px;
+  }
+  #dv_visitanos #dv_contenidomapa #dv_tabsmap #sp_tabsedepasto,
+  #dv_visitanos #dv_contenidomapa #dv_tabsmap #sp_tabsedeipiales {
+    border-radius: 0;
   }
   #dv_visitanos #dv_contenidomapa .etiqueta_localizacion:nth-of-type(1) {
-    padding: 12.5px 0;
-    border-radius: 0;
-    font-size: 20px;
-  }
-  #dv_visitanos #dv_contenidomapa .etiqueta_localizacion:nth-of-type(2) {
-    padding: 15px 0 0 0;
+    padding: 20px 0 0 0;
     font-size: 18px;
   }
-  #dv_visitanos #dv_contenidomapa .etiqueta_localizacion:nth-of-type(3) {
+  #dv_visitanos #dv_contenidomapa .etiqueta_localizacion:nth-of-type(2) {
+    padding: 0 30px 20px 30px;
     font-size: 18px;
   }
   #dv_visitanos #dv_contenidomapa #dv_seccionmapa {
@@ -597,6 +614,7 @@
         .boxShadow(0;0;5px;2px;rgba(0, 0, 0, 0.2));*/
   }
   #dv_programa .contenedor_imgprograma {
+    height: 280px;
     border-radius: 0;
     /*background-color: green;
 
@@ -626,7 +644,7 @@
                     .font(@robotobold;18px);*/
   }
   #dv_programa .contenedor_programa {
-    padding: 20px;
+    padding: 25px;
     border-radius: 0;
     /*padding: 30px;
 
@@ -652,8 +670,23 @@
                     color: @grisnav;
                 }*/
   }
+  #dv_programa .contenedor_detalleprograma {
+    padding: 40px 50px;
+  }
   #dv_navprograma {
     display: none;
+  }
+}
+@media only screen and (max-width: 554px) {
+  #dv_programa .contenedor_imgprograma {
+    height: 250px;
+  }
+  #dv_programa .contenedor_imgprograma div .etiqueta_titprog {
+    width: 95%;
+    font-size: 18px;
+  }
+  #dv_programa .contenedor_detalleprograma {
+    padding: 25px;
   }
 }
 @media only screen and (max-width: 768px) {

@@ -257,10 +257,10 @@ header #dv_logo #sp_menu {
 }
 header #dv_logo img {
   margin: 5px 0;
-  max-width: 150px;
-  max-height: 150px;
-  width: 150px;
-  height: 150px;
+  max-width: 140px;
+  max-height: 140px;
+  width: 140px;
+  height: 140px;
   border-radius: 100%;
   -moz-border-radius: 100%;
   -o-border-radius: 100%;
@@ -367,7 +367,7 @@ header #lnk_inicio {
     order: 2;*/
 }
 header #sp_inicio {
-  background-color: #00529B;
+  /*background-color: @base;*/
   width: 100%;
   height: 100%;
 }
@@ -420,7 +420,7 @@ header .navsecnoactive {
   color: #00529B;
 }
 header .etiqueta_next {
-  background-color: #00529B;
+  /*background-color: @base;*/
   width: 20px;
   height: 20px;
 }

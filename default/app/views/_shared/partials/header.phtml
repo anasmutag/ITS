@@ -381,7 +381,10 @@
                 $('#sp_inicio').removeClass('contendor_navegacionsecdn');
                 $('#lnk_inicio').next('span').removeClass('contendor_navegacionsecdn');
                 $('#sp_programas').removeClass('contendor_navegacionsecdn').next('span').removeClass('contendor_navegacionsecdn');
+                $('#sp_programateclab').addClass('contendor_navegacionsecdn');
+                $('#sp_programa').removeClass('navsecnoactive').next('span').addClass('contendor_navegacionsecdn');
                 $('#sp_programa').text('Técnico Laborales').removeClass('contendor_navegacionsecdn');
+                
                 $('#sp_teclab').parent().css({display: 'none'});
                 $('#sec_contenido').html(data);
             },
@@ -443,6 +446,8 @@
                 $('#sp_inicio').removeClass('contendor_navegacionsecdn');
                 $('#lnk_inicio').next('span').removeClass('contendor_navegacionsecdn');
                 $('#sp_programas').removeClass('contendor_navegacionsecdn').next('span').removeClass('contendor_navegacionsecdn');
+                $('#sp_programateclab').addClass('contendor_navegacionsecdn');
+                $('#sp_programa').removeClass('navsecnoactive').next('span').addClass('contendor_navegacionsecdn');
                 $('#sp_programa').text('Ingles Por Niveles').removeClass('contendor_navegacionsecdn');
                 $('#sp_inglesniv').parent().css({display: 'none'});
                 $('#sec_contenido').html(data);

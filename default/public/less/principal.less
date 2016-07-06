@@ -18,6 +18,7 @@
         .borderRadius(8px);
     }*/
     #dv_texto {
+        margin: 0 0 25px 0;
         padding: 15px;
         color: @base;
         background-color: @blanco;
@@ -98,7 +99,7 @@
     .dimensions;
 }
 #dv_visitanos {
-    padding: 25px 30px;
+    padding: 30px;
     
     .dimensions;
     .flexBox;
@@ -114,7 +115,45 @@
         .borderRadius(8px);
         .flexBox;
         
-        .etiqueta_localizacion:nth-of-type(1) {
+        #dv_tabsmap {
+            border-bottom: 2px solid @base;
+            
+            .dimensions;
+            .flexBox;
+            .font(@robotobold;18px);
+            .borderRadius(8px;8px;0;0);
+            
+            span {
+                .dimensions(50%;40px);
+                .flexBox;
+            }
+            #sp_tabsedepasto {
+                .borderRadius(8px;0;0;0);
+            }
+            #sp_tabsedeipiales {
+                .borderRadius(0;8px;0;0);
+            }
+            .etiqueta_tabactive {
+                color: @blanco;
+                cursor: default;
+                
+                background: @base;
+                background: -moz-linear-gradient(top, @base 0%, #2989d8 100%, #207cca 100%, #7db9e8 100%);
+                background: -webkit-linear-gradient(top, @base 0%,#2989d8 100%,#207cca 100%,#7db9e8 100%);
+                background: linear-gradient(to bottom, @base 0%,#2989d8 100%,#207cca 100%,#7db9e8 100%);
+                filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='@base', endColorstr='#7db9e8',GradientType=0 );
+            }
+            .etiqueta_tabnoactive {
+                background-color: @blanco;
+                color: @base;
+                cursor: pointer;
+                
+                /*&:hover {
+                    color: @grisnav;
+                }*/
+            }
+        }
+        /*.etiqueta_localizacion:nth-of-type(1) {
             padding: 10px 0;
             color: @blanco;
             
@@ -128,15 +167,15 @@
             .flexBox;
             .font(@robotobold;18px);
             .borderRadius(8px;8px;100%;100%);
-        }
-        .etiqueta_localizacion:nth-of-type(2) {
-            padding: 15px 30px 0 30px;
+        }*/
+        .etiqueta_localizacion:nth-of-type(1) {
+            padding: 30px 30px 0 30px;
             
             .dimensions;
             .flexBox;
             .font(@robotomedium;16px);
         }
-        .etiqueta_localizacion:nth-of-type(3) {
+        .etiqueta_localizacion:nth-of-type(2) {
             padding: 0 30px 15px 30px;
             
             .dimensions;
@@ -160,7 +199,7 @@
     }
 }
 .contenedor_pilares {
-    margin: 25px 0 0 0;
+    /*margin: 25px 0 0 0;*/
     
     .flexBox(@justify-content: space-between);
 

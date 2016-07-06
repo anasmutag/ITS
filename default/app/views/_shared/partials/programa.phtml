@@ -2,8 +2,59 @@
     <div>
         <span class="etiqueta_titprog"><?= $nomPrograma?></span>
     </div>
+    <? switch($idPrograma):
+        case 2: ?>
+            <img src="<?= PUBLIC_PATH?>img/slider/info_talentohumano.jpg">
+            
+            <? break;
+        case 3: ?>
+            <img src="<?= PUBLIC_PATH?>img/slider/info_contabilidad.jpg">
+            
+            <? break;
+        case 4: ?>
+            <img src="<?= PUBLIC_PATH?>img/slider/info_deportes.jpg">
+            
+            <? break;
+        case 5: ?>
+            <img src="<?= PUBLIC_PATH?>img/slider/sistemas.jpg">
+            
+            <? break;
+        case 6: ?>
+            <img src="<?= PUBLIC_PATH?>img/slider/info_vigilancia.jpg">
+            
+            <? break;
+        case 7: ?>
+            <img src="<?= PUBLIC_PATH?>img/slider/info_ingles.jpg">
+            
+            <? break;
+        default:
+            break;
+    endswitch; ?>
 </div>
-<div class="contenedor_programa">
-    <?//= $idPrograma?>
-    <!--span class="etiqueta_titprog"><?= $nomPrograma?></span-->
+<div class="contenedor_detalleprograma">
+    <div class="contenedor_secciondetalleprograma">
+        <? if($idPrograma != 7): ?>
+            <span class="etiqueta_certificadoprograma">CERTIFICADO<br><?= $certificado?></span>
+            <span class="etiqueta_tituloinformacionprograma">DESEMPÉÑATE COMO:</span>
+            <div class="contenedor_informacionprograma">
+                <? foreach($desempeno as $d): ?>
+                    <div class="contenedor_nominfoprograma">
+                        <div class="contenedor_iconvineta"><span class="icon_vineta"></span></div>
+                        <div class="contenedor_nombreinformacion"><?= $d?></div>
+                    </div>
+                <? endforeach; ?>
+            </div>
+            <span class="etiqueta_tituloinformacionprograma">ÁREAS DE FORMACIÓN</span>
+            <div class="contenedor_informacionprograma">
+                <? foreach($area as $a): ?>
+                    <div class="contenedor_nominfoprograma">
+                        <div class="contenedor_iconvineta"><span class="icon_vineta"></span></div>
+                        <div class="contenedor_nombreinformacion"><?= $a?></div>
+                    </div>
+                <? endforeach; ?>
+            </div>
+        <? else: ?>
+            <div>Aqui es...</div>
+        <? endif; ?>
+    </div>
 </div>

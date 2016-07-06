@@ -9,6 +9,7 @@
         padding: 0;
         
         #dv_texto {
+            margin: 0;
             padding: 25px;
             font-size: 18px;
             border-radius: 0;
@@ -33,16 +34,28 @@
             box-shadow: none;
             border-radius: 0;
 
-            .etiqueta_localizacion:nth-of-type(1) {
+            #dv_tabsmap {
+                font-size: 20px;
+                border-radius: 0;
+
+                span {
+                    height: 45px;
+                }
+                #sp_tabsedepasto, #sp_tabsedeipiales {
+                    border-radius: 0;
+                }
+            }
+            /*.etiqueta_localizacion:nth-of-type(1) {
                 padding: 12.5px 0;
                 border-radius: 0;
                 font-size: 20px;
-            }
-            .etiqueta_localizacion:nth-of-type(2) {
-                padding: 15px 0 0 0;
+            }*/
+            .etiqueta_localizacion:nth-of-type(1) {
+                padding: 20px 0 0 0;
                 font-size: 18px;
             }
-            .etiqueta_localizacion:nth-of-type(3) {
+            .etiqueta_localizacion:nth-of-type(2) {
+                padding: 0 30px 20px 30px;
                 font-size: 18px;
             }
             #dv_seccionmapa {

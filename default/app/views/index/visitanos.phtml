@@ -1,16 +1,104 @@
-<div id="dv_visitanos" style="font-size: 40px">
+<div id="dv_visitanos">
     <div id="dv_contenidomapa">
-        <span class="etiqueta_localizacion">Localización</span>
-        <span class="etiqueta_localizacion">San Juan de Pasto, Nariño, Colombia</span>
-        <span class="etiqueta_localizacion">Calle 21 No. 23-90</span>
+        <div id="dv_tabsmap">
+            <span id="sp_tabsedepasto" class="etiqueta_tabactive">Sede Pasto</span>
+            <span id="sp_tabsedeipiales" class="etiqueta_tabnoactive">Sede Ipiales</span>
+        </div>
+        <!--span class="etiqueta_localizacion">Localización</span-->
+        <span id="sp_ciulocalizacion" class="etiqueta_localizacion">San Juan de Pasto, Nariño, Colombia</span>
+        <span id="sp_dirlocalizacion" class="etiqueta_localizacion">Calle 21 No. 23-90</span>
         <div id="dv_seccionmapa">
-            <div id="dv_mapa"></div>
+            <? //View::partial('map'); ?>
+            <!--div id="dv_mapa"></div-->
             <!--div id="dv_streetview"></div-->
         </div>
     </div>
 </div>
 
 <script type="text/javascript">
+    $.ajax({
+        type: 'POST',
+        url: window.public_path + "index/map/",
+        data: {
+            'sede': 0
+        },
+        beforeSend: function(){
+
+        },
+        success: function(data){
+            $('#dv_seccionmapa').html(data);
+        },
+        error: function(){
+            console.log('Error');
+        }
+    }).always(function(){
+
+    });
+    
+    $('#sp_tabsedepasto').on('click', function(){
+        if(window.tablocalizacion > 0){
+            window.tablocalizacion = 0;
+            
+            $('#sp_tabsedeipiales').removeClass('etiqueta_tabactive').addClass('etiqueta_tabnoactive');
+            $(this).removeClass('etiqueta_tabnoactive').addClass('etiqueta_tabactive');
+            
+            $('#sp_ciulocalizacion').text('San Juan de Pasto, Nariño, Colombia');
+            $('#sp_dirlocalizacion').text('Calle 21 No. 23-90');
+            
+            $.ajax({
+                type: 'POST',
+                url: window.public_path + "index/map/",
+                data: {
+                    'sede': 0
+                },
+                beforeSend: function(){
+
+                },
+                success: function(data){
+                    $('#dv_seccionmapa').html(data);
+                },
+                error: function(){
+                    console.log('Error');
+                }
+            }).always(function(){
+
+            });
+        }
+    });
+    
+    $('#sp_tabsedeipiales').on('click', function(){
+        if(window.tablocalizacion < 1){
+            window.tablocalizacion = 1;
+            
+            $('#sp_tabsedepasto').removeClass('etiqueta_tabactive').addClass('etiqueta_tabnoactive');
+            $(this).removeClass('etiqueta_tabnoactive').addClass('etiqueta_tabactive');
+            
+            $('#sp_ciulocalizacion').text('Ipiales, Nariño, Colombia');
+            $('#sp_dirlocalizacion').text('Carrera 2a No. 12-98');
+            
+            $.ajax({
+                type: 'POST',
+                url: window.public_path + "index/map/",
+                data: {
+                    'sede': 1
+                },
+                beforeSend: function(){
+
+                },
+                success: function(data){
+                    $('#dv_seccionmapa').html(data);
+                },
+                error: function(){
+                    console.log('Error');
+                }
+            }).always(function(){
+
+            });
+        }
+    });
+</script>
+
+<!--script type="text/javascript">
     var myLatLng, map, market;
     
     function initMap() {
@@ -38,7 +126,14 @@
         });
 
         map.setStreetView(panorama);*/
+        
+        google.maps.event.addDomListener(window, "resize", function() {
+            var center = map.getCenter();
+            
+            google.maps.event.trigger(map, "resize");
+            map.setCenter(center); 
+        });
     }
 </script>
 <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBYXHhoAbijaDCTdv98TsW_oucwePlcnD4&callback=initMap" async defer>
-</script>
+</script-->

@@ -17,15 +17,19 @@
     .boxShadow(0;0;5px;2px;rgba(0, 0, 0, 0.2));
     
     .contenedor_imgprograma {
-        background-color: green;
+        position: relative;
         
-        .dimensions(@height:220px);
+        .dimensions(@height:250px);
         .flexBox(@align-items:flex-start);
         .borderRadius(8px;8px;0;0);
         
         div {
+            position: absolute;
+            top: 0;
+            left: 0;
             padding: 10px 0;
-            color: @blanco;
+            /*color: @blanco;*/
+            color: @amarillo;
             background: @base;
             background: -moz-linear-gradient(top, @base 0%, #2989d8 100%, #207cca 100%, #7db9e8 100%);
             background: -webkit-linear-gradient(top, @base 0%,#2989d8 100%,#207cca 100%,#7db9e8 100%);
@@ -40,6 +44,9 @@
                 .dimensions(75%);
                 .font(@robotobold;18px);
             }
+        }
+        img {
+            .dimensions(100%;100%);
         }
     }
     .contenedor_programa {
@@ -61,6 +68,69 @@
             
             &:hover {
                 color: @grisnav;
+            }
+        }
+    }
+    .contenedor_detalleprograma {
+        padding: 30px 40px;
+        color: @base;
+        
+        .dimensions;
+        .flexBox;
+        .borderRadius(0;0;8px;8px);
+        
+        .contenedor_secciondetalleprograma {
+            .dimensions;
+            .flexBox;
+            
+            .etiqueta_certificadoprograma {
+                margin: 0 0 30px 0;
+                padding: 0 0 10px 0;
+                border-bottom: 1px solid @base;
+                
+                .dimensions;
+                .flexBox;
+                .font(@robotobold;18px);
+            }
+            .etiqueta_tituloinformacionprograma {
+                margin: 0 0 15px 0;
+                text-align: center;
+                
+                .dimensions;
+                .font(@robotomedium;18px);
+            }
+            .contenedor_informacionprograma {
+                margin: 0 0 30px 0;
+                
+                .dimensions;
+                .flexBox(@flex-direction:column;@align-items:flex-start;@align-content:flex-start);
+                
+                .contenedor_nominfoprograma {
+                    margin: 0 0 5px 0;
+                    text-align: left;
+                    
+                    .dimensions;
+                    .flexBox(@justify-content:flex-start;@align-items:flex-start;@align-content:flex-start);
+                    .font(@robotoregular;16px);
+                    
+                    &:nth-last-of-type(1) {
+                        margin: 0;
+                    }
+                }
+                .contenedor_iconvineta {
+                    margin: 0 4px 0 0;
+                    
+                    .dimensions(18px;18px);
+                    .flexBox;
+                }
+                .contenedor_nombreinformacion {
+                    width: 90%;
+                    line-height: 1.2;
+                }
+                
+                &:nth-last-of-type(1) {
+                    margin: 0;
+                }
             }
         }
     }

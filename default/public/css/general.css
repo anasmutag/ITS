@@ -257,10 +257,10 @@ header #dv_logo #sp_menu {
 }
 header #dv_logo img {
   margin: 5px 0;
-  max-width: 150px;
-  max-height: 150px;
-  width: 150px;
-  height: 150px;
+  max-width: 140px;
+  max-height: 140px;
+  width: 140px;
+  height: 140px;
   border-radius: 100%;
   -moz-border-radius: 100%;
   -o-border-radius: 100%;
@@ -367,7 +367,7 @@ header #lnk_inicio {
     order: 2;*/
 }
 header #sp_inicio {
-  background-color: #00529B;
+  /*background-color: @base;*/
   width: 100%;
   height: 100%;
 }
@@ -420,7 +420,7 @@ header .navsecnoactive {
   color: #00529B;
 }
 header .etiqueta_next {
-  background-color: #00529B;
+  /*background-color: @base;*/
   width: 20px;
   height: 20px;
 }
@@ -1762,10 +1762,13 @@ header {
   background-size: 40px;
 }
 .icon_home {
-  mask: url(../../ITS/img/icon/ic_home_black_48px.svg) no-repeat 50% 50%;
-  -webkit-mask: url(../../ITS/img/icon/ic_home_black_48px.svg) no-repeat 50% 50%;
-  mask-size: cover;
-  -webkit-mask-size: cover;
+  /*mask: url(../../ITS/img/icon/ic_home_black_48px.svg) no-repeat 50% 50%;
+    -webkit-mask: url(../../ITS/img/icon/ic_home_black_48px.svg) no-repeat 50% 50%;
+    mask-size: cover;
+    -webkit-mask-size: cover;*/
+  background: url("../../ITS/img/icon/ic_home_48dp_2x.png") no-repeat center;
+  background-size: cover;
+  cursor: pointer;
 }
 .icon_before {
   mask: url(../../ITS/img/icon/ic_navigate_before_black_48px.svg) no-repeat 50% 50%;
@@ -1774,10 +1777,13 @@ header {
   -webkit-mask-size: cover;
 }
 .icon_next {
-  mask: url(../../ITS/img/icon/ic_navigate_next_black_48px.svg) no-repeat 50% 50%;
-  -webkit-mask: url(../../ITS/img/icon/ic_navigate_next_black_48px.svg) no-repeat 50% 50%;
-  mask-size: cover;
-  -webkit-mask-size: cover;
+  /*mask: url(../../ITS/img/icon/ic_navigate_next_black_48px.svg) no-repeat 50% 50%;
+    -webkit-mask: url(../../ITS/img/icon/ic_navigate_next_black_48px.svg) no-repeat 50% 50%;
+    mask-size: cover;
+    -webkit-mask-size: cover;*/
+  background: url("../../ITS/img/icon/ic_navigate_next_48dp_2x.png") no-repeat center;
+  background-size: cover;
+  cursor: pointer;
 }
 .icon_down {
   background: url("../../ITS/img/icon/ic_keyboard_arrow_down_48dp_2x.png") no-repeat center;
@@ -1790,12 +1796,12 @@ header {
   background-size: 35px;
   cursor: pointer;
 }
-.icon_location {
-  mask: url(../../ITS/img/icon/ic_location_on_black_48px.svg) no-repeat 50% 50%;
-  -webkit-mask: url(../../ITS/img/icon/ic_location_on_black_48px.svg) no-repeat 50% 50%;
-  mask-size: cover;
-  -webkit-mask-size: cover;
-}
+/*.icon_location {
+    mask: url(../../ITS/img/icon/ic_location_on_black_48px.svg) no-repeat 50% 50%;
+    -webkit-mask: url(../../ITS/img/icon/ic_location_on_black_48px.svg) no-repeat 50% 50%;
+    mask-size: cover;
+    -webkit-mask-size: cover;
+}*/
 .icon_home_white {
   background: url("../../ITS/img/icon/ic_home_white_48dp_2x.png") no-repeat center;
   background-size: 40px;
@@ -1820,5 +1826,11 @@ header {
   background: url("../../ITS/img/icon/ic_account_box_white_48dp_2x.png") no-repeat center;
   background-size: 40px;
   cursor: pointer;
+}
+.icon_vineta {
+  background: url("../../ITS/img/icon/ic_done_48dp_1x.png") no-repeat center;
+  background-size: cover;
+  width: 100%;
+  height: 100%;
 }
 /*# sourceMappingURL=general.css.map */
