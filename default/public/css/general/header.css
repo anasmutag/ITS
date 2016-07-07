@@ -257,10 +257,10 @@ header #dv_logo #sp_menu {
 }
 header #dv_logo img {
   margin: 5px 0;
-  max-width: 140px;
-  max-height: 140px;
-  width: 140px;
-  height: 140px;
+  max-width: 120px;
+  max-height: 120px;
+  width: 120px;
+  height: 120px;
   border-radius: 100%;
   -moz-border-radius: 100%;
   -o-border-radius: 100%;
@@ -746,6 +746,7 @@ header .dropdown-content a:hover {
 }
 #dv_opcionesmenu .contenedor_institucionopcionmenu div .etiqueta_instituciontituloopcionmenu {
   padding-left: 15px;
+  text-align: left;
   text-decoration: none;
   color: #00529B;
   width: 185px;

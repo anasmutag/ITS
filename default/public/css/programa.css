@@ -571,90 +571,14 @@
     -webkit-order: 2;
     order: 2;*/
 }
-#dv_programa .contenedor_detalleprograma .contenedor_secciondetalleprograma .contenedor_informacionprograma .contenedor_nominfoprograma {
-  margin: 0 0 5px 0;
+#dv_programa .contenedor_detalleprograma .contenedor_secciondetalleprograma .contenedor_informacionprograma ul {
   text-align: left;
-  width: 100%;
-  height: auto;
-  display: -webkit-box;
-  display: -moz-box;
-  display: -ms-flexbox;
-  display: -ms-box;
-  display: -webkit-flex;
-  display: flex;
-  -webkit-box-pack: flex-start;
-  -moz-box-pack: flex-start;
-  -webkit-justify-content: flex-start;
-  justify-content: flex-start;
-  -webkit-box-align: flex-start;
-  -moz-box-align: flex-start;
-  -webkit-align-items: flex-start;
-  -ms-flex-align: flex-start;
-  align-items: flex-start;
-  -webkit-align-content: flex-start;
-  -ms-flex-pack: flex-start;
-  align-content: flex-start;
-  -webkit-flex-wrap: wrap;
-  -ms-flex-wrap: wrap;
-  flex-wrap: wrap;
-  -webkit-flex-direction: row;
-  -moz-flex-direction: row;
-  -ms-flex-direction: row;
-  -o-flex-direction: row;
-  flex-direction: row;
-  /*-webkit-box-ordinal-group: 2;
-    -moz-box-ordinal-group: 2;
-    -ms-flex-order: 2;
-    -webkit-order: 2;
-    order: 2;*/
-  font-family: 'RobotoRegular';
-  font-size: 16px;
+  list-style: square inside url(../img/icon/ic_done.png);
 }
-#dv_programa .contenedor_detalleprograma .contenedor_secciondetalleprograma .contenedor_informacionprograma .contenedor_nominfoprograma:nth-last-of-type(1) {
-  margin: 0;
-}
-#dv_programa .contenedor_detalleprograma .contenedor_secciondetalleprograma .contenedor_informacionprograma .contenedor_iconvineta {
-  margin: 0 4px 0 0;
-  width: 18px;
-  height: 18px;
-  display: -webkit-box;
-  display: -moz-box;
-  display: -ms-flexbox;
-  display: -ms-box;
-  display: -webkit-flex;
-  display: flex;
-  -webkit-box-pack: center;
-  -moz-box-pack: center;
-  -webkit-justify-content: center;
-  justify-content: center;
-  -webkit-box-align: center;
-  -moz-box-align: center;
-  -webkit-align-items: center;
-  -ms-flex-align: center;
-  align-items: center;
-  -webkit-align-content: center;
-  -ms-flex-pack: center;
-  align-content: center;
-  -webkit-flex-wrap: wrap;
-  -ms-flex-wrap: wrap;
-  flex-wrap: wrap;
-  -webkit-flex-direction: row;
-  -moz-flex-direction: row;
-  -ms-flex-direction: row;
-  -o-flex-direction: row;
-  flex-direction: row;
-  /*-webkit-box-ordinal-group: 2;
-    -moz-box-ordinal-group: 2;
-    -ms-flex-order: 2;
-    -webkit-order: 2;
-    order: 2;*/
-}
-#dv_programa .contenedor_detalleprograma .contenedor_secciondetalleprograma .contenedor_informacionprograma .contenedor_nombreinformacion {
-  width: 90%;
+#dv_programa .contenedor_detalleprograma .contenedor_secciondetalleprograma .contenedor_informacionprograma ul li {
+  padding: 5px 0;
   line-height: 1.2;
-}
-#dv_programa .contenedor_detalleprograma .contenedor_secciondetalleprograma .contenedor_informacionprograma:nth-last-of-type(1) {
-  margin: 0;
+  cursor: default;
 }
 #dv_navprograma {
   color: #00529B;

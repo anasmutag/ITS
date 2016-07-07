@@ -29,28 +29,22 @@
 </div>
 <div class="contenedor_detalleprograma">
     <div class="contenedor_secciondetalleprograma">
-        <? //if($idPrograma != 7): ?>
-            <span class="etiqueta_certificadoprograma">CERTIFICADO<br><?= $certificado?></span>
-            <span class="etiqueta_tituloinformacionprograma">DESEMPÉÑATE COMO:</span>
-            <div class="contenedor_informacionprograma">
+        <span class="etiqueta_certificadoprograma">CERTIFICADO<br><?= $certificado?></span>
+        <span class="etiqueta_tituloinformacionprograma">DESEMPÉÑATE COMO:</span>
+        <div class="contenedor_informacionprograma">
+            <ul>
                 <? foreach($desempeno as $d): ?>
-                    <div class="contenedor_nominfoprograma">
-                        <div class="contenedor_iconvineta"><span class="icon_vineta"></span></div>
-                        <div class="contenedor_nombreinformacion"><?= $d?></div>
-                    </div>
+                    <li><?= $d?></li>
                 <? endforeach; ?>
-            </div>
-            <span class="etiqueta_tituloinformacionprograma">ÁREAS DE FORMACIÓN</span>
-            <div class="contenedor_informacionprograma">
+            </ul>
+        </div>
+        <span class="etiqueta_tituloinformacionprograma">ÁREAS DE FORMACIÓN</span>
+        <div class="contenedor_informacionprograma">
+            <ul>
                 <? foreach($area as $a): ?>
-                    <div class="contenedor_nominfoprograma">
-                        <div class="contenedor_iconvineta"><span class="icon_vineta"></span></div>
-                        <div class="contenedor_nombreinformacion"><?= $a?></div>
-                    </div>
+                    <li><?= $a?></li>
                 <? endforeach; ?>
-            </div>
-        <?/* else: ?>
-            <div>Aqui es...</div>
-        <? endif; */?>
+            </ul>
+        </div>
     </div>
 </div>

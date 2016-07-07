@@ -47,9 +47,9 @@
             <div>
                 <span class="etiqueta_iconopcionmenu"></span>
                 <? if($banProgramas > 0): ?>
-                    <span id="sp_programasinglesniv" class="etiqueta_instituciontituloopcionmenu">Ingles Por Niveles</span>
+                    <span id="sp_programascurso" class="etiqueta_instituciontituloopcionmenu">Cursos, Seminarios y Diplomados</span>
                 <? else: ?>
-                    <a class="etiqueta_instituciontituloopcionmenu" href="<?= PUBLIC_PATH?>program/programas/7">Ingles Por Niveles</a>
+                    <a class="etiqueta_instituciontituloopcionmenu" href="<?= PUBLIC_PATH?>program/programas/7">Cursos, Seminarios y Diplomados</a>
                 <? endif; ?>
             </div>
         </div>
@@ -458,7 +458,7 @@
         });
     });
     
-    $('#sp_programasinglesniv').on('click', function (){
+    $('#sp_programascurso').on('click', function (){
         $.ajax({
             type: 'POST',
             //url: window.public_path + "program/ingles/1",
@@ -477,7 +477,7 @@
                 $('#sp_programateclab').addClass('contendor_navegacionsecdn');
                 $('#sp_programa').removeClass('navsecnoactive').next('span').addClass('contendor_navegacionsecdn');
                 $('#sp_programa').text('Ingles Por Niveles').removeClass('contendor_navegacionsecdn');
-                $('#sp_inglesniv').parent().css({display: 'none'});
+                $('#sp_curso').parent().css({display: 'none'});
                 $('#sec_contenido').html(data);
                 
                 $('body').removeClass('menuopen');

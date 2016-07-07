@@ -125,31 +125,15 @@
                 .dimensions;
                 .flexBox(@flex-direction:column;@align-items:flex-start;@align-content:flex-start);
                 
-                .contenedor_nominfoprograma {
-                    margin: 0 0 5px 0;
+                ul {
                     text-align: left;
-                    
-                    .dimensions;
-                    .flexBox(@justify-content:flex-start;@align-items:flex-start;@align-content:flex-start);
-                    .font(@robotoregular;16px);
-                    
-                    &:nth-last-of-type(1) {
-                        margin: 0;
+                    list-style: square inside url(../img/icon/ic_done.png);
+
+                    li {
+                        padding: 5px 0;
+                        line-height: 1.2;
+                        cursor: default;
                     }
-                }
-                .contenedor_iconvineta {
-                    margin: 0 4px 0 0;
-                    
-                    .dimensions(18px;18px);
-                    .flexBox;
-                }
-                .contenedor_nombreinformacion {
-                    width: 90%;
-                    line-height: 1.2;
-                }
-                
-                &:nth-last-of-type(1) {
-                    margin: 0;
                 }
             }
         }
