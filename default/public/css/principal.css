@@ -196,6 +196,7 @@
   color: #2d0c67;
   text-shadow: -2px -2px 0 #ffffff, 2px -2px 0 #ffffff, -2px 2px 0 #ffffff, 2px 2px 0 #ffffff;
   letter-spacing: 2px;
+  text-transform: uppercase;
   font-family: 'Roboto-Black';
   font-size: 18px;
 }
