@@ -13,7 +13,7 @@ class ProgramController extends AppController {
             4 -> Preparación Física y Entrenamiento Deportivo
             5 -> Sistemas
             6 -> Vigilancia, Seguridad y Control de Instalaciones
-            7 -> Ingles Por Niveles */
+            7 -> Cursos */
         
         $this->tipoProg = $tipo;
         
@@ -26,11 +26,8 @@ class ProgramController extends AppController {
         View::template(NULL);
     }
     
-    public function ingles() {
+    public function cursos() {
         View::template(NULL);
-        
-        $this->idPrograma = Input::request('idPrograma');
-        $this->nomPrograma = Input::request('nomPrograma');
     }
     
     public function detallePrograma() {
@@ -70,12 +67,6 @@ class ProgramController extends AppController {
                 $this->certificado = "Técnico Laboral en Vigilancia, Seguridad y Control de Instalaciones";
                 $this->desempeno = ["Técnico Laboral en Vigilancia, Seguridad y Control de Instalaciones", "Jefe de Departamento de Seguridad", "Supervisor", "Técnico en Medios Tecnológicos", "Guarda de Seguridad", "Asesor de Empresas en Seguridad Privada"];
                 $this->area = ["Electrónica (Alarmas, Sensores)", "Técnica Investigativa (Criminalística)", "Técnicas Brigadas de emergencia", "Observación y Descripción", "Humanidades", "Primeros Auxilios", "Derecho Constitucional", "Administración (Suervisor, Jefe Seguridad)", "Plan de Evacuación, Manejo de Riesgos, Catástrofes", "Medios Tecnológicos (Monitoreo de Cámaras)", "Técnica (Tonfa – Defensa Personal)", "Control de Accesos en Instalaciones", "Acción y Reacción", "Procedimientos", "Salud Ocupacional", "Derecho Penal"];
-                
-                break;
-            case 7:
-                $this->certificado = "";
-                $this->desempeno = "";
-                $this->area = "";
                 
                 break;
             default:

@@ -9,7 +9,8 @@
             <span class="etiqueta_nomprograma" data-programa="4">En Preparación Física y Entrenamiento Deportivo</span>
             <span class="etiqueta_nomprograma" data-programa="5">En Sistemas</span>
             <span class="etiqueta_nomprograma" data-programa="6">En Vigilancia, Seguridad y Control de Instalaciones</span>
-            <span id="sp_ingles" class="etiqueta_tipprograma" data-programa="7">Ingles Por Niveles</span>
+            <span id="sp_cursos" class="etiqueta_tipprograma" data-programa="8">Cursos, Seminarios y Diplomados</span>
+            <!--span id="sp_ingles" class="etiqueta_tipprograma" data-programa="7">Ingles Por Niveles</span-->
         </div>
     </div>
 </div>
@@ -39,11 +40,8 @@
         case 7: ?>
             $.ajax({
                 type: 'POST',
-                url: window.public_path + "program/ingles/",
-                data: {
-                    'idPrograma': 7,
-                    'nomPrograma': 'Ingles Por Niveles'
-                },
+                url: window.public_path + "program/cursos/",
+                data: {},
                 beforeSend: function(){
 
                 },
@@ -99,7 +97,31 @@
         });
     });
     
-    $('#sp_ingles').on('click', function (){
+    $('#sp_cursos').on('click', function (){
+        $.ajax({
+            type: 'POST',
+            url: window.public_path + "program/cursos/",
+            data: {},
+            beforeSend: function(){
+
+            },
+            success: function(data){
+                $('#dv_navegacionsec').removeClass('contendor_navegacionsecdn');
+                $('#sp_inicio').removeClass('contendor_navegacionsecdn').next('span').removeClass('contendor_navegacionsecdn');
+                $('#sp_programas').removeClass('contendor_navegacionsecdn').next('span').removeClass('contendor_navegacionsecdn');
+                $('#sp_programa').addClass('contendor_navegacionsecdn').next('span').addClass('contendor_navegacionsecdn');
+                $('#sp_programateclab').text('Cursos, Seminarios y Diplomados').removeClass('contendor_navegacionsecdn');
+                $('#dv_programa').html(data);
+            },
+            error: function(){
+                console.log('Error');
+            }
+        }).always(function(){
+
+        });
+    });
+    
+    /*$('#sp_ingles').on('click', function (){
         var idPrograma = $(this).data('programa'),
             nomPrograma = $(this).text();
         
@@ -127,5 +149,5 @@
         }).always(function(){
 
         });
-    });
+    });*/
 </script>

@@ -23,17 +23,13 @@
             <img src="<?= PUBLIC_PATH?>img/slider/info_vigilancia.jpg">
             
             <? break;
-        case 7: ?>
-            <img src="<?= PUBLIC_PATH?>img/slider/info_ingles.jpg">
-            
-            <? break;
         default:
             break;
     endswitch; ?>
 </div>
 <div class="contenedor_detalleprograma">
     <div class="contenedor_secciondetalleprograma">
-        <? if($idPrograma != 7): ?>
+        <? //if($idPrograma != 7): ?>
             <span class="etiqueta_certificadoprograma">CERTIFICADO<br><?= $certificado?></span>
             <span class="etiqueta_tituloinformacionprograma">DESEMPÉÑATE COMO:</span>
             <div class="contenedor_informacionprograma">
@@ -53,8 +49,8 @@
                     </div>
                 <? endforeach; ?>
             </div>
-        <? else: ?>
+        <?/* else: ?>
             <div>Aqui es...</div>
-        <? endif; ?>
+        <? endif; */?>
     </div>
 </div>

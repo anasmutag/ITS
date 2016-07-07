@@ -576,6 +576,9 @@
   }
 }
 @media only screen and (min-width: 769px) and (max-width: 896px) {
+  #dv_informaciongeneral .contenedor_pilar {
+    min-height: 200px;
+  }
   .contenedor_pilares .contenedor_pilar {
     min-height: 240px;
   }
@@ -644,7 +647,7 @@
                     .font(@robotobold;18px);*/
   }
   #dv_programa .contenedor_programa {
-    padding: 25px;
+    padding: 40px 50px;
     border-radius: 0;
     /*padding: 30px;
 
@@ -684,6 +687,9 @@
   #dv_programa .contenedor_imgprograma div .etiqueta_titprog {
     width: 95%;
     font-size: 18px;
+  }
+  #dv_programa .contenedor_programa {
+    padding: 25px;
   }
   #dv_programa .contenedor_detalleprograma {
     padding: 25px;

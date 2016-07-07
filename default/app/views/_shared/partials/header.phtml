@@ -108,12 +108,12 @@
         <div id="prueba" class="dropdown-content">
             <? if($banProgramas > 0): ?>
                 <span id="sp_teclab">Técnico Laborales</span>
-                <span id="sp_inglesniv">Ingles Por Niveles</span>
+                <span id="sp_curso">Cursos, Seminarios y Diplomados</span>
             <? else: ?>
                 <!--a href="<?= PUBLIC_PATH?>program/tecnicos/<?= ($banProgramas>0)?1:0;?>">Técnico Laborales</a>
                 <a href="<?= PUBLIC_PATH?>program/ingles/<?= ($banProgramas>0)?1:0;?>">Ingles Por Niveles</a-->
                 <a href="<?= PUBLIC_PATH?>program/programas/1">Técnico Laborales</a>
-                <a href="<?= PUBLIC_PATH?>program/programas/7">Ingles Por Niveles</a>
+                <a href="<?= PUBLIC_PATH?>program/programas/7">Cursos, Seminarios y Diplomados</a>
             <? endif; ?>
                         
             <!--span>Técnico Laboral en Administración de Gestión del Talento Humano</span>
@@ -181,7 +181,7 @@
                     
                     <? break;
                 case 7: ?>
-                    $('#sp_programa').text('Ingles Por Niveles').removeClass('contendor_navegacionsecdn');
+                    $('#sp_programa').text('Cursos, Seminarios y Diplomados').removeClass('contendor_navegacionsecdn');
                     
                     <? break;
                 default:
@@ -429,10 +429,9 @@
         });
     });
     
-    $('#sp_inglesniv').on('click', function (){
+    $('#sp_curso').on('click', function (){
         $.ajax({
             type: 'POST',
-            //url: window.public_path + "program/ingles/1",
             url: window.public_path + "program/programas/7",
             data: {
                 'tipoProg': 7
@@ -442,14 +441,13 @@
             },
             success: function(data){
                 $('#dv_navegacionsec').removeClass('contendor_navegacionsecdn');
-                //$('#sp_inicio').removeClass('contendor_navegacionsecdn').next('span').removeClass('contendor_navegacionsecdn');
                 $('#sp_inicio').removeClass('contendor_navegacionsecdn');
                 $('#lnk_inicio').next('span').removeClass('contendor_navegacionsecdn');
                 $('#sp_programas').removeClass('contendor_navegacionsecdn').next('span').removeClass('contendor_navegacionsecdn');
                 $('#sp_programateclab').addClass('contendor_navegacionsecdn');
                 $('#sp_programa').removeClass('navsecnoactive').next('span').addClass('contendor_navegacionsecdn');
-                $('#sp_programa').text('Ingles Por Niveles').removeClass('contendor_navegacionsecdn');
-                $('#sp_inglesniv').parent().css({display: 'none'});
+                $('#sp_programa').text('Cursos, Seminarios y Diplomados').removeClass('contendor_navegacionsecdn');
+                $('#sp_curso').parent().css({display: 'none'});
                 $('#sec_contenido').html(data);
             },
             error: function(){
