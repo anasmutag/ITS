@@ -277,8 +277,7 @@
   top: 0;
   left: 0;
   padding: 10px 0;
-  /*color: @blanco;*/
-  color: #fff200;
+  color: #ffffff;
   background: #00529B;
   background: -moz-linear-gradient(top, #00529B 0%, #2989d8 100%, #207cca 100%, #7db9e8 100%);
   background: -webkit-linear-gradient(top, #00529B 0%, #2989d8 100%, #207cca 100%, #7db9e8 100%);

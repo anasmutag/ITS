@@ -155,6 +155,182 @@
   display: block;
   margin: 0 30px 0 0;
 }
+#dv_facilidades {
+  background-color: #ffffff;
+  width: 100%;
+  height: 100px;
+  display: -webkit-box;
+  display: -moz-box;
+  display: -ms-flexbox;
+  display: -ms-box;
+  display: -webkit-flex;
+  display: flex;
+  -webkit-box-pack: space-between;
+  -moz-box-pack: space-between;
+  -webkit-justify-content: space-between;
+  -ms-flex-pack: space-between;
+  justify-content: space-between;
+  -webkit-box-align: center;
+  -moz-box-align: center;
+  -webkit-align-items: center;
+  -ms-flex-align: center;
+  align-items: center;
+  -webkit-align-content: center;
+  -ms-flex-pack: center;
+  align-content: center;
+  -webkit-flex-wrap: wrap;
+  -ms-flex-wrap: wrap;
+  flex-wrap: wrap;
+  -webkit-flex-direction: row;
+  -moz-flex-direction: row;
+  -ms-flex-direction: row;
+  -o-flex-direction: row;
+  flex-direction: row;
+  /*-webkit-box-ordinal-group: 2;
+    -moz-box-ordinal-group: 2;
+    -ms-flex-order: 2;
+    -webkit-order: 2;
+    order: 2;*/
+}
+#dv_facilidades .contenedor_facilidades {
+  color: #2d0c67;
+  text-shadow: -2px -2px 0 #ffffff, 2px -2px 0 #ffffff, -2px 2px 0 #ffffff, 2px 2px 0 #ffffff;
+  letter-spacing: 2px;
+  font-family: 'Roboto-Black';
+  font-size: 18px;
+}
+#dv_facilidades .contenedor_facilidades:nth-of-type(1) {
+  background: url(../img/horarios.jpg) no-repeat center;
+  background-size: cover;
+  width: 60%;
+  height: 100%;
+  display: -webkit-box;
+  display: -moz-box;
+  display: -ms-flexbox;
+  display: -ms-box;
+  display: -webkit-flex;
+  display: flex;
+  -webkit-box-pack: center;
+  -moz-box-pack: center;
+  -webkit-justify-content: center;
+  justify-content: center;
+  -webkit-box-align: center;
+  -moz-box-align: center;
+  -webkit-align-items: center;
+  -ms-flex-align: center;
+  align-items: center;
+  -webkit-align-content: center;
+  -ms-flex-pack: center;
+  align-content: center;
+  -webkit-flex-wrap: wrap;
+  -ms-flex-wrap: wrap;
+  flex-wrap: wrap;
+  -webkit-flex-direction: column;
+  -moz-flex-direction: column;
+  -ms-flex-direction: column;
+  -o-flex-direction: column;
+  flex-direction: column;
+  /*-webkit-box-ordinal-group: 2;
+    -moz-box-ordinal-group: 2;
+    -ms-flex-order: 2;
+    -webkit-order: 2;
+    order: 2;*/
+}
+#dv_facilidades .contenedor_facilidades:nth-of-type(1) span {
+  width: 50%;
+  height: 33%;
+  display: -webkit-box;
+  display: -moz-box;
+  display: -ms-flexbox;
+  display: -ms-box;
+  display: -webkit-flex;
+  display: flex;
+  -webkit-box-pack: center;
+  -moz-box-pack: center;
+  -webkit-justify-content: center;
+  justify-content: center;
+  -webkit-box-align: center;
+  -moz-box-align: center;
+  -webkit-align-items: center;
+  -ms-flex-align: center;
+  align-items: center;
+  -webkit-align-content: center;
+  -ms-flex-pack: center;
+  align-content: center;
+  -webkit-flex-wrap: wrap;
+  -ms-flex-wrap: wrap;
+  flex-wrap: wrap;
+  -webkit-flex-direction: row;
+  -moz-flex-direction: row;
+  -ms-flex-direction: row;
+  -o-flex-direction: row;
+  flex-direction: row;
+  /*-webkit-box-ordinal-group: 2;
+    -moz-box-ordinal-group: 2;
+    -ms-flex-order: 2;
+    -webkit-order: 2;
+    order: 2;*/
+}
+#dv_facilidades .contenedor_facilidades:nth-of-type(1) span:nth-of-type(1) {
+  height: 100%;
+}
+#dv_facilidades .contenedor_facilidades:nth-of-type(1) span:nth-of-type(2) {
+  -webkit-box-align: flex-end;
+  -moz-box-align: flex-end;
+  -webkit-align-items: flex-end;
+  -ms-flex-align: flex-end;
+  align-items: flex-end;
+  -webkit-align-content: flex-end;
+  -ms-flex-pack: flex-end;
+  align-content: flex-end;
+}
+#dv_facilidades .contenedor_facilidades:nth-of-type(1) span:nth-last-of-type(1) {
+  -webkit-box-align: flex-start;
+  -moz-box-align: flex-start;
+  -webkit-align-items: flex-start;
+  -ms-flex-align: flex-start;
+  align-items: flex-start;
+  -webkit-align-content: flex-start;
+  -ms-flex-pack: flex-start;
+  align-content: flex-start;
+}
+#dv_facilidades .contenedor_facilidades:nth-of-type(2) {
+  background: url(../img/facilidadpago.jpg) no-repeat center;
+  background-size: cover;
+  width: 40%;
+  height: 100%;
+  display: -webkit-box;
+  display: -moz-box;
+  display: -ms-flexbox;
+  display: -ms-box;
+  display: -webkit-flex;
+  display: flex;
+  -webkit-box-pack: center;
+  -moz-box-pack: center;
+  -webkit-justify-content: center;
+  justify-content: center;
+  -webkit-box-align: center;
+  -moz-box-align: center;
+  -webkit-align-items: center;
+  -ms-flex-align: center;
+  align-items: center;
+  -webkit-align-content: center;
+  -ms-flex-pack: center;
+  align-content: center;
+  -webkit-flex-wrap: wrap;
+  -ms-flex-wrap: wrap;
+  flex-wrap: wrap;
+  -webkit-flex-direction: row;
+  -moz-flex-direction: row;
+  -ms-flex-direction: row;
+  -o-flex-direction: row;
+  flex-direction: row;
+  /*-webkit-box-ordinal-group: 2;
+    -moz-box-ordinal-group: 2;
+    -ms-flex-order: 2;
+    -webkit-order: 2;
+    order: 2;*/
+}
 #dv_contenido {
   padding: 25px 30px 35px 30px;
   width: 100%;
@@ -162,6 +338,13 @@
   /*div {
         .flexBox;
         .borderRadius(8px);
+    }*/
+  /*#dv_facilidades {
+        margin: 0 0 25px 0;
+        background-color: @blanco;
+        
+        .dimensions;
+        .flexBox;
     }*/
   /*#dv_pilares {
         justify-content: space-between;
@@ -302,6 +485,13 @@
 }
 #dv_informaciongeneral .contenedor_pilar div .etiqueta_objetivoestrategico:nth-last-child(1) {
   margin-bottom: 0;
+}
+#dv_informaciongeneral .contenedor_pilar:nth-of-type(1),
+#dv_informaciongeneral .contenedor_pilar:nth-of-type(2) {
+  min-height: 100px;
+  /*div {
+                padding: 20px;
+            }*/
 }
 #dv_informaciongeneral .contenedor_pilar:nth-last-of-type(1) {
   min-height: 250px;

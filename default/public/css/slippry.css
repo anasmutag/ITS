@@ -282,10 +282,10 @@
     background-color: rgba(0, 0, 0, 0.54);
     color: #fff;*/
     width: 100%;
-    color: #fff200;
+    color: #2d0c67;
     padding: 20px 0;
     text-align: right;
-    text-shadow: -2px -2px 0 #00529B, 2px -2px 0 #00529B, -2px 2px 0 #00529B, 2px 2px 0 #00529B;
+    text-shadow: -2px -2px 0 #ffffff, 2px -2px 0 #ffffff, -2px 2px 0 #ffffff, 2px 2px 0 #ffffff;
     letter-spacing: 3px;
     font-family: 'Roboto-Black';
     font-size: 28px;

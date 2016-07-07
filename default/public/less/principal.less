@@ -8,6 +8,64 @@
     display: block;
     margin: 0 30px 0 0;
 }
+#dv_facilidades {
+    background-color: @blanco;
+
+    .dimensions(100%;100px);
+    .flexBox(@justify-content:space-between);
+    
+    .contenedor_facilidades {
+        color: @its;
+        text-shadow: -2px -2px 0 @blanco, 2px -2px 0 @blanco, -2px 2px 0 @blanco, 2px 2px 0 @blanco;
+        letter-spacing: 2px;
+        
+        .font(@robotoblack; 18px);
+        
+        &:nth-of-type(1) {
+            background: url(../img/horarios.jpg) no-repeat center;
+            background-size: cover;
+            
+            .dimensions(60%;100%);
+            .flexBox(@flex-direction:column);
+            
+            span {
+                .dimensions(50%;33%);
+                .flexBox;
+                
+                &:nth-of-type(1) {
+                    height: 100%;
+                }
+                &:nth-of-type(2) {
+                    -webkit-box-align: flex-end;
+                    -moz-box-align: flex-end;
+                    -webkit-align-items: flex-end;
+                    -ms-flex-align: flex-end;
+                    align-items: flex-end;
+                    -webkit-align-content: flex-end;
+                    -ms-flex-pack: flex-end;
+                    align-content: flex-end;
+                }
+                &:nth-last-of-type(1) {
+                    -webkit-box-align: flex-start;
+                    -moz-box-align: flex-start;
+                    -webkit-align-items: flex-start;
+                    -ms-flex-align: flex-start;
+                    align-items: flex-start;
+                    -webkit-align-content: flex-start;
+                    -ms-flex-pack: flex-start;
+                    align-content: flex-start;
+                }
+            }
+        }
+        &:nth-of-type(2) {
+            background: url(../img/facilidadpago.jpg) no-repeat center;
+            background-size: cover;
+            
+            .dimensions(40%;100%);
+            .flexBox;
+        }
+    }
+}
 #dv_contenido {
     padding: 25px 30px 35px 30px;
     
@@ -16,6 +74,13 @@
     /*div {
         .flexBox;
         .borderRadius(8px);
+    }*/
+    /*#dv_facilidades {
+        margin: 0 0 25px 0;
+        background-color: @blanco;
+        
+        .dimensions;
+        .flexBox;
     }*/
     #dv_texto {
         margin: 0 0 25px 0;
@@ -92,6 +157,13 @@
             margin-bottom: 0;
         }
         
+        &:nth-of-type(1), &:nth-of-type(2) {
+            min-height: 100px;
+            
+            /*div {
+                padding: 20px;
+            }*/
+        }
         &:nth-last-of-type(1) {
             min-height: 250px;
         }

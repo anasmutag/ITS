@@ -465,6 +465,9 @@
     width: 100%;
     margin: 0;
   }
+  #dv_informaciongeneral .contenedor_pilar div .etiqueta_objetivoestrategico {
+    margin: 20px 0;
+  }
   #dv_institucion {
     padding: 0;
   }
