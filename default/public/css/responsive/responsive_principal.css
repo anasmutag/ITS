@@ -148,9 +148,6 @@
     background-position: @bpx @bpy;
 }*/
 @media only screen and (max-width: 768px) {
-  .etiqueta_titprogslider {
-    margin: 0;
-  }
   #dv_facilidades {
     height: 90px;
   }
@@ -269,7 +266,6 @@
     height: 22px;
   }
   .sy-caption-wrap .sy-caption {
-    text-align: center;
     font-size: 24px;
   }
 }
@@ -304,6 +300,7 @@
     padding-top: 165px;
   }
   .sy-caption-wrap .sy-caption {
+    padding: 20px 10px;
     letter-spacing: 0;
     font-size: 18px;
   }

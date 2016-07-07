@@ -280,13 +280,13 @@
     /*position: relative;
     left: -50%;
     background-color: rgba(0, 0, 0, 0.54);
-    color: #fff;*/
-    width: 100%;
-    color: #2d0c67;
-    padding: 20px 0;
-    text-align: right;
+    color: #fff;
+    width: 100%;*/
+    padding: 20px 30px;
+    text-align: center;
     text-shadow: -2px -2px 0 #ffffff, 2px -2px 0 #ffffff, -2px 2px 0 #ffffff, 2px 2px 0 #ffffff;
     letter-spacing: 3px;
+    color: #2d0c67;
     font-family: 'Roboto-Black';
     font-size: 28px;
     /*-moz-border-radius: 1.2em;
