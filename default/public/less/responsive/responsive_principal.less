@@ -49,7 +49,7 @@
             }
         }
     }
-    #dv_institucion {
+    #dv_institucion, #dv_contactenos {
         padding: 0;
     }
     #dv_visitanos {
@@ -128,7 +128,7 @@
         padding-top: 260px;
     }
     .sy-pager li {
-        .dimensions(22px;22px);
+        .dimensions(18px;18px);
     }
     .sy-caption-wrap .sy-caption {
         font-size: 24px;
@@ -157,6 +157,19 @@
             }
         }
     }
+    .contenedor_contactenos {
+        .contenedor_pilar {
+            .contenedor_infocontactenos {
+                .contenedor_seccioninfocontactenos {
+                    &:nth-last-of-type(1) {
+                        label {
+                            font-size: 15px;
+                        }
+                    }
+                }
+            }
+        }
+    }
     .sy-slides-wrap {
         height: 165px;
     }
@@ -173,9 +186,12 @@
         padding-top: 165px;
     }
     .sy-caption-wrap .sy-caption {
-        padding: 20px 10px;
+        padding: 38px 10px;
         letter-spacing: 0;
         font-size: 18px;
+    }
+    .sy-pager {
+        margin: 10px 0;
     }
 }
 
@@ -187,9 +203,27 @@
             min-height: 200px;
         }
     }
+    #dv_contactenos {
+        .contenedor_pilar {
+            width: 45%;
+        }
+    }
     .contenedor_pilares {
         .contenedor_pilar {
             min-height: 240px;
+        }
+    }
+    .contenedor_contactenos {
+        .contenedor_pilar {
+            .contenedor_infocontactenos {
+                .contenedor_seccioninfocontactenos {
+                    &:nth-last-of-type(1) {
+                        label {
+                            font-size: 15px;
+                        }
+                    }
+                }
+            }
         }
     }
     .sy-slides-wrap {

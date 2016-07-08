@@ -305,10 +305,10 @@
   footer #dv_enlacesinteres .contenedor_enlacesinteres:nth-child(2) #dv_imgenlacesinteres {
     padding: 0 5%;
   }
-  footer #dv_enlacesinteres .contenedor_enlacesinteres:nth-child(2) #dv_imgenlacesinteres .contenedor_imgenlacesinteres:nth-of-type(3),
-  footer #dv_enlacesinteres .contenedor_enlacesinteres:nth-child(2) #dv_imgenlacesinteres .contenedor_imgenlacesinteres:nth-of-type(4),
-  footer #dv_enlacesinteres .contenedor_enlacesinteres:nth-child(2) #dv_imgenlacesinteres .contenedor_imgenlacesinteres:nth-of-type(5),
-  footer #dv_enlacesinteres .contenedor_enlacesinteres:nth-child(2) #dv_imgenlacesinteres .contenedor_imgenlacesinteres:nth-of-type(6) {
+  footer #dv_enlacesinteres .contenedor_enlacesinteres:nth-child(2) #dv_imgenlacesinteres .contenedor_imgenlacesinteres:nth-child(3),
+  footer #dv_enlacesinteres .contenedor_enlacesinteres:nth-child(2) #dv_imgenlacesinteres .contenedor_imgenlacesinteres:nth-child(4),
+  footer #dv_enlacesinteres .contenedor_enlacesinteres:nth-child(2) #dv_imgenlacesinteres .contenedor_imgenlacesinteres:nth-child(5),
+  footer #dv_enlacesinteres .contenedor_enlacesinteres:nth-child(2) #dv_imgenlacesinteres .contenedor_imgenlacesinteres:nth-child(6) {
     margin-bottom: 15px;
   }
   footer #dv_informacion_instituto #dv_contenido_informacion_instituto {

@@ -2,6 +2,8 @@
 @import "funciones.less";
 
 #dv_slider {
+    position: relative;
+    
     .dimensions;
 }
 #dv_facilidades {
@@ -64,7 +66,7 @@
     }
 }
 #dv_contenido {
-    padding: 25px 30px 35px 30px;
+    padding: 35px 30px;
     
     .dimensions;
     
@@ -166,7 +168,7 @@
         }
     }
 }
-#dv_institucion {
+#dv_institucion, #dv_contactenos {
     padding: 25px 30px;
     
     .dimensions;
@@ -324,6 +326,49 @@
     
     .contenedor_pilar {
         width: 40%;
+    }
+}
+.contenedor_contactenos {
+    justify-content: space-around;
+    
+    .contenedor_pilar {
+        width: 40%;
+        
+        .contenedor_infocontactenos {
+            .dimensions;
+            .flexBox;
+            
+            .contenedor_seccioninfocontactenos {
+                margin: 0 0 10px 0;
+                padding: 0;
+                
+                .dimensions;
+                .flexBox(@align-items:flex-start;@align-content:flex-start);
+                
+                .etiqueta_iconinfocontactenos {
+                    .flexBox;
+                    .dimensions(20px;20px);
+                }
+                div {
+                    margin: 0 0 0 5px;
+                    padding: 0;
+                    
+                    .flexBox(@align-items:flex-start;@align-content:flex-start;@flex-direction:column);
+                    
+                    label {
+                        &:nth-of-type(1) {
+                            line-height: 1.4;
+                        }
+                        &:nth-of-type(2) {
+                            .font(@robotoregular;14px);
+                        }
+                    }
+                }
+                &:nth-last-of-type(1) {
+                    margin: 0;
+                }
+            }
+        }
     }
 }
 .displaynone {

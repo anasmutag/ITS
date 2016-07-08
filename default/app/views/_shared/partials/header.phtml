@@ -53,13 +53,17 @@
                 <? endif; ?>
             </div>
         </div>
-        <a class="contenedor_opcionmenu" href="#">
+        <!--a class="contenedor_opcionmenu" href="#">
             <span class="etiqueta_iconopcionmenu icon_campus"></span>
             <span class="etiqueta_tituloopcionmenu">Campus Virtual</span>
-        </a>
-        <a class="contenedor_opcionmenu" href="<?= PUBLIC_PATH?>registration/preinscripcion/">
+        </a-->
+        <!--a class="contenedor_opcionmenu" href="<?= PUBLIC_PATH?>registration/preinscripcion/">
             <span class="etiqueta_iconopcionmenu icon_contact"></span>
             <span class="etiqueta_tituloopcionmenu">Preinscripción</span>
+        </a-->
+        <a class="contenedor_opcionmenu" href="<?= PUBLIC_PATH?>index/contactenos/">
+            <span class="etiqueta_iconopcionmenu icon_contact"></span>
+            <span class="etiqueta_tituloopcionmenu">Contáctenos</span>
         </a>
         <div id="dv_noopcionmenu"><div></div></div>
     </div>
@@ -80,7 +84,7 @@
     <span id="sp_menu" class="icon_menu"></span>
     <img src="<?= PUBLIC_PATH?>img/logo.png" alt="Logo Instituto Técnico Surcolombiano">
 </div>
-<div id="dv_instituto">INSTITUTO TÉCNICO SURCOOMBIANO</div>
+<div id="dv_instituto"><h1>INSTITUTO TÉCNICO SURCOOMBIANO</h1></div>
 <div id="dv_navegacion">
     <div class="btn">
         <a class="dropbtn" href="<?= PUBLIC_PATH?>" style="position: relative;">Inicio</a>
@@ -123,11 +127,12 @@
             <span>Técnico Laboral en Vigilancia, Seguridad y Control de Instalaciones</span-->
         </div>
     </div>
-    <div class="btn">
+    <!--div class="btn">
         <a class="dropbtn" href="#" style="position: relative;">Campus Virtual</a>
-    </div>
+    </div-->
     <div class="btn">
-        <a class="dropbtn" href="<?= PUBLIC_PATH?>registration/preinscripcion/" style="position: relative;">Preinscripción</a>
+        <!--a class="dropbtn" href="<?= PUBLIC_PATH?>registration/preinscripcion/" style="position: relative;">Preinscripción</a-->
+        <a class="dropbtn" href="<?= PUBLIC_PATH?>index/contactenos/" style="position: relative;">Contáctenos</a>
     </div>
 </div>
 <div id="dv_navegacionsec" class="contenedor_navegacionsec contendor_navegacionsecdn">
@@ -167,8 +172,8 @@
                 $('#sp_institucion').removeClass('etiqueta_institucion');
                 $('#sp_institucion').removeClass('navsecnoactive');
                 $('#sp_institucion').removeClass('contendor_navegacionsecdn').addClass('navsecactive');
-            <? endif; ?>
-        <? elseif($banProgramas > 0): ?>
+            <? endif;
+        elseif($banProgramas > 0): ?>
             $('#dv_navegacionsec').removeClass('contendor_navegacionsecdn');
             //$('#sp_inicio').removeClass('contendor_navegacionsecdn').next('span').removeClass('contendor_navegacionsecdn');
             $('#sp_inicio').removeClass('contendor_navegacionsecdn');
@@ -186,7 +191,15 @@
                     <? break;
                 default:
                     break;
-            endswitch;?>
+            endswitch;
+        elseif($banContactenos > 0): ?>
+            $('#dv_navegacionsec').removeClass('contendor_navegacionsecdn');
+            $('#sp_inicio').removeClass('contendor_navegacionsecdn');
+            $('#lnk_inicio').next('span').removeClass('contendor_navegacionsecdn');
+            $('#sp_institucion').addClass('etiqueta_institucion');
+            $('#sp_institucion').removeClass('navsecactive').addClass('navsecnoactive');
+            $('#sp_institucion').removeClass('contendor_navegacionsecdn').next('span').removeClass('contendor_navegacionsecdn');
+            $('#sp_institucionopc').text('Contáctenos').removeClass('contendor_navegacionsecdn');
         <? endif; ?>
     });
     
@@ -227,7 +240,12 @@
                 $('#sp_institucion').removeClass('contendor_navegacionsecdn').next('span').addClass('contendor_navegacionsecdn');
                 $('#sp_institucionopc').addClass('contendor_navegacionsecdn');
                 $('#sp_institucionmv').parent().css({display: 'none'});
-                $('#sec_contenido').html(data);
+                
+                <? if($banContactenos > 0): ?>
+                    window.location = "<?= PUBLIC_PATH?>index/institucion/3"
+                <? else: ?>
+                    $('#sec_contenido').html(data);
+                <? endif; ?>
             },
             error: function(){
                 console.log('Error');

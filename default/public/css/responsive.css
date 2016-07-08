@@ -305,10 +305,10 @@
   footer #dv_enlacesinteres .contenedor_enlacesinteres:nth-child(2) #dv_imgenlacesinteres {
     padding: 0 5%;
   }
-  footer #dv_enlacesinteres .contenedor_enlacesinteres:nth-child(2) #dv_imgenlacesinteres .contenedor_imgenlacesinteres:nth-of-type(3),
-  footer #dv_enlacesinteres .contenedor_enlacesinteres:nth-child(2) #dv_imgenlacesinteres .contenedor_imgenlacesinteres:nth-of-type(4),
-  footer #dv_enlacesinteres .contenedor_enlacesinteres:nth-child(2) #dv_imgenlacesinteres .contenedor_imgenlacesinteres:nth-of-type(5),
-  footer #dv_enlacesinteres .contenedor_enlacesinteres:nth-child(2) #dv_imgenlacesinteres .contenedor_imgenlacesinteres:nth-of-type(6) {
+  footer #dv_enlacesinteres .contenedor_enlacesinteres:nth-child(2) #dv_imgenlacesinteres .contenedor_imgenlacesinteres:nth-child(3),
+  footer #dv_enlacesinteres .contenedor_enlacesinteres:nth-child(2) #dv_imgenlacesinteres .contenedor_imgenlacesinteres:nth-child(4),
+  footer #dv_enlacesinteres .contenedor_enlacesinteres:nth-child(2) #dv_imgenlacesinteres .contenedor_imgenlacesinteres:nth-child(5),
+  footer #dv_enlacesinteres .contenedor_enlacesinteres:nth-child(2) #dv_imgenlacesinteres .contenedor_imgenlacesinteres:nth-child(6) {
     margin-bottom: 15px;
   }
   footer #dv_informacion_instituto #dv_contenido_informacion_instituto {
@@ -487,7 +487,8 @@
   #dv_informaciongeneral .contenedor_pilar div .etiqueta_objetivoestrategico {
     margin: 20px 0;
   }
-  #dv_institucion {
+  #dv_institucion,
+  #dv_contactenos {
     padding: 0;
   }
   #dv_visitanos {
@@ -562,8 +563,8 @@
     padding-top: 260px;
   }
   .sy-pager li {
-    width: 22px;
-    height: 22px;
+    width: 18px;
+    height: 18px;
   }
   .sy-caption-wrap .sy-caption {
     font-size: 24px;
@@ -584,6 +585,9 @@
   #dv_visitanos #dv_contenidomapa #dv_seccionmapa {
     height: 300px;
   }
+  .contenedor_contactenos .contenedor_pilar .contenedor_infocontactenos .contenedor_seccioninfocontactenos:nth-last-of-type(1) label {
+    font-size: 15px;
+  }
   .sy-slides-wrap {
     height: 165px;
   }
@@ -600,17 +604,26 @@
     padding-top: 165px;
   }
   .sy-caption-wrap .sy-caption {
-    padding: 20px 10px;
+    padding: 38px 10px;
     letter-spacing: 0;
     font-size: 18px;
+  }
+  .sy-pager {
+    margin: 10px 0;
   }
 }
 @media only screen and (min-width: 769px) and (max-width: 896px) {
   #dv_informaciongeneral .contenedor_pilar {
     min-height: 200px;
   }
+  #dv_contactenos .contenedor_pilar {
+    width: 45%;
+  }
   .contenedor_pilares .contenedor_pilar {
     min-height: 240px;
+  }
+  .contenedor_contactenos .contenedor_pilar .contenedor_infocontactenos .contenedor_seccioninfocontactenos:nth-last-of-type(1) label {
+    font-size: 15px;
   }
   .sy-slides-wrap {
     height: 300px;

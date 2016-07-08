@@ -31,11 +31,12 @@
     <? (isset($programas))?$banProgramas = $programas:$banProgramas = 0;
     (isset($tipoProg))?$tipoPrograma = $tipoProg:$tipoPrograma = 0;
     (isset($institucion))?$banInstitucion = $institucion:$banInstitucion = 0;
-    (isset($tipoIns))?$tipoInstitucion = $tipoIns:$tipoInstitucion = 0; ?>
+    (isset($tipoIns))?$tipoInstitucion = $tipoIns:$tipoInstitucion = 0;
+    (isset($contactenos))?$banContactenos = $contactenos:$banContactenos = 0; ?>
 </head>
 <body>
     <header>
-        <? View::partial("header", false, array('banProgramas'=>$banProgramas, 'tipoPrograma'=>$tipoPrograma, 'banInstitucion'=>$banInstitucion, 'tipoInstitucion'=>$tipoInstitucion)) ?>
+        <? View::partial("header", false, array('banProgramas'=>$banProgramas, 'tipoPrograma'=>$tipoPrograma, 'banInstitucion'=>$banInstitucion, 'tipoInstitucion'=>$tipoInstitucion, 'banContactenos'=>$banContactenos)) ?>
     </header>
     <section id="sec_contenido">
         <? View::content(); ?>
@@ -47,8 +48,9 @@
     <!--script type="text/javascript">
         //alert(<?= (isset($programas))?$programas:0;?>);
         //alert(<?= $banProgramas;?>);
-        console.log('banProgramas: ' + <?= $banProgramas;?>);
-        console.log('banInstitucion: ' + <?= $banInstitucion;?>);
+        //console.log('banProgramas: ' + <?= $banProgramas;?>);
+        //console.log('banInstitucion: ' + <?= $banInstitucion;?>);
+        //console.log('banContactenos: ' + <?= $banContactenos;?>);
     </script-->
 </body>
 </html>

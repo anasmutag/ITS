@@ -1225,25 +1225,25 @@ footer #dv_enlacesinteres .contenedor_enlacesinteres:nth-child(2) #dv_imgenlaces
   /*min-height: 50px;*/
   max-height: 100%;
 }
-footer #dv_enlacesinteres .contenedor_enlacesinteres:nth-child(2) #dv_imgenlacesinteres .contenedor_imgenlacesinteres:nth-of-type(1),
-footer #dv_enlacesinteres .contenedor_enlacesinteres:nth-child(2) #dv_imgenlacesinteres .contenedor_imgenlacesinteres:nth-of-type(2) {
+footer #dv_enlacesinteres .contenedor_enlacesinteres:nth-child(2) #dv_imgenlacesinteres .contenedor_imgenlacesinteres:nth-child(1),
+footer #dv_enlacesinteres .contenedor_enlacesinteres:nth-child(2) #dv_imgenlacesinteres .contenedor_imgenlacesinteres:nth-child(2) {
   margin: 0 12.5px 15px 12.5px;
   width: 250px;
   height: auto;
 }
-footer #dv_enlacesinteres .contenedor_enlacesinteres:nth-child(2) #dv_imgenlacesinteres .contenedor_imgenlacesinteres:nth-of-type(3) {
+footer #dv_enlacesinteres .contenedor_enlacesinteres:nth-child(2) #dv_imgenlacesinteres .contenedor_imgenlacesinteres:nth-child(3) {
   width: 200px;
   height: auto;
 }
-footer #dv_enlacesinteres .contenedor_enlacesinteres:nth-child(2) #dv_imgenlacesinteres .contenedor_imgenlacesinteres:nth-of-type(4) {
+footer #dv_enlacesinteres .contenedor_enlacesinteres:nth-child(2) #dv_imgenlacesinteres .contenedor_imgenlacesinteres:nth-child(4) {
   width: 80px;
   height: auto;
 }
-footer #dv_enlacesinteres .contenedor_enlacesinteres:nth-child(2) #dv_imgenlacesinteres .contenedor_imgenlacesinteres:nth-of-type(5) {
+footer #dv_enlacesinteres .contenedor_enlacesinteres:nth-child(2) #dv_imgenlacesinteres .contenedor_imgenlacesinteres:nth-child(5) {
   width: 50px;
   height: auto;
 }
-footer #dv_enlacesinteres .contenedor_enlacesinteres:nth-child(2) #dv_imgenlacesinteres .contenedor_imgenlacesinteres:nth-of-type(6) {
+footer #dv_enlacesinteres .contenedor_enlacesinteres:nth-child(2) #dv_imgenlacesinteres .contenedor_imgenlacesinteres:nth-child(6) {
   width: 125px;
   height: auto;
 }
@@ -1797,12 +1797,26 @@ header {
   background-size: 35px;
   cursor: pointer;
 }
-/*.icon_location {
-    mask: url(../../ITS/img/icon/ic_location_on_black_48px.svg) no-repeat 50% 50%;
-    -webkit-mask: url(../../ITS/img/icon/ic_location_on_black_48px.svg) no-repeat 50% 50%;
-    mask-size: cover;
-    -webkit-mask-size: cover;
-}*/
+.icon_location {
+  background: url("../../ITS/img/icon/ic_location_on_48dp_2x.png") no-repeat center;
+  background-size: cover;
+  cursor: default;
+}
+.icon_phone {
+  background: url("../../ITS/img/icon/ic_phone_48dp_2x.png") no-repeat center;
+  background-size: cover;
+  cursor: default;
+}
+.icon_cellphone {
+  background: url("../../ITS/img/icon/ic_phone_android_48dp_2x.png") no-repeat center;
+  background-size: cover;
+  cursor: default;
+}
+.icon_email {
+  background: url("../../ITS/img/icon/ic_email_48dp_2x.png") no-repeat center;
+  background-size: cover;
+  cursor: default;
+}
 .icon_home_white {
   background: url("../../ITS/img/icon/ic_home_white_48dp_2x.png") no-repeat center;
   background-size: 40px;

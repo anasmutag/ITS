@@ -44,6 +44,10 @@ class IndexController extends AppController {
         }*/
     }
     
+    public function contactenos() {
+        $this->contactenos = 1;
+    }
+    
     public function map() {
         View::template(NULL);
         
