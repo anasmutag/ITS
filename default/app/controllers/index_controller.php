@@ -20,28 +20,14 @@ class IndexController extends AppController {
         if($institucion > 0){
             View::template(NULL);
         }
-        
-        //View::template(NULL);
     }
     
     public function informacion() {
         View::template(NULL);
-        
-        /*$this->institucion = 1;
-        
-        if($banInformacion > 0){
-            View::template(NULL);
-        }*/
     }
     
     public function visitanos() {
         View::template(NULL);
-        
-        /*$this->institucion = 1;
-        
-        if($banVisitanos > 0){
-            View::template(NULL);
-        }*/
     }
     
     public function contactenos() {

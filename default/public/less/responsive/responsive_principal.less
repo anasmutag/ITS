@@ -72,11 +72,6 @@
                     border-radius: 0;
                 }
             }
-            /*.etiqueta_localizacion:nth-of-type(1) {
-                padding: 12.5px 0;
-                border-radius: 0;
-                font-size: 20px;
-            }*/
             .etiqueta_localizacion:nth-of-type(1) {
                 padding: 20px 0 0 0;
                 font-size: 18px;
@@ -115,15 +110,6 @@
     .sy-slides-wrap {
         height: 260px;
     }
-    /*.sy-slide {
-        height: 100%;
-    }
-    .sy-slide > a {
-        height: 100%;
-    }
-    .sy-slide > a > img {
-        height: 100%;
-    }*/
     .sy-filler {
         padding-top: 260px;
     }
@@ -157,31 +143,9 @@
             }
         }
     }
-    .contenedor_contactenos {
-        .contenedor_pilar {
-            .contenedor_infocontactenos {
-                .contenedor_seccioninfocontactenos {
-                    &:nth-last-of-type(1) {
-                        label {
-                            font-size: 15px;
-                        }
-                    }
-                }
-            }
-        }
-    }
     .sy-slides-wrap {
         height: 165px;
     }
-    /*.sy-slide {
-        height: 100%;
-    }
-    .sy-slide > a {
-        height: 100%;
-    }
-    .sy-slide > a > img {
-        height: 100%;
-    }*/
     .sy-filler {
         padding-top: 165px;
     }
@@ -195,7 +159,13 @@
     }
 }
 
-@media only screen and (min-width: 769px) and (max-width: 1024px) {}
+@media only screen and (min-width: 769px) and (max-width: 1024px) {
+    .contenedor_contactenos {
+        .contenedor_pilar {
+            min-height: 180px;
+        }
+    }
+}
 
 @media only screen and (min-width: 769px) and (max-width: 896px) {
     #dv_informaciongeneral {
@@ -215,29 +185,12 @@
     }
     .contenedor_contactenos {
         .contenedor_pilar {
-            .contenedor_infocontactenos {
-                .contenedor_seccioninfocontactenos {
-                    &:nth-last-of-type(1) {
-                        label {
-                            font-size: 15px;
-                        }
-                    }
-                }
-            }
+            min-height: 180px;
         }
     }
     .sy-slides-wrap {
         height: 300px;
     }
-    /*.sy-slide {
-        height: 100%;
-    }
-    .sy-slide > a {
-        height: 100%;
-    }
-    .sy-slide > a > img {
-        height: 100%;
-    }*/
     .sy-filler {
         padding-top: 300px;
     }

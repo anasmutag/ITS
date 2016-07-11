@@ -10,7 +10,6 @@
             <span class="etiqueta_nomprograma" data-programa="5">En Sistemas</span>
             <span class="etiqueta_nomprograma" data-programa="6">En Vigilancia, Seguridad y Control de Instalaciones</span>
             <span id="sp_cursos" class="etiqueta_tipprograma" data-programa="8">Cursos, Seminarios y Diplomados</span>
-            <!--span id="sp_ingles" class="etiqueta_tipprograma" data-programa="7">Ingles Por Niveles</span-->
         </div>
     </div>
 </div>
@@ -26,7 +25,6 @@
 
                 },
                 success: function(data){
-                    //$('#sec_contenido').html(data);
                     $('#dv_programa').html(data);
                 },
                 error: function(){
@@ -46,7 +44,6 @@
 
                 },
                 success: function(data){
-                    //$('#sec_contenido').html(data);
                     $('#dv_programa').html(data);
                 },
                 error: function(){
@@ -67,7 +64,6 @@
             nomPrograma = str.replace("En ", ""),
             res = str.replace("En ", "en "),
             programa = "Técnico Laboral " + res;
-            //nomPrograma = "Técnico Laboral " + $(this).text();
         
         $.ajax({
             type: 'POST',
@@ -85,7 +81,6 @@
                 $('#sp_programas').removeClass('contendor_navegacionsecdn').next('span').removeClass('contendor_navegacionsecdn');
                 $('#sp_programa').text('Técnico Laborales').addClass('navsecnoactive').removeClass('contendor_navegacionsecdn');
                 $('#sp_programa').next('span').removeClass('contendor_navegacionsecdn');
-                //$('#sp_programateclab').text(nomPrograma).removeClass('contendor_navegacionsecdn');
                 $('#sp_programateclab').text(nomPrograma).removeClass('contendor_navegacionsecdn');
                 $('#dv_programa').html(data);
             },
@@ -120,34 +115,4 @@
 
         });
     });
-    
-    /*$('#sp_ingles').on('click', function (){
-        var idPrograma = $(this).data('programa'),
-            nomPrograma = $(this).text();
-        
-        $.ajax({
-            type: 'POST',
-            url: window.public_path + "program/detallePrograma/",
-            data: {
-                'idPrograma': idPrograma,
-                'nomPrograma': nomPrograma
-            },
-            beforeSend: function(){
-
-            },
-            success: function(data){
-                $('#dv_navegacionsec').removeClass('contendor_navegacionsecdn');
-                $('#sp_inicio').removeClass('contendor_navegacionsecdn').next('span').removeClass('contendor_navegacionsecdn');
-                $('#sp_programas').removeClass('contendor_navegacionsecdn').next('span').removeClass('contendor_navegacionsecdn');
-                $('#sp_programa').addClass('contendor_navegacionsecdn').next('span').addClass('contendor_navegacionsecdn');
-                $('#sp_programateclab').text(nomPrograma).removeClass('contendor_navegacionsecdn');
-                $('#dv_programa').html(data);
-            },
-            error: function(){
-                console.log('Error');
-            }
-        }).always(function(){
-
-        });
-    });*/
 </script>

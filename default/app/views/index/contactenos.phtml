@@ -21,12 +21,6 @@
                     <label>317 862 6794</label>
                 </div>
             </div>
-            <div class="contenedor_seccioninfocontactenos">
-                <label class="icon_email etiqueta_iconinfocontactenos"></label>
-                <div>
-                    <label>itsurcolombiano.director@gmail.com</label>
-                </div>
-            </div>
         </div>
     </div>
     <div id="dv_sedeipiales" class="contenedor_pilar">
@@ -45,12 +39,46 @@
                     <label>725 1106</label>
                 </div>
             </div>
-            <div class="contenedor_seccioninfocontactenos">
-                <label class="icon_email etiqueta_iconinfocontactenos"></label>
-                <div>
-                    <label>itsurcolombiano.director@gmail.com</label>
-                </div>
-            </div>
         </div>
     </div>
+    <div id="dv_emailcontactenos" class="contenedor_pilar">
+        <span>SOLICITA INFORMACIÓN</span>
+        <div id="dv_diremailcontactenos">
+            <label class="icon_email"></label>
+            <label>itsurcolombiano.director@gmail.com</label>
+        </div>
+        <form id="frm_contactenos">
+            <div class="contenedor_seccioncontactenos">
+                <label class="etiqueta_encabezadoseccioncontactenos">Nombre(s) y Apellidos</label>
+                <input type="text" class="entrada_textoseccioncontactenos" required="required">
+            </div>
+            <div class="contenedor_seccioncontactenos">
+                <label class="etiqueta_encabezadoseccioncontactenos">Correo Electrónico</label>
+                <input type="email" class="entrada_textoseccioncontactenos" required="required">
+            </div>
+            <div class="contenedor_seccioncontactenos">
+                <label class="etiqueta_encabezadoseccioncontactenos">Asunto</label>
+                <input type="text" class="entrada_textoseccioncontactenos" required="required">
+            </div>
+            <div class="contenedor_seccioncontactenos">
+                <label class="etiqueta_encabezadoseccioncontactenos">Mensaje</label>
+                <textarea class="areatexto_mensajeseccioncontactenos" rows="4" required="required"></textarea>
+            </div>
+            <div class="contenedor_seccioncontactenos">
+                <!--input id="btn_cancelar" class="boton_contactenos" type="button" value="Cancelar" disabled="disabled"-->
+                <input id="btn_cancelar" class="boton_contactenos" type="button" value="Cancelar">
+                <input id="bn_enviar" class="boton_contactenos" type="button" value="Enviar">
+            </div>
+        </form>
+    </div>
 </div>
+
+<script type="text/javascript">
+    $('#btn_cancelar').on('click', function (){
+        document.getElementById("frm_contactenos").reset();
+    });
+    
+    $('#btn_enviar').on('click', function (){
+        console.log('Enviar correo electrónico');
+    });
+</script>

@@ -1,13 +1,8 @@
 <div id="dv_slider" class="displaynone">
     <ul id="ul_slider">
         <li>
-            <a href="#slide1" onclick="return false;">
-                <img src="img/slider/sistemas.jpg" alt="Técnico Laboral en Sistemas">
-            </a>
-        </li>
-        <li>
-            <a href="#slide2" onclick="return false;">
-                <img src="img/slider/deportes.jpg" alt="Técnico Laboral en Preparación Fisica y Entrenamiento Deportivo">
+            <a href="#slide3" onclick="return false;">
+                <img src="img/slider/talentohumano.jpg" alt="Técnico Laboral en Administración del Talento Humano">
             </a>
         </li>
         <li>
@@ -16,13 +11,18 @@
             </a>
         </li>
         <li>
-            <a href="#slide3" onclick="return false;">
-                <img src="img/slider/vigilancia.jpg" alt="Técnico Laboral en Vigilancia Seguridad y Control de Instalaciones">
+            <a href="#slide2" onclick="return false;">
+                <img src="img/slider/deportes.jpg" alt="Técnico Laboral en Preparación Fisica y Entrenamiento Deportivo">
+            </a>
+        </li>
+        <li>
+            <a href="#slide1" onclick="return false;">
+                <img src="img/slider/sistemas.jpg" alt="Técnico Laboral en Sistemas">
             </a>
         </li>
         <li>
             <a href="#slide3" onclick="return false;">
-                <img src="img/slider/talentohumano.jpg" alt="Técnico Laboral en Administración del Talento Humano">
+                <img src="img/slider/vigilancia.jpg" alt="Técnico Laboral en Vigilancia Seguridad y Control de Instalaciones">
             </a>
         </li>
     </ul>
@@ -37,15 +37,6 @@
     <div class="contenedor_facilidades">Facilidad de Pagos</div>
 </div>
 <div id="dv_contenido">
-    <!--div id="dv_facilidades">
-        <div class="contenedor_facilidades">HORARIOS FLEXIBLES</div>
-        <div class="contenedor_facilidades">
-            <span>DIURNO</span>
-            <span>NOCTURNO</span>
-            <span>FINES DE SEMANA</span>
-        </div>
-        <div class="contenedor_facilidades">FACILIDAD DE PAGOS</div>
-    </div-->
     <div id="dv_texto">
         La calidad de la educativa esta en el alcance de las competencias laborales a través de habilidades, destrezas, actitudes, aptitudes, conocimientos y el ser como persona con valores para desempeñarse en el medio productivo.
     </div>
@@ -70,10 +61,6 @@
         $('#dv_slider').removeClass('displaynone');
     });
     
-    /*$(document).ready(function(){
-        
-    });*/
-    
     require([
         window.public_path+'javascript/slippry.min.js'
     ],function(){
@@ -88,26 +75,7 @@
             controls: false,
             speed: 1000,
             //pager: false,
-            auto: false
+            auto: true
         });
     });
-
-    /*var he = $('#dv_pilareducacion').height(),
-        ht = $('#dv_pilartecnologia').height(),
-        hc = $('#dv_pilarcompetencias').height(),
-        height = 0;
-    
-    if(he >= ht){
-        if(ht >= hc){
-            height = he;
-        }else{
-            if(he >= hc) height = he; else height = hc;
-        }
-    }else{
-        if(ht >= hc) height = ht; else height = hc;
-    }
-    
-    console.log("Height = " + height);
-    
-    $('.contenedor_pilar').css({height: (height + 30)});*/
 </script>

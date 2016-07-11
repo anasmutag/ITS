@@ -1,6 +1,3 @@
-<?//= $tipoPrograma?>
-<?//= var_dump($tipoInstitucion)?>
-
 <div id="dv_menu" class="contenedor_opcionesmenu">
     <div id="dv_opcionesmenu">
         <a class="contenedor_opcionmenu" href="<?= PUBLIC_PATH?>">
@@ -91,11 +88,6 @@
     </div>
     <div class="btn dropdown">
         <span id="sp_instituciong" class="dropbtn active">Institución</span>
-        <?/* if($banInstitucion > 0): ?>
-            <span id="sp_instituciong" class="dropbtn active">Institución</span>
-        <? else: ?>
-            <a class="dropbtn" href="<?= PUBLIC_PATH?>index/institucion/3" style="position: relative;">Institución</a>
-        <? endif; */?>
         <div class="dropdown-content">
             <? if($banInstitucion > 0): ?>
                 <span id="sp_institucionmv">Misión | Visión</span>
@@ -107,24 +99,15 @@
         </div>
     </div>
     <div class="btn dropdown">
-        <!--a id="sp_programas1" class="dropbtn" href="<?= PUBLIC_PATH?>program/programas/" style="position: relative;">Programas</a-->
         <span class="dropbtn">Programas</span>
         <div id="prueba" class="dropdown-content">
             <? if($banProgramas > 0): ?>
                 <span id="sp_teclab">Técnico Laborales</span>
                 <span id="sp_curso">Cursos, Seminarios y Diplomados</span>
             <? else: ?>
-                <!--a href="<?= PUBLIC_PATH?>program/tecnicos/<?= ($banProgramas>0)?1:0;?>">Técnico Laborales</a>
-                <a href="<?= PUBLIC_PATH?>program/ingles/<?= ($banProgramas>0)?1:0;?>">Ingles Por Niveles</a-->
                 <a href="<?= PUBLIC_PATH?>program/programas/1">Técnico Laborales</a>
                 <a href="<?= PUBLIC_PATH?>program/programas/7">Cursos, Seminarios y Diplomados</a>
             <? endif; ?>
-                        
-            <!--span>Técnico Laboral en Administración de Gestión del Talento Humano</span>
-            <span>Técnico Laboral en Gestión Contable y Financiero</span>
-            <span>Técnico Laboral en Preparación Física y Entrenamiento Deportivo</span>
-            <span>Técnico Laboral en Sistemas</span>
-            <span>Técnico Laboral en Vigilancia, Seguridad y Control de Instalaciones</span-->
         </div>
     </div>
     <!--div class="btn">
@@ -136,7 +119,6 @@
     </div>
 </div>
 <div id="dv_navegacionsec" class="contenedor_navegacionsec contendor_navegacionsecdn">
-    <!--span id="sp_iniciox" class="contendor_navegacionsecdn navsecnoactive">Inicio</span-->
     <a id="lnk_inicio" href="<?= PUBLIC_PATH?>"><span id="sp_inicio" class="contendor_navegacionsecdn icon_home"></span></a>
     <span class="icon_next etiqueta_next contendor_navegacionsecdn"></span>
     <span id="sp_institucion" class="contendor_navegacionsecdn navsecnoactive">Institución</span>
@@ -153,10 +135,8 @@
     $(window).load(function(){
         <? if($banInstitucion > 0): ?>
             $('#dv_navegacionsec').removeClass('contendor_navegacionsecdn');
-            //$('#sp_inicio').removeClass('contendor_navegacionsecdn').next('span').removeClass('contendor_navegacionsecdn');
             $('#sp_inicio').removeClass('contendor_navegacionsecdn');
             $('#lnk_inicio').next('span').removeClass('contendor_navegacionsecdn');
-            //$('#sp_institucion').removeClass('contendor_navegacionsecdn').next('span').removeClass('contendor_navegacionsecdn');
             
             <? if($tipoInstitucion === '1'): ?>
                 $('#sp_institucion').addClass('etiqueta_institucion');
@@ -175,7 +155,6 @@
             <? endif;
         elseif($banProgramas > 0): ?>
             $('#dv_navegacionsec').removeClass('contendor_navegacionsecdn');
-            //$('#sp_inicio').removeClass('contendor_navegacionsecdn').next('span').removeClass('contendor_navegacionsecdn');
             $('#sp_inicio').removeClass('contendor_navegacionsecdn');
             $('#lnk_inicio').next('span').removeClass('contendor_navegacionsecdn');
             $('#sp_programas').removeClass('contendor_navegacionsecdn').next('span').removeClass('contendor_navegacionsecdn');
@@ -206,12 +185,6 @@
     $('.dropdown').on('mouseover', function (){
         var top = $(this).offset().top,
             left = $(this).offset().left;
-        
-        /*if($(this).find('#prueba')){
-            console.log("True");
-        }else{
-            console.log("False");
-        }*/
         
         $(this).find('.dropdown-content').css({display: 'flex', top: top + 40, left: left - 30});
     });
@@ -258,7 +231,6 @@
     $('#sp_institucionmv').on('click', function (){
         $.ajax({
             type: 'POST',
-            //url: window.public_path + "index/institucion/",
             url: window.public_path + "index/institucion/1",
             data: {
                 'tipoIns': 1
@@ -268,7 +240,6 @@
             },
             success: function(data){
                 $('#dv_navegacionsec').removeClass('contendor_navegacionsecdn');
-                //$('#sp_inicio').removeClass('contendor_navegacionsecdn').next('span').removeClass('contendor_navegacionsecdn');
                 $('#sp_inicio').removeClass('contendor_navegacionsecdn');
                 $('#lnk_inicio').next('span').removeClass('contendor_navegacionsecdn');
                 $('#sp_institucion').addClass('etiqueta_institucion');
@@ -289,7 +260,6 @@
     $('#sp_institucionmisionvision').on('click', function (){
         $.ajax({
             type: 'POST',
-            //url: window.public_path + "index/institucion/",
             url: window.public_path + "index/institucion/1",
             data: {
                 'tipoIns': 1
@@ -322,7 +292,6 @@
     $('#sp_institucionv').on('click', function (){
         $.ajax({
             type: 'POST',
-            //url: window.public_path + "index/visitanos/",
             url: window.public_path + "index/institucion/2",
             data: {
                 'tipoIns': 2
@@ -332,7 +301,6 @@
             },
             success: function(data){
                 $('#dv_navegacionsec').removeClass('contendor_navegacionsecdn');
-                //$('#sp_inicio').removeClass('contendor_navegacionsecdn').next('span').removeClass('contendor_navegacionsecdn');
                 $('#sp_inicio').removeClass('contendor_navegacionsecdn');
                 $('#lnk_inicio').next('span').removeClass('contendor_navegacionsecdn');
                 $('#sp_institucion').addClass('etiqueta_institucion');
@@ -353,7 +321,6 @@
     $('#sp_institucionvisitanos').on('click', function (){
         $.ajax({
             type: 'POST',
-            //url: window.public_path + "index/visitanos/",
             url: window.public_path + "index/institucion/2",
             data: {
                 'tipoIns': 2
@@ -385,7 +352,6 @@
     $('#sp_teclab').on('click', function (){
         $.ajax({
             type: 'POST',
-            //url: window.public_path + "program/tecnicos/1",
             url: window.public_path + "program/programas/1",
             data: {
                 'tipoProg': 1
@@ -395,7 +361,6 @@
             },
             success: function(data){
                 $('#dv_navegacionsec').removeClass('contendor_navegacionsecdn');
-                //$('#sp_inicio').removeClass('contendor_navegacionsecdn').next('span').removeClass('contendor_navegacionsecdn');
                 $('#sp_inicio').removeClass('contendor_navegacionsecdn');
                 $('#lnk_inicio').next('span').removeClass('contendor_navegacionsecdn');
                 $('#sp_programas').removeClass('contendor_navegacionsecdn').next('span').removeClass('contendor_navegacionsecdn');
@@ -417,7 +382,6 @@
     $('#sp_programasteclab').on('click', function (){
         $.ajax({
             type: 'POST',
-            //url: window.public_path + "program/tecnicos/1",
             url: window.public_path + "program/programas/1",
             data: {
                 'tipoProg': 1
@@ -479,7 +443,6 @@
     $('#sp_programascurso').on('click', function (){
         $.ajax({
             type: 'POST',
-            //url: window.public_path + "program/ingles/1",
             url: window.public_path + "program/programas/7",
             data: {
                 'tipoProg': 7
@@ -508,27 +471,6 @@
 
         });
     });
-    
-    /*$('#sp_inicio').on('click', function (){
-        $.ajax({
-            type: 'POST',
-            url: window.public_path + "index/index/",
-            data: {
-                'banInicio': 1
-            },
-            beforeSend: function(){
-
-            },
-            success: function(data){
-                $('#sec_contenido').html(data);
-            },
-            error: function(){
-                console.log('Error');
-            }
-        }).always(function(){
-
-        });
-    });*/
     
     var $menu = $('#sp_menu'),
         $drawer = $('#dv_menu'),

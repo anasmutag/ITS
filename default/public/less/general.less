@@ -20,9 +20,7 @@ html {
 body {
     text-align: center;
     margin: auto;
-    /*min-width: 340px;*/
     min-width: 320px;
-    /*max-width: 1000px;*/
     max-width: 1024px;
     background-color: @fondo;
     
@@ -44,6 +42,9 @@ header {
     
     .flexBox;
 }
+input {
+    outline: 0;
+}
 .icon_menu {
     /*mask: url(../../ITS/img/icon/ic_menu_white_48px.svg) no-repeat 50% 50%;
     -webkit-mask: url(../../ITS/img/icon/ic_menu_white_48px.svg) no-repeat 50% 50%;
@@ -61,11 +62,6 @@ header {
     background-size: 40px;
 }
 .icon_home {
-    /*mask: url(../../ITS/img/icon/ic_home_black_48px.svg) no-repeat 50% 50%;
-    -webkit-mask: url(../../ITS/img/icon/ic_home_black_48px.svg) no-repeat 50% 50%;
-    mask-size: cover;
-    -webkit-mask-size: cover;*/
-    
     background: url("../../ITS/img/icon/ic_home_48dp_2x.png") no-repeat center;
     background-size: cover;
     cursor: pointer;
@@ -77,11 +73,6 @@ header {
     -webkit-mask-size: cover;
 }
 .icon_next {
-    /*mask: url(../../ITS/img/icon/ic_navigate_next_black_48px.svg) no-repeat 50% 50%;
-    -webkit-mask: url(../../ITS/img/icon/ic_navigate_next_black_48px.svg) no-repeat 50% 50%;
-    mask-size: cover;
-    -webkit-mask-size: cover;*/
-    
     background: url("../../ITS/img/icon/ic_navigate_next_48dp_2x.png") no-repeat center;
     background-size: cover;
     cursor: pointer;
@@ -92,7 +83,6 @@ header {
     cursor: pointer;
 }
 .icon_up {
-    /*background: url("../../ITS/img/icon/ic_keyboard_arrow_up_48dp_2x.png") no-repeat center;*/
     background: url("../../ITS/img/icon/ic_keyboard_arrow_up_white_48dp_2x.png") no-repeat center;
     background-size: 35px;
     cursor: pointer;

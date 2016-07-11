@@ -48,74 +48,7 @@
     font-style: normal;
 }
 */
-/*@colorw: #FFFFFF;   //blanco
-@colorn: #000000;   //negro
-@coloro: #FF3E00;   //naranja
-@colorv: #80016B;   //morado
-@colorg: #958F88;   //gris
-@colorgl: #443B3E;  //gris linea separadora
-@colorgm: #7C7471;  //gris borde miniaturas
-@colorgcc: #DBDAD4; //gris totales carrito de compra
-@colora: #28539F;   //azul
-@colorcc: #EEEFEC;  //gris tabla carrito de compras
-@colorgn: #BCBEC0; //Gris universal para todo contenedor
-@colorglt: #59585A; //Gris letras superior header
-@colorglb: #CFD0D2;
-@colorggen: #E4E3E3; //Gris universal fondos*/
-/*.borderRadiusCompleto(
-    @radio: 5px
-){
-    border-radius: @radio;
-    -moz-border-radius: @radio;
-    -o-border-radius: @radio;
-    -ms-border-radius: @radio;
-    -khtml-border-radius: @radio;
-    -webkit-border-radius: @radio;
-}
-
-.borderRadiusParcial(
-    @rtl;
-    @rtr;
-    @rbr;
-    @rbl
-){
-    border-radius: @arguments;
-    -moz-border-radius: @arguments;
-    -o-border-radius: @arguments;
-    -ms-border-radius: @arguments;
-    -khtml-border-radius: @arguments;
-    -webkit-border-radius: @arguments;
-}
-
-.button(
-    @width: 215px;
-    @height: 55px;
-    @font-family: @robotoregular;
-    @font-size: 18px;
-    @color: @colorn;
-    @border-width: 2px;
-    @border-color: @coloro;
-    @background-color: transparent
-){
-    width: @width;
-    min-width: 120px;
-    height: @height;
-    min-height: 35px;
-    font-family: @font-family;
-    font-size: @font-size;
-    color: @color;
-    border: @border-width solid @border-color;
-    background-color: @background-color;
-    padding: 0;
-    .borderRadiusCompleto;
-}
-
-.hoverButton(@border-color) when(@border-color = #FFFFFF){
-    color: @colorv;
-    background-color: @border-color;
-}
-
-.hoverButton(@border-color) when(@border-color = #000000){
+/*.hoverButton(@border-color) when(@border-color = #000000){
     color: @colorw;
     background-color: @border-color;
 }
@@ -499,11 +432,6 @@
     padding: 0;
     box-shadow: none;
     border-radius: 0;
-    /*.etiqueta_localizacion:nth-of-type(1) {
-                padding: 12.5px 0;
-                border-radius: 0;
-                font-size: 20px;
-            }*/
   }
   #dv_visitanos #dv_contenidomapa #dv_tabsmap {
     font-size: 20px;
@@ -550,15 +478,6 @@
   .sy-slides-wrap {
     height: 260px;
   }
-  /*.sy-slide {
-        height: 100%;
-    }
-    .sy-slide > a {
-        height: 100%;
-    }
-    .sy-slide > a > img {
-        height: 100%;
-    }*/
   .sy-filler {
     padding-top: 260px;
   }
@@ -585,21 +504,9 @@
   #dv_visitanos #dv_contenidomapa #dv_seccionmapa {
     height: 300px;
   }
-  .contenedor_contactenos .contenedor_pilar .contenedor_infocontactenos .contenedor_seccioninfocontactenos:nth-last-of-type(1) label {
-    font-size: 15px;
-  }
   .sy-slides-wrap {
     height: 165px;
   }
-  /*.sy-slide {
-        height: 100%;
-    }
-    .sy-slide > a {
-        height: 100%;
-    }
-    .sy-slide > a > img {
-        height: 100%;
-    }*/
   .sy-filler {
     padding-top: 165px;
   }
@@ -612,6 +519,11 @@
     margin: 10px 0;
   }
 }
+@media only screen and (min-width: 769px) and (max-width: 1024px) {
+  .contenedor_contactenos .contenedor_pilar {
+    min-height: 180px;
+  }
+}
 @media only screen and (min-width: 769px) and (max-width: 896px) {
   #dv_informaciongeneral .contenedor_pilar {
     min-height: 200px;
@@ -622,21 +534,12 @@
   .contenedor_pilares .contenedor_pilar {
     min-height: 240px;
   }
-  .contenedor_contactenos .contenedor_pilar .contenedor_infocontactenos .contenedor_seccioninfocontactenos:nth-last-of-type(1) label {
-    font-size: 15px;
+  .contenedor_contactenos .contenedor_pilar {
+    min-height: 180px;
   }
   .sy-slides-wrap {
     height: 300px;
   }
-  /*.sy-slide {
-        height: 100%;
-    }
-    .sy-slide > a {
-        height: 100%;
-    }
-    .sy-slide > a > img {
-        height: 100%;
-    }*/
   .sy-filler {
     padding-top: 300px;
   }
@@ -644,77 +547,32 @@
 @media only screen and (max-width: 768px) {
   #dv_contenidoprograma {
     padding: 0;
-    /*.dimensions(@height:100%);
-        .flexBox(@justify-content:space-between;@align-items:flex-start;@align-content:flex-start);*/
   }
   #dv_programa {
     width: 100%;
     box-shadow: none;
     border-radius: 0;
-    /*color: #00529B;
-        background-color: #ffffff;
-
-        .dimensions(@width:65%);
-        .flexBox;
-        .borderRadius(8px);
-        .boxShadow(0;0;5px;2px;rgba(0, 0, 0, 0.2));*/
   }
   #dv_programa .contenedor_imgprograma {
     height: 280px;
     border-radius: 0;
-    /*background-color: green;
-
-            .dimensions(@height:180px);
-            .flexBox(@align-items:flex-start);
-            .borderRadius(8px;8px;0;0);*/
   }
   #dv_programa .contenedor_imgprograma div {
     padding: 12.5px 0;
     border-radius: 0;
-    /*padding: 10px 0;
-                color: @blanco;
-                background: @base;
-                background: -moz-linear-gradient(top, @base 0%, #2989d8 100%, #207cca 100%, #7db9e8 100%);
-                background: -webkit-linear-gradient(top, @base 0%,#2989d8 100%,#207cca 100%,#7db9e8 100%);
-                background: linear-gradient(to bottom, @base 0%,#2989d8 100%,#207cca 100%,#7db9e8 100%);
-                filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='@base', endColorstr='#7db9e8',GradientType=0 );
-
-                .dimensions;
-                .flexBox;
-                .borderRadius(8px;8px;100%;100%);*/
   }
   #dv_programa .contenedor_imgprograma div .etiqueta_titprog {
     width: 90%;
     font-size: 20px;
-    /*.dimensions(75%);
-                    .font(@robotobold;18px);*/
   }
   #dv_programa .contenedor_programa {
     padding: 40px 50px;
     border-radius: 0;
-    /*padding: 30px;
-
-            .dimensions;
-            .flexBox(@align-items:flex-start;@align-content:flex-start;@flex-direction:column);
-            .borderRadius(0;0;8px;8px);
-
-            .etiqueta_titprog {
-                text-align: left;
-                font-size: 20px;
-                margin-bottom: 10px;
-                cursor: default;
-            }*/
   }
   #dv_programa .contenedor_programa .etiqueta_nomprog {
     padding: 7.5px 0;
     text-align: left;
     font-size: 16px;
-    /*padding: 5px 0;
-                cursor: pointer;
-
-                &:hover {
-                    color: @grisnav;
-                }*/
   }
   #dv_programa .contenedor_detalleprograma {
     padding: 40px 50px;

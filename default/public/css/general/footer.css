@@ -48,74 +48,7 @@
     font-style: normal;
 }
 */
-/*@colorw: #FFFFFF;   //blanco
-@colorn: #000000;   //negro
-@coloro: #FF3E00;   //naranja
-@colorv: #80016B;   //morado
-@colorg: #958F88;   //gris
-@colorgl: #443B3E;  //gris linea separadora
-@colorgm: #7C7471;  //gris borde miniaturas
-@colorgcc: #DBDAD4; //gris totales carrito de compra
-@colora: #28539F;   //azul
-@colorcc: #EEEFEC;  //gris tabla carrito de compras
-@colorgn: #BCBEC0; //Gris universal para todo contenedor
-@colorglt: #59585A; //Gris letras superior header
-@colorglb: #CFD0D2;
-@colorggen: #E4E3E3; //Gris universal fondos*/
-/*.borderRadiusCompleto(
-    @radio: 5px
-){
-    border-radius: @radio;
-    -moz-border-radius: @radio;
-    -o-border-radius: @radio;
-    -ms-border-radius: @radio;
-    -khtml-border-radius: @radio;
-    -webkit-border-radius: @radio;
-}
-
-.borderRadiusParcial(
-    @rtl;
-    @rtr;
-    @rbr;
-    @rbl
-){
-    border-radius: @arguments;
-    -moz-border-radius: @arguments;
-    -o-border-radius: @arguments;
-    -ms-border-radius: @arguments;
-    -khtml-border-radius: @arguments;
-    -webkit-border-radius: @arguments;
-}
-
-.button(
-    @width: 215px;
-    @height: 55px;
-    @font-family: @robotoregular;
-    @font-size: 18px;
-    @color: @colorn;
-    @border-width: 2px;
-    @border-color: @coloro;
-    @background-color: transparent
-){
-    width: @width;
-    min-width: 120px;
-    height: @height;
-    min-height: 35px;
-    font-family: @font-family;
-    font-size: @font-size;
-    color: @color;
-    border: @border-width solid @border-color;
-    background-color: @background-color;
-    padding: 0;
-    .borderRadiusCompleto;
-}
-
-.hoverButton(@border-color) when(@border-color = #FFFFFF){
-    color: @colorv;
-    background-color: @border-color;
-}
-
-.hoverButton(@border-color) when(@border-color = #000000){
+/*.hoverButton(@border-color) when(@border-color = #000000){
     color: @colorw;
     background-color: @border-color;
 }
@@ -564,7 +497,6 @@ footer #dv_enlacesinteres .contenedor_enlacesinteres:nth-child(2) #dv_imgenlaces
 footer #dv_enlacesinteres .contenedor_enlacesinteres:nth-child(2) #dv_imgenlacesinteres .contenedor_imgenlacesinteres img {
   width: 100%;
   max-width: 100%;
-  /*min-height: 50px;*/
   max-height: 100%;
 }
 footer #dv_enlacesinteres .contenedor_enlacesinteres:nth-child(2) #dv_imgenlacesinteres .contenedor_imgenlacesinteres:nth-child(1),
@@ -629,7 +561,6 @@ footer #dv_informacion_instituto #dv_contenido_informacion_instituto {
   padding: 10px 0;
   font-size: 10px;
   color: #ffffff;
-  /*background-color: @base;*/
   background: #00529B;
   background: -moz-linear-gradient(top, #00529B 0%, #2989d8 100%, #207cca 100%, #7db9e8 100%);
   background: -webkit-linear-gradient(top, #00529B 0%, #2989d8 100%, #207cca 100%, #7db9e8 100%);
@@ -674,9 +605,6 @@ footer #dv_informacion_instituto #dv_contenido_informacion_instituto {
   -ms-border-radius: 0 0 100% 100%;
   -khtml-border-radius: 0 0 100% 100%;
   -webkit-border-radius: 0 0 100% 100%;
-  /*span {
-                width: 100%;
-            }*/
 }
 footer #dv_informacion_instituto #dv_contenido_informacion_instituto div {
   width: 100%;

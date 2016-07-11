@@ -104,43 +104,18 @@
     text-shadow: @arguments;
 }
 
-/*.borderRadiusCompleto(
-    @radio: 5px
-){
-    border-radius: @radio;
-    -moz-border-radius: @radio;
-    -o-border-radius: @radio;
-    -ms-border-radius: @radio;
-    -khtml-border-radius: @radio;
-    -webkit-border-radius: @radio;
-}
-
-.borderRadiusParcial(
-    @rtl;
-    @rtr;
-    @rbr;
-    @rbl
-){
-    border-radius: @arguments;
-    -moz-border-radius: @arguments;
-    -o-border-radius: @arguments;
-    -ms-border-radius: @arguments;
-    -khtml-border-radius: @arguments;
-    -webkit-border-radius: @arguments;
-}
-
 .button(
-    @width: 215px;
-    @height: 55px;
+    @width: 100px;
+    @height: 35px;
     @font-family: @robotoregular;
     @font-size: 18px;
-    @color: @colorn;
+    @color: @blanco;
     @border-width: 2px;
-    @border-color: @coloro;
-    @background-color: transparent
+    @border-color: @base;
+    @background-color: @base
 ){
     width: @width;
-    min-width: 120px;
+    min-width: 100px;
     height: @height;
     min-height: 35px;
     font-family: @font-family;
@@ -149,15 +124,16 @@
     border: @border-width solid @border-color;
     background-color: @background-color;
     padding: 0;
-    .borderRadiusCompleto;
+    
+    .borderRadius;
 }
 
-.hoverButton(@border-color) when(@border-color = #FFFFFF){
-    color: @colorv;
-    background-color: @border-color;
+.hoverButton(@border-color) when(@border-color = #00529B){
+    color: @base;
+    background-color: @blanco;
 }
 
-.hoverButton(@border-color) when(@border-color = #000000){
+/*.hoverButton(@border-color) when(@border-color = #000000){
     color: @colorw;
     background-color: @border-color;
 }

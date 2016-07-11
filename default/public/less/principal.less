@@ -70,17 +70,6 @@
     
     .dimensions;
     
-    /*div {
-        .flexBox;
-        .borderRadius(8px);
-    }*/
-    /*#dv_facilidades {
-        margin: 0 0 25px 0;
-        background-color: @blanco;
-        
-        .dimensions;
-        .flexBox;
-    }*/
     #dv_texto {
         margin: 0 0 25px 0;
         padding: 15px;
@@ -92,51 +81,7 @@
         .boxShadow(0;0;5px;2px;rgba(0, 0, 0, 0.2));
         .font(@robotoregular;16px);
     }
-    /*#dv_pilares {
-        justify-content: space-between;
-        padding: 15px 0 0 0;
-        
-        .contenedor_pilar {
-            padding: 15px 0;
-            color: #00529B;
-            background-color: #ffffff;
-            
-            .boxShadow(0;0;5px;2px;rgba(0, 0, 0, 0.2));
-            .dimensions(@width:30%);
-            
-            span {
-                .dimensions;
-            }
-            div {
-                    padding: 15px 15px 0 15px;
-            }
-        }
-    }*/
 }
-/*#dv_certificaciones {
-    margin: 25px 0 5px 0;
-    
-    .dimensions;
-    .flexBox;
-    
-    div {
-        margin: 0 7.5px;
-        
-        .dimensions(80px);
-        .flexBox;
-        
-        img {
-            width: 100%;
-        }
-    }
-    div:nth-of-type(1) {
-        margin-left: 0;
-    }
-    div:nth-last-of-type(1) {
-        width: 110px;
-        margin-right: 0;
-    }
-}*/
 #dv_informaciongeneral {
     .contenedor_pilar {
         margin: 0 0 30px 0;
@@ -158,10 +103,6 @@
         
         &:nth-of-type(1), &:nth-of-type(2) {
             min-height: 100px;
-            
-            /*div {
-                padding: 20px;
-            }*/
         }
         &:nth-last-of-type(1) {
             min-height: 250px;
@@ -185,7 +126,6 @@
         color: @base;
         
         .boxShadow(0;0;5px;2px;rgba(0, 0, 0, 0.2));
-        /*.dimensions(@width:75%;360px);*/
         .dimensions(@width:75%);
         .borderRadius(8px);
         .flexBox;
@@ -222,27 +162,8 @@
                 background-color: @blanco;
                 color: @base;
                 cursor: pointer;
-                
-                /*&:hover {
-                    color: @grisnav;
-                }*/
             }
         }
-        /*.etiqueta_localizacion:nth-of-type(1) {
-            padding: 10px 0;
-            color: @blanco;
-            
-            background: @base;
-            background: -moz-linear-gradient(top, @base 0%, #2989d8 100%, #207cca 100%, #7db9e8 100%);
-            background: -webkit-linear-gradient(top, @base 0%,#2989d8 100%,#207cca 100%,#7db9e8 100%);
-            background: linear-gradient(to bottom, @base 0%,#2989d8 100%,#207cca 100%,#7db9e8 100%);
-            filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='@base', endColorstr='#7db9e8',GradientType=0 );
-            
-            .dimensions;
-            .flexBox;
-            .font(@robotobold;18px);
-            .borderRadius(8px;8px;100%;100%);
-        }*/
         .etiqueta_localizacion:nth-of-type(1) {
             padding: 30px 30px 0 30px;
             
@@ -261,27 +182,19 @@
             padding: 0 30px;
             
             .dimensions(100%;360px);
-            /*.dimensions(100%;580px);*/
             
             #dv_mapa {
                 .dimensions(100%;100%);
-                /*.dimensions(100%;50%);*/
             }
-            /*#dv_streetview {
-                .dimensions(100%;50%);
-            }*/
         }
     }
 }
 .contenedor_pilares {
-    /*margin: 25px 0 0 0;*/
-    
     .flexBox(@justify-content: space-between);
 
     .contenedor_pilar {
         min-height: 200px;
         position: relative;
-        /*padding: 0 0 15px 0;*/
         color: #00529B;
         background-color: #ffffff;
 
@@ -296,8 +209,6 @@
             top: 0;
             left: 0;
             padding: 10px 0;
-            /*font-size: 18px;*/
-            /*background-color: @base;*/
             color: @blanco;
             
             background: @base;
@@ -333,6 +244,7 @@
     
     .contenedor_pilar {
         width: 40%;
+        min-height: 180px;
         
         .contenedor_infocontactenos {
             .dimensions;
@@ -366,6 +278,89 @@
                 }
                 &:nth-last-of-type(1) {
                     margin: 0;
+                }
+            }
+        }
+    }
+    #dv_emailcontactenos {
+        margin: 30px 0 0 0;
+        padding: 60px 30px 30px 30px;
+        
+        .dimensions(60%);
+        
+        #dv_diremailcontactenos {
+            margin: 0 0 20px 0;
+            padding: 0;
+            
+            .dimensions;
+            .flexBox;
+            
+            label {
+                &:nth-of-type(1) {
+                    margin: 0 10px 0 0;
+                    
+                    .dimensions(25px;25px);
+                }
+                &:nth-of-type(2) {
+                    .flexBox;
+                }
+            }
+        }
+        #lbl_titulocontactenos {
+            margin: 0 0 30px 0;
+            
+            .dimensions;
+        }
+        #frm_contactenos {
+            .dimensions;
+            .flexBox;
+            
+            .contenedor_seccioncontactenos {
+                margin: 0 0 15px 0;
+                padding: 0;
+                
+                .dimensions;
+                .flexBox(@align-items:flex-start;@align-content:flex-start);
+                
+                .etiqueta_encabezadoseccioncontactenos {
+                    margin: 0 10px 0 0;
+                    padding: 6.5px 0;
+                    text-align: right;
+                    
+                    .dimensions(165px);
+                }
+                .entrada_textoseccioncontactenos {
+                    padding: 5px 6px;
+                    color: @base;
+                    border: 1px solid @base;
+                    
+                    .dimensions(45%);
+                    .borderRadius(5px);
+                    .font(@robotomedium;14px);
+                }
+                .areatexto_mensajeseccioncontactenos {
+                    width: 45%;
+                    resize: none;
+                    padding: 5px 6px;
+                    color: @base;
+                    border: 1px solid @base;
+                    
+                    .borderRadius(5px);
+                    .font(@robotomedium;14px);
+                }
+                
+                &:nth-last-of-type(1) {
+                    margin: 15px 0 0 0;
+                    
+                    .boton_contactenos {
+                        margin: 0 12.5px;
+                        
+                        .button;
+                        
+                        &:hover {
+                            .hoverButton(@base);
+                        }
+                    }
                 }
             }
         }
