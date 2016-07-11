@@ -1,0 +1,67 @@
+@import "variables.less";
+@import "funciones.less";
+
+#sec_contenido404 {
+    .dimensions;
+    .flexBox;
+    
+    #dv_contenido404 {
+        padding: 60px 45px;
+        color: @base;
+        
+        .dimensions;
+        .flexBox;
+        
+        #sp_advertencia404 {
+            background: url(../img/404.png) no-repeat center;
+            background-size: cover;
+            
+            .dimensions(100px;90px);
+        }
+        #sp_encabezado404 {
+            margin: 0 0 0 15px;
+            
+            .font(@robotobold;80px);
+            .textShadow(4px;4px;8px;@negro);
+        }
+        div {
+            margin: 20px 0 0 0;
+            
+            .dimensions;
+            .flexBox;
+            
+            .etiqueta_texto404 {
+                text-align: center;
+                
+                .dimensions;
+                
+                &:nth-of-type(1) {
+                    letter-spacing: 2px;
+                    
+                    .font(@robotobold;40px);
+                    .textShadow(2px;2px;8px;@negro);
+                }
+                &:nth-of-type(2) {
+                    margin: 10px 0 0 0;
+                    
+                    .font(@robotobold;16px);
+                }
+                &:nth-of-type(3) {
+                    .font(@robotobold;16px);
+                }
+            }
+        }
+        a {
+            margin: 30px 0 0 0;
+            text-decoration: none;
+            
+            .flexBox;
+            .button(@width:200px;@height:35px;@color:@base;@background-color:@blanco);
+            
+            &:hover {
+                background-color: @base;
+                color: @blanco;
+            }
+        }
+    }
+}

@@ -175,6 +175,24 @@
     padding: 20px;
     font-size: 18px;
   }
+  .contenedor_contactenos #dv_emailcontactenos {
+    width: 100%;
+    margin: 0;
+    padding: 0;
+  }
+  .contenedor_contactenos #dv_emailcontactenos #dv_diremailcontactenos {
+    margin: 20px 0 15px 0;
+  }
+  .contenedor_contactenos #dv_emailcontactenos #frm_contactenos {
+    margin: 0 0 30px 0;
+  }
+  .contenedor_contactenos #dv_emailcontactenos #frm_contactenos .contenedor_seccioncontactenos .etiqueta_encabezadoseccioncontactenos {
+    width: 180px;
+  }
+  .contenedor_contactenos #dv_emailcontactenos #frm_contactenos .contenedor_seccioncontactenos:nth-last-of-type(1) .boton_contactenos {
+    width: 120px;
+    height: 40px;
+  }
   .sy-slides-wrap {
     height: 260px;
   }
@@ -203,6 +221,28 @@
   }
   #dv_visitanos #dv_contenidomapa #dv_seccionmapa {
     height: 300px;
+  }
+  .contenedor_contactenos #dv_emailcontactenos #dv_diremailcontactenos {
+    padding: 0 20px;
+    font-size: 14.5px;
+  }
+  .contenedor_contactenos #dv_emailcontactenos #frm_contactenos .contenedor_seccioncontactenos .etiqueta_encabezadoseccioncontactenos {
+    width: 100%;
+    margin: 0;
+    text-align: center;
+  }
+  .contenedor_contactenos #dv_emailcontactenos #frm_contactenos .contenedor_seccioncontactenos .entrada_textoseccioncontactenos {
+    font-size: 15px;
+    width: 75%;
+    height: 28px;
+  }
+  .contenedor_contactenos #dv_emailcontactenos #frm_contactenos .contenedor_seccioncontactenos .areatexto_mensajeseccioncontactenos {
+    width: 75%;
+    font-size: 15px;
+  }
+  .contenedor_contactenos #dv_emailcontactenos #frm_contactenos .contenedor_seccioncontactenos:nth-last-of-type(1) .boton_contactenos {
+    width: 120px;
+    height: 45px;
   }
   .sy-slides-wrap {
     height: 165px;
@@ -236,6 +276,17 @@
   }
   .contenedor_contactenos .contenedor_pilar {
     min-height: 180px;
+  }
+  .contenedor_contactenos #dv_emailcontactenos #frm_contactenos .contenedor_seccioncontactenos .etiqueta_encabezadoseccioncontactenos {
+    width: 100%;
+    margin: 0;
+    text-align: center;
+  }
+  .contenedor_contactenos #dv_emailcontactenos #frm_contactenos .contenedor_seccioncontactenos .entrada_textoseccioncontactenos {
+    width: 75%;
+  }
+  .contenedor_contactenos #dv_emailcontactenos #frm_contactenos .contenedor_seccioncontactenos .areatexto_mensajeseccioncontactenos {
+    width: 75%;
   }
   .sy-slides-wrap {
     height: 300px;

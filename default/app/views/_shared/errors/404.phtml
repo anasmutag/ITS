@@ -1,24 +1,44 @@
-<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
-<html xmlns="http://www.w3.org/1999/xhtml">
+<!DOCTYPE html>
+<html lang="es">
 <head>
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-    <title>KumbiaPHP web &amp; app Framework</title>
-    <link rel="stylesheet" href="<?php echo PUBLIC_PATH ?>css/style.css" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1, maximum-scale=1">
+    
+    <title>Página no encontrada - Instituto Técnico Surcolombiano</title>
+    
+    <? Tag::css("general") ?>
+    <? Tag::css("404") ?>
+    <? //Tag::css("principal") ?>
+    <? //Tag::css("programa") ?>
+    <? //Tag::css("registro") ?>
+    <? //Tag::css("slippry") ?>
+    <? Tag::css("responsive") ?>
+    
+    <?= Html::includeCss() ?>
+    
+    <link rel="icon" type="img/ico" href="<?= PUBLIC_PATH."img/favicon.ico "?>">
+    
+    <?= Tag::js('jquery/jquery-2.2.3.min') ?>
+    <?= Tag::js('html5shiv') ?>
 </head>
 <body>
-    <div style="text-align: center; margin: 50px; font-size: 12pt; background-color: transparent; font-family: Lucida Grande, Verdana, Sans-serif;">
-        <table align="center" id="content" style="background-color: #fff; border: #999 1px solid; padding: 10px 10px 6px 10px; width: 50%;">
-            <tbody>
-                <tr>
-                    <td style="width: 5%">
-                        <a href="http://www.kumbiaphp.com"><img src="<?php echo PUBLIC_PATH ?>img/site_logo.gif" alt="Kumbia PHP Framework"/></a>
-                    </td>
-                    <td>
-                        <h1 style="font-size: 14pt; color: #990000; margin: 0 0 4px 0;">ERROR 404</h1>
-                    </td>
-                </tr>
-            </tbody>
-        </table>
-    </div>
+    <header>
+        <? View::partial("header", false, array('banProgramas'=>0, 'tipoPrograma'=>0, 'banInstitucion'=>0, 'tipoInstitucion'=>0, 'banContactenos'=>0)) ?>
+    </header>
+    <section id="sec_contenido404">
+        <div id="dv_contenido404">
+            <span id="sp_advertencia404"></span>
+            <span id="sp_encabezado404">UPS!</span>
+            <div>
+                <span class="etiqueta_texto404">Página no encontrada</span>
+                <span class="etiqueta_texto404">Parece que ha habido un error con la página que estabas buscando.</span>
+                <span class="etiqueta_texto404">Es posible que la entrada haya sido eliminada o que la direccion no exista.</span>
+            </div>
+            <a href="<?= PUBLIC_PATH?>">Ir a la página principal</a>
+        </div>
+    </section>
+    <footer>
+        <? View::partial("footer") ?>
+    </footer>
 </body>
 </html>
