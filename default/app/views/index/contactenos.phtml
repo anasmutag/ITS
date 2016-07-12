@@ -50,24 +50,24 @@
         <form id="frm_contactenos">
             <div class="contenedor_seccioncontactenos">
                 <label class="etiqueta_encabezadoseccioncontactenos">Nombre(s) y Apellidos</label>
-                <input type="text" class="entrada_textoseccioncontactenos" required="required">
+                <input type="text" name="nombre" class="entrada_textoseccioncontactenos" required="required">
             </div>
             <div class="contenedor_seccioncontactenos">
                 <label class="etiqueta_encabezadoseccioncontactenos">Correo Electrónico</label>
-                <input type="email" class="entrada_textoseccioncontactenos" required="required">
+                <input type="email" name="email" class="entrada_textoseccioncontactenos" required="required">
             </div>
             <div class="contenedor_seccioncontactenos">
                 <label class="etiqueta_encabezadoseccioncontactenos">Asunto</label>
-                <input type="text" class="entrada_textoseccioncontactenos" required="required">
+                <input type="text" name="asunto" class="entrada_textoseccioncontactenos" required="required">
             </div>
             <div class="contenedor_seccioncontactenos">
                 <label class="etiqueta_encabezadoseccioncontactenos">Mensaje</label>
-                <textarea class="areatexto_mensajeseccioncontactenos" rows="5" required="required"></textarea>
+                <textarea  name="mensaje" class="areatexto_mensajeseccioncontactenos" rows="5" required="required"></textarea>
             </div>
             <div class="contenedor_seccioncontactenos">
                 <!--input id="btn_cancelar" class="boton_contactenos" type="button" value="Cancelar" disabled="disabled"-->
                 <input id="btn_cancelar" class="boton_contactenos" type="button" value="Cancelar">
-                <input id="bn_enviar" class="boton_contactenos" type="button" value="Enviar">
+                <input id="btn_enviar" class="boton_contactenos" type="button" value="Enviar">
             </div>
         </form>
     </div>
@@ -79,6 +79,22 @@
     });
     
     $('#btn_enviar').on('click', function (){
-        console.log('Enviar correo electrónico');
+        $.ajax({
+            type: 'POST',
+            url: window.public_path + 'index/enviarCorreoElectronico/',
+            data: $('#frm_contactenos').serialize(),
+            dataType: 'json',
+            beforeSend: function(){
+                
+            },
+            success: function(data) {
+                alert(data.res + ' ' + data.msg);
+            },
+            error: function(){
+                console.log('Error');
+            }
+        }).always(function(){
+            
+        });
     });
 </script>

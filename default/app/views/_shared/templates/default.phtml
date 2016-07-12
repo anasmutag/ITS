@@ -25,6 +25,7 @@
     <script type="text/javascript">
         window.public_path = '<?= PUBLIC_PATH?>';
         window.tablocalizacion = 0;
+        window.navegacion = 0;
     </script>
     
     <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBYXHhoAbijaDCTdv98TsW_oucwePlcnD4">
@@ -37,6 +38,7 @@
     (isset($contactenos))?$banContactenos = $contactenos:$banContactenos = 0; ?>
 </head>
 <body>
+    <? View::partial("menu", false, array('banProgramas'=>$banProgramas, 'banInstitucion'=>$banInstitucion)); ?>
     <header>
         <? View::partial("header", false, array('banProgramas'=>$banProgramas, 'tipoPrograma'=>$tipoPrograma, 'banInstitucion'=>$banInstitucion, 'tipoInstitucion'=>$tipoInstitucion, 'banContactenos'=>$banContactenos)) ?>
     </header>

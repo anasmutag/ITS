@@ -42,8 +42,126 @@ header {
     
     .flexBox;
 }
-input {
+input, textarea {
     outline: 0;
+}
+.menuopen{
+    overflow: hidden;
+}
+.contenedor_opcionesmenu{
+    display: flex;
+    position: absolute;
+    z-index: 30000;
+    -webkit-transform: translate(-150%, 0);
+    -moz-transform: translate(-150%, 0);
+    -ms-transform: translate(-150%, 0);
+    transform: translate(-150%, 0);
+    -webkit-transition: -webkit-transform 0s ease;
+    transition: transform 0s ease;
+    
+    .dimensions(100%;100%);
+}
+.opcionesmenuopen{
+    -webkit-transform: translate(0, 0);
+    -moz-transform: translate(0, 0);
+    -ms-transform: translate(0, 0);
+    transform: translate(0, 0);
+    left: 0;
+}
+#dv_opcionesmenu{
+    width: 260px;
+    min-width: 260px;
+    background-color: rgba(255, 255, 255, 1);
+    color: @base;
+    overflow-y: auto;
+    -ms-overflow-style: none;
+    
+    &::-webkit-scrollbar{
+        width: 0;
+    }
+    
+    .contenedor_opcionmenu{
+        position: relative;
+        border-bottom: 1px solid @base;
+        cursor: pointer;
+        text-decoration: none;
+        
+        .dimensions(100%;60px);
+        .flexBox(@justify-content:flex-start);
+        .font(@robotobold;15px);
+        
+        .etiqueta_iconopcionmenu {
+            background-color: @base;
+            
+            .dimensions(60px;60px);
+        }
+        .etiqueta_tituloopcionmenu {
+            margin-left: 15px;
+            text-decoration: none;
+            color: @base;
+        }
+        .etiqueta_tituloopcionmenuseleccionada {
+            color: @blanco;
+        }
+        .etiqueta_icondown {
+            position: absolute;
+            top: 0;
+            right: 0;
+            
+            .dimensions(45px;60px);
+        }
+    }
+    .contenedor_opcionmenuseleccionada {
+        background-color: @base;
+        color: @blanco;
+    }
+    .contenedor_institucionopcionmenu {
+        height: 120px;
+        border: 0;
+        
+        div {
+            border-bottom: 1px solid @base;
+            
+            .dimensions(100%;60px);
+            .flexBox(@justify-content:flex-start);
+            
+            .etiqueta_iconopcionmenu {
+                background-color: @base;
+
+                .dimensions(60px;60px);
+            }
+            .etiqueta_instituciontituloopcionmenu {
+                padding-left: 15px;
+                text-align: left;
+                text-decoration: none;
+                color: @base;
+                
+                .dimensions(185px;60px);
+                .flexBox(@justify-content:flex-start);
+            }
+        }
+    }
+    #dv_institucionopcionesmenu, #dv_programasopcionesmenu {
+        display: none;
+    }
+}
+#dv_cerrarmenu {
+    position: absolute;
+    background-color: @base;
+    
+    .dimensions(60px;60px);
+    
+    #sp_cerrarmenu {
+        position: absolute;
+        left: 0;
+        
+        .dimensions(60px;60px);
+    }
+}
+#dv_backmenu{
+    background-color: rgba(6, 5, 6, 0.4);
+    
+    .dimensions(100%;100%);
 }
 .icon_menu {
     /*mask: url(../../ITS/img/icon/ic_menu_white_48px.svg) no-repeat 50% 50%;

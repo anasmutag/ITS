@@ -1,0 +1,134 @@
+<div id="dv_menu" class="contenedor_opcionesmenu">
+    <div id="dv_opcionesmenu">
+        <a class="contenedor_opcionmenu" href="<?= PUBLIC_PATH?>">
+            <span class="etiqueta_iconopcionmenu icon_home_white"></span>
+            <span class="etiqueta_tituloopcionmenu">Inicio</span>
+        </a>
+        <div id="dv_institucionopcionmenu" class="contenedor_opcionmenu">
+            <span class="etiqueta_iconopcionmenu icon_institucion"></span>
+            <span id="sp_institucionmenu" class="etiqueta_tituloopcionmenu">Institución</span>
+            <span id="sp_institucionicondown" class="etiqueta_icondown icon_down"></span>
+        </div>
+        <div id="dv_institucionopcionesmenu" class="contenedor_opcionmenu contenedor_institucionopcionmenu">
+            <div>
+                <span class="etiqueta_iconopcionmenu"></span>
+                <? if($banInstitucion > 0): ?>
+                    <span id="sp_institucionmisionvision" class="etiqueta_instituciontituloopcionmenu">Misión | Visión</span>
+                <? else: ?>
+                    <a class="etiqueta_instituciontituloopcionmenu" href="<?= PUBLIC_PATH?>index/institucion/1">Misión | Visión</a>
+                <? endif; ?>
+            </div>
+            <div>
+                <span class="etiqueta_iconopcionmenu"></span>
+                <? if($banInstitucion > 0): ?>
+                    <span id="sp_institucionvisitanos" class="etiqueta_instituciontituloopcionmenu">Visítanos</span>
+                <? else: ?>
+                    <a class="etiqueta_instituciontituloopcionmenu" href="<?= PUBLIC_PATH?>index/institucion/2">Visítanos</a>
+                <? endif; ?>
+            </div>
+        </div>
+        <div id="dv_programasopcionmenu" class="contenedor_opcionmenu">
+            <span class="etiqueta_iconopcionmenu icon_programs"></span>
+            <span id="sp_programasmenu" class="etiqueta_tituloopcionmenu">Programas</span>
+            <span id="sp_programasicondown" class="etiqueta_icondown icon_down"></span>
+        </div>
+        <div id="dv_programasopcionesmenu" class="contenedor_opcionmenu contenedor_institucionopcionmenu">
+            <div id="dv_programasteclab">
+                <span class="etiqueta_iconopcionmenu"></span>
+                <? if($banProgramas > 0): ?>
+                    <span id="sp_programasteclab" class="etiqueta_instituciontituloopcionmenu">Técnico Laborales</span>
+                <? else: ?>
+                    <a class="etiqueta_instituciontituloopcionmenu" href="<?= PUBLIC_PATH?>program/programas/1">Técnico Laborales</a>
+                <? endif; ?>
+            </div>
+            <div>
+                <span class="etiqueta_iconopcionmenu"></span>
+                <? if($banProgramas > 0): ?>
+                    <span id="sp_programascurso" class="etiqueta_instituciontituloopcionmenu">Cursos, Seminarios y Diplomados</span>
+                <? else: ?>
+                    <a class="etiqueta_instituciontituloopcionmenu" href="<?= PUBLIC_PATH?>program/programas/7">Cursos, Seminarios y Diplomados</a>
+                <? endif; ?>
+            </div>
+        </div>
+        <!--a class="contenedor_opcionmenu" href="#">
+            <span class="etiqueta_iconopcionmenu icon_campus"></span>
+            <span class="etiqueta_tituloopcionmenu">Campus Virtual</span>
+        </a-->
+        <!--a class="contenedor_opcionmenu" href="<?= PUBLIC_PATH?>registration/preinscripcion/">
+            <span class="etiqueta_iconopcionmenu icon_contact"></span>
+            <span class="etiqueta_tituloopcionmenu">Preinscripción</span>
+        </a-->
+        <a class="contenedor_opcionmenu" href="<?= PUBLIC_PATH?>index/contactenos/">
+            <span class="etiqueta_iconopcionmenu icon_contact"></span>
+            <span class="etiqueta_tituloopcionmenu">Contáctenos</span>
+        </a>
+        <div id="dv_noopcionmenu"><div></div></div>
+    </div>
+    <div id="dv_cerrarmenu">
+        <span id="sp_cerrarmenu" class="icon_cerrarmenu"></span>
+    </div>
+    <div id="dv_backmenu"></div>
+</div>
+
+<script type="text/javascript">
+    $(document).ready(function(){
+        var menu = $('#sp_menu'),
+            drawer = $('#dv_menu'),
+            close = $('#dv_cerrarmenu');
+            //$back = $('#dv_backmenu);
+
+        drawer.on('click',function(e){
+            //e.stopPropagation();
+        });
+
+        menu.on('click', function(e) {
+            e.stopPropagation();
+
+            //var altura = $('#dv_opcionesmenu').height() - 305;
+            var altura = $('#dv_opcionesmenu').height() - 244;
+            
+            var t = $('header').offset().top;
+
+            $('body').addClass('menuopen');
+            drawer.css({top: t});
+
+            if(altura > 0){
+                $('#dv_noopcionmenu').css({width: '100%', height: altura});
+                $('#dv_noopcionmenu div').css({width: '60px', height: '100%', 'background-color': '#00529B'});
+            }
+
+            drawer.toggleClass('opcionesmenuopen');
+        });
+
+        close.on('click', function() {
+            $('body').removeClass('menuopen');
+            drawer.removeClass('opcionesmenuopen');
+            drawer.removeAttr('style');
+        });
+
+        $(window).resize(function(){
+            var altura = $('#dv_opcionesmenu').height() - 305;
+
+            if(altura > 0){
+                $('#dv_noopcionmenu').css({width: '100%', height: altura});
+                $('#dv_noopcionmenu div').css({width: '60px', height: '100%', 'background-color': '#00529B'});
+            }else{
+                $('#dv_noopcionmenu').css({width: '100%', height: '0'});
+            }
+        });
+
+        $('#dv_institucionopcionmenu').on('click', function(){
+            $('#dv_institucionopcionesmenu').slideToggle();
+            $('#sp_institucionmenu').toggleClass('etiqueta_tituloopcionmenuseleccionada');
+            $('#sp_institucionicondown').toggleClass('icon_up');
+            $('#dv_institucionopcionmenu').toggleClass('contenedor_opcionmenuseleccionada');
+        });
+
+        $('#dv_programasopcionmenu').on('click', function(){
+            $('#dv_programasopcionesmenu').slideToggle();
+            $('#sp_programasmenu').toggleClass('etiqueta_tituloopcionmenuseleccionada');
+            $('#sp_programasicondown').toggleClass('icon_up');
+            $('#dv_programasopcionmenu').toggleClass('contenedor_opcionmenuseleccionada');
+        });
+    });
+</script>

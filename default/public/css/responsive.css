@@ -84,6 +84,10 @@
   html {
     background: #e2edf3;
   }
+  header {
+    position: fixed;
+    z-index: 1000;
+  }
   header #dv_fechahora {
     padding: 5px 15px;
     font-size: 12.5px;
@@ -263,6 +267,7 @@
   }
   #sec_contenido {
     min-height: 280px;
+    padding: 60px 0 0 0;
   }
 }
 @media only screen and (max-width: 660px) {
