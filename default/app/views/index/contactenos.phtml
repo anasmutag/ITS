@@ -84,8 +84,6 @@
             asunto = $('#solicitud_asunto').val(),
             mensaje = $('#solicitud_mensaje').val();
         
-        console.log(nombre+"->"+email+"->"+asunto+"->"+mensaje);
-        
         if(nombre.length > 0 && email.length > 0 && validar_email(email.trim()) && asunto.length > 0 && mensaje.length > 0){
             $.ajax({
                 type: 'POST',
@@ -105,7 +103,7 @@
                     $('body').removeClass('menuopen');
                     
                     document.getElementById("frm_contactenos").reset();
-                    console.log(data.res + ' ' + data.msg);
+                    console.log(data.res);
                 },
                 error: function(){
                     console.log('Error');
