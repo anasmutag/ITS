@@ -21,8 +21,10 @@
                 <span id="sp_institucionmv">Misión | Visión</span>
                 <span id="sp_institucionv">Visítanos</span>
             <? else: ?>
-                <a href="<?= PUBLIC_PATH?>index/institucion/1">Misión | Visión</a>
-                <a href="<?= PUBLIC_PATH?>index/institucion/2">Visítanos</a>
+                <!--a href="<?= PUBLIC_PATH?>index/institucion/1">Misión | Visión</a-->
+                <a href="<?= PUBLIC_PATH?>institucion/mision_vision">Misión | Visión</a>
+                <!--a href="<?= PUBLIC_PATH?>index/institucion/2">Visítanos</a-->
+                <a href="<?= PUBLIC_PATH?>institucion/visitanos">Visítanos</a>
             <? endif; ?>
         </div>
     </div>
@@ -33,8 +35,10 @@
                 <span id="sp_teclab">Técnico Laborales</span>
                 <span id="sp_curso">Cursos, Seminarios y Diplomados</span>
             <? else: ?>
-                <a href="<?= PUBLIC_PATH?>program/programas/1">Técnico Laborales</a>
-                <a href="<?= PUBLIC_PATH?>program/programas/7">Cursos, Seminarios y Diplomados</a>
+                <!--a href="<?= PUBLIC_PATH?>program/programas/1">Técnico Laborales</a-->
+                <a href="<?= PUBLIC_PATH?>programas/tecnico_laborales">Técnico Laborales</a>
+                <!--a href="<?= PUBLIC_PATH?>program/programas/7">Cursos, Seminarios y Diplomados</a-->
+                <a href="<?= PUBLIC_PATH?>programas/cursos_seminarios_diplomados">Cursos, Seminarios y Diplomados</a>
             <? endif; ?>
         </div>
     </div>
@@ -43,7 +47,8 @@
     </div-->
     <div class="btn">
         <!--a class="dropbtn" href="<?= PUBLIC_PATH?>registration/preinscripcion/" style="position: relative;">Preinscripción</a-->
-        <a class="dropbtn" href="<?= PUBLIC_PATH?>index/contactenos/" style="position: relative;">Contáctenos</a>
+        <!--a class="dropbtn" href="<?= PUBLIC_PATH?>index/contactenos/" style="position: relative;">Contáctenos</a-->
+        <a class="dropbtn" href="<?= PUBLIC_PATH?>institucion/contactenos/" style="position: relative;">Contáctenos</a>
     </div>
 </div>
 <div id="dv_navegacionsec" class="contenedor_navegacionsec contendor_navegacionsecdn">
@@ -120,53 +125,58 @@
             navSec = $('#dv_navegacionsec');
 
         /*pos = $('#dv_navegacion').offset();*/
-        pos = $('header').offset();
+        pos = $('header').offset(),
+        alth = $('header').height(),
+        altns = $('#dv_navegacionsec').height();
 
         $(window).scroll(function () {
-            if ($(this).scrollTop() > pos.top && window.innerWidth > 768) {
+            if ($(this).scrollTop() > (pos.top + alth - altns)) {
                 window.navegacion = 1;
                 
                 navSec.css({
                     display: 'none'
                 });
-                header.css({
-                    height: '40px',
-                    background: 'linear-gradient(to bottom, #00529B 0%, #2989d8 100%, #207cca 100%, #7db9e8 100%)',
-                    position: 'fixed',
-                    top: '0',
-                    left: pos.left,
-                    'z-index': '100',
-                    'max-width': '1024px',
-                    'justify-content': 'flex-end'
-                });
-                logo.css({
-                    width: '10%',
-                    height: '30px',
-                    padding: '5px 0'
-                });
-                imgLogo.css({
-                    width: '30px',
-                    height: '30px',
-                    margin: '0'
-                });
-                its.css({
-                    width: '40%',
-                    height: '40px',
-                    'font-size': '20px',
-                    'letter-spacing': '0',
-                    display: 'flex',
-                    'align-items': 'center',
-                    'justify-content': 'center'
-                });
-                nav.css({
-                    width: '50%'
-                });
-                itemNav.css({
-                    width: '25%'
-                });
+                
+                if (window.innerWidth > 768) {
+                    header.css({
+                        height: '40px',
+                        background: 'linear-gradient(to bottom, #00529B 0%, #2989d8 100%, #207cca 100%, #7db9e8 100%)',
+                        position: 'fixed',
+                        top: '0',
+                        left: pos.left,
+                        'z-index': '100',
+                        'max-width': '1024px',
+                        'justify-content': 'flex-end'
+                    });
+                    logo.css({
+                        width: '10%',
+                        height: '30px',
+                        padding: '5px 0'
+                    });
+                    imgLogo.css({
+                        width: '30px',
+                        height: '30px',
+                        margin: '0'
+                    });
+                    its.css({
+                        width: '40%',
+                        height: '40px',
+                        'font-size': '20px',
+                        'letter-spacing': '0',
+                        display: 'flex',
+                        'align-items': 'center',
+                        'justify-content': 'center'
+                    });
+                    nav.css({
+                        width: '50%'
+                    });
+                    itemNav.css({
+                        width: '25%'
+                    });
 
-                /*nav.addClass("navegacion");
-                nav.css({left:pos.left});*/
+                    /*nav.addClass("navegacion");
+                    nav.css({left:pos.left});*/
+                }
 
                 header.addClass("navegacion");
             } else {
@@ -188,7 +198,9 @@
     });
     
     $(window).resize(function(){
-        pos = $('header').offset();
+        pos = $('header').offset(),
+        alth = $('header').height(),
+        altns = $('#dv_navegacionsec').height();
     });
     
     $('.dropdown').on('mouseover', function (){
@@ -221,6 +233,8 @@
 
             },
             success: function(data){
+                history.pushState(null, "", "<?= PUBLIC_PATH?>institucion");
+                
                 $('#dv_navegacionsec').removeClass('contendor_navegacionsecdn');
                 $('#sp_inicio').removeClass('contendor_navegacionsecdn');
                 $('#lnk_inicio').next('span').removeClass('contendor_navegacionsecdn');
@@ -255,47 +269,17 @@
 
             },
             success: function(data){
-                $('#dv_navegacionsec').removeClass('contendor_navegacionsecdn');
-                $('#sp_inicio').removeClass('contendor_navegacionsecdn');
-                $('#lnk_inicio').next('span').removeClass('contendor_navegacionsecdn');
-                $('#sp_institucion').addClass('etiqueta_institucion');
-                $('#sp_institucion').removeClass('navsecactive').addClass('navsecnoactive');
-                $('#sp_institucion').removeClass('contendor_navegacionsecdn').next('span').removeClass('contendor_navegacionsecdn');
-                $('#sp_institucionopc').text('Misión | Visión').removeClass('contendor_navegacionsecdn');
-                $('#sp_institucionmv').parent().css({display: 'none'});
-                $('#sec_contenido').html(data);
-            },
-            error: function(){
-                console.log('Error');
-            }
-        }).always(function(){
-
-        });
-    });
-    
-    $('#sp_institucionmisionvision').on('click', function (){
-        $.ajax({
-            type: 'POST',
-            url: window.public_path + "index/institucion/1",
-            data: {
-                'tipoIns': 1
-            },
-            beforeSend: function(){
-
-            },
-            success: function(data){
-                $('#dv_navegacionsec').removeClass('contendor_navegacionsecdn');
-                $('#sp_inicio').removeClass('contendor_navegacionsecdn');
-                $('#lnk_inicio').next('span').removeClass('contendor_navegacionsecdn');
-                $('#sp_institucion').addClass('etiqueta_institucion');
-                $('#sp_institucion').removeClass('navsecactive').addClass('navsecnoactive');
-                $('#sp_institucion').removeClass('contendor_navegacionsecdn').next('span').removeClass('contendor_navegacionsecdn');
-                $('#sp_institucionopc').text('Misión | Visión').removeClass('contendor_navegacionsecdn');
-                $('#sp_institucionmv').parent().css({display: 'none'});
-                $('#sec_contenido').html(data);
+                history.pushState(null, "", "<?= PUBLIC_PATH?>institucion/mision_vision");
                 
-                $('body').removeClass('menuopen');
-                $drawer.removeClass('opcionesmenuopen');
+                $('#dv_navegacionsec').removeClass('contendor_navegacionsecdn');
+                $('#sp_inicio').removeClass('contendor_navegacionsecdn');
+                $('#lnk_inicio').next('span').removeClass('contendor_navegacionsecdn');
+                $('#sp_institucion').addClass('etiqueta_institucion');
+                $('#sp_institucion').removeClass('navsecactive').addClass('navsecnoactive');
+                $('#sp_institucion').removeClass('contendor_navegacionsecdn').next('span').removeClass('contendor_navegacionsecdn');
+                $('#sp_institucionopc').text('Misión | Visión').removeClass('contendor_navegacionsecdn');
+                $('#sp_institucionmv').parent().css({display: 'none'});
+                $('#sec_contenido').html(data);
             },
             error: function(){
                 console.log('Error');
@@ -316,47 +300,18 @@
 
             },
             success: function(data){
-                $('#dv_navegacionsec').removeClass('contendor_navegacionsecdn');
-                $('#sp_inicio').removeClass('contendor_navegacionsecdn');
-                $('#lnk_inicio').next('span').removeClass('contendor_navegacionsecdn');
-                $('#sp_institucion').addClass('etiqueta_institucion');
-                $('#sp_institucion').removeClass('navsecactive').addClass('navsecnoactive');
-                $('#sp_institucion').removeClass('contendor_navegacionsecdn').next('span').removeClass('contendor_navegacionsecdn');
-                $('#sp_institucionopc').text('Visítanos').removeClass('contendor_navegacionsecdn');
-                $('#sp_institucionv').parent().css({display: 'none'});
-                $('#sec_contenido').html(data);
-            },
-            error: function(){
-                console.log('Error');
-            }
-        }).always(function(){
-
-        });
-    });
-    
-    $('#sp_institucionvisitanos').on('click', function (){
-        $.ajax({
-            type: 'POST',
-            url: window.public_path + "index/institucion/2",
-            data: {
-                'tipoIns': 2
-            },
-            beforeSend: function(){
-
-            },
-            success: function(data){
-                $('#dv_navegacionsec').removeClass('contendor_navegacionsecdn');
-                $('#sp_inicio').removeClass('contendor_navegacionsecdn');
-                $('#lnk_inicio').next('span').removeClass('contendor_navegacionsecdn');
-                $('#sp_institucion').addClass('etiqueta_institucion');
-                $('#sp_institucion').removeClass('navsecactive').addClass('navsecnoactive');
-                $('#sp_institucion').removeClass('contendor_navegacionsecdn').next('span').removeClass('contendor_navegacionsecdn');
-                $('#sp_institucionopc').text('Visítanos').removeClass('contendor_navegacionsecdn');
-                $('#sp_institucionv').parent().css({display: 'none'});
-                $('#sec_contenido').html(data);
+                history.pushState(null, "", "<?= PUBLIC_PATH?>institucion/visitanos");
                 
-                $('body').removeClass('menuopen');
-                $drawer.removeClass('opcionesmenuopen');            },
+                $('#dv_navegacionsec').removeClass('contendor_navegacionsecdn');
+                $('#sp_inicio').removeClass('contendor_navegacionsecdn');
+                $('#lnk_inicio').next('span').removeClass('contendor_navegacionsecdn');
+                $('#sp_institucion').addClass('etiqueta_institucion');
+                $('#sp_institucion').removeClass('navsecactive').addClass('navsecnoactive');
+                $('#sp_institucion').removeClass('contendor_navegacionsecdn').next('span').removeClass('contendor_navegacionsecdn');
+                $('#sp_institucionopc').text('Visítanos').removeClass('contendor_navegacionsecdn');
+                $('#sp_institucionv').parent().css({display: 'none'});
+                $('#sec_contenido').html(data);
+            },
             error: function(){
                 console.log('Error');
             }
@@ -376,6 +331,8 @@
 
             },
             success: function(data){
+                history.pushState(null, "", "<?= PUBLIC_PATH?>programas/tecnico_laborales");
+                
                 $('#dv_navegacionsec').removeClass('contendor_navegacionsecdn');
                 $('#sp_inicio').removeClass('contendor_navegacionsecdn');
                 $('#lnk_inicio').next('span').removeClass('contendor_navegacionsecdn');
@@ -386,38 +343,6 @@
                 
                 $('#sp_teclab').parent().css({display: 'none'});
                 $('#sec_contenido').html(data);
-            },
-            error: function(){
-                console.log('Error');
-            }
-        }).always(function(){
-
-        });
-    });
-    
-    $('#sp_programasteclab').on('click', function (){
-        $.ajax({
-            type: 'POST',
-            url: window.public_path + "program/programas/1",
-            data: {
-                'tipoProg': 1
-            },
-            beforeSend: function(){
-
-            },
-            success: function(data){
-                $('#dv_navegacionsec').removeClass('contendor_navegacionsecdn');
-                $('#sp_inicio').removeClass('contendor_navegacionsecdn');
-                $('#lnk_inicio').next('span').removeClass('contendor_navegacionsecdn');
-                $('#sp_programas').removeClass('contendor_navegacionsecdn').next('span').removeClass('contendor_navegacionsecdn');
-                $('#sp_programateclab').addClass('contendor_navegacionsecdn');
-                $('#sp_programa').removeClass('navsecnoactive').next('span').addClass('contendor_navegacionsecdn');
-                $('#sp_programa').text('Técnico Laborales').removeClass('contendor_navegacionsecdn');
-                $('#sp_teclab').parent().css({display: 'none'});
-                $('#sec_contenido').html(data);
-                
-                $('body').removeClass('menuopen');
-                $drawer.removeClass('opcionesmenuopen');
             },
             error: function(){
                 console.log('Error');
@@ -438,6 +363,8 @@
 
             },
             success: function(data){
+                history.pushState(null, "", "<?= PUBLIC_PATH?>programas/cursos_seminarios_diplomados");
+                
                 $('#dv_navegacionsec').removeClass('contendor_navegacionsecdn');
                 $('#sp_inicio').removeClass('contendor_navegacionsecdn');
                 $('#lnk_inicio').next('span').removeClass('contendor_navegacionsecdn');
@@ -447,38 +374,6 @@
                 $('#sp_programa').text('Cursos, Seminarios y Diplomados').removeClass('contendor_navegacionsecdn');
                 $('#sp_curso').parent().css({display: 'none'});
                 $('#sec_contenido').html(data);
-            },
-            error: function(){
-                console.log('Error');
-            }
-        }).always(function(){
-
-        });
-    });
-    
-    $('#sp_programascurso').on('click', function (){
-        $.ajax({
-            type: 'POST',
-            url: window.public_path + "program/programas/7",
-            data: {
-                'tipoProg': 7
-            },
-            beforeSend: function(){
-
-            },
-            success: function(data){
-                $('#dv_navegacionsec').removeClass('contendor_navegacionsecdn');
-                $('#sp_inicio').removeClass('contendor_navegacionsecdn');
-                $('#lnk_inicio').next('span').removeClass('contendor_navegacionsecdn');
-                $('#sp_programas').removeClass('contendor_navegacionsecdn').next('span').removeClass('contendor_navegacionsecdn');
-                $('#sp_programateclab').addClass('contendor_navegacionsecdn');
-                $('#sp_programa').removeClass('navsecnoactive').next('span').addClass('contendor_navegacionsecdn');
-                $('#sp_programa').text('Ingles Por Niveles').removeClass('contendor_navegacionsecdn');
-                $('#sp_curso').parent().css({display: 'none'});
-                $('#sec_contenido').html(data);
-                
-                $('body').removeClass('menuopen');
-                $drawer.removeClass('opcionesmenuopen');
             },
             error: function(){
                 console.log('Error');

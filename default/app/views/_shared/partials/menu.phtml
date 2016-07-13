@@ -15,7 +15,8 @@
                 <? if($banInstitucion > 0): ?>
                     <span id="sp_institucionmisionvision" class="etiqueta_instituciontituloopcionmenu">Misión | Visión</span>
                 <? else: ?>
-                    <a class="etiqueta_instituciontituloopcionmenu" href="<?= PUBLIC_PATH?>index/institucion/1">Misión | Visión</a>
+                    <!--a class="etiqueta_instituciontituloopcionmenu" href="<?= PUBLIC_PATH?>index/institucion/1">Misión | Visión</a-->
+                    <a class="etiqueta_instituciontituloopcionmenu" href="<?= PUBLIC_PATH?>institucion/mision_vision">Misión | Visión</a>
                 <? endif; ?>
             </div>
             <div>
@@ -23,7 +24,8 @@
                 <? if($banInstitucion > 0): ?>
                     <span id="sp_institucionvisitanos" class="etiqueta_instituciontituloopcionmenu">Visítanos</span>
                 <? else: ?>
-                    <a class="etiqueta_instituciontituloopcionmenu" href="<?= PUBLIC_PATH?>index/institucion/2">Visítanos</a>
+                    <!--a class="etiqueta_instituciontituloopcionmenu" href="<?= PUBLIC_PATH?>index/institucion/2">Visítanos</a-->
+                    <a class="etiqueta_instituciontituloopcionmenu" href="<?= PUBLIC_PATH?>institucion/visitanos">Visítanos</a>
                 <? endif; ?>
             </div>
         </div>
@@ -38,7 +40,8 @@
                 <? if($banProgramas > 0): ?>
                     <span id="sp_programasteclab" class="etiqueta_instituciontituloopcionmenu">Técnico Laborales</span>
                 <? else: ?>
-                    <a class="etiqueta_instituciontituloopcionmenu" href="<?= PUBLIC_PATH?>program/programas/1">Técnico Laborales</a>
+                    <!--a class="etiqueta_instituciontituloopcionmenu" href="<?= PUBLIC_PATH?>program/programas/1">Técnico Laborales</a-->
+                    <a class="etiqueta_instituciontituloopcionmenu" href="<?= PUBLIC_PATH?>programas/tecnico_laborales">Técnico Laborales</a>
                 <? endif; ?>
             </div>
             <div>
@@ -46,7 +49,8 @@
                 <? if($banProgramas > 0): ?>
                     <span id="sp_programascurso" class="etiqueta_instituciontituloopcionmenu">Cursos, Seminarios y Diplomados</span>
                 <? else: ?>
-                    <a class="etiqueta_instituciontituloopcionmenu" href="<?= PUBLIC_PATH?>program/programas/7">Cursos, Seminarios y Diplomados</a>
+                    <!--a class="etiqueta_instituciontituloopcionmenu" href="<?= PUBLIC_PATH?>program/programas/7">Cursos, Seminarios y Diplomados</a-->
+                    <a class="etiqueta_instituciontituloopcionmenu" href="<?= PUBLIC_PATH?>programas/cursos_seminarios_diplomados">Cursos, Seminarios y Diplomados</a>
                 <? endif; ?>
             </div>
         </div>
@@ -58,7 +62,11 @@
             <span class="etiqueta_iconopcionmenu icon_contact"></span>
             <span class="etiqueta_tituloopcionmenu">Preinscripción</span>
         </a-->
-        <a class="contenedor_opcionmenu" href="<?= PUBLIC_PATH?>index/contactenos/">
+        <!--a class="contenedor_opcionmenu" href="<?= PUBLIC_PATH?>index/contactenos/">
+            <span class="etiqueta_iconopcionmenu icon_contact"></span>
+            <span class="etiqueta_tituloopcionmenu">Contáctenos</span>
+        </a-->
+        <a class="contenedor_opcionmenu" href="<?= PUBLIC_PATH?>institucion/contactenos/">
             <span class="etiqueta_iconopcionmenu icon_contact"></span>
             <span class="etiqueta_tituloopcionmenu">Contáctenos</span>
         </a>
@@ -76,6 +84,141 @@
             drawer = $('#dv_menu'),
             close = $('#dv_cerrarmenu');
             //$back = $('#dv_backmenu);
+        
+        $('#sp_institucionmisionvision').on('click', function (){
+            $.ajax({
+                type: 'POST',
+                url: window.public_path + "index/institucion/1",
+                data: {
+                    'tipoIns': 1
+                },
+                beforeSend: function(){
+
+                },
+                success: function(data){
+                    history.pushState(null, "", "<?= PUBLIC_PATH?>institucion/mision_vision");
+                    
+                    $('#dv_navegacionsec').removeClass('contendor_navegacionsecdn');
+                    $('#sp_inicio').removeClass('contendor_navegacionsecdn');
+                    $('#lnk_inicio').next('span').removeClass('contendor_navegacionsecdn');
+                    $('#sp_institucion').addClass('etiqueta_institucion');
+                    $('#sp_institucion').removeClass('navsecactive').addClass('navsecnoactive');
+                    $('#sp_institucion').removeClass('contendor_navegacionsecdn').next('span').removeClass('contendor_navegacionsecdn');
+                    $('#sp_institucionopc').text('Misión | Visión').removeClass('contendor_navegacionsecdn');
+                    $('#sp_institucionmv').parent().css({display: 'none'});
+                    $('#sec_contenido').html(data);
+
+                    $('body').removeClass('menuopen');
+                    drawer.removeClass('opcionesmenuopen');
+                },
+                error: function(){
+                    console.log('Error');
+                }
+            }).always(function(){
+
+            });
+        });
+        
+        $('#sp_institucionvisitanos').on('click', function (){
+            $.ajax({
+                type: 'POST',
+                url: window.public_path + "index/institucion/2",
+                data: {
+                    'tipoIns': 2
+                },
+                beforeSend: function(){
+
+                },
+                success: function(data){
+                    history.pushState(null, "", "<?= PUBLIC_PATH?>institucion/visitanos");
+                    
+                    $('#dv_navegacionsec').removeClass('contendor_navegacionsecdn');
+                    $('#sp_inicio').removeClass('contendor_navegacionsecdn');
+                    $('#lnk_inicio').next('span').removeClass('contendor_navegacionsecdn');
+                    $('#sp_institucion').addClass('etiqueta_institucion');
+                    $('#sp_institucion').removeClass('navsecactive').addClass('navsecnoactive');
+                    $('#sp_institucion').removeClass('contendor_navegacionsecdn').next('span').removeClass('contendor_navegacionsecdn');
+                    $('#sp_institucionopc').text('Visítanos').removeClass('contendor_navegacionsecdn');
+                    $('#sp_institucionv').parent().css({display: 'none'});
+                    $('#sec_contenido').html(data);
+
+                    $('body').removeClass('menuopen');
+                    drawer.removeClass('opcionesmenuopen');            },
+                error: function(){
+                    console.log('Error');
+                }
+            }).always(function(){
+
+            });
+        });
+        
+        $('#sp_programasteclab').on('click', function (){
+            $.ajax({
+                type: 'POST',
+                url: window.public_path + "program/programas/1",
+                data: {
+                    'tipoProg': 1
+                },
+                beforeSend: function(){
+
+                },
+                success: function(data){
+                    history.pushState(null, "", "<?= PUBLIC_PATH?>programas/tecnico_laborales");
+                    
+                    $('#dv_navegacionsec').removeClass('contendor_navegacionsecdn');
+                    $('#sp_inicio').removeClass('contendor_navegacionsecdn');
+                    $('#lnk_inicio').next('span').removeClass('contendor_navegacionsecdn');
+                    $('#sp_programas').removeClass('contendor_navegacionsecdn').next('span').removeClass('contendor_navegacionsecdn');
+                    $('#sp_programateclab').addClass('contendor_navegacionsecdn');
+                    $('#sp_programa').removeClass('navsecnoactive').next('span').addClass('contendor_navegacionsecdn');
+                    $('#sp_programa').text('Técnico Laborales').removeClass('contendor_navegacionsecdn');
+                    $('#sp_teclab').parent().css({display: 'none'});
+                    $('#sec_contenido').html(data);
+
+                    $('body').removeClass('menuopen');
+                    drawer.removeClass('opcionesmenuopen');
+                },
+                error: function(){
+                    console.log('Error');
+                }
+            }).always(function(){
+
+            });
+        });
+        
+        $('#sp_programascurso').on('click', function (){
+            $.ajax({
+                type: 'POST',
+                url: window.public_path + "program/programas/7",
+                data: {
+                    'tipoProg': 7
+                },
+                beforeSend: function(){
+
+                },
+                success: function(data){
+                    history.pushState(null, "", "<?= PUBLIC_PATH?>programas/cursos_seminarios_diplomados");
+                    
+                    $('#dv_navegacionsec').removeClass('contendor_navegacionsecdn');
+                    $('#sp_inicio').removeClass('contendor_navegacionsecdn');
+                    $('#lnk_inicio').next('span').removeClass('contendor_navegacionsecdn');
+                    $('#sp_programas').removeClass('contendor_navegacionsecdn').next('span').removeClass('contendor_navegacionsecdn');
+                    $('#sp_programateclab').addClass('contendor_navegacionsecdn');
+                    $('#sp_programa').removeClass('navsecnoactive').next('span').addClass('contendor_navegacionsecdn');
+                    $('#sp_programa').text('Ingles Por Niveles').removeClass('contendor_navegacionsecdn');
+                    $('#sp_curso').parent().css({display: 'none'});
+                    $('#sec_contenido').html(data);
+
+                    $('body').removeClass('menuopen');
+                    drawer.removeClass('opcionesmenuopen');
+                },
+                error: function(){
+                    console.log('Error');
+                }
+            }).always(function(){
+
+            });
+        });
 
         drawer.on('click',function(e){
             //e.stopPropagation();

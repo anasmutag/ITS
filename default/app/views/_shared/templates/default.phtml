@@ -42,7 +42,7 @@
     <header>
         <? View::partial("header", false, array('banProgramas'=>$banProgramas, 'tipoPrograma'=>$tipoPrograma, 'banInstitucion'=>$banInstitucion, 'tipoInstitucion'=>$tipoInstitucion, 'banContactenos'=>$banContactenos)) ?>
     </header>
-    <section id="sec_contenido">
+    <section id="sec_contenido" class="<?= ($banInstitucion>0||$banProgramas>0||$banContactenos>0)?'seccion_contenidol':'seccion_contenidos';?>">
         <? View::content(); ?>
     </section>
     <footer>

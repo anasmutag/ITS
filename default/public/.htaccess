@@ -13,6 +13,13 @@ DirectoryIndex index.php
     RewriteCond %{REQUEST_FILENAME} !-d
     
     RewriteRule ^([^/]+)/?$ index.php [QSA,L,NC]
+    RewriteRule ^institucion/mision_vision/?$ index.php?_url=index/institucion/1 [QSA,L,NC]
+    RewriteRule ^institucion/visitanos/?$ index.php?_url=index/institucion/2 [QSA,L,NC]
+    RewriteRule ^institucion/?$ index.php?_url=index/institucion/3 [QSA,L,NC]
+    RewriteRule ^institucion/contactenos/?$ index.php?_url=index/contactenos/ [QSA,L,NC]
+    
+    RewriteRule ^programas/tecnico_laborales/?$ index.php?_url=program/programas/1 [QSA,L,NC]
+    RewriteRule ^programas/cursos_seminarios_diplomados/?$ index.php?_url=program/programas/7 [QSA,L,NC]
     
     # Para peticiones que no son archivos ni directorios
     # Reescribe a index.php?_url=URL

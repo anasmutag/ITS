@@ -1431,6 +1431,12 @@ header {
     -webkit-order: 2;
     order: 2;*/
 }
+.seccion_contenidos {
+  padding: 0;
+}
+.seccion_contenidol {
+  padding: 0;
+}
 input,
 textarea {
   outline: 0;
