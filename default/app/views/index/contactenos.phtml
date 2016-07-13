@@ -50,19 +50,19 @@
         <form id="frm_contactenos">
             <div class="contenedor_seccioncontactenos">
                 <label class="etiqueta_encabezadoseccioncontactenos">Nombre(s) y Apellidos</label>
-                <input type="text" name="nombre" class="entrada_textoseccioncontactenos" required="required">
+                <input type="text" name="nombre" id="solicitud_nombre" class="entrada_textoseccioncontactenos" required="required">
             </div>
             <div class="contenedor_seccioncontactenos">
                 <label class="etiqueta_encabezadoseccioncontactenos">Correo Electrónico</label>
-                <input type="email" name="email" class="entrada_textoseccioncontactenos" required="required">
+                <input type="email" name="email" id="solicitud_email" class="entrada_textoseccioncontactenos" autocomplete="off" required="required">
             </div>
             <div class="contenedor_seccioncontactenos">
                 <label class="etiqueta_encabezadoseccioncontactenos">Asunto</label>
-                <input type="text" name="asunto" class="entrada_textoseccioncontactenos" required="required">
+                <input type="text" name="asunto" id="solicitud_asunto" class="entrada_textoseccioncontactenos" required="required">
             </div>
             <div class="contenedor_seccioncontactenos">
                 <label class="etiqueta_encabezadoseccioncontactenos">Mensaje</label>
-                <textarea  name="mensaje" class="areatexto_mensajeseccioncontactenos" rows="5" required="required"></textarea>
+                <textarea name="mensaje" id="solicitud_mensaje" class="areatexto_mensajeseccioncontactenos" rows="5" required="required"></textarea>
             </div>
             <div class="contenedor_seccioncontactenos">
                 <!--input id="btn_cancelar" class="boton_contactenos" type="button" value="Cancelar" disabled="disabled"-->
@@ -79,22 +79,97 @@
     });
     
     $('#btn_enviar').on('click', function (){
-        $.ajax({
-            type: 'POST',
-            url: window.public_path + 'index/enviarCorreoElectronico/',
-            data: $('#frm_contactenos').serialize(),
-            dataType: 'json',
-            beforeSend: function(){
+        var nombre = $('#solicitud_nombre').val(),
+            email = $('#solicitud_email').val(),
+            asunto = $('#solicitud_asunto').val(),
+            mensaje = $('#solicitud_mensaje').val();
+        
+        console.log(nombre+"->"+email+"->"+asunto+"->"+mensaje);
+        
+        if(nombre.length > 0 && email.length > 0 && validar_email(email.trim()) && asunto.length > 0 && mensaje.length > 0){
+            $.ajax({
+                type: 'POST',
+                url: window.public_path + 'index/enviarCorreoElectronico/',
+                data: $('#frm_contactenos').serialize(),
+                dataType: 'json',
+                beforeSend: function(){
+                    document.getElementById("btn_enviar").disabled = true;
+                    
+                    $('body').addClass('menuopen');
+                    
+                    $.blockUI({
+                        message: "Enviando solicitud..."
+                    });
+                },
+                success: function(data) {
+                    $('body').removeClass('menuopen');
+                    
+                    document.getElementById("frm_contactenos").reset();
+                    console.log(data.res + ' ' + data.msg);
+                },
+                error: function(){
+                    console.log('Error');
+                }
+            }).always(function(){
+                document.getElementById("btn_enviar").disabled = false;
                 
-            },
-            success: function(data) {
-                alert(data.res + ' ' + data.msg);
-            },
-            error: function(){
-                console.log('Error');
+                $.unblockUI();
+            });
+        }else{
+            $input = $('#solicitud_nombre');
+            if(nombre.length === 0){
+                $input.addClass('entrada_textoseccioncontactenosnovalido');
+            }else{
+                $input.removeClass('entrada_textoseccioncontactenosnovalido');
             }
-        }).always(function(){
-            
-        });
+            $input = $('#solicitud_email');
+            if(email.length === 0 || !validar_email(email.trim())){
+                $input.addClass('entrada_textoseccioncontactenosnovalido');
+            }else{
+                $input.removeClass('entrada_textoseccioncontactenosnovalido');
+            }
+            $input = $('#solicitud_asunto');
+            if(asunto.length === 0){
+                $input.addClass('entrada_textoseccioncontactenosnovalido');
+            }else{
+                $input.removeClass('entrada_textoseccioncontactenosnovalido');
+            }
+            $input = $('#solicitud_mensaje');
+            if(mensaje.length === 0){
+                $input.addClass('entrada_textoseccioncontactenosnovalido');
+            }else{
+                $input.removeClass('entrada_textoseccioncontactenosnovalido');
+            }
+        }
+    });
+    
+    $('#solicitud_nombre, #solicitud_asunto, #solicitud_mensaje').on('blur', function() {
+        var txt = $(this).val();
+        
+        if (txt.length <= 0) {
+            $(this).addClass('entrada_textoseccioncontactenosnovalido');
+        } else {
+            $(this).removeClass('entrada_textoseccioncontactenosnovalido');
+        }
+    });
+    
+    $('#solicitud_email').on('blur', function() {
+        var email = $(this).val().trim();
+        
+        if (!validar_email(email)) {
+            $(this).addClass('entrada_textoseccioncontactenosnovalido');
+        } else {
+            $(this).removeClass('entrada_textoseccioncontactenosnovalido');
+        }
+    });
+    
+    $('#solicitud_nombre, #solicitud_email, #solicitud_asunto, #solicitud_mensaje').on('keyup', function() {
+        var txt = $(this).val();
+        
+        if (txt.length <= 0) {
+            $(this).addClass('entrada_textoseccioncontactenosnovalido');
+        } else {
+            $(this).removeClass('entrada_textoseccioncontactenosnovalido');
+        }
     });
 </script>

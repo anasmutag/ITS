@@ -1721,6 +1721,7 @@ textarea {
 }
 .icon_programs {
   background: url("../../ITS/img/icon/ic_school_white_48dp_2x.png") no-repeat center;
+  /*background: url("../../ITS/img/icon.png") no-repeat 0 0;*/
   background-size: 40px;
   cursor: pointer;
 }

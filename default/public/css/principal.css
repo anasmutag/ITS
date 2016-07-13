@@ -1155,6 +1155,9 @@
   font-family: 'RobotoMedium';
   font-size: 14px;
 }
+.contenedor_contactenos #dv_emailcontactenos #frm_contactenos .contenedor_seccioncontactenos .entrada_textoseccioncontactenosnovalido {
+  border: 1px solid #FF0000 !important;
+}
 .contenedor_contactenos #dv_emailcontactenos #frm_contactenos .contenedor_seccioncontactenos:nth-last-of-type(1) {
   margin: 15px 0 0 0;
 }
