@@ -44,16 +44,24 @@ class IndexController extends AppController {
         $arr['res'] = 'fail';
         $arr['msg'] = '';
         
-        $nombre = Input::request('nombre');
-        $email = Input::request('email');
-        $asunto = Input::request('asunto');
-        $mensaje = Input::request('mensaje');
+        $nombre = filter_var(Input::request('nombre'), FILTER_SANITIZE_STRING);
+        $email = filter_var(Input::request('email'), FILTER_SANITIZE_STRING);
+        $asunto = filter_var(Input::request('asunto'), FILTER_SANITIZE_STRING);
+        $mensaje = filter_var(Input::request('mensaje'), FILTER_SANITIZE_STRING);
         
-        if($correo->enviarSolicitud($nombre,$email,$asunto,$mensaje)){
-            $arr['res'] = 'ok';
-            $arr['msg'] = 'Solicitud de información enviada con exito';
+        if(!filter_var($email, FILTER_VALIDATE_EMAIL) === false){
+            //echo("$email is a valid email address");
+            
+            if($correo->enviarSolicitud($nombre,$email,$asunto,$mensaje)){
+                $arr['res'] = 'ok';
+                $arr['msg'] = 'Solicitud de información enviada con exito.';
+            }else{
+                $arr['msg'] = 'Ocurrio un error al enviar tu solicitud. Intenta nuevamente.';
+            }
         }else{
-            $arr['msg'] = 'Ocurrio un error al enviar tu solicitud';
+            //echo("$email is not a valid email address");
+            
+            $arr['msg'] = 'Correo electrónico no valido.';
         }
         
         exit(json_encode($arr));

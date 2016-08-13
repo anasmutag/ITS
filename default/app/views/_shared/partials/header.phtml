@@ -5,11 +5,16 @@
     
     San Juan de Pasto, <?= $meses[date('n')-1] . ' ' . $dia . ' del ' . $anio?>
 </div-->
-<div id="dv_logo">
-    <span id="sp_menu" class="icon_menu"></span>
+<div id="<?= ($view<=0)?'dv_logo':'dv_logoalterno';?>">
+    <? if($view <= 0) : ?>
+        <span id="sp_menu" class="icon_menu"></span>
+    <? endif; ?>
     <img src="<?= PUBLIC_PATH?>img/logo.png" alt="Logo Instituto Técnico Surcolombiano">
 </div>
-<div id="dv_instituto"><h1>INSTITUTO TÉCNICO SURCOOMBIANO</h1></div>
+<div id="<?= ($view<=0)?'dv_instituto':'dv_institutoalterno';?>">
+    <?= ($view<=0)?'<h1>INSTITUTO TÉCNICO SURCOOMBIANO</h1>':'<h1>CONSULTA DE NOTAS</h1><span>INSTITUTO TÉCNICO SURCOOMBIANO</span>';?>
+</div>
+<? if($view <= 0) : ?>
 <div id="dv_navegacion">
     <div class="btn">
         <a class="dropbtn" href="<?= PUBLIC_PATH?>" style="position: relative;">Inicio</a>
@@ -42,6 +47,14 @@
             <? endif; ?>
         </div>
     </div>
+    <div class="btn dropdown">
+        <span class="dropbtn">Servicios</span>
+        <div id="prueba" class="dropdown-content">
+            <a href="<?= PUBLIC_PATH?>estudiantes/consulta_notas">Consulta de Notas</a>
+            <a href="<?= PUBLIC_PATH?>docentes/registro_notas">Registro de Notas</a>
+            <a href="#">Evaluación Docente</a>
+        </div>
+    </div>
     <!--div class="btn">
         <a class="dropbtn" href="#" style="position: relative;">Campus Virtual</a>
     </div-->
@@ -63,6 +76,7 @@
     <span class="icon_next etiqueta_next contendor_navegacionsecdn"></span>
     <span id="sp_programateclab" class="contendor_navegacionsecdn navsecactive"></span>
 </div>
+<? endif; ?>
 
 <script type="text/javascript">
     $(window).load(function(){
@@ -116,15 +130,18 @@
     });
     
     $("document").ready(function($){
-        var header = $('header'),
+        /*var header = $('header'),
             logo = $('#dv_logo'),
             imgLogo = $('#dv_logo img'),
             its = $('#dv_instituto'),
             nav = $('#dv_navegacion'),
             itemNav = $('#dv_navegacion .btn'),
-            navSec = $('#dv_navegacionsec');
+            navSec = $('#dv_navegacionsec'),
+            contenido = $('#sec_contenido');*/
+        
+        var navSec = $('#dv_navegacionsec'),
+            contenido = $('#sec_contenido');
 
-        /*pos = $('#dv_navegacion').offset();*/
         pos = $('header').offset(),
         alth = $('header').height(),
         altns = $('#dv_navegacionsec').height();
@@ -133,11 +150,7 @@
             if ($(this).scrollTop() > (pos.top + alth - altns)) {
                 window.navegacion = 1;
                 
-                navSec.css({
-                    display: 'none'
-                });
-                
-                if (window.innerWidth > 768) {
+                /*if (window.innerWidth > 768) {
                     header.css({
                         height: '40px',
                         background: 'linear-gradient(to bottom, #00529B 0%, #2989d8 100%, #207cca 100%, #7db9e8 100%)',
@@ -173,26 +186,33 @@
                     itemNav.css({
                         width: '25%'
                     });
-
-                    /*nav.addClass("navegacion");
-                    nav.css({left:pos.left});*/
+                    contenido.css({
+                        padding: '40px 0 0 0'
+                    });
+                }*/
+                
+                if (window.innerWidth <= 768) {
+                    navSec.css({
+                        display: 'none'
+                    });
+                    contenido.css({
+                        padding: '60px 0 0 0'
+                    });
                 }
-
-                header.addClass("navegacion");
+                
+                //header.addClass("navegacion");
             } else {
                 window.navegacion = 0;
 
-                header.removeClass('navegacion');
+                /*header.removeClass('navegacion');
                 header.removeAttr('style');
                 logo.removeAttr('style');
                 imgLogo.removeAttr('style');
                 its.removeAttr('style');
                 nav.removeAttr('style');
-                itemNav.removeAttr('style');
+                itemNav.removeAttr('style');*/
                 navSec.removeAttr('style');
-
-                /*nav.removeClass("navegacion");
-                nav.removeAttr('style');*/
+                contenido.removeAttr('style');
             }
         });
     });

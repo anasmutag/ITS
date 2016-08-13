@@ -7,13 +7,16 @@
 .reset();
 
 html {
-    background-image: url(../img/fondo_02.jpg);
-    /*background-position: center;*/
+    /*background-image: url(../img/fondo_02.jpg);
     background-repeat: no-repeat;
-    background-size: cover;
+    background-size: cover;*/
     
-    /*background: linear-gradient(to bottom right, #006369, #00abb6);*/
-    /*background: linear-gradient(to bottom right, #006369 0%, #007b83 100%, #00939c 100%, #00abb6 100%);*/
+    background: white;
+    background: -webkit-linear-gradient(white, @html);
+    background: -o-linear-gradient(white, @html);
+    background: -moz-linear-gradient(white, @html);
+    background: linear-gradient(white, @html);
+    background-repeat: no-repeat;
     
     .font(@robotoregular;14px);
 }
@@ -122,7 +125,7 @@ input, textarea {
         color: @blanco;
     }
     .contenedor_institucionopcionmenu {
-        height: 120px;
+        height: 122px;
         border: 0;
         
         div {
@@ -147,19 +150,23 @@ input, textarea {
             }
         }
     }
-    #dv_institucionopcionesmenu, #dv_programasopcionesmenu {
+    #dv_institucionopcionesmenu, #dv_programasopcionesmenu, #dv_serviciosopcionesmenu {
         display: none;
+    }
+    #dv_serviciosopcionesmenu {
+        height: 183px;
     }
 }
 #dv_cerrarmenu {
     position: absolute;
+    top: 0;
+    left: 260px;
     background-color: @base;
     
     .dimensions(60px;60px);
     
     #sp_cerrarmenu {
-        position: absolute;
-        left: 0;
+        display: block;
         
         .dimensions(60px;60px);
     }
@@ -243,6 +250,12 @@ input, textarea {
 }
 .icon_programs {
     background: url("../../ITS/img/icon/ic_school_white_48dp_2x.png") no-repeat center;
+    /*background: url("../../ITS/img/icon.png") no-repeat 0 0;*/
+    background-size: 40px;
+    cursor: pointer;
+}
+.icon_services {
+    background: url("../../ITS/img/icon/ic_people_white_48dp_2x.png") no-repeat center;
     /*background: url("../../ITS/img/icon.png") no-repeat 0 0;*/
     background-size: 40px;
     cursor: pointer;

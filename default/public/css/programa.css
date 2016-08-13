@@ -1,5 +1,4 @@
-/*@html: #006369;
-@html: #589abb;*/
+/*@html: #006369;*/
 @font-face {
   font-family: 'RobotoBold';
   src: url(../font/Roboto-Bold.ttf) format('truetype');
@@ -467,6 +466,10 @@
   font-family: 'RobotoMedium';
   font-size: 18px;
 }
+#dv_programa .contenedor_detalleprograma .contenedor_secciondetalleprograma .etiqueta_tituloinformacionprograma:nth-last-of-type(1) {
+  padding: 0 0 10px 0;
+  border-bottom: 1px solid #00529B;
+}
 #dv_programa .contenedor_detalleprograma .contenedor_secciondetalleprograma .contenedor_informacionprograma {
   margin: 0 0 30px 0;
   width: 100%;
@@ -512,6 +515,9 @@
   padding: 5px 0;
   line-height: 1.2;
   cursor: default;
+}
+#dv_programa .contenedor_detalleprograma .contenedor_secciondetalleprograma .contenedor_informacionprograma:nth-last-of-type(1) {
+  margin: 0;
 }
 #dv_navprograma {
   color: #00529B;

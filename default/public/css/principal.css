@@ -1,5 +1,4 @@
-/*@html: #006369;
-@html: #589abb;*/
+/*@html: #006369;*/
 @font-face {
   font-family: 'RobotoBold';
   src: url(../font/Roboto-Bold.ttf) format('truetype');
@@ -1156,12 +1155,12 @@
   font-size: 14px;
 }
 .contenedor_contactenos #dv_emailcontactenos #frm_contactenos .contenedor_seccioncontactenos .entrada_textoseccioncontactenosnovalido {
-  border: 1px solid #FF0000 !important;
+  border: 1px solid #ff0000 !important;
 }
-.contenedor_contactenos #dv_emailcontactenos #frm_contactenos .contenedor_seccioncontactenos:nth-last-of-type(1) {
+.contenedor_contactenos #dv_emailcontactenos #frm_contactenos .contenedor_seccioncontactenos:nth-last-of-type(2) {
   margin: 15px 0 0 0;
 }
-.contenedor_contactenos #dv_emailcontactenos #frm_contactenos .contenedor_seccioncontactenos:nth-last-of-type(1) .boton_contactenos {
+.contenedor_contactenos #dv_emailcontactenos #frm_contactenos .contenedor_seccioncontactenos:nth-last-of-type(2) .boton_contactenos {
   margin: 0 12.5px;
   width: 100px;
   min-width: 100px;
@@ -1180,9 +1179,21 @@
   -khtml-border-radius: 5px;
   -webkit-border-radius: 5px;
 }
-.contenedor_contactenos #dv_emailcontactenos #frm_contactenos .contenedor_seccioncontactenos:nth-last-of-type(1) .boton_contactenos:hover {
+.contenedor_contactenos #dv_emailcontactenos #frm_contactenos .contenedor_seccioncontactenos:nth-last-of-type(2) .boton_contactenos:hover {
   color: #00529B;
   background-color: #ffffff;
+}
+.contenedor_contactenos #dv_emailcontactenos #frm_contactenos .contenedor_seccioncontactenos:nth-last-of-type(1) {
+  margin: 30px 0 0 0;
+}
+.contenedor_contactenos #dv_emailcontactenos #frm_contactenos .contenedor_seccioncontactenos:nth-last-of-type(1) label {
+  font-size: 14px;
+}
+.contenedor_contactenos #dv_emailcontactenos #frm_contactenos .contenedor_seccioncontactenos:nth-last-of-type(1) .respuestaok {
+  color: green;
+}
+.contenedor_contactenos #dv_emailcontactenos #frm_contactenos .contenedor_seccioncontactenos:nth-last-of-type(1) .respuestafail {
+  color: red;
 }
 .displaynone {
   display: none;

@@ -7,7 +7,7 @@
     }
     header {
         position: fixed;
-        z-index: 1000;
+        z-index: 100;
         
         #dv_fechahora {
             padding: 5px 15px;
@@ -31,11 +31,21 @@
                 .boxShadow(-8px;0;16px;-8px);
             }
         }
+        #dv_logoalterno {
+            display: none;
+        }
         #dv_instituto {
             margin: 5px 0;
             width: 80%;
             letter-spacing: 0;
             font-size: 25px;
+        }
+        #dv_institutoalterno {
+            margin: 0;
+            padding: 0 5px;
+            font-size: 20px;
+            
+            .dimensions(100%;80px);
         }
         #dv_navegacion {
             display: none;

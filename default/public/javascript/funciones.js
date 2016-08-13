@@ -7,3 +7,37 @@ function validar_email(email){
         return false;
     }
 }
+
+function validar_codigoestudiante(codigo){
+    //return true;
+    
+    $.ajax({
+        type: 'POST',
+        url: window.public_path + 'grade/validarCodigoEstudiante/',
+        data: {
+            codigo: codigo
+        },
+        dataType: 'json',
+        beforeSend: function(){
+            $('body').addClass('menuopen');
+            
+            $.blockUI({
+                message: "Validando código..."
+            });
+        },
+        success: function(data) {
+            $('body').removeClass('menuopen');
+            
+            if(data !== null && data.res === 'ok'){
+                return true;
+            }else{
+                return false;
+            }
+        },
+        error: function(){
+            return false;
+        }
+    }).always(function(){
+        $.unblockUI();
+    });
+}

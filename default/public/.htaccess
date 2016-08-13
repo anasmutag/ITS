@@ -21,6 +21,9 @@ DirectoryIndex index.php
     RewriteRule ^programas/tecnico_laborales/?$ index.php?_url=program/programas/1 [QSA,L,NC]
     RewriteRule ^programas/cursos_seminarios_diplomados/?$ index.php?_url=program/programas/7 [QSA,L,NC]
     
+    RewriteRule ^estudiantes/consulta_notas/?$ index.php?_url=grade/consultaNotas/ [QSA,L,NC]
+    RewriteRule ^docentes/registro_notas/?$ index.php?_url=grade/registroNotas/ [QSA,L,NC]
+    
     # Para peticiones que no son archivos ni directorios
     # Reescribe a index.php?_url=URL
     #RewriteRule ^(.*)$ index.php?_url=/$1 [QSA,L]

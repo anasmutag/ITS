@@ -1,61 +1,67 @@
 <!DOCTYPE html>
 <html lang="es">
-<head>
-    <meta http-equiv="Content-type" content="text/html; charset=<?php echo APP_CHARSET ?>" />
-    <meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1, maximum-scale=1">
-    
-    <title>Instituto Técnico Surcolombiano</title>
-    
-    <? Tag::css("general") ?>
-    <? Tag::css("principal") ?>
-    <? Tag::css("programa") ?>
-    <? Tag::css("registro") ?>
-    <? Tag::css("slippry") ?>
-    <? Tag::css("responsive") ?>
-    
-    <?= Html::includeCss() ?>
-    
-    <link rel="icon" type="img/ico" href="<?= PUBLIC_PATH."img/favicon.ico "?>">
-    
-    <?= Tag::js('jquery/jquery-2.2.3.min') ?>
-    <?= Tag::js('jquery/jquery.blockUI') ?>
-    <?= Tag::js('html5shiv') ?>
-    <?= Tag::js('funciones') ?>
-    <?= Tag::js('require') ?>
-    
-    <script type="text/javascript">
-        window.public_path = '<?= PUBLIC_PATH?>';
-        window.tablocalizacion = 0;
-        window.navegacion = 0;
-    </script>
-    
-    <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBYXHhoAbijaDCTdv98TsW_oucwePlcnD4">
-    </script>
-    
-    <? (isset($programas))?$banProgramas = $programas:$banProgramas = 0;
-    (isset($tipoProg))?$tipoPrograma = $tipoProg:$tipoPrograma = 0;
-    (isset($institucion))?$banInstitucion = $institucion:$banInstitucion = 0;
-    (isset($tipoIns))?$tipoInstitucion = $tipoIns:$tipoInstitucion = 0;
-    (isset($contactenos))?$banContactenos = $contactenos:$banContactenos = 0; ?>
-</head>
-<body>
-    <? View::partial("menu", false, array('banProgramas'=>$banProgramas, 'banInstitucion'=>$banInstitucion)); ?>
-    <header>
-        <? View::partial("header", false, array('banProgramas'=>$banProgramas, 'tipoPrograma'=>$tipoPrograma, 'banInstitucion'=>$banInstitucion, 'tipoInstitucion'=>$tipoInstitucion, 'banContactenos'=>$banContactenos)) ?>
-    </header>
-    <section id="sec_contenido" class="<?= ($banInstitucion>0||$banProgramas>0||$banContactenos>0)?'seccion_contenidol':'seccion_contenidos';?>">
-        <? View::content(); ?>
-    </section>
-    <footer>
-        <? View::partial("footer") ?>
-    </footer>
-    
-    <!--script type="text/javascript">
-        //alert(<?= (isset($programas))?$programas:0;?>);
-        //alert(<?= $banProgramas;?>);
-        //console.log('banProgramas: ' + <?= $banProgramas;?>);
-        //console.log('banInstitucion: ' + <?= $banInstitucion;?>);
-        //console.log('banContactenos: ' + <?= $banContactenos;?>);
-    </script-->
-</body>
+    <head>
+        <meta http-equiv="Content-type" content="text/html; charset=<?php echo APP_CHARSET ?>" />
+        <meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1, maximum-scale=1">
+
+        <title>Instituto Técnico Surcolombiano</title>
+
+        <? Tag::css("general") ?>
+        <? Tag::css("principal") ?>
+        <? Tag::css("programa") ?>
+        <? Tag::css("registro") ?>
+        <? Tag::css("slippry") ?>
+        <? Tag::css("jquery/jquery-ui") ?>
+        <? Tag::css("jquery/jquery-ui.structure") ?>
+        <? Tag::css("jquery/jquery-ui.theme") ?>
+        <? Tag::css("slippry") ?>
+        <? Tag::css("responsive") ?>
+
+        <?= Html::includeCss() ?>
+
+        <link rel="icon" type="img/ico" href="<?= PUBLIC_PATH."img/favicon.ico "?>">
+
+        <?= Tag::js('jquery/jquery-2.2.3.min') ?>
+        <?= Tag::js('jquery/jquery-ui') ?>
+        <?= Tag::js('jquery/jquery.blockUI') ?>
+        <?= Tag::js('slippry.min') ?>
+        <?= Tag::js('html5shiv') ?>
+        <?= Tag::js('funciones') ?>
+        <?= Tag::js('require') ?>
+
+        <script type="text/javascript">
+            window.public_path = '<?= PUBLIC_PATH?>';
+            window.tablocalizacion = 0;
+            window.navegacion = 0;
+        </script>
+
+        <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBYXHhoAbijaDCTdv98TsW_oucwePlcnD4">
+        </script>
+
+        <? (isset($programas))?$banProgramas = $programas:$banProgramas = 0;
+        (isset($tipoProg))?$tipoPrograma = $tipoProg:$tipoPrograma = 0;
+        (isset($institucion))?$banInstitucion = $institucion:$banInstitucion = 0;
+        (isset($tipoIns))?$tipoInstitucion = $tipoIns:$tipoInstitucion = 0;
+        (isset($contactenos))?$banContactenos = $contactenos:$banContactenos = 0; ?>
+    </head>
+    <body>
+        <? View::partial("menu", false, array('banProgramas'=>$banProgramas, 'banInstitucion'=>$banInstitucion)); ?>
+        <header>
+            <? View::partial("header", false, array('view'=>0, 'banProgramas'=>$banProgramas, 'tipoPrograma'=>$tipoPrograma, 'banInstitucion'=>$banInstitucion, 'tipoInstitucion'=>$tipoInstitucion, 'banContactenos'=>$banContactenos)) ?>
+        </header>
+        <section id="sec_contenido" class="<?= ($banInstitucion>0||$banProgramas>0||$banContactenos>0)?'seccion_contenidol':'seccion_contenidos';?>">
+            <? View::content(); ?>
+        </section>
+        <footer>
+            <? View::partial("footer", false, array('view'=>0)) ?>
+        </footer>
+
+        <!--script type="text/javascript">
+            //alert(<?= (isset($programas))?$programas:0;?>);
+            //alert(<?= $banProgramas;?>);
+            //console.log('banProgramas: ' + <?= $banProgramas;?>);
+            //console.log('banInstitucion: ' + <?= $banInstitucion;?>);
+            //console.log('banContactenos: ' + <?= $banContactenos;?>);
+        </script-->
+    </body>
 </html>

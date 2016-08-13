@@ -1,5 +1,4 @@
-/*@html: #006369;
-@html: #589abb;*/
+/*@html: #006369;*/
 @font-face {
   font-family: 'RobotoBold';
   src: url(../font/Roboto-Bold.ttf) format('truetype');
@@ -86,7 +85,7 @@
   }
   header {
     position: fixed;
-    z-index: 1000;
+    z-index: 100;
   }
   header #dv_fechahora {
     padding: 5px 15px;
@@ -169,11 +168,21 @@
     -moz-box-shadow: -8px 0 16px -8px #000000;
     box-shadow: -8px 0 16px -8px #000000;
   }
+  header #dv_logoalterno {
+    display: none;
+  }
   header #dv_instituto {
     margin: 5px 0;
     width: 80%;
     letter-spacing: 0;
     font-size: 25px;
+  }
+  header #dv_institutoalterno {
+    margin: 0;
+    padding: 0 5px;
+    font-size: 20px;
+    width: 100%;
+    height: 80px;
   }
   header #dv_navegacion {
     display: none;

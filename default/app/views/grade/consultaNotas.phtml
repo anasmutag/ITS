@@ -1,0 +1,78 @@
+<div class="contenedor_sistemacalificacion">
+    <span>CONSULTA DE NOTAS</span>
+    <label class="etiqueta_textosistemacalificacion">Mediante esta página usted puede consultar sus calificaciones</label>
+    <form id="frm_codigoestudiante">
+        <div class="contendor_elementosistemacalificacion">
+            <label id="lbl_codigoestudiante">Código</label>
+            <input id="txt_codigoestudiante" class="entrada_datossistemacalificacion" type="text" placeholder="Digite aquí su código" required="required">
+        </div>
+        <div class="contendor_elementosistemacalificacion">
+            <input id="btn_consultarnotas" class="boton_sistemacalificacion" type="button" value="Consultar">
+        </div>
+    </form>
+</div>
+
+<script type="text/javascript">
+    $('#btn_consultarnotas').on('click', function (){
+        var codigo = $('#txt_codigoestudiante').val();
+        
+        if(codigo.length > 0){
+            $.ajax({
+                type: 'POST',
+                url: window.public_path + 'grade/consultarNotas/',
+                data: {
+                    codigo: codigo
+                },
+                beforeSend: function(){
+                    /*document.getElementById("btn_consultarnotas").disabled = true;*/
+                    
+                    $('body').addClass('menuopen');
+                    
+                    $.blockUI({
+                        message: "Procesando solicitud..."
+                    });
+                },
+                success: function(data) {
+                    $('body').removeClass('menuopen');
+                    document.getElementById("frm_codigoestudiante").reset();
+                    
+                    $('#sec_contenidoalterno').html(data);
+                },
+                error: function(){
+                    console.log('Ocurrio un error inesperado. Intenta nuevamente');
+                }
+            }).always(function(){
+                /*document.getElementById("btn_consultarnotas").disabled = false;*/
+                
+                $.unblockUI();
+            });
+        }else{
+            $input = $('#txt_codigoestudiante');
+            if(codigo.length === 0){
+                $input.addClass('entrada_codigoestudiantenosnovalido');
+            }else{
+                $input.removeClass('entrada_codigoestudiantenosnovalido');
+            }
+        }
+    });
+    
+    $('#txt_codigoestudiante').on('blur', function() {
+        var txt = $(this).val();
+        
+        if (txt.length <= 0) {
+            $(this).addClass('entrada_codigoestudiantenosnovalido');
+        } else {
+            $(this).removeClass('entrada_codigoestudiantenosnovalido');
+        }
+    });
+    
+    $('#txt_codigoestudiante').on('keyup', function() {
+        var txt = $(this).val();
+        
+        if (txt.length <= 0) {
+            $(this).addClass('entrada_codigoestudiantenosnovalido');
+        } else {
+            $(this).removeClass('entrada_codigoestudiantenosnovalido');
+        }
+    });
+</script>

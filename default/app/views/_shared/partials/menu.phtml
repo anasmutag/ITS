@@ -1,6 +1,6 @@
 <div id="dv_menu" class="contenedor_opcionesmenu">
     <div id="dv_opcionesmenu">
-        <a class="contenedor_opcionmenu" href="<?= PUBLIC_PATH?>">
+        <a class="contenedor_opcionmenu" href="<?= PUBLIC_PATH?>" onclick="$(this).css({'background-color': '#00529B'});$(this).find('.etiqueta_tituloopcionmenu').css({color: '#ffffff'});" style="-webkit-tap-highlight-color: rgba(0, 0, 0, 0);">
             <span class="etiqueta_iconopcionmenu icon_home_white"></span>
             <span class="etiqueta_tituloopcionmenu">Inicio</span>
         </a>
@@ -52,6 +52,25 @@
                     <!--a class="etiqueta_instituciontituloopcionmenu" href="<?= PUBLIC_PATH?>program/programas/7">Cursos, Seminarios y Diplomados</a-->
                     <a class="etiqueta_instituciontituloopcionmenu" href="<?= PUBLIC_PATH?>programas/cursos_seminarios_diplomados">Cursos, Seminarios y Diplomados</a>
                 <? endif; ?>
+            </div>
+        </div>
+        <div id="dv_serviciosopcionmenu" class="contenedor_opcionmenu">
+            <span class="etiqueta_iconopcionmenu icon_services"></span>
+            <span id="sp_serviciosmenu" class="etiqueta_tituloopcionmenu">Servicios</span>
+            <span id="sp_serviciosicondown" class="etiqueta_icondown icon_down"></span>
+        </div>
+        <div id="dv_serviciosopcionesmenu" class="contenedor_opcionmenu contenedor_institucionopcionmenu">
+            <div>
+                <span class="etiqueta_iconopcionmenu"></span>
+                <a class="etiqueta_instituciontituloopcionmenu" href="<?= PUBLIC_PATH?>estudiantes/consulta_notas">Consulta de Notas</a>
+            </div>
+            <div>
+                <span class="etiqueta_iconopcionmenu"></span>
+                <a class="etiqueta_instituciontituloopcionmenu" href="<?= PUBLIC_PATH?>docentes/registro_notas">Registro de Notas</a>
+            </div>
+            <div>
+                <span class="etiqueta_iconopcionmenu"></span>
+                <a class="etiqueta_instituciontituloopcionmenu" href="#">Evaluación Docente</a>
             </div>
         </div>
         <!--a class="contenedor_opcionmenu" href="#">
@@ -228,7 +247,7 @@
             e.stopPropagation();
 
             //var altura = $('#dv_opcionesmenu').height() - 305;
-            var altura = $('#dv_opcionesmenu').height() - 244;
+            var altura = $('#dv_opcionesmenu').height() - 305;
             
             var t = $('header').offset().top;
 
@@ -272,6 +291,13 @@
             $('#sp_programasmenu').toggleClass('etiqueta_tituloopcionmenuseleccionada');
             $('#sp_programasicondown').toggleClass('icon_up');
             $('#dv_programasopcionmenu').toggleClass('contenedor_opcionmenuseleccionada');
+        });
+        
+        $('#dv_serviciosopcionmenu').on('click', function(){
+            $('#dv_serviciosopcionesmenu').slideToggle();
+            $('#sp_serviciosmenu').toggleClass('etiqueta_tituloopcionmenuseleccionada');
+            $('#sp_serviciosicondown').toggleClass('icon_up');
+            $('#dv_serviciosopcionmenu').toggleClass('contenedor_opcionmenuseleccionada');
         });
     });
 </script>

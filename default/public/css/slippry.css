@@ -200,6 +200,13 @@
       width: 100%;
       height: 100%;
       border: 0; }
+    .sy-slide > a > picture > img {
+      margin: 0;
+      padding: 0;
+      display: block;
+      width: 100%;
+      height: 100%;
+      border: 0; }
 
 /* next/ prev buttons, with arrows and clickable area a lot larger than the visible buttons */
 .sy-controls {

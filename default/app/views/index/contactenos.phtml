@@ -65,15 +65,40 @@
                 <textarea name="mensaje" id="solicitud_mensaje" class="areatexto_mensajeseccioncontactenos" rows="5" required="required"></textarea>
             </div>
             <div class="contenedor_seccioncontactenos">
+                <input id="btn_enviar" class="boton_contactenos" type="button" value="Enviar">
                 <!--input id="btn_cancelar" class="boton_contactenos" type="button" value="Cancelar" disabled="disabled"-->
                 <input id="btn_cancelar" class="boton_contactenos" type="button" value="Cancelar">
-                <input id="btn_enviar" class="boton_contactenos" type="button" value="Enviar">
+            </div>
+            <div class="contenedor_seccioncontactenos">
+                <label id="lbl_respuestasolicitud">Mensaje de confirmación</label>
             </div>
         </form>
     </div>
 </div>
+<div id="dv_dialogosolicitud">
+    <span>Aqui es...</span>
+</div>
 
 <script type="text/javascript">
+    $('#frm_contactenos .contenedor_seccioncontactenos:nth-last-of-type(1)').hide();
+    
+    $('#dv_dialogosolicitud').dialog({
+        autoOpen: false,
+        modal: true,
+        resizable: false,
+        buttons: {
+            "Página principal": function() {
+                window.location = "<?= PUBLIC_PATH?>";
+            },
+            "Regresar": function() {
+                $(this).dialog("close");
+            }
+        },
+        close: function (){
+            //$('body').removeClass('dvcontenedordialogo');
+        }
+    });
+    
     $('#btn_cancelar').on('click', function (){
         document.getElementById("frm_contactenos").reset();
     });
@@ -100,13 +125,30 @@
                     });
                 },
                 success: function(data) {
-                    $('body').removeClass('menuopen');
+                    if(data !== null && data.res === 'ok'){
+                        $('body').removeClass('menuopen');
+                        
+                        //$('#dv_dialogosolicitud').dialog('open');
+                        
+                        $('#lbl_respuestasolicitud').text(data.msg);
+                        $('#lbl_respuestasolicitud').removeClass('respuestafail').addClass('respuestaok');
+                        $('#frm_contactenos .contenedor_seccioncontactenos:nth-last-of-type(1)').show();
+                        
+                        document.getElementById("frm_contactenos").reset();
+                    }else{
+                        $('body').removeClass('menuopen');
+                        
+                        //$('#dv_dialogosolicitud').dialog('open');
+                        
+                        $('#lbl_respuestasolicitud').text(data.msg);
+                        $('#lbl_respuestasolicitud').removeClass('respuestaok').addClass('respuestafail');
+                        $('#frm_contactenos .contenedor_seccioncontactenos:nth-last-of-type(1)').show();
+                    }
                     
-                    document.getElementById("frm_contactenos").reset();
                     console.log(data.res);
                 },
                 error: function(){
-                    console.log('Error');
+                    console.log('Ocurrio un error inesperado. Intenta nuevamente');
                 }
             }).always(function(){
                 document.getElementById("btn_enviar").disabled = false;

@@ -118,6 +118,11 @@
                 
                 .dimensions;
                 .font(@robotomedium;18px);
+                
+                &:nth-last-of-type(1){
+                    padding: 0 0 10px 0;
+                    border-bottom: 1px solid @base;
+                }
             }
             .contenedor_informacionprograma {
                 margin: 0 0 30px 0;
@@ -134,6 +139,9 @@
                         line-height: 1.2;
                         cursor: default;
                     }
+                }
+                &:nth-last-of-type(1){
+                    margin: 0;
                 }
             }
         }

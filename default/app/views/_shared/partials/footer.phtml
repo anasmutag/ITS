@@ -1,42 +1,46 @@
-<div id="dv_enlacesinteres">
-    <div class="contenedor_enlacesinteres">
-        <div id="dv_certificaciones">
-            <div id="dv_certificacioncalidad">
-                <span id="sp_certificacioncalidad" class="etiqueta_certificacioncalidad">Certificación de Calidad</span>
-                <div id="dv_contenidocertificacioncalidad">
-                    <div><span id="sp_certificaciones">Certificación de</span></div>
-                    <div><span id="sp_calidad">CALIDAD</span></div>
+<? if($view <= 0) : ?>
+    <div id="dv_enlacesinteres">
+        <div class="contenedor_enlacesinteres">
+            <div id="dv_certificaciones">
+                <div id="dv_certificacioncalidad">
+                    <span id="sp_certificacioncalidad" class="etiqueta_certificacioncalidad">Certificación de Calidad</span>
+                    <div id="dv_contenidocertificacioncalidad">
+                        <div><span id="sp_certificaciones">Certificación de</span></div>
+                        <div><span id="sp_calidad">CALIDAD</span></div>
+                    </div>
                 </div>
-            </div>
-            <div id="dv_iconoscertificacioncalidad">
-                <div class="contenedor_logocalidad"><img src="<?= PUBLIC_PATH?>img/ISO_9001.png" alt="icontec - ISO 9001"></div>
-                <div class="contenedor_logocalidad"><img src="<?= PUBLIC_PATH?>img/NTC_5555.png" alt="icontec - NTC 5555"></div>
-                <div class="contenedor_logocalidad"><img src="<?= PUBLIC_PATH?>img/Certificacion_Servicios.png" alt="icontec - Certificación de Servicios"></div>
-                <div class="contenedor_logocalidad"><img src="<?= PUBLIC_PATH?>img/IQNet.png" alt="Certificado IQNet"></div>
-                <div class="contenedor_logocalidad">
-                    <div><img src="<?= PUBLIC_PATH?>img/Instituciones_Legales.png" alt="Institución Legal - Secretaria de EducaciónMunicipal"></div>
+                <div id="dv_iconoscertificacioncalidad">
+                    <div class="contenedor_logocalidad"><img src="<?= PUBLIC_PATH?>img/ISO_9001.png" alt="icontec - ISO 9001"></div>
+                    <div class="contenedor_logocalidad"><img src="<?= PUBLIC_PATH?>img/NTC_5555.png" alt="icontec - NTC 5555"></div>
+                    <div class="contenedor_logocalidad"><img src="<?= PUBLIC_PATH?>img/Certificacion_Servicios.png" alt="icontec - Certificación de Servicios"></div>
+                    <div class="contenedor_logocalidad"><img src="<?= PUBLIC_PATH?>img/IQNet.png" alt="Certificado IQNet"></div>
+                    <div class="contenedor_logocalidad">
+                        <div><img src="<?= PUBLIC_PATH?>img/Instituciones_Legales.png" alt="Institución Legal - Secretaria de EducaciónMunicipal"></div>
+                    </div>
                 </div>
             </div>
         </div>
-    </div>
-    <div class="contenedor_enlacesinteres">
-        <div id="dv_imgenlacesinteres">
-            <a class="contenedor_imgenlacesinteres" href="http://www.mintrabajo.gov.co/" target="_blanck"><img src="<?= PUBLIC_PATH?>img/logo_mintrabajo.png" alt="Convenio Ministerio del Trabajo"></a>
-            <a class="contenedor_imgenlacesinteres" href="http://www.funproinco.org/" target="_blanck"><img src="<?= PUBLIC_PATH?>img/logo_proinco.png" alt="Convenio Fundación Proinco"></a>
-            <div class="contenedor_imgenlacesinteres"><img src="<?= PUBLIC_PATH?>img/logo_pentagono.png" alt="Convenio El Pentagono LTDA"></div>
-            <a class="contenedor_imgenlacesinteres" href="http://comfamiliarnarino.com/" target="_blanck"><img src="<?= PUBLIC_PATH?>img/logo_comfamiliar.png" alt="Convenio Comfamiliar Nariño"></a>
-            <a class="contenedor_imgenlacesinteres" href="http://www.ccpasto.org.co/" target="_blanck"><img src="<?= PUBLIC_PATH?>img/logo_ccpasto.png" alt="Convenio Camara de Comercio de Pasto"></a>
-            <div class="contenedor_imgenlacesinteres"><img src="<?= PUBLIC_PATH?>img/logo_seguridadsur.png" alt="Convenio Seguridad del Sur LTDA"></div>
+        <div class="contenedor_enlacesinteres">
+            <div id="dv_imgenlacesinteres">
+                <a class="contenedor_imgenlacesinteres" href="http://www.mintrabajo.gov.co/" target="_blanck"><img src="<?= PUBLIC_PATH?>img/logo_mintrabajo.png" alt="Convenio Ministerio del Trabajo"></a>
+                <a class="contenedor_imgenlacesinteres" href="http://www.funproinco.org/" target="_blanck"><img src="<?= PUBLIC_PATH?>img/logo_proinco.png" alt="Convenio Fundación Proinco"></a>
+                <div class="contenedor_imgenlacesinteres"><img src="<?= PUBLIC_PATH?>img/logo_pentagono.png" alt="Convenio El Pentagono LTDA"></div>
+                <a class="contenedor_imgenlacesinteres" href="http://comfamiliarnarino.com/" target="_blanck"><img src="<?= PUBLIC_PATH?>img/logo_comfamiliar.png" alt="Convenio Comfamiliar Nariño"></a>
+                <a class="contenedor_imgenlacesinteres" href="http://www.ccpasto.org.co/" target="_blanck"><img src="<?= PUBLIC_PATH?>img/logo_ccpasto.png" alt="Convenio Camara de Comercio de Pasto"></a>
+                <div class="contenedor_imgenlacesinteres"><img src="<?= PUBLIC_PATH?>img/logo_seguridadsur.png" alt="Convenio Seguridad del Sur LTDA"></div>
+            </div>
         </div>
     </div>
-</div>
+<? endif; ?>
 <div id="dv_informacion_instituto">
-    <div id="dv_contenido_informacion_instituto">
-        <div>
-            <span>Calle 21 No. 23-90. San Juan de Pasto - Colombia</span><span>.&nbsp;</span><span>Teléfono: (2)7208428 - Celular: 3178626794</span><span>.&nbsp;</span><span>Email: itsurcolombiano.director@gmail.com</span>
-        </div>
-        <div>
-            <span>Copyright © Instituto Técnico Surcolombiano</span><span>.&nbsp;</span><span>Todos los derechos reservados</span>
-        </div>
+    <div id="<?= ($view<=0)?'dv_contenido_informacion_instituto':'dv_contenidoinformacioninstitutoalterno';?>">
+        <? if($view <= 0) : ?>
+            <div>
+                <span>Calle 21 No. 23-90. San Juan de Pasto - Colombia</span><span>.&nbsp;</span><span>Teléfono: (2)7208428 - Celular: 3178626794</span><span>.&nbsp;</span><span>Email: itsurcolombiano.director@gmail.com</span>
+            </div>
+            <div>
+                <span>Copyright © Instituto Técnico Surcolombiano</span><span>.&nbsp;</span><span>Todos los derechos reservados</span>
+            </div>
+        <? endif; ?>
     </div>
 </div>

@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="es">
+    <head>
+        <meta http-equiv="Content-type" content="text/html; charset=<?php echo APP_CHARSET ?>" />
+        <meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1, maximum-scale=1">
+        
+        <title>ITS - Sistema de Calificaciones</title>
+        
+        <? Tag::css("general") ?>
+        <? Tag::css("servicios") ?>
+        <? Tag::css("principal") ?>
+        <? Tag::css("programa") ?>
+        <? Tag::css("registro") ?>
+        <? Tag::css("slippry") ?>
+        <? Tag::css("jquery/jquery-ui") ?>
+        <? Tag::css("jquery/jquery-ui.structure") ?>
+        <? Tag::css("jquery/jquery-ui.theme") ?>
+        <? Tag::css("responsive") ?>
+        <? Tag::css("responsive_servicios") ?>
+
+        <?= Html::includeCss() ?>
+
+        <link rel="icon" type="img/ico" href="<?= PUBLIC_PATH."img/favicon.ico "?>">
+
+        <?= Tag::js('jquery/jquery-2.2.3.min') ?>
+        <?= Tag::js('jquery/jquery-ui') ?>
+        <?= Tag::js('jquery/jquery.blockUI') ?>
+        <?= Tag::js('html5shiv') ?>
+        <?= Tag::js('funciones') ?>
+
+        <script type="text/javascript">
+            window.public_path = '<?= PUBLIC_PATH?>';
+            
+            $(document).ready(function(){
+                hb = $('body').innerHeight();
+                hw = window.innerHeight;
+                
+                h = (hw - hb) / 2;
+                
+                if(hb <= hw){
+                    $('html').addClass('contenido');
+                    $('body').addClass('cuerpo_alterno');
+                    $('body').css({
+                        'margin-top': h.toString() + "px"
+                    });
+                    $('#cab_alterno').addClass('cabecera_alterno');
+                    $('#dv_informacion_instituto').addClass('pie_alterno');
+                }
+            });
+            
+            $(window).resize(function(){
+                hb = $('body').innerHeight();
+                hw = window.innerHeight;
+                
+                h = (hw - hb) / 2;
+                
+                if(hb <= hw){
+                    $('html').addClass('contenido');
+                    $('body').addClass('cuerpo_alterno');
+                    $('body').css({
+                        'margin-top': h.toString() + "px"
+                    });
+                    $('#cab_alterno').addClass('cabecera_alterno');
+                    $('#dv_informacion_instituto').addClass('pie_alterno');
+                }else{
+                    $('html').removeClass('contenido');
+                    $('body').removeClass('cuerpo_alterno');
+                    $('body').removeAttr('style');
+                    $('#cab_alterno').removeClass('cabecera_alterno');
+                    $('#dv_informacion_instituto').removeClass('pie_alterno');
+                }
+            });
+        </script>
+        
+        <? (isset($programas))?$banProgramas = $programas:$banProgramas = 0;
+        (isset($tipoProg))?$tipoPrograma = $tipoProg:$tipoPrograma = 0;
+        (isset($institucion))?$banInstitucion = $institucion:$banInstitucion = 0;
+        (isset($tipoIns))?$tipoInstitucion = $tipoIns:$tipoInstitucion = 0;
+        (isset($contactenos))?$banContactenos = $contactenos:$banContactenos = 0; ?>
+    </head>
+    <body>
+        <header id="cab_alterno">
+            <? View::partial("header", false, array('view'=>1, 'banProgramas'=>$banProgramas, 'tipoPrograma'=>$tipoPrograma, 'banInstitucion'=>$banInstitucion, 'tipoInstitucion'=>$tipoInstitucion, 'banContactenos'=>$banContactenos)) ?>
+        </header>
+        <section id="sec_contenidoalterno">
+            <? View::content(); ?>
+        </section>
+        <footer>
+            <? View::partial("footer", false, array('view'=>1)) ?>
+        </footer>
+    </body>
+</html>
