@@ -4,7 +4,7 @@
     <form id="frm_codigoestudiante">
         <div class="contendor_elementosistemacalificacion">
             <label id="lbl_codigoestudiante">Código</label>
-            <input id="txt_codigoestudiante" class="entrada_datossistemacalificacion" type="text" placeholder="Digite aquí su código" required="required">
+            <input id="txt_codigoestudiante" class="entrada_datossistemacalificacion" type="text" placeholder="Digite aquí su código" autofocus required="required">
         </div>
         <div class="contendor_elementosistemacalificacion">
             <input id="btn_consultarnotas" class="boton_sistemacalificacion" type="button" value="Consultar">
@@ -49,9 +49,9 @@
         }else{
             $input = $('#txt_codigoestudiante');
             if(codigo.length === 0){
-                $input.addClass('entrada_codigoestudiantenosnovalido');
+                $input.addClass('entrada_camponovalido');
             }else{
-                $input.removeClass('entrada_codigoestudiantenosnovalido');
+                $input.removeClass('entrada_camponovalido');
             }
         }
     });
@@ -60,9 +60,9 @@
         var txt = $(this).val();
         
         if (txt.length <= 0) {
-            $(this).addClass('entrada_codigoestudiantenosnovalido');
+            $(this).addClass('entrada_camponovalido');
         } else {
-            $(this).removeClass('entrada_codigoestudiantenosnovalido');
+            $(this).removeClass('entrada_camponovalido');
         }
     });
     
@@ -70,9 +70,9 @@
         var txt = $(this).val();
         
         if (txt.length <= 0) {
-            $(this).addClass('entrada_codigoestudiantenosnovalido');
+            $(this).addClass('entrada_camponovalido');
         } else {
-            $(this).removeClass('entrada_codigoestudiantenosnovalido');
+            $(this).removeClass('entrada_camponovalido');
         }
     });
 </script>

@@ -80,7 +80,7 @@
     </head>
     <body>
         <header id="cab_alterno">
-            <? View::partial("header", false, array('view'=>1, 'banProgramas'=>$banProgramas, 'tipoPrograma'=>$tipoPrograma, 'banInstitucion'=>$banInstitucion, 'tipoInstitucion'=>$tipoInstitucion, 'banContactenos'=>$banContactenos)) ?>
+            <? View::partial("header", false, array('view'=>$view, 'titulosc'=>$titulosc, 'banProgramas'=>$banProgramas, 'tipoPrograma'=>$tipoPrograma, 'banInstitucion'=>$banInstitucion, 'tipoInstitucion'=>$tipoInstitucion, 'banContactenos'=>$banContactenos)) ?>
         </header>
         <section id="sec_contenidoalterno">
             <? View::content(); ?>

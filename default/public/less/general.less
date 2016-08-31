@@ -6,6 +6,9 @@
 .normalize();
 .reset();
 
+* {
+    -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
+}
 html {
     /*background-image: url(../img/fondo_02.jpg);
     background-repeat: no-repeat;
@@ -102,7 +105,7 @@ input, textarea {
         .etiqueta_iconopcionmenu {
             background-color: @base;
             
-            .dimensions(60px;60px);
+            .dimensions(60px;61px);
         }
         .etiqueta_tituloopcionmenu {
             margin-left: 15px;
@@ -137,7 +140,7 @@ input, textarea {
             .etiqueta_iconopcionmenu {
                 background-color: @base;
 
-                .dimensions(60px;60px);
+                .dimensions(60px;61px);
             }
             .etiqueta_instituciontituloopcionmenu {
                 padding-left: 15px;
@@ -147,6 +150,15 @@ input, textarea {
                 
                 .dimensions(185px;60px);
                 .flexBox(@justify-content:flex-start);
+                
+                &:active {
+                    background-color: @base;
+                    color: @blanco;
+                }
+                &:focus {
+                    background-color: @base;
+                    color: @blanco;
+                }
             }
         }
     }

@@ -1543,6 +1543,9 @@ table {
   border-collapse: collapse;
   border-spacing: 0;
 }
+* {
+  -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
+}
 html {
   /*background-image: url(../img/fondo_02.jpg);
     background-repeat: no-repeat;
@@ -1732,7 +1735,7 @@ textarea {
 #dv_opcionesmenu .contenedor_opcionmenu .etiqueta_iconopcionmenu {
   background-color: #00529B;
   width: 60px;
-  height: 60px;
+  height: 61px;
 }
 #dv_opcionesmenu .contenedor_opcionmenu .etiqueta_tituloopcionmenu {
   margin-left: 15px;
@@ -1797,7 +1800,7 @@ textarea {
 #dv_opcionesmenu .contenedor_institucionopcionmenu div .etiqueta_iconopcionmenu {
   background-color: #00529B;
   width: 60px;
-  height: 60px;
+  height: 61px;
 }
 #dv_opcionesmenu .contenedor_institucionopcionmenu div .etiqueta_instituciontituloopcionmenu {
   padding-left: 15px;
@@ -1838,6 +1841,14 @@ textarea {
     -ms-flex-order: 2;
     -webkit-order: 2;
     order: 2;*/
+}
+#dv_opcionesmenu .contenedor_institucionopcionmenu div .etiqueta_instituciontituloopcionmenu:active {
+  background-color: #00529B;
+  color: #ffffff;
+}
+#dv_opcionesmenu .contenedor_institucionopcionmenu div .etiqueta_instituciontituloopcionmenu:focus {
+  background-color: #00529B;
+  color: #ffffff;
 }
 #dv_opcionesmenu #dv_institucionopcionesmenu,
 #dv_opcionesmenu #dv_programasopcionesmenu,

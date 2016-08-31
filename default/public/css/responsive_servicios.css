@@ -88,6 +88,63 @@
   .pie_alterno {
     border-radius: 0;
   }
+  #sec_contenidoalterno {
+    min-height: auto;
+    padding: 0;
+  }
+  .contenedor_sistemacalificacion {
+    width: 100%;
+    min-height: auto;
+    border-radius: 0;
+    box-shadow: none;
+  }
+  .contenedor_sistemacalificacion span {
+    position: initial;
+    padding: 12.5px 0;
+    font-size: 20px;
+    background: transparent;
+    color: #00529B;
+    border-radius: 0;
+    border-bottom: 2px solid #00529B;
+  }
+  .contenedor_sistemacalificacion .etiqueta_textosistemacalificacion {
+    margin: 30px 0 30px 0;
+    padding: 0 20px;
+  }
+}
+@media only screen and (max-width: 554px) {
+  .contenedor_sistemacalificacion .etiqueta_textosistemacalificacion {
+    margin: 20px 0 25px 0;
+    padding: 0 20px;
+  }
+  .contenedor_sistemacalificacion #frm_codigoestudiante,
+  .contenedor_sistemacalificacion #frm_logindocente {
+    padding: 0 15px;
+  }
+  .contenedor_sistemacalificacion #frm_codigoestudiante .contendor_elementosistemacalificacion #lbl_codigoestudiante,
+  .contenedor_sistemacalificacion #frm_logindocente .contendor_elementosistemacalificacion #lbl_codigoestudiante,
+  .contenedor_sistemacalificacion #frm_codigoestudiante .contendor_elementosistemacalificacion .etiqueta_textoelementosistemacalificacion,
+  .contenedor_sistemacalificacion #frm_logindocente .contendor_elementosistemacalificacion .etiqueta_textoelementosistemacalificacion {
+    width: 100%;
+    margin: 0;
+    text-align: center;
+  }
+  .contenedor_sistemacalificacion #frm_codigoestudiante .contendor_elementosistemacalificacion .entrada_datossistemacalificacion,
+  .contenedor_sistemacalificacion #frm_logindocente .contendor_elementosistemacalificacion .entrada_datossistemacalificacion {
+    font-size: 15px;
+    width: 80%;
+    height: 28px;
+  }
+  .contenedor_sistemacalificacion #frm_codigoestudiante .contendor_elementosistemacalificacion .boton_sistemacalificacion,
+  .contenedor_sistemacalificacion #frm_logindocente .contendor_elementosistemacalificacion .boton_sistemacalificacion {
+    font-size: 18px;
+    width: 115px;
+    height: 45px;
+  }
+  .contenedor_sistemacalificacion #frm_codigoestudiante .contendor_elementosistemacalificacion:nth-last-of-type(1),
+  .contenedor_sistemacalificacion #frm_logindocente .contendor_elementosistemacalificacion:nth-last-of-type(1) {
+    margin: 15px 0 30px 0;
+  }
 }
 @media only screen and (min-width: 769px) and (max-width: 1024px) {
   .cuerpo_alterno,
@@ -95,8 +152,5 @@
   .pie_alterno {
     border-radius: 0;
   }
-  /*#sec_contenidoalterno {
-        
-    }*/
 }
 /*# sourceMappingURL=responsive_servicios.css.map */

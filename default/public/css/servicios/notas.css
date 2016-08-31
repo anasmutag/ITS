@@ -290,8 +290,8 @@
 .contenedor_sistemacalificacion #frm_logindocente .contendor_elementosistemacalificacion:nth-last-of-type(1) {
   margin: 20px 0 35px 0;
 }
-.contenedor_sistemacalificacion #frm_codigoestudiante .entrada_codigoestudiantenosnovalido,
-.contenedor_sistemacalificacion #frm_logindocente .entrada_codigoestudiantenosnovalido {
+.contenedor_sistemacalificacion #frm_codigoestudiante .entrada_camponovalido,
+.contenedor_sistemacalificacion #frm_logindocente .entrada_camponovalido {
   border: 1px solid #ff0000 !important;
 }
 /*# sourceMappingURL=notas.css.map */

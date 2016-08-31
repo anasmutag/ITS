@@ -12,71 +12,81 @@
     <img src="<?= PUBLIC_PATH?>img/logo.png" alt="Logo Instituto Técnico Surcolombiano">
 </div>
 <div id="<?= ($view<=0)?'dv_instituto':'dv_institutoalterno';?>">
-    <?= ($view<=0)?'<h1>INSTITUTO TÉCNICO SURCOOMBIANO</h1>':'<h1>CONSULTA DE NOTAS</h1><span>INSTITUTO TÉCNICO SURCOOMBIANO</span>';?>
+    <?= ($view<=0)?'<h1>INSTITUTO TÉCNICO SURCOOMBIANO</h1>':'<h1>' . $titulosc . '</h1><span>INSTITUTO TÉCNICO SURCOOMBIANO</span>';?>
 </div>
 <? if($view <= 0) : ?>
-<div id="dv_navegacion">
-    <div class="btn">
-        <a class="dropbtn" href="<?= PUBLIC_PATH?>" style="position: relative;">Inicio</a>
-    </div>
-    <div class="btn dropdown">
-        <span id="sp_instituciong" class="dropbtn active">Institución</span>
-        <div class="dropdown-content">
-            <? if($banInstitucion > 0): ?>
-                <span id="sp_institucionmv">Misión | Visión</span>
-                <span id="sp_institucionv">Visítanos</span>
-            <? else: ?>
-                <!--a href="<?= PUBLIC_PATH?>index/institucion/1">Misión | Visión</a-->
-                <a href="<?= PUBLIC_PATH?>institucion/mision_vision">Misión | Visión</a>
-                <!--a href="<?= PUBLIC_PATH?>index/institucion/2">Visítanos</a-->
-                <a href="<?= PUBLIC_PATH?>institucion/visitanos">Visítanos</a>
-            <? endif; ?>
+    <div id="dv_navegacion">
+        <div class="btn">
+            <a class="dropbtn" href="<?= PUBLIC_PATH?>" style="position: relative;">Inicio</a>
+        </div>
+        <div class="btn dropdown">
+            <span id="sp_instituciong" class="dropbtn active">Institución</span>
+            <div class="dropdown-content">
+                <? if($banInstitucion > 0): ?>
+                    <span id="sp_institucionmv">Misión | Visión</span>
+                    <span id="sp_institucionv">Visítanos</span>
+                <? else: ?>
+                    <!--a href="<?= PUBLIC_PATH?>index/institucion/1">Misión | Visión</a-->
+                    <a href="<?= PUBLIC_PATH?>institucion/mision_vision">Misión | Visión</a>
+                    <!--a href="<?= PUBLIC_PATH?>index/institucion/2">Visítanos</a-->
+                    <a href="<?= PUBLIC_PATH?>institucion/visitanos">Visítanos</a>
+                <? endif; ?>
+            </div>
+        </div>
+        <div class="btn dropdown">
+            <span class="dropbtn">Programas</span>
+            <div id="prueba" class="dropdown-content">
+                <? if($banProgramas > 0): ?>
+                    <span id="sp_teclab">Técnico Laborales</span>
+                    <span id="sp_curso">Cursos, Seminarios y Diplomados</span>
+                <? else: ?>
+                    <!--a href="<?= PUBLIC_PATH?>program/programas/1">Técnico Laborales</a-->
+                    <a href="<?= PUBLIC_PATH?>programas/tecnico_laborales">Técnico Laborales</a>
+                    <!--a href="<?= PUBLIC_PATH?>program/programas/7">Cursos, Seminarios y Diplomados</a-->
+                    <a href="<?= PUBLIC_PATH?>programas/cursos_seminarios_diplomados">Cursos, Seminarios y Diplomados</a>
+                <? endif; ?>
+            </div>
+        </div>
+        <div class="btn dropdown">
+            <span class="dropbtn">Servicios</span>
+            <div id="prueba" class="dropdown-content">
+                <a href="<?= PUBLIC_PATH?>estudiantes/consulta_notas">Consulta de Notas</a>
+                <a href="<?= PUBLIC_PATH?>docentes/inicio">Registro de Notas</a>
+                <a href="<?= PUBLIC_PATH?>evaluation/evaluacionDocente">Evaluación Docente</a>
+            </div>
+        </div>
+        <!--div class="btn">
+            <a class="dropbtn" href="#" style="position: relative;">Campus Virtual</a>
+        </div-->
+        <div class="btn">
+            <!--a class="dropbtn" href="<?= PUBLIC_PATH?>registration/preinscripcion/" style="position: relative;">Preinscripción</a-->
+            <!--a class="dropbtn" href="<?= PUBLIC_PATH?>index/contactenos/" style="position: relative;">Contáctenos</a-->
+            <a class="dropbtn" href="<?= PUBLIC_PATH?>institucion/contactenos" style="position: relative;">Contáctenos</a>
         </div>
     </div>
-    <div class="btn dropdown">
-        <span class="dropbtn">Programas</span>
-        <div id="prueba" class="dropdown-content">
-            <? if($banProgramas > 0): ?>
-                <span id="sp_teclab">Técnico Laborales</span>
-                <span id="sp_curso">Cursos, Seminarios y Diplomados</span>
-            <? else: ?>
-                <!--a href="<?= PUBLIC_PATH?>program/programas/1">Técnico Laborales</a-->
-                <a href="<?= PUBLIC_PATH?>programas/tecnico_laborales">Técnico Laborales</a>
-                <!--a href="<?= PUBLIC_PATH?>program/programas/7">Cursos, Seminarios y Diplomados</a-->
-                <a href="<?= PUBLIC_PATH?>programas/cursos_seminarios_diplomados">Cursos, Seminarios y Diplomados</a>
-            <? endif; ?>
+    <div id="dv_navegacionsec" class="contenedor_navegacionsec contendor_navegacionsecdn">
+        <a id="lnk_inicio" href="<?= PUBLIC_PATH?>"><span id="sp_inicio" class="contendor_navegacionsecdn icon_home"></span></a>
+        <span class="icon_next etiqueta_next contendor_navegacionsecdn"></span>
+        <span id="sp_institucion" class="contendor_navegacionsecdn navsecnoactive">Institución</span>
+        <span class="icon_next etiqueta_next contendor_navegacionsecdn"></span>
+        <span id="sp_institucionopc" class="contendor_navegacionsecdn navsecactive"></span>
+        <span id="sp_programas" class="contendor_navegacionsecdn navsecnoactive">Programas</span>
+        <span class="icon_next etiqueta_next contendor_navegacionsecdn"></span>
+        <span id="sp_programa" class="contendor_navegacionsecdn navsecactive"></span>
+        <span class="icon_next etiqueta_next contendor_navegacionsecdn"></span>
+        <span id="sp_programateclab" class="contendor_navegacionsecdn navsecactive"></span>
+    </div>
+<? else:
+    if($view > 1 && Auth::is_valid()): ?>
+        <div style="width: 100%; height: 60px; background-color: #ffffff">
+            <div>
+                <span>Bienvenido Profesor</span>
+                <span><?= Auth::get('nombre_docente') . ' ' . Auth::get('apellido_docente')?></span>
+            </div>
+            <button onclick="window.location = '<?= PUBLIC_PATH?>grade/salirDocente'">Salir</button>
         </div>
-    </div>
-    <div class="btn dropdown">
-        <span class="dropbtn">Servicios</span>
-        <div id="prueba" class="dropdown-content">
-            <a href="<?= PUBLIC_PATH?>estudiantes/consulta_notas">Consulta de Notas</a>
-            <a href="<?= PUBLIC_PATH?>docentes/registro_notas">Registro de Notas</a>
-            <a href="#">Evaluación Docente</a>
-        </div>
-    </div>
-    <!--div class="btn">
-        <a class="dropbtn" href="#" style="position: relative;">Campus Virtual</a>
-    </div-->
-    <div class="btn">
-        <!--a class="dropbtn" href="<?= PUBLIC_PATH?>registration/preinscripcion/" style="position: relative;">Preinscripción</a-->
-        <!--a class="dropbtn" href="<?= PUBLIC_PATH?>index/contactenos/" style="position: relative;">Contáctenos</a-->
-        <a class="dropbtn" href="<?= PUBLIC_PATH?>institucion/contactenos" style="position: relative;">Contáctenos</a>
-    </div>
-</div>
-<div id="dv_navegacionsec" class="contenedor_navegacionsec contendor_navegacionsecdn">
-    <a id="lnk_inicio" href="<?= PUBLIC_PATH?>"><span id="sp_inicio" class="contendor_navegacionsecdn icon_home"></span></a>
-    <span class="icon_next etiqueta_next contendor_navegacionsecdn"></span>
-    <span id="sp_institucion" class="contendor_navegacionsecdn navsecnoactive">Institución</span>
-    <span class="icon_next etiqueta_next contendor_navegacionsecdn"></span>
-    <span id="sp_institucionopc" class="contendor_navegacionsecdn navsecactive"></span>
-    <span id="sp_programas" class="contendor_navegacionsecdn navsecnoactive">Programas</span>
-    <span class="icon_next etiqueta_next contendor_navegacionsecdn"></span>
-    <span id="sp_programa" class="contendor_navegacionsecdn navsecactive"></span>
-    <span class="icon_next etiqueta_next contendor_navegacionsecdn"></span>
-    <span id="sp_programateclab" class="contendor_navegacionsecdn navsecactive"></span>
-</div>
-<? endif; ?>
+    <? endif;
+endif; ?>
 
 <script type="text/javascript">
     $(window).load(function(){
