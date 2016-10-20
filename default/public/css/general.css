@@ -1398,6 +1398,7 @@ html input[disabled] {
 input[type="checkbox"],
 input[type="radio"] {
   box-sizing: border-box;
+  margin: 0;
   padding: 0;
 }
 input[type="search"] {
