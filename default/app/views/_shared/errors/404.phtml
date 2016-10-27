@@ -16,14 +16,14 @@
     
     <?= Html::includeCss() ?>
     
-    <link rel="icon" type="img/ico" href="<?= PUBLIC_PATH."img/favicon.ico "?>">
+    <link rel="icon" type="img/ico" href="<?= PUBLIC_PATH . "img/favicon.ico "?>">
     
     <?= Tag::js('jquery/jquery-2.2.3.min') ?>
     <?= Tag::js('html5shiv') ?>
 </head>
 <body>
     <header>
-        <? View::partial("header", false, array('banProgramas'=>0, 'tipoPrograma'=>0, 'banInstitucion'=>0, 'tipoInstitucion'=>0, 'banContactenos'=>0)) ?>
+        <? View::partial("header", false, array('view'=>0, 'banProgramas'=>0, 'tipoPrograma'=>0, 'banInstitucion'=>0, 'tipoInstitucion'=>0, 'banContactenos'=>0)) ?>
     </header>
     <section id="sec_contenido404">
         <div id="dv_contenido404">
@@ -38,7 +38,7 @@
         </div>
     </section>
     <footer>
-        <? View::partial("footer") ?>
+        <? View::partial("footer", false, array('view'=>0)) ?>
     </footer>
 </body>
 </html>
