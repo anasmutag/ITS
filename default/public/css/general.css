@@ -1735,6 +1735,8 @@ textarea {
 }
 #dv_opcionesmenu .contenedor_opcionmenu .etiqueta_iconopcionmenu {
   background-color: #00529B;
+  border-bottom: 1px solid #00529B;
+  border-top: 1px solid #00529B;
   width: 60px;
   height: 61px;
 }

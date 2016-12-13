@@ -67,6 +67,8 @@ define('CORE_PATH', dirname(dirname(APP_PATH)) . '/core/');
 }*/
 
 define('PUBLIC_PATH','/ITS/');
+/* Usar en produccion */
+//define('PUBLIC_PATH','/');
 
 /**
  * Obtiene la url

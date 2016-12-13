@@ -119,9 +119,12 @@
                 .dimensions;
                 .font(@robotomedium;18px);
                 
-                &:nth-last-of-type(1){
+                &:nth-last-of-type(2), &:nth-last-of-type(1){
                     padding: 0 0 10px 0;
                     border-bottom: 1px solid @base;
+                }
+                &:nth-last-of-type(1){
+                    border: 0;
                 }
             }
             .contenedor_informacionprograma {
@@ -142,6 +145,19 @@
                 }
                 &:nth-last-of-type(1){
                     margin: 0;
+                    
+                    .flexBox;
+                    
+                    a{
+                        text-decoration: none;
+                        
+                        .flexBox;
+                        .button(@width:140px);
+                        
+                        &:hover {
+                            .hoverButton(@base);
+                        }
+                    }
                 }
             }
         }
