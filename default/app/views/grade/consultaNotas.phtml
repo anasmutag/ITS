@@ -4,12 +4,15 @@
     <form id="frm_codigoestudiante">
         <div class="contendor_elementosistemacalificacion">
             <label id="lbl_codigoestudiante">Código</label>
-            <input id="txt_codigoestudiante" class="entrada_datossistemacalificacion" type="text" placeholder="Digite aquí su código" autofocus required="required">
+            <input id="txt_codigoestudiante" class="entrada_datossistemacalificacion" type="text" placeholder="Digite aquí su código" autofocus required="required" onkeypress="return soloNumeros(event);">
         </div>
         <div class="contendor_elementosistemacalificacion">
             <input id="btn_consultarnotas" class="boton_sistemacalificacion" type="button" value="Consultar">
         </div>
     </form>
+</div>
+<div class="contendor_regresarprincipal">
+    <a href="<?= PUBLIC_PATH?>" class="etiqueta_regresarprincipal">Regresar</a>
 </div>
 
 <script type="text/javascript">

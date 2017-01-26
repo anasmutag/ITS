@@ -23,7 +23,9 @@ DirectoryIndex index.php
     
     RewriteRule ^estudiantes/consulta_notas/?$ index.php?_url=grade/consultaNotas/ [QSA,L,NC]
     RewriteRule ^docentes/inicio/?$ index.php?_url=grade/registroNotas/ [QSA,L,NC]
+    RewriteRule ^docentes/inicio/validaciones/?$ index.php?_url=grade/registroNotas/2 [QSA,L,NC]
     RewriteRule ^docentes/registro_notas/?$ index.php?_url=grade/registrarNotas/ [QSA,L,NC]
+    RewriteRule ^docentes/registro_notas/validaciones/?$ index.php?_url=grade/registrarNotas/2 [QSA,L,NC]
     
     # Para peticiones que no son archivos ni directorios
     # Reescribe a index.php?_url=URL

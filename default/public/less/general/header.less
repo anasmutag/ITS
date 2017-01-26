@@ -177,4 +177,37 @@ header {
     .dropdown-content span:hover, .dropdown-content a:hover {
         background-color: #f0f0f0;
     }
+    #dv_navregistronotas {
+        position: relative;
+        background-color: @blanco;
+        border-bottom: 1px solid @base;
+        
+        .dimensions(@height:45px);
+        .flexBox;
+        
+        div {
+            color: @base;
+            
+            .dimensions;
+            .flexBox;
+            .font(@robotomedium;16px);
+        }
+        button {
+            position: absolute;
+            right: 0;
+            top: 0;
+            color: @base;
+            border: 0;
+            background-color: @blanco;
+            outline: none;
+ 
+            .dimensions(80px;100%);
+            .flexBox;
+            .font(@robotomedium;14px);
+
+            &:hover {
+                background-color: #f0f0f0;
+            }
+        }
+    }
 }

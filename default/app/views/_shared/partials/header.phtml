@@ -52,6 +52,7 @@
             <div id="prueba" class="dropdown-content">
                 <a href="<?= PUBLIC_PATH?>estudiantes/consulta_notas">Consulta de Notas</a>
                 <a href="<?= PUBLIC_PATH?>docentes/inicio">Registro de Notas</a>
+                <a href="<?= PUBLIC_PATH?>docentes/inicio/validaciones/">Registro de Validaciones</a>
                 <a href="<?= PUBLIC_PATH?>evaluation/evaluacionDocente">Evaluación Docente</a>
             </div>
         </div>
@@ -78,12 +79,16 @@
     </div>
 <? else:
     if($view > 1 && Auth::is_valid()): ?>
-        <div style="width: 100%; height: 60px; background-color: #ffffff">
+        <div id="dv_navregistronotas">
             <div>
-                <span>Bienvenido Profesor</span>
+                <span>Bienvenido, Profesor&nbsp;</span>
                 <span><?= Auth::get('nombre_docente') . ' ' . Auth::get('apellido_docente')?></span>
             </div>
-            <button onclick="window.location = '<?= PUBLIC_PATH?>grade/salirDocente'">Salir</button>
+            <? if($view > 2): ?>
+                <button onclick="window.location = '<?= PUBLIC_PATH?>grade/salirDocente/2'">Salir</button>
+            <? else: ?>
+                <button onclick="window.location = '<?= PUBLIC_PATH?>grade/salirDocente'">Salir</button>
+            <? endif; ?>
         </div>
     <? endif;
 endif; ?>

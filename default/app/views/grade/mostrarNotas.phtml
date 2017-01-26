@@ -1,1 +1,75 @@
-<div style="font-size: 40px; color: green;"><?= $codigo?></div>
+<?//= json_encode($semestres)?>
+<?//= json_encode($materias)?>
+<?//= json_encode($notas)?>
+
+<? foreach($semestres as $semestre): ?>
+    <label class="etiqueta_semestre">
+        <? switch($semestre->semestre):
+        case 1: ?>
+            Primer Semestre
+            <?break;
+        case 2: ?>
+            Segundo Semestre
+            <?break;
+        case 3: ?>
+            Tercer Semestre
+            <?break;
+        endswitch; ?>
+    </label>
+    <? foreach($materias as $materia):
+        if($semestre->semestre === $materia->semestre): ?>
+            <div class="contenedor_notasmateriasalumno">
+                <div class="contenedor_notasalumno">
+                    <label><?= $materia->codigo_materia?></label>
+                    <label><?= $materia->nombre_materia?></label>
+                    
+                        <? $numnotas = 0;
+                        foreach($notas as $nota):
+                            if($materia->id_materia === $nota->id_materia):
+                                $numnotas += 1;
+                            endif;
+                        endforeach;
+                        
+                        if($estado == 2 || $numnotas === 3):
+                            $definitiva = 0;
+                            foreach($notas as $nota):
+                                if($materia->id_materia === $nota->id_materia):
+                                    switch($nota->id_tiponota):
+                                        case 1:
+                                            $definitiva += ($nota->valor_nota*0.3);
+                                            break;
+                                        case 2:
+                                            $definitiva += ($nota->valor_nota*0.3);
+                                            break;
+                                        case 3:
+                                            $definitiva += ($nota->valor_nota*0.4);
+                                            break;
+                                    endswitch;
+                                endif;
+                            endforeach;
+                            
+                            if(round($definitiva, 1) < 3.5):
+                                echo '<label class="materianoaprobada">' . round($definitiva, 1) . '</label>';
+                            else:
+                                echo '<label class="materiaaprobada">' . round($definitiva, 1) . '</label>';
+                            endif;
+                        else:
+                            echo '-';
+                        endif; ?>
+                    
+                </div>
+                <div class="contenedor_detallenotasalumno <?= ($estado==2||$numnotas===3)?'displaynone':'';?>">
+                    <? if(empty($notas)): ?>
+                        <label class="etiqueta_sinnotas">No hay notas registradas para esta asignatura</label>
+                    <? else:
+                        foreach($notas as $nota):
+                            if($materia->id_materia === $nota->id_materia): ?>
+                                <label><?= $nota->nombre_tiponota . ': ' . $nota->valor_nota?></label>
+                            <? endif;
+                        endforeach;
+                    endif; ?>
+                </div>
+            </div>
+        <? endif;
+    endforeach; ?>
+<? endforeach; ?>

@@ -83,3 +83,96 @@
         }
     }
 }
+#dv_notasalumno {
+    margin: 40px 0 0 0;
+    
+    .dimensions;
+    .flexBox;
+    
+    label {
+        margin: 0 0 5px 0;
+
+        .dimensions;
+
+        &:nth-child(1) {
+            margin-top: 15px;
+        }
+        &:nth-last-child(1) {
+            margin-bottom: 35px;
+        }
+    }
+}
+#dv_periodosnotas {
+    margin: 0 0 35px 0;
+    
+    .dimensions;
+    .flexBox;
+    
+    #slt_periodonotas {
+        margin: 0 0 0 10px;
+        padding: 4px 2px;
+        color: @base;
+        border: 1px solid @base;
+        outline: none;
+
+        .dimensions(@width:200px);
+        .borderRadius(5px);
+        .font(@robotomedium;14px);
+    }
+}
+.contenedor_notassemestresalumno {
+    margin: 0 0 35px 0;
+    
+    .dimensions;
+    .flexBox;
+    
+    .etiqueta_semestre {
+        margin: 0 0 10px 0;
+        padding: 0 0 5px 0;
+        border-bottom: 1px solid @base;
+        
+        .dimensions(@width:80%);
+        .flexBox;
+    }
+    .contenedor_notasmateriasalumno {
+        .dimensions;
+        .flexBox;
+        
+        .contenedor_notasalumno {
+            margin: 0 0 10px 0;
+            cursor: pointer;
+            
+            .dimensions(@width:70%);
+            .flexBox(@justify-content:space-between);
+            
+            &:hover {
+                color: @grisnav;
+            }
+            label {
+                cursor: pointer;
+            }
+            .materiaaprobada {
+                color: green;
+            }
+            .materianoaprobada {
+                color: @error
+            }
+        }
+        .contenedor_detallenotasalumno {
+            margin: 0 0 20px 0;
+            padding: 5px 5%;
+            border-top: 1px solid @base;
+            border-bottom: 1px solid @base;
+            
+            .dimensions(@width:70%);
+            .flexBox(@justify-content:space-between);
+            
+            .etiqueta_sinnotas {
+                color: @grisnav;
+            }
+        }
+        .displaynone {
+            display: none;
+        }
+    }
+}

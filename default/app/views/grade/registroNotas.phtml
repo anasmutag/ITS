@@ -1,6 +1,6 @@
 <div class="contenedor_sistemacalificacion">
     <span>REGISTRO DE NOTAS</span>
-    <label class="etiqueta_textosistemacalificacion">Mediante esta página usted puede registrar y/o actualizar calificaciones</label>
+    <label class="etiqueta_textosistemacalificacion">Mediante esta página usted puede registrar calificaciones</label>
     <form id="frm_logindocente">
         <div class="contendor_elementosistemacalificacion">
             <label class="etiqueta_textoelementosistemacalificacion">Identificación</label>
@@ -14,6 +14,9 @@
             <input id="btn_logindocente" class="boton_sistemacalificacion" type="button" value="Ingresar">
         </div>
     </form>
+</div>
+<div class="contendor_regresarprincipal">
+    <a href="<?= PUBLIC_PATH?>" class="etiqueta_regresarprincipal">Regresar</a>
 </div>
 
 <script type="text/javascript">
@@ -41,7 +44,11 @@
                     //$('body').removeClass('menuopen');
                     
                     if(data !== null && data.res === 'ok'){
-                        window.location = "<?= PUBLIC_PATH?>docentes/registro_notas/";
+                        <? if($tipo == 2): ?>
+                            window.location = "<?= PUBLIC_PATH?>docentes/registro_notas/validaciones/";
+                        <? else: ?>
+                            window.location = "<?= PUBLIC_PATH?>docentes/registro_notas/";
+                        <? endif; ?>
                     }else{
                         console.log(data.msg);
                     }
