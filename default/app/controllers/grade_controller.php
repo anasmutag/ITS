@@ -1,6 +1,6 @@
 <?php
 
-Load::models('Docente', 'Programa', 'Materia', 'Materiaprograma', 'Matricula', 'Alumno', 'Nota', 'Validacion');
+Load::models('Docente', 'Programa', 'Materia', 'Materiaprograma', 'Matricula', 'Alumno', 'Nota', 'Validacion', 'Pagovalidacion');
 
 class GradeController extends AppController {
     public function consultaNotas() {
@@ -25,6 +25,7 @@ class GradeController extends AppController {
             $this->activo = $matricula->cargarSemestres($codigo, 1);
         }else{
             $this->estado = 0;
+            $this->codigo = $codigo;
         }
     }
     
@@ -32,21 +33,26 @@ class GradeController extends AppController {
         View::template(NULL);
         
         $nota = new Nota();
+        $validacion = new Validacion();
+        $alumno = new Alumno();
         
         $codigo = Input::request('codigo');
         $semestre = Input::request('semestre');
         
         $this->tipoperiodo = $semestre;
         $this->estado = Input::request('estado');
+        $this->alumno = $alumno->cargarIdAlumno($codigo)[0]->id_alumno;
         
         if($semestre < 0){
             $this->semestres = $nota->cargarSemestresAlumno($codigo);
             $this->materias = $nota->cargarMateriasAlumno($codigo);
             $this->notas = $nota->cargarNotasAlumno($codigo);
+            $this->validaciones = $validacion->cargarNotasValidcionesAlumno($codigo);
         }else{
             $this->semestres = $nota->cargarSemestreAlumno($codigo, $semestre);
             $this->materias = $nota->cargarMateriasSemestreAlumno($codigo, $semestre);
             $this->notas = $nota->cargarNotasSemestreAlumno($codigo, $semestre);
+            $this->validaciones = $validacion->cargarNotasValidcionesSemestreAlumno($codigo, $semestre);
         }
     }
     
@@ -209,12 +215,20 @@ class GradeController extends AppController {
                     
                     if($definitiva < 3.5){
                         $validacion = new Validacion();
+                        $pagovalidacion = new Pagovalidacion();
                         
                         $validacion->valor_validacion = '0';
                         $validacion->id_alumno = $n->idalumno;
                         $validacion->id_materia = $materia;
                         
-                        if(!$validacion->save()){
+                        if($validacion->save()){
+                            $pagovalidacion->valor_pagovalidacion = '0';
+                            $pagovalidacion->id_validacion = $validacion->id_validacion;
+                            
+                            if(!$pagovalidacion->save()){
+                                $bannotas = 0;
+                            }
+                        }else{
                             $bannotas = 0;
                         }
                     }
@@ -253,11 +267,24 @@ class GradeController extends AppController {
         foreach ($notas as $n) {
             if($n->valor !== '0'){
                 $validacion = new Validacion();
+                $pagovalidacion = new Pagovalidacion();
                 
                 $validacion->cargarDatosValidacion($n->idvalidacion);
                 $validacion->valor_validacion = $n->valor;
                 
-                if(!$validacion->update()){
+                if($validacion->update()){
+                    $pagovalidacion->cargarDatosPagoValidacion($n->idvalidacion);
+                    
+                    if($validacion->valor_validacion >= 3.5){
+                        $pagovalidacion->estado_pagovalidacion = 3;
+                    }else{
+                        $pagovalidacion->estado_pagovalidacion = 1;
+                    }
+                    
+                    if(!$pagovalidacion->update()){
+                        $bannotas = 0;
+                    }
+                }else{
                     $bannotas = 0;
                 }
             }

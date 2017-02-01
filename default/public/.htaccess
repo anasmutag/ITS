@@ -22,6 +22,7 @@ DirectoryIndex index.php
     RewriteRule ^programas/cursos_seminarios_diplomados/?$ index.php?_url=program/programas/7 [QSA,L,NC]
     
     RewriteRule ^estudiantes/consulta_notas/?$ index.php?_url=grade/consultaNotas/ [QSA,L,NC]
+    RewriteRule ^estudiantes/evaluacion_docente/?$ index.php?_url=evaluation/evaluacionDocente/ [QSA,L,NC]
     RewriteRule ^docentes/inicio/?$ index.php?_url=grade/registroNotas/ [QSA,L,NC]
     RewriteRule ^docentes/inicio/validaciones/?$ index.php?_url=grade/registroNotas/2 [QSA,L,NC]
     RewriteRule ^docentes/registro_notas/?$ index.php?_url=grade/registrarNotas/ [QSA,L,NC]

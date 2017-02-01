@@ -1,6 +1,10 @@
 <?php
 
 class Matricula extends ActiveRecord {
+    /*public function cargarDatosMatriculaActualizarValidaciones($alumno) {
+        return $this->find("coditions: id_alumno = $alumno and id_estadomatricula = 1");
+    }*/
+    
     public function cargarAlumnosMateria($sede, $programa, $materia) {
         return $this->find("columns: alumno.id_alumno,alumno.identificacion_alumno,alumno.nombre_alumno,alumno.apellido_alumno,materia.id_materia",
                 "join: join alumno on matricula.id_alumno = alumno.id_alumno
@@ -13,18 +17,19 @@ class Matricula extends ActiveRecord {
     }
     
     public function cargarAlumnosMateriaValidaciones($sede, $programa, $materia) {
-        return $this->find("columns: id_validacion,alumno.id_alumno,alumno.identificacion_alumno,alumno.nombre_alumno,alumno.apellido_alumno,materia.id_materia",
+        return $this->find("columns: validacion.id_validacion,alumno.id_alumno,alumno.identificacion_alumno,alumno.nombre_alumno,alumno.apellido_alumno,materia.id_materia",
                 "join: join alumno on matricula.id_alumno = alumno.id_alumno
                     join alumnoprograma on alumno.id_alumno = alumnoprograma.id_alumno
                     join programa on alumnoprograma.id_programa = programa.id_programa
                     join materiaprograma on programa.id_programa = materiaprograma.id_programa
                     join materia on materiaprograma.id_materia = materia.id_materia
-                    join validacion on materia.id_materia = validacion.id_materia",
+                    join validacion on materia.id_materia = validacion.id_materia
+                    join pagovalidacion on validacion.id_validacion = pagovalidacion.id_validacion",
                 "conditions: matricula.id_sede = $sede
                     and programa.id_programa = $programa
                     and materia.id_materia = $materia
-                    and matricula.id_estadomatricula = 1
-                    and matricula.id_semestre = materiaprograma.semestre",
+                    and matricula.id_semestre = materiaprograma.semestre
+                    and estado_pagovalidacion = 2",
                 "order: apellido_alumno");
     }
     
@@ -50,8 +55,10 @@ class Matricula extends ActiveRecord {
                     join programa on alumnoprograma.id_programa = programa.id_programa
                     join materiaprograma on programa.id_programa = materiaprograma.id_programa
                     join materia on materiaprograma.id_materia = materia.id_materia
-                    join validacion on materia.id_materia = validacion.id_materia",
-                "conditions: id_estadomatricula = 1 and materiaprograma.id_materia = $materia");
+                    join validacion on materia.id_materia = validacion.id_materia
+                    join pagovalidacion on validacion.id_validacion = pagovalidacion.id_validacion",
+                "conditions: materiaprograma.id_materia = $materia
+                    and estado_pagovalidacion = 2");
     }
     
     public function cargarSemestres($codigo, $estado) {

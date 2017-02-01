@@ -1,7 +1,4 @@
-<div style="font-size: 40px; color: green; margin-bottom: 30px">Evaluación Docente</div>
-<!--div style="width: 800px; height: 400px; background-color: blueviolet"></div-->
-
-<iframe src="https://docs.google.com/forms/d/e/1FAIpQLSdLdrEKuJQLklHAJyYI9z5Y1VafaHUYPoPgXbwlT8HIXOfHlA/viewform?embedded=true"
+<!--iframe src="https://docs.google.com/forms/d/e/1FAIpQLSdLdrEKuJQLklHAJyYI9z5Y1VafaHUYPoPgXbwlT8HIXOfHlA/viewform?embedded=true"
     width="800"
     height="400"
     frameborder="0"
@@ -10,7 +7,94 @@
     scrolling="yes">
     Cargando...
 </iframe>
+<iframe src="https://docs.google.com/forms/d/e/1FAIpQLSckqMfzH92XAwFXTOMdu7tz_0s9lyH0hdQ5OBF_025I3yOcUA/viewform?embedded=true"
+    width="800"
+    height="400"
+    frameborder="0"
+    marginheight="0"
+    marginwidth="0"
+    scrolling="yes">
+    Cargando...
+</iframe-->
 
+<div class="contenedor_sistemacalificacion">
+    <span>ENCUESTA DOCENTE</span>
+    <label class="etiqueta_textosistemacalificacion etiqueta_textoencuestadocente">Mediante esta página usted puede ayudarnos a mejorar nuestro nivel de enseñanza</label>
+    <form id="frm_encuestadocente">
+        <div class="contendor_elementosistemacalificacion">
+            <label id="lbl_codigoestudiante">Código</label>
+            <input id="txt_codigoestudiante" class="entrada_datossistemacalificacion" type="text" placeholder="Digite aquí su código" autofocus required="required" onkeypress="return soloNumeros(event);">
+        </div>
+        <div class="contendor_elementosistemacalificacion">
+            <input id="btn_validarcodigoestudiante" class="boton_sistemacalificacion" type="button" value="Consultar">
+        </div>
+    </form>
+</div>
 <div class="contendor_regresarprincipal">
     <a href="<?= PUBLIC_PATH?>" class="etiqueta_regresarprincipal">Regresar</a>
 </div>
+
+<script type="text/javascript">
+    $('#btn_validarcodigoestudiante').on('click', function (){
+        var codigo = $('#txt_codigoestudiante').val();
+        
+        if(codigo.length > 0){
+            $.ajax({
+                type: 'POST',
+                url: window.public_path + 'evaluation/encuestaDocente/',
+                data: {
+                    codigo: codigo
+                },
+                beforeSend: function(){
+                    /*document.getElementById("btn_consultarnotas").disabled = true;*/
+                    
+                    $('body').addClass('menuopen');
+                    
+                    $.blockUI({
+                        message: "Validando datos..."
+                    });
+                },
+                success: function(data) {
+                    $('body').removeClass('menuopen');
+                    document.getElementById("frm_encuestadocente").reset();
+                    
+                    $('#sec_contenidoalterno').html(data);
+                },
+                error: function(){
+                    console.log('Ocurrio un error inesperado. Intenta nuevamente');
+                }
+            }).always(function(){
+                /*document.getElementById("btn_consultarnotas").disabled = false;*/
+                
+                $.unblockUI();
+            });
+        }else{
+            $input = $('#txt_codigoestudiante');
+            if(codigo.length === 0){
+                $input.addClass('entrada_camponovalido');
+            }else{
+                $input.removeClass('entrada_camponovalido');
+            }
+        }
+    });
+    
+    $('#txt_codigoestudiante').on('blur', function() {
+        var txt = $(this).val();
+        
+        if (txt.length <= 0) {
+            $(this).addClass('entrada_camponovalido');
+        } else {
+            $(this).removeClass('entrada_camponovalido');
+        }
+    });
+    
+    $('#txt_codigoestudiante').on('keyup', function() {
+        var txt = $(this).val();
+        
+        if (txt.length <= 0) {
+            $(this).addClass('entrada_camponovalido');
+        } else {
+            $(this).removeClass('entrada_camponovalido');
+        }
+    });
+</script>

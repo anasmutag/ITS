@@ -1,33 +1,42 @@
 <?//= json_encode($datosAlumno)?>
 
-<div class="contenedor_sistemacalificacion">
-    <span>REPORTE DE CALIFICACIONES</span>
-    <div id="dv_notasalumno">
-        <label><?= $datosAlumno[0]->nombre_alumno . ' ' . $datosAlumno[0]->apellido_alumno?></label>
-        <label><?= $datosAlumno[0]->abreviatura_tipodocumento . ' ' . $datosAlumno[0]->identificacion_alumno?></label>
-        <label>Programa: <?= $datosAlumno[0]->nombre_programa?></label>
+<? if($estado === 1): ?>
+    <div class="contenedor_sistemacalificacion">
+        <span>REPORTE DE CALIFICACIONES</span>
+        <div id="dv_notasalumno">
+            <label><?= $datosAlumno[0]->nombre_alumno . ' ' . $datosAlumno[0]->apellido_alumno?></label>
+            <label><?= $datosAlumno[0]->abreviatura_tipodocumento . ' ' . $datosAlumno[0]->identificacion_alumno?></label>
+            <label>Programa: <?= $datosAlumno[0]->nombre_programa?></label>
+        </div>
+        <div id="dv_periodosnotas">
+            <label>Periodo</label>
+            <select id="slt_periodonotas">
+                <option value="0">Seleccionar Periodo</option>
+                <? if(!empty($inactivos)):
+                    foreach ($inactivos as $inactivo): ?>
+                        <option value="<?= $inactivo->id_semestre?>" data-estado="2"><?= $inactivo->nombre_semestre?></option>
+                    <? endforeach;
+                endif;
+                if(!empty($activo)):
+                    foreach ($activo as $a): ?>
+                        <option value="<?= $a->id_semestre?>" data-estado="1"><?= $a->nombre_semestre?></option>
+                    <? endforeach;
+                endif;
+                if(!empty($inactivos)): ?>
+                    <option value="-1" data-estado="2">Todos</option>
+                <? endif; ?>
+            </select>
+        </div>
+        <div class="contenedor_notassemestresalumno"></div>
     </div>
-    <div id="dv_periodosnotas">
-        <label>Periodo</label>
-        <select id="slt_periodonotas">
-            <option value="0">Seleccionar Periodo</option>
-            <? if(!empty($inactivos)):
-                foreach ($inactivos as $inactivo): ?>
-                    <option value="<?= $inactivo->id_semestre?>" data-estado="2"><?= $inactivo->nombre_semestre?></option>
-                <? endforeach;
-            endif;
-            if(!empty($activo)):
-                foreach ($activo as $a): ?>
-                    <option value="<?= $a->id_semestre?>" data-estado="1"><?= $a->nombre_semestre?></option>
-                <? endforeach;
-            endif;
-            if(!empty($inactivos)): ?>
-                <option value="-1" data-estado="2">Todos</option>
-            <? endif; ?>
-        </select>
+<? else: ?>
+    <div class="contenedor_sistemacalificacion">
+        <span>REPORTE DE CALIFICACIONES</span>
+        <div id="dv_notasalumno">
+            <label class="etiqueta_consultanotaserronea">El código <?= $codigo?> no se encuentra registrado en nuestra base de datos. Click en "Salir" para realizar una nueva busqueda.</label>
+        </div>
     </div>
-    <div class="contenedor_notassemestresalumno"></div>
-</div>
+<? endif; ?>
 <div class="contendor_regresarprincipal">
     <a href="<?= PUBLIC_PATH?>estudiantes/consulta_notas" class="etiqueta_regresarprincipal">Salir</a>
 </div>
@@ -42,7 +51,7 @@
                 type: 'POST',
                 url: "<?= PUBLIC_PATH?>grade/mostrarNotas/",
                 data: {
-                    codigo: <?= $datosAlumno[0]->identificacion_alumno?>,
+                    codigo: <?= ($estado===1)?$datosAlumno[0]->identificacion_alumno:0;?>,
                     semestre: semestre,
                     estado: estado
                 },

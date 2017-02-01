@@ -70,17 +70,17 @@
                 },
                 dataType: 'json',
                 beforeSend: function(){
-                    /*document.getElementById("btn_consultarnotas").disabled = true;
-
+                    //document.getElementById("btn_consultarnotas").disabled = true;
+                    
                     $('body').addClass('menuopen');
-
+                    
                     $.blockUI({
-                        message: "Procesando solicitud..."
-                    });*/
+                        message: "Registrando calificación(es)..."
+                    });
                 },
                 success: function(data) {
-                    /*$('body').removeClass('menuopen');
-                    document.getElementById("frm_codigoestudiante").reset();*/
+                    $('body').removeClass('menuopen');
+                    //document.getElementById("frm_codigoestudiante").reset();
 
                     if(data !== null && data.res === 'ok'){
                         $('#dv_dialogoconfirmacionregistronotas').dialog('open');
@@ -94,9 +94,9 @@
                     //console.log('Ocurrio un error inesperado. Intenta nuevamente');
                 }
             }).always(function(){
-                /*document.getElementById("btn_consultarnotas").disabled = false;
+                //document.getElementById("btn_consultarnotas").disabled = false;
 
-                $.unblockUI();*/
+                $.unblockUI();
             });
         }else{
             $inputfocus = null;
