@@ -21,7 +21,7 @@ class Correo {
         $this->mail->Password = $config['password'];
         $this->mail->SetFrom($email, $nombre);
         $this->mail->addReplyTo($email, $nombre);
-        $this->mail->addAddress('anasmutag@gmail.com');
+        $this->mail->addAddress($config['username']);
         $this->mail->Subject = $asunto;
         $this->mail->msgHTML($mensaje);
 
