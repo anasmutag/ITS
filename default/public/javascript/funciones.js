@@ -43,7 +43,7 @@ function validar_codigoestudiante(codigo){
 }
 
 function convertiranumero(cadena){
-    cadena = cadena.replace(/\./g, "");
+    //cadena = cadena.replace(/\./g, "");
     cadena = cadena.replace(',','.');
     
     return parseFloat(cadena);

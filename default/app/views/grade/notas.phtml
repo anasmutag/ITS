@@ -58,7 +58,7 @@
         <? foreach($alumnos as $alumno): ?>
             var nota = $('#txt_notaalumno' + <?= $alumno->id_alumno?>).val();
             
-            if(nota.length === 0){
+            if(nota.length === 0 || convertiranumero(nota) < 0 || convertiranumero(nota) > 5){
                 banderanotas = 0;
             }
         <? endforeach; ?>
@@ -127,7 +127,7 @@
                 var nota = $('#txt_notaalumno' + <?= $alumno->id_alumno?>).val();
                 
                 $input = $('#txt_notaalumno' + <?= $alumno->id_alumno?>);
-                if(nota.length === 0){
+                if(nota.length === 0  || convertiranumero(nota) < 0 || convertiranumero(nota) > 5){
                     $input.addClass('etiqueta_tiponotanovalido');
                     if($inputfocus === null)$inputfocus = $input;
                 }else{
@@ -143,7 +143,7 @@
     });
     
     function validarNota(){
-        if($(this).val().length > 0){
+        if($(this).val().length > 0  && convertiranumero($(this).val()) >= 0 && convertiranumero($(this).val()) <= 5){
             $(this).removeClass('etiqueta_tiponotanovalido');
         }else{
             $(this).addClass('etiqueta_tiponotanovalido');

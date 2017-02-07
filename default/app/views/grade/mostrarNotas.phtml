@@ -70,9 +70,13 @@
                                     echo '<label class="materianoaprobada">' . round($definitiva, 1) . '</label>';
                                 endif;
                             else:
+                                $valor = 0;
+                                
                                 echo '<label class="materiaaprobada">' . round($definitiva, 1) . '</label>';
                             endif;
                         else:
+                            $valor = 0;
+                            
                             echo '-';
                         endif; ?>
                     

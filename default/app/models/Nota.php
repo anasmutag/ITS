@@ -88,11 +88,8 @@ class Nota extends ActiveRecord {
                 "join: join materia on nota.id_materia = materia.id_materia
                     join materiaprograma on materia.id_materia = materiaprograma.id_materia
                     join tiponota on nota.id_tiponota = tiponota.id_tiponota",
-                "conditions: id_alumno = (
-                    select id_alumno
-                    from alumno
-                    where identificacion_alumno = $id
-                ) and materia.id_materia = $materia",
+                "conditions: id_alumno = $id
+                    and materia.id_materia = $materia",
                 "order: nota.id_tiponota");
     }
 }
