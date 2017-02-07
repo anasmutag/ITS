@@ -1,3 +1,5 @@
+<?//= json_encode($programasdocente)?>
+
 <div id="dv_registronotasdocente">
     <span id="sp_tituloregistronotas">Sistema de Registro de Calificaciones</span>
     <div id="dv_registronotasprograma">
@@ -35,7 +37,7 @@
             
             $.ajax({
                 type: 'GET',
-                url: "<?= PUBLIC_PATH . 'grade/obtenerMaterias/'?>" + programa,
+                url: "<?= PUBLIC_PATH . 'grade/obtenerMaterias/'?>" + programa + "/" + <?= $tipo?>,
                 dataType: 'json',
                 success: function(data){
                     $('#slt_materiasrn').empty();
@@ -68,6 +70,8 @@
                     success: function(data){
                         $('#dv_registronotasalumnos').html('');
                         $('#dv_registronotasalumnos').html(data);
+                        
+                        rs();
                     },
                     error: function (xhr, ajaxOptions, thrownError){ }
                 });
@@ -83,6 +87,8 @@
                     success: function(data){
                         $('#dv_registronotasalumnos').html('');
                         $('#dv_registronotasalumnos').html(data);
+                        
+                        rs();
                     },
                     error: function (xhr, ajaxOptions, thrownError){ }
                 });

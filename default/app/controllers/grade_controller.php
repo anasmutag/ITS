@@ -113,24 +113,29 @@ class GradeController extends AppController {
             
             if($tipo === 1){
                 $this->view = 2;
+                $this->programas = $programa->programasDocente(Auth::get('id_docente'));
             }else{
                 $this->view = 3;
+                $this->programas = $programa->programas();
             }
             
             $this->titulosc = "REGISTRO DE CALIFICACIONES";
-            $this->programas = $programa->programas();
             $this->tipo = $tipo;
         }else{
             Router::redirect("docentes/inicio/");
         }
     }
     
-    public function obtenerMaterias($idprograma = '0') {
+    public function obtenerMaterias($idprograma = '0', $tipo) {
         View::select(NULL, NULL);
         
         $materiaprograma = new Materiaprograma();
         
-        echo json_encode($materiaprograma->materiasprograma($idprograma));
+        if($tipo == 1){
+            echo json_encode($materiaprograma->materiasProgramaDocente($idprograma, Auth::get('id_docente')));
+        }else{
+            echo json_encode($materiaprograma->materiasprograma($idprograma));
+        }
     }
     
     public function notas() {
@@ -152,14 +157,17 @@ class GradeController extends AppController {
     public function validaciones() {
         View::template(NULL);
         
-        $matricula = new Matricula();
+        //$matricula = new Matricula();
+        $validacion = new Validacion();
         
         $sede = Input::request('sede');
         $programa = Input::request('programa');
         $materia = Input::request('materia');
         
-        $this->numeroalumnos = $matricula->cargarNumeroAlumnosValidaciones($materia);
-        $this->alumnos = $matricula->cargarAlumnosMateriaValidaciones($sede, $programa, $materia);
+        //$this->numeroalumnos = $matricula->cargarNumeroAlumnosValidaciones($materia);
+        $this->numeroalumnos = $validacion->cargarNumeroAlumnosValidaciones($sede, $programa, $materia);
+        //$this->alumnos = $matricula->cargarAlumnosMateriaValidaciones($sede, $programa, $materia);
+        $this->alumnos = $validacion->cargarAlumnosMateriaValidaciones($sede, $programa, $materia);
         $this->idmateria = $materia;
     }
     
@@ -171,6 +179,7 @@ class GradeController extends AppController {
         $tiponota = Input::request('tiponota');
         $materia = Input::request('idmateria');
         $notas = json_decode(stripslashes(Input::request('notas')));
+        $docente = Input::request('docente');
         $bannotas = 1;
         
         $arr['res'] = 'fail';
@@ -191,6 +200,7 @@ class GradeController extends AppController {
             $nota->id_tiponota = $tiponota;
             $nota->id_alumno = $n->idalumno;
             $nota->id_materia = $materia;
+            $nota->docente_nota = $docente;
 
             if($nota->save()){
                 if($tiponota == 3){
@@ -271,6 +281,7 @@ class GradeController extends AppController {
                 
                 $validacion->cargarDatosValidacion($n->idvalidacion);
                 $validacion->valor_validacion = $n->valor;
+                $validacion->docente_validacion = Auth::get('id_docente');
                 
                 if($validacion->update()){
                     $pagovalidacion->cargarDatosPagoValidacion($n->idvalidacion);

@@ -16,7 +16,7 @@ class Matricula extends ActiveRecord {
                 "order: apellido_alumno");
     }
     
-    public function cargarAlumnosMateriaValidaciones($sede, $programa, $materia) {
+    /*public function cargarAlumnosMateriaValidaciones($sede, $programa, $materia) {
         return $this->find("columns: validacion.id_validacion,alumno.id_alumno,alumno.identificacion_alumno,alumno.nombre_alumno,alumno.apellido_alumno,materia.id_materia",
                 "join: join alumno on matricula.id_alumno = alumno.id_alumno
                     join alumnoprograma on alumno.id_alumno = alumnoprograma.id_alumno
@@ -31,7 +31,7 @@ class Matricula extends ActiveRecord {
                     and matricula.id_semestre = materiaprograma.semestre
                     and estado_pagovalidacion = 2",
                 "order: apellido_alumno");
-    }
+    }*/
     
     public function cargarNumeroAlumnosSemestre($materia) {
         return $this->find("columns: count(*) as resultado",
@@ -48,7 +48,7 @@ class Matricula extends ActiveRecord {
                     and materiaprograma.id_materia = $materia");
     }
     
-    public function cargarNumeroAlumnosValidaciones($materia) {
+    /*public function cargarNumeroAlumnosValidaciones($materia) {
         return $this->find("columns: count(*) as resultado",
                 "join: join alumno on matricula.id_alumno = alumno.id_alumno
                     join alumnoprograma on alumno.id_alumno = alumnoprograma.id_alumno
@@ -59,7 +59,7 @@ class Matricula extends ActiveRecord {
                     join pagovalidacion on validacion.id_validacion = pagovalidacion.id_validacion",
                 "conditions: materiaprograma.id_materia = $materia
                     and estado_pagovalidacion = 2");
-    }
+    }*/
     
     public function cargarSemestres($codigo, $estado) {
         return $this->find("columns: matricula.id_semestre,nombre_semestre",
