@@ -1,0 +1,44 @@
+<?//= json_encode($encuesta)?>
+
+<div style="width: 100%">
+    <span><?= $encuesta[0]->nomdocente?></span>
+</div>
+<div>
+    <iframe name="hidden_iframe" id="hidden_iframe" style="display: none;" onload="if(submitted){/*window.location = <?= PUBLIC_PATH?> + 'estudiantes/evaluacion_docente';*/ alert('Si'); }"></iframe>
+    <!--form action="https://docs.google.com/forms/d/e/1FAIpQLSckqMfzH92XAwFXTOMdu7tz_0s9lyH0hdQ5OBF_025I3yOcUA/formResponse" method="post" target="hidden_iframe" onsubmit="submitted = true;"-->
+    <form action="<?= $encuesta[0]->url?>" method="post" target="hidden_iframe" onsubmit="submitted = true;">
+        <div style="width: 100%; margin-bottom: 15px">
+            <span style="width: 100%">Pregunta uno</span>
+            <div style="width: 100%">
+                <span for="entrada11">1</span><input id="entrada11" type="radio" name="<?= $encuesta[0]->epuno?>" value="1">
+                <span for="entrada12">2</span><input id="entrada12" type="radio" name="<?= $encuesta[0]->epuno?>" value="2">
+                <span for="entrada13">3</span><input id="entrada13" type="radio" name="<?= $encuesta[0]->epuno?>" value="3">
+                <span for="entrada14">4</span><input id="entrada14" type="radio" name="<?= $encuesta[0]->epuno?>" value="4">
+                <span for="entrada15">5</span><input id="entrada15" type="radio" name="<?= $encuesta[0]->epuno?>" value="5">
+            </div>
+        </div>
+        <div style="width: 100%; margin-bottom: 15px">
+            <span style="width: 100%">Pregunta dos</span>
+            <div style="width: 100%">
+                <span for="entrada21">1</span><input id="entrada21" type="radio" name="<?= $encuesta[0]->epdos?>" value="1">
+                <span for="entrada22">2</span><input id="entrada22" type="radio" name="<?= $encuesta[0]->epdos?>" value="2">
+                <span for="entrada23">3</span><input id="entrada23" type="radio" name="<?= $encuesta[0]->epdos?>" value="3">
+                <span for="entrada24">4</span><input id="entrada24" type="radio" name="<?= $encuesta[0]->epdos?>" value="4">
+                <span for="entrada25">5</span><input id="entrada25" type="radio" name="<?= $encuesta[0]->epdos?>" value="5">
+            </div>
+        </div>
+        <div style="width: 100%; margin-bottom: 15px">
+            <span style="width: 100%">Pregunta tres</span>
+            <div style="width: 100%">
+                <span for="entrada31">1</span><input id="entrada31" type="radio" name="<?= $encuesta[0]->eptres?>" value="1">
+                <span for="entrada32">2</span><input id="entrada32" type="radio" name="<?= $encuesta[0]->eptres?>" value="2">
+                <span for="entrada33">3</span><input id="entrada33" type="radio" name="<?= $encuesta[0]->eptres?>" value="3">
+                <span for="entrada34">4</span><input id="entrada34" type="radio" name="<?= $encuesta[0]->eptres?>" value="4">
+                <span for="entrada35">5</span><input id="entrada35" type="radio" name="<?= $encuesta[0]->eptres?>" value="5">
+            </div>
+        </div>
+        <div style="width: 100%; margin-bottom: 15px">
+            <input type="submit" name="submit" value="Enviar">
+        </div>
+    </form>
+</div>

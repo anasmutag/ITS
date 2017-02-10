@@ -37,6 +37,7 @@ class Validacion extends ActiveRecord {
                 "conditions: matricula.id_sede = $sede
                     and programa.id_programa = $programa
                     and materia.id_materia = $materia
+                    and materia.id_materia = validacion.id_materia
                     and matricula.id_semestre = materiaprograma.semestre
                     and estado_pagovalidacion = 2",
                 "order: apellido_alumno");
@@ -54,6 +55,7 @@ class Validacion extends ActiveRecord {
                 "conditions: matricula.id_sede = $sede
                     and programa.id_programa = $programa
                     and materia.id_materia = $materia
+                    and materia.id_materia = validacion.id_materia
                     and matricula.id_semestre = materiaprograma.semestre
                     and estado_pagovalidacion = 2",
                 "order: apellido_alumno");

@@ -58,7 +58,7 @@ class Nota extends ActiveRecord {
     }
     
     public function cargarNotasAlumno($id) {
-        return $this->find("columns: semestre,materia.id_materia,nombre_materia,valor_nota,nota.id_tiponota,nombre_tiponota",
+        return $this->find("columns: semestre,materia.id_materia,nombre_materia,valor_nota,faltas_nota,nota.id_tiponota,nombre_tiponota",
                 "join: join materia on nota.id_materia = materia.id_materia
                     join materiaprograma on materia.id_materia = materiaprograma.id_materia
                     join tiponota on nota.id_tiponota = tiponota.id_tiponota",
@@ -71,7 +71,7 @@ class Nota extends ActiveRecord {
     }
     
     public function cargarNotasSemestreAlumno($id, $semestre) {
-        return $this->find("columns: semestre,materia.id_materia,nombre_materia,valor_nota,nota.id_tiponota,nombre_tiponota",
+        return $this->find("columns: semestre,materia.id_materia,nombre_materia,valor_nota,faltas_nota,nota.id_tiponota,nombre_tiponota",
                 "join: join materia on nota.id_materia = materia.id_materia
                     join materiaprograma on materia.id_materia = materiaprograma.id_materia
                     join tiponota on nota.id_tiponota = tiponota.id_tiponota",

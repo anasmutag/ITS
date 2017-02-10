@@ -31,6 +31,13 @@
 </div>
 
 <script type="text/javascript">
+    $('#slt_sedern').change(function() {
+        $('#dv_registronotasalumnos').html('');
+        $('#slt_materiasrn').empty();
+        $('#slt_materiasrn').append('<option value="0">Seleccionar materia</option>');
+        $("#slt_programasrn").val('0');
+    });
+
     $('#slt_programasrn').change(function() {
         if($(this).val().length > 0){
             var programa = $(this).val();
@@ -40,6 +47,7 @@
                 url: "<?= PUBLIC_PATH . 'grade/obtenerMaterias/'?>" + programa + "/" + <?= $tipo?>,
                 dataType: 'json',
                 success: function(data){
+                    $('#dv_registronotasalumnos').html('');
                     $('#slt_materiasrn').empty();
                     $('#slt_materiasrn').append('<option value="0">Seleccionar materia</option>');
                     

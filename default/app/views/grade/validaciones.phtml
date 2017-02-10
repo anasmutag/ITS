@@ -10,7 +10,7 @@
             <div class="contenedor_registrodenotas">
                 <span class="etiqueta_idalumno"><?= $alumno->identificacion_alumno?></span>
                 <span class="etiqueta_namealumno"><?= $alumno->nombre_alumno . ' ' . $alumno->apellido_alumno?></span>
-                <input id="txt_notaalumno<?= $alumno->id_alumno?>" class="texto_gradealumno" type="number" data-idalumno="<?=$alumno->id_alumno?>" data-idvalidacion="<?=$alumno->id_validacion?>" maxlength="3" step="0.1" min="0" max="5" value="0" onkeyup="validarNota.call(this);">
+                <input id="txt_notaalumno<?= $alumno->id_alumno?>" class="texto_gradealumno" type="number" data-idalumno="<?=$alumno->id_alumno?>" data-idvalidacion="<?=$alumno->id_validacion?>" maxlength="3" step="0.1" min="1" max="3.5" value="1" onkeyup="validarNota.call(this);">
             </div>
         <? endforeach; ?>
         <div id="dv_registrarnotasalumno">
@@ -42,7 +42,7 @@
         <? foreach($alumnos as $alumno): ?>
             var nota = $('#txt_notaalumno' + <?= $alumno->id_alumno?>).val();
             
-            if(nota.length === 0 || convertiranumero(nota) < 0 || convertiranumero(nota) > 5){
+            if(nota.length === 0 || convertiranumero(nota) < 1 || convertiranumero(nota) > 3.5){
                 banderanotas = 0;
             }
         <? endforeach; ?>
@@ -111,7 +111,7 @@
                 var nota = $('#txt_notaalumno' + <?= $alumno->id_alumno?>).val();
                 
                 $input = $('#txt_notaalumno' + <?= $alumno->id_alumno?>);
-                if(nota.length === 0 || convertiranumero(nota) < 0 || convertiranumero(nota) > 5){
+                if(nota.length === 0 || convertiranumero(nota) < 1 || convertiranumero(nota) > 3.5){
                     $input.addClass('etiqueta_tiponotanovalido');
                     if($inputfocus === null)$inputfocus = $input;
                 }else{
@@ -127,7 +127,7 @@
     });
     
     function validarNota(){
-        if($(this).val().length > 0 && convertiranumero($(this).val()) >= 0 && convertiranumero($(this).val()) <= 5){
+        if($(this).val().length > 0 && convertiranumero($(this).val()) >= 1 && convertiranumero($(this).val()) <= 3.5){
             $(this).removeClass('etiqueta_tiponotanovalido');
         }else{
             $(this).addClass('etiqueta_tiponotanovalido');

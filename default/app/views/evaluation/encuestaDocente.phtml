@@ -1,10 +1,69 @@
-<div>
-    <? if($estado===1): ?>
-        <?= 'Código si existe'?>
-    <? else: ?>
-        <?= 'Código no existe'?>
-    <? endif; ?>
-</div>
+<?//= json_encode($encuestas)?>
+<?//= json_encode($alumno)?>
+
+<? if($estado === 1): ?>
+    <div style="width: 100%">
+        <span><?= $alumno[0]->nombre_alumno . ' ' . $alumno[0]->apellido_alumno?></span>
+        <span><?= $alumno[0]->abreviatura_tipodocumento?>&nbsp;<?= $alumno[0]->identificacion_alumno?></span>
+        <span><?= $alumno[0]->nombre_programa?></span>
+    </div>
+    <div style="width: 100%">
+        <? foreach($encuestas as $encuesta): ?>
+            <div style="width: 100%">
+                <span><?= $encuesta[0]->nombre_docente . ' ' . $encuesta[0]->apellido_docente?></span>
+                <span class="etiqueta_evaluardocente" data-docente="<?= $encuesta[0]->id_docente?>" data-nomdocente="<?= $encuesta[0]->nombre_docente . ' ' . $encuesta[0]->apellido_docente?>" data-url="<?= $encuesta[0]->url_encuestadocente?>" data-puno="<?= $encuesta[0]->epuno_encuestadocente?>" data-pdos="<?= $encuesta[0]->epdos_encuestadocente?>" data-ptres="<?= $encuesta[0]->eptres_encuestadocente?>">Evaluar Docente</span>
+            </div>
+        <? endforeach; ?>
+    </div>
+<? else: ?>
+    <?= 'Código no existe'?>
+<? endif; ?>
 <div class="contendor_regresarprincipal">
     <a href="<?= PUBLIC_PATH?>estudiantes/evaluacion_docente" class="etiqueta_regresarprincipal">Salir</a>
 </div>
+
+<script type="text/javascript">
+    $('.etiqueta_evaluardocente').on('click', function (){
+        var encuesta = new Array();
+        
+        encuesta.push({
+            docente: $(this).data('docente'),
+            nomdocente: $(this).data('nomdocente'),
+            url: $(this).data('url'),
+            epuno: $(this).data('puno'),
+            epdos: $(this).data('pdos'),
+            eptres: $(this).data('ptres')
+        });
+        
+        $.ajax({
+            type: 'POST',
+            url: <?= PUBLIC_PATH?> + 'evaluation/encuesta/',
+            data: {
+                encuesta: JSON.stringify(encuesta)
+            },
+            beforeSend: function(){
+                //document.getElementById("btn_consultarnotas").disabled = true;
+
+                $('body').addClass('menuopen');
+
+                $.blockUI({
+                    message: "Cargando datos..."
+                });
+            },
+            success: function(data) {
+                $('body').removeClass('menuopen');
+                //document.getElementById("frm_codigoestudiante").reset();
+
+                $('#sec_contenidoalterno').html('');
+                $('#sec_contenidoalterno').html(data);
+            },
+            error: function(){
+                //console.log('Ocurrio un error inesperado. Intenta nuevamente');
+            }
+        }).always(function(){
+            //document.getElementById("btn_consultarnotas").disabled = false;
+
+            $.unblockUI();
+        });
+    });
+</script>

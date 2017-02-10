@@ -25,14 +25,18 @@
                     <label><?= $materia->nombre_materia?></label>
                     
                         <? $numnotas = 0;
+                        $faltas = 0;
+                        
                         foreach($notas as $nota):
                             if($materia->id_materia === $nota->id_materia):
                                 $numnotas += 1;
+                                $faltas += $nota->faltas_nota;
                             endif;
                         endforeach;
                         
                         if($estado == 2 || $numnotas === 3):
                             $definitiva = 0;
+                            
                             foreach($notas as $nota):
                                 if($materia->id_materia === $nota->id_materia):
                                     switch($nota->id_tiponota):
@@ -82,23 +86,27 @@
                     
                 </div>
                 <div class="contenedor_detallenotasalumno <?= ($estado==2||$numnotas===3)?'displaynone':'';?>">
-                    <? if($valor > 0):
+                    <? if(empty($notas)): ?>
+                        <label class="etiqueta_sinnotas">No hay notas registradas para esta asignatura</label>
+                    <? else:
+                        foreach($notas as $nota):
+                            if($materia->id_materia === $nota->id_materia): ?>
+                                <label><?= $nota->nombre_tiponota . ': ' . $nota->valor_nota?></label>
+                            <? endif;
+                        endforeach;
+                    endif;
+                    
+                    if($valor > 0):
                         if($valor < 3.5): ?>
-                            <label>Validación No Aprobada</label>
+                            <label class="etiqueta_notavalidacion">Validación No Aprobada</label>
                         <? else: ?>
-                            <label>Validación Aprobada</label>
+                            <label class="etiqueta_notavalidacion">Validación Aprobada</label>
                         <? endif;
-                    else:
-                        if(empty($notas)): ?>
-                            <label class="etiqueta_sinnotas">No hay notas registradas para esta asignatura</label>
-                        <? else:
-                            foreach($notas as $nota):
-                                if($materia->id_materia === $nota->id_materia): ?>
-                                    <label><?= $nota->nombre_tiponota . ': ' . $nota->valor_nota?></label>
-                                <? endif;
-                            endforeach;
-                        endif;
-                    endif; ?>
+                    endif;
+                    
+                    if($faltas != 0): ?>
+                        <label class="etiqueta_notavalidacion">Faltas:&nbsp;<?= $faltas?></label>
+                    <? endif; ?>
                 </div>
             </div>
         <? endif;

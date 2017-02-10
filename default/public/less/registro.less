@@ -49,10 +49,11 @@
         .flexBox;
         
         #dv_registrodenotas {
+            margin: 15px 0 0 0;
             padding: 15px 0;
             background-color: @blanco;
             
-            .dimensions(@width:60%);
+            .dimensions(@width:65%);
             .flexBox;
             .borderRadius(8px);
             .boxShadow(0;0;6px;0);
@@ -84,7 +85,7 @@
                 padding: 5px 0 5px 0;
                 border-bottom: 1px solid @base;
                 
-                .dimensions(@width:70%);
+                .dimensions(@width:85%);
                 .flexBox(@justify-content:space-between);
                 
                 .etiqueta_idalumno {
@@ -103,17 +104,45 @@
                     color: @base;
                     text-align: center;
                     outline: none;
+                    -moz-appearance:textfield;
                     
                     .dimensions(@width:30px);
                     .borderRadius;
+                    
+                    &::-webkit-outer-spin-button, &::-webkit-inner-spin-button {
+                        -webkit-appearance: none;
+                        margin: 0;
+                    }
                 }
-                input[type=number]::-webkit-outer-spin-button,
-                input[type=number]::-webkit-inner-spin-button {
-                    -webkit-appearance: none;
-                    margin: 0;
-                }
-                input[type=number] {
-                    -moz-appearance:textfield;
+                .contenedor_faltascortealumno {
+                    .dimensions(@width:60px);
+                    .flexBox;
+                    
+                    .etiqueta_faltascortealumno {
+                        padding: 5px 2px;
+                        border: 1px solid @base;
+                        color: @blanco;
+                        background-color: @base;
+                        text-align: center;
+                        cursor: pointer;
+
+                        .dimensions(@width:55px);
+                        .borderRadius;
+                        
+                        &:hover {
+                            .hoverButton(@base);
+                        }
+                    }
+                    .contenedor_entradafaltacortesalumno {
+                        .dimensions;
+                        
+                        .etiqueta_cerrarentradafaltascortealumno {
+                            margin: 0 0 0 4px;
+                            cursor: pointer;
+                            
+                            .font(@robotoblack;16px);
+                        }
+                    }
                 }
             }
             #dv_registrarnotasalumno {

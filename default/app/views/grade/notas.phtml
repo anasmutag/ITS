@@ -26,7 +26,14 @@
             <div class="contenedor_registrodenotas">
                 <span class="etiqueta_idalumno"><?= $alumno->identificacion_alumno?></span>
                 <span class="etiqueta_namealumno"><?= $alumno->nombre_alumno . ' ' . $alumno->apellido_alumno?></span>
-                <input id="txt_notaalumno<?= $alumno->id_alumno?>" class="texto_gradealumno" type="number" data-idalumno="<?=$alumno->id_alumno?>" maxlength="3" step="0.1" min="0" max="5" value="0" onkeyup="validarNota.call(this);">
+                <input id="txt_notaalumno<?= $alumno->id_alumno?>" class="texto_gradealumno" type="number" data-idalumno="<?=$alumno->id_alumno?>" maxlength="3" step="0.1" min="1" max="5" value="1" onkeyup="validarNota.call(this);">
+                <div class="contenedor_faltascortealumno">
+                    <span class="etiqueta_faltascortealumno">Faltas</span>
+                    <div class="contenedor_entradafaltacortesalumno displaynone">
+                        <input id="num_faltasalumno<?= $alumno->id_alumno?>" class="texto_gradealumno" type="number" min="1" value="0" onkeyup="validarFaltas.call(this);">
+                        <span class="etiqueta_cerrarentradafaltascortealumno">X</span>
+                    </div>
+                </div>
             </div>
         <? endforeach; ?>
         <div id="dv_registrarnotasalumno">
@@ -55,25 +62,33 @@
     $('#btn_registrarnotasalumno').on('click', function (){
         var tiponota = $('#txt_cortessemestre').data('tiponota'),
             idmateria = <?= $idmateria?>,
-            banderanotas = 1;
+            banderanotas = 1,
+            banderafaltas = 1;
         
         <? foreach($alumnos as $alumno): ?>
-            var nota = $('#txt_notaalumno' + <?= $alumno->id_alumno?>).val();
+            var nota = $('#txt_notaalumno' + <?= $alumno->id_alumno?>).val(),
+                faltas = $('#num_faltasalumno' + <?= $alumno->id_alumno?>).val();
             
-            if(nota.length === 0 || convertiranumero(nota) < 0 || convertiranumero(nota) > 5){
+            if(nota.length === 0 || convertiranumero(nota) < 1 || convertiranumero(nota) > 5){
                 banderanotas = 0;
+            }
+            
+            if(nota.length === 0 || convertiranumero(nota) < 0){
+                banderafaltas = 0;
             }
         <? endforeach; ?>
         
-        if(tiponota > 0 && banderanotas > 0){
+        if(tiponota > 0 && banderanotas > 0 && banderafaltas > 0){
             var notas = new Array();
             
             <? foreach($alumnos as $alumno): ?>
                 var nota = $('#txt_notaalumno' + <?= $alumno->id_alumno?>).val(),
+                    faltas = $('#num_faltasalumno' + <?= $alumno->id_alumno?>).val(),
                     idalumno = $('#txt_notaalumno' + <?= $alumno->id_alumno?>).data('idalumno');
 
                 notas.push({
                     valor: puntoporcoma(nota),
+                    faltas: faltas,
                     idalumno: idalumno
                 });
             <? endforeach; ?>
@@ -130,7 +145,7 @@
                 var nota = $('#txt_notaalumno' + <?= $alumno->id_alumno?>).val();
                 
                 $input = $('#txt_notaalumno' + <?= $alumno->id_alumno?>);
-                if(nota.length === 0  || convertiranumero(nota) < 0 || convertiranumero(nota) > 5){
+                if(nota.length === 0  || convertiranumero(nota) < 1 || convertiranumero(nota) > 5){
                     $input.addClass('etiqueta_tiponotanovalido');
                     if($inputfocus === null)$inputfocus = $input;
                 }else{
@@ -146,7 +161,27 @@
     });
     
     function validarNota(){
-        if($(this).val().length > 0 && convertiranumero($(this).val()) >= 0 && convertiranumero($(this).val()) <= 5){
+        if($(this).val().length > 0 && convertiranumero($(this).val()) >= 1 && convertiranumero($(this).val()) <= 5){
+            $(this).removeClass('etiqueta_tiponotanovalido');
+        }else{
+            $(this).addClass('etiqueta_tiponotanovalido');
+        }
+    }
+    
+    $('.etiqueta_faltascortealumno').on('click', function (){
+        $(this).addClass('displaynone');
+        $(this).next('div .contenedor_entradafaltacortesalumno').removeClass('displaynone');
+        $(this).next('div .contenedor_entradafaltacortesalumno').find('input').val('1');
+    });
+    
+    $('.etiqueta_cerrarentradafaltascortealumno').on('click', function (){
+        $(this).parent('div').addClass('displaynone');
+        $(this).prev('input').val('0');
+        $(this).parent('div').prev('span').removeClass('displaynone');
+    });
+    
+    function validarFaltas(){
+        if($(this).val().length > 0 && convertiranumero($(this).val()) >= 0){
             $(this).removeClass('etiqueta_tiponotanovalido');
         }else{
             $(this).addClass('etiqueta_tiponotanovalido');

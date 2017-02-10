@@ -201,6 +201,7 @@ class GradeController extends AppController {
             $nota->id_alumno = $n->idalumno;
             $nota->id_materia = $materia;
             $nota->docente_nota = $docente;
+            $nota->faltas_nota = $n->faltas;
 
             if($nota->save()){
                 if($tiponota == 3){
