@@ -1,43 +1,160 @@
 <?//= json_encode($encuesta)?>
 
-<div style="width: 100%">
-    <span><?= $encuesta[0]->nomdocente?></span>
+<div id="dv_datosevaluaciondocente">
+    <span class="etiqueta_marcadatosevaluaciondocente">Profesor(a)</span>
+    <span class="etiqueta_datoevaluaciondocente"><?= $encuesta[0]->nomdocente?></span>
+    <span class="etiqueta_marcadatosevaluaciondocente">Objetivo</span>
+    <span class="etiqueta_datoevaluaciondocente">Evaluar a los docentes, con el fin de mejorar la calidad de los procesos pedagógicos</span>
+    <span class="etiqueta_marcadatosevaluaciondocente">Instrucciones</span>
+    <span class="etiqueta_datoevaluaciondocente">Lea detenidamente y evalúe el proceso pedagógico desarrollado en clases del docente, para cada pregunta colocar la valoración correspondiente. Agradecemos responder de la manera más objetiva posible</span>
+    <span class="etiqueta_marcadatosevaluaciondocente">Valoración</span>
+    <span class="etiqueta_datoevaluaciondocente">1 (Malo) - 2 (Regular) - 3 (Bueno) - 4 (Excelente)</span>
 </div>
-<div>
+<div id="dv_evaluaciondocente">
     <iframe name="hidden_iframe" id="hidden_iframe" style="display: none;" onload="if(submitted){/*window.location = <?= PUBLIC_PATH?> + 'estudiantes/evaluacion_docente';*/ alert('Si'); }"></iframe>
-    <!--form action="https://docs.google.com/forms/d/e/1FAIpQLSckqMfzH92XAwFXTOMdu7tz_0s9lyH0hdQ5OBF_025I3yOcUA/formResponse" method="post" target="hidden_iframe" onsubmit="submitted = true;"-->
-    <form action="<?= $encuesta[0]->url?>" method="post" target="hidden_iframe" onsubmit="submitted = true;">
-        <div style="width: 100%; margin-bottom: 15px">
-            <span style="width: 100%">Pregunta uno</span>
-            <div style="width: 100%">
-                <span for="entrada11">1</span><input id="entrada11" type="radio" name="<?= $encuesta[0]->epuno?>" value="1">
-                <span for="entrada12">2</span><input id="entrada12" type="radio" name="<?= $encuesta[0]->epuno?>" value="2">
-                <span for="entrada13">3</span><input id="entrada13" type="radio" name="<?= $encuesta[0]->epuno?>" value="3">
-                <span for="entrada14">4</span><input id="entrada14" type="radio" name="<?= $encuesta[0]->epuno?>" value="4">
-                <span for="entrada15">5</span><input id="entrada15" type="radio" name="<?= $encuesta[0]->epuno?>" value="5">
+    <form id="frm_evaluaciondocente" name="evaluaciondocente" action="<?= $encuesta[0]->url?>" method="post" target="hidden_iframe" onsubmit="submitted = true;">
+        <div class="contenedor_tituloseccionevaluaciondocente">ORIENTACION ETICA</div>
+        <div class="contenedor_preguntasevaluaciondocente">
+            <span class="etiqueta_preguntaevaluaciondocente">En el desarrollo del módulo, el docente estimula la práctica de valores (Responsabilidad, Respeto, Compromiso)</span>
+            <div class="contenedor_opcionesrespuestapreguntaevaluaciondocente">
+                <input id="entrada11" class="entrada_opcionrespuesta" type="radio" name="<?= $encuesta[0]->epuno?>" value="1" required="required"><span class="etiqueta_nombreopcionrespuesta" for="entrada11">1</span>
+                <input id="entrada12" class="entrada_opcionrespuesta" type="radio" name="<?= $encuesta[0]->epuno?>" value="2"><span class="etiqueta_nombreopcionrespuesta" for="entrada12">2</span>
+                <input id="entrada13" class="entrada_opcionrespuesta" type="radio" name="<?= $encuesta[0]->epuno?>" value="3" checked="checked"><span class="etiqueta_nombreopcionrespuesta" for="entrada13">3</span>
+                <input id="entrada14" class="entrada_opcionrespuesta" type="radio" name="<?= $encuesta[0]->epuno?>" value="4"><span class="etiqueta_nombreopcionrespuesta" for="entrada14">4</span>
             </div>
         </div>
-        <div style="width: 100%; margin-bottom: 15px">
-            <span style="width: 100%">Pregunta dos</span>
-            <div style="width: 100%">
-                <span for="entrada21">1</span><input id="entrada21" type="radio" name="<?= $encuesta[0]->epdos?>" value="1">
-                <span for="entrada22">2</span><input id="entrada22" type="radio" name="<?= $encuesta[0]->epdos?>" value="2">
-                <span for="entrada23">3</span><input id="entrada23" type="radio" name="<?= $encuesta[0]->epdos?>" value="3">
-                <span for="entrada24">4</span><input id="entrada24" type="radio" name="<?= $encuesta[0]->epdos?>" value="4">
-                <span for="entrada25">5</span><input id="entrada25" type="radio" name="<?= $encuesta[0]->epdos?>" value="5">
+        <div class="contenedor_preguntasevaluaciondocente">
+            <span class="etiqueta_preguntaevaluaciondocente">Las relaciones interpersonales con el docente son cordiales, de confianza y respeto</span>
+            <div class="contenedor_opcionesrespuestapreguntaevaluaciondocente">
+                <input id="entrada21" class="entrada_opcionrespuesta" type="radio" name="<?= $encuesta[0]->epdos?>" value="1" required="required"><span class="etiqueta_nombreopcionrespuesta" for="entrada21">1</span>
+                <input id="entrada22" class="entrada_opcionrespuesta" type="radio" name="<?= $encuesta[0]->epdos?>" value="2"><span class="etiqueta_nombreopcionrespuesta" for="entrada22">2</span>
+                <input id="entrada23" class="entrada_opcionrespuesta" type="radio" name="<?= $encuesta[0]->epdos?>" value="3" checked="checked"><span class="etiqueta_nombreopcionrespuesta" for="entrada23">3</span>
+                <input id="entrada24" class="entrada_opcionrespuesta" type="radio" name="<?= $encuesta[0]->epdos?>" value="4"><span class="etiqueta_nombreopcionrespuesta" for="entrada24">4</span>
             </div>
         </div>
-        <div style="width: 100%; margin-bottom: 15px">
-            <span style="width: 100%">Pregunta tres</span>
-            <div style="width: 100%">
-                <span for="entrada31">1</span><input id="entrada31" type="radio" name="<?= $encuesta[0]->eptres?>" value="1">
-                <span for="entrada32">2</span><input id="entrada32" type="radio" name="<?= $encuesta[0]->eptres?>" value="2">
-                <span for="entrada33">3</span><input id="entrada33" type="radio" name="<?= $encuesta[0]->eptres?>" value="3">
-                <span for="entrada34">4</span><input id="entrada34" type="radio" name="<?= $encuesta[0]->eptres?>" value="4">
-                <span for="entrada35">5</span><input id="entrada35" type="radio" name="<?= $encuesta[0]->eptres?>" value="5">
+        <div class="contenedor_tituloseccionevaluaciondocente">CONTENIDOS</div>
+        <div class="contenedor_preguntasevaluaciondocente">
+            <span class="etiqueta_preguntaevaluaciondocente">Integra el contenido del módulo con otros relacionados para el desarrollo práctico del programa</span>
+            <div class="contenedor_opcionesrespuestapreguntaevaluaciondocente">
+                <input id="entrada31" class="entrada_opcionrespuesta" type="radio" name="<?= $encuesta[0]->eptres?>" value="1" required="required"><span class="etiqueta_nombreopcionrespuesta" for="entrada31">1</span>
+                <input id="entrada32" class="entrada_opcionrespuesta" type="radio" name="<?= $encuesta[0]->eptres?>" value="2"><span class="etiqueta_nombreopcionrespuesta" for="entrada32">2</span>
+                <input id="entrada33" class="entrada_opcionrespuesta" type="radio" name="<?= $encuesta[0]->eptres?>" value="3" checked="checked"><span class="etiqueta_nombreopcionrespuesta" for="entrada33">3</span>
+                <input id="entrada34" class="entrada_opcionrespuesta" type="radio" name="<?= $encuesta[0]->eptres?>" value="4"><span class="etiqueta_nombreopcionrespuesta" for="entrada34">4</span>
             </div>
         </div>
-        <div style="width: 100%; margin-bottom: 15px">
+        <div class="contenedor_preguntasevaluaciondocente">
+            <span class="etiqueta_preguntaevaluaciondocente">Relaciona el contenido del módulo con la realidad regional, nacional e internacional</span>
+            <div class="contenedor_opcionesrespuestapreguntaevaluaciondocente">
+                <input id="entrada41" class="entrada_opcionrespuesta" type="radio" name="<?= $encuesta[0]->epcuatro?>" value="1" required="required"><span class="etiqueta_nombreopcionrespuesta" for="entrada41">1</span>
+                <input id="entrada42" class="entrada_opcionrespuesta" type="radio" name="<?= $encuesta[0]->epcuatro?>" value="2"><span class="etiqueta_nombreopcionrespuesta" for="entrada42">2</span>
+                <input id="entrada43" class="entrada_opcionrespuesta" type="radio" name="<?= $encuesta[0]->epcuatro?>" value="3" checked="checked"><span class="etiqueta_nombreopcionrespuesta" for="entrada43">3</span>
+                <input id="entrada44" class="entrada_opcionrespuesta" type="radio" name="<?= $encuesta[0]->epcuatro?>" value="4"><span class="etiqueta_nombreopcionrespuesta" for="entrada44">4</span>
+            </div>
+        </div>
+        <div class="contenedor_preguntasevaluaciondocente">
+            <span class="etiqueta_preguntaevaluaciondocente">Hasta la fecha ha cumplido con los contenidos programáticos propuestos</span>
+            <div class="contenedor_opcionesrespuestapreguntaevaluaciondocente">
+                <input id="entrada51" class="entrada_opcionrespuesta" type="radio" name="<?= $encuesta[0]->epcinco?>" value="1" required="required"><span class="etiqueta_nombreopcionrespuesta" for="entrada51">1</span>
+                <input id="entrada52" class="entrada_opcionrespuesta" type="radio" name="<?= $encuesta[0]->epcinco?>" value="2"><span class="etiqueta_nombreopcionrespuesta" for="entrada52">2</span>
+                <input id="entrada53" class="entrada_opcionrespuesta" type="radio" name="<?= $encuesta[0]->epcinco?>" value="3" checked="checked"><span class="etiqueta_nombreopcionrespuesta" for="entrada53">3</span>
+                <input id="entrada54" class="entrada_opcionrespuesta" type="radio" name="<?= $encuesta[0]->epcinco?>" value="4"><span class="etiqueta_nombreopcionrespuesta" for="entrada54">4</span>
+            </div>
+        </div>
+        <div class="contenedor_tituloseccionevaluaciondocente">METODOLOGIA</div>
+        <div class="contenedor_preguntasevaluaciondocente">
+            <span class="etiqueta_preguntaevaluaciondocente">Las actividades propuestas son motivantes, estimula la participación en clase, son creativas y facilitan el aprendizaje</span>
+            <div class="contenedor_opcionesrespuestapreguntaevaluaciondocente">
+                <input id="entrada61" class="entrada_opcionrespuesta" type="radio" name="<?= $encuesta[0]->epseis?>" value="1" required="required"><span class="etiqueta_nombreopcionrespuesta" for="entrada61">1</span>
+                <input id="entrada62" class="entrada_opcionrespuesta" type="radio" name="<?= $encuesta[0]->epseis?>" value="2"><span class="etiqueta_nombreopcionrespuesta" for="entrada62">2</span>
+                <input id="entrada63" class="entrada_opcionrespuesta" type="radio" name="<?= $encuesta[0]->epseis?>" value="3" checked="checked"><span class="etiqueta_nombreopcionrespuesta" for="entrada63">3</span>
+                <input id="entrada64" class="entrada_opcionrespuesta" type="radio" name="<?= $encuesta[0]->epseis?>" value="4"><span class="etiqueta_nombreopcionrespuesta" for="entrada64">4</span>
+            </div>
+        </div>
+        <div class="contenedor_preguntasevaluaciondocente">
+            <span class="etiqueta_preguntaevaluaciondocente">Trata los temas en forma organizada, sistemática y actualizada, de acuerdo con los contenidos programáticos del módulo</span>
+            <div class="contenedor_opcionesrespuestapreguntaevaluaciondocente">
+                <input id="entrada71" class="entrada_opcionrespuesta" type="radio" name="<?= $encuesta[0]->epsiete?>" value="1" required="required"><span class="etiqueta_nombreopcionrespuesta" for="entrada71">1</span>
+                <input id="entrada72" class="entrada_opcionrespuesta" type="radio" name="<?= $encuesta[0]->epsiete?>" value="2"><span class="etiqueta_nombreopcionrespuesta" for="entrada72">2</span>
+                <input id="entrada73" class="entrada_opcionrespuesta" type="radio" name="<?= $encuesta[0]->epsiete?>" value="3" checked="checked"><span class="etiqueta_nombreopcionrespuesta" for="entrada73">3</span>
+                <input id="entrada74" class="entrada_opcionrespuesta" type="radio" name="<?= $encuesta[0]->epsiete?>" value="4"><span class="etiqueta_nombreopcionrespuesta" for="entrada74">4</span>
+            </div>
+        </div>
+        <div class="contenedor_tituloseccionevaluaciondocente">PAPEL DOCENTE</div>
+        <div class="contenedor_preguntasevaluaciondocente">
+            <span class="etiqueta_preguntaevaluaciondocente">Tiene los conocimientos necesarios para desarrollar y aplicar el módulo correspondiente</span>
+            <div class="contenedor_opcionesrespuestapreguntaevaluaciondocente">
+                <input id="entrada81" class="entrada_opcionrespuesta" type="radio" name="<?= $encuesta[0]->epocho?>" value="1" required="required"><span class="etiqueta_nombreopcionrespuesta" for="entrada81">1</span>
+                <input id="entrada82" class="entrada_opcionrespuesta" type="radio" name="<?= $encuesta[0]->epocho?>" value="2"><span class="etiqueta_nombreopcionrespuesta" for="entrada82">2</span>
+                <input id="entrada83" class="entrada_opcionrespuesta" type="radio" name="<?= $encuesta[0]->epocho?>" value="3" checked="checked"><span class="etiqueta_nombreopcionrespuesta" for="entrada83">3</span>
+                <input id="entrada84" class="entrada_opcionrespuesta" type="radio" name="<?= $encuesta[0]->epocho?>" value="4"><span class="etiqueta_nombreopcionrespuesta" for="entrada84">4</span>
+            </div>
+        </div>
+        <div class="contenedor_preguntasevaluaciondocente">
+            <span class="etiqueta_preguntaevaluaciondocente">Ha estado dispuesto a atenderlo cuando usted lo ha necesitado en horarios establecidos</span>
+            <div class="contenedor_opcionesrespuestapreguntaevaluaciondocente">
+                <input id="entrada91" class="entrada_opcionrespuesta" type="radio" name="<?= $encuesta[0]->epnueve?>" value="1" required="required"><span class="etiqueta_nombreopcionrespuesta" for="entrada91">1</span>
+                <input id="entrada92" class="entrada_opcionrespuesta" type="radio" name="<?= $encuesta[0]->epnueve?>" value="2"><span class="etiqueta_nombreopcionrespuesta" for="entrada92">2</span>
+                <input id="entrada93" class="entrada_opcionrespuesta" type="radio" name="<?= $encuesta[0]->epnueve?>" value="3" checked="checked"><span class="etiqueta_nombreopcionrespuesta" for="entrada93">3</span>
+                <input id="entrada94" class="entrada_opcionrespuesta" type="radio" name="<?= $encuesta[0]->epnueve?>" value="4"><span class="etiqueta_nombreopcionrespuesta" for="entrada94">4</span>
+            </div>
+        </div>
+        <div class="contenedor_preguntasevaluaciondocente">
+            <span class="etiqueta_preguntaevaluaciondocente">Es puntual con el horario al inicio y finalización de su clase</span>
+            <div class="contenedor_opcionesrespuestapreguntaevaluaciondocente">
+                <input id="entrada101" class="entrada_opcionrespuesta" type="radio" name="<?= $encuesta[0]->epdiez?>" value="1" required="required"><span class="etiqueta_nombreopcionrespuesta" for="entrada101">1</span>
+                <input id="entrada102" class="entrada_opcionrespuesta" type="radio" name="<?= $encuesta[0]->epdiez?>" value="2"><span class="etiqueta_nombreopcionrespuesta" for="entrada102">2</span>
+                <input id="entrada103" class="entrada_opcionrespuesta" type="radio" name="<?= $encuesta[0]->epdiez?>" value="3" checked="checked"><span class="etiqueta_nombreopcionrespuesta" for="entrada103">3</span>
+                <input id="entrada104" class="entrada_opcionrespuesta" type="radio" name="<?= $encuesta[0]->epdiez?>" value="4"><span class="etiqueta_nombreopcionrespuesta" for="entrada104">4</span>
+            </div>
+        </div>
+        <div class="contenedor_tituloseccionevaluaciondocente">RECURSOS</div>
+        <div class="contenedor_preguntasevaluaciondocente">
+            <span class="etiqueta_preguntaevaluaciondocente">Los libros, materiales y documentos de apoyo que le sugiere el docente contribuyen al desarrollo integral del módulo</span>
+            <div class="contenedor_opcionesrespuestapreguntaevaluaciondocente">
+                <input id="entrada111" class="entrada_opcionrespuesta" type="radio" name="<?= $encuesta[0]->eponce?>" value="1" required="required"><span class="etiqueta_nombreopcionrespuesta" for="entrada111">1</span>
+                <input id="entrada112" class="entrada_opcionrespuesta" type="radio" name="<?= $encuesta[0]->eponce?>" value="2"><span class="etiqueta_nombreopcionrespuesta" for="entrada112">2</span>
+                <input id="entrada113" class="entrada_opcionrespuesta" type="radio" name="<?= $encuesta[0]->eponce?>" value="3" checked="checked"><span class="etiqueta_nombreopcionrespuesta" for="entrada113">3</span>
+                <input id="entrada114" class="entrada_opcionrespuesta" type="radio" name="<?= $encuesta[0]->eponce?>" value="4"><span class="etiqueta_nombreopcionrespuesta" for="entrada114">4</span>
+            </div>
+        </div>
+        <div class="contenedor_preguntasevaluaciondocente">
+            <span class="etiqueta_preguntaevaluaciondocente">Usa adecuadamente los apoyos educativos (Tablero, Material Didáctico, Audiovisual, Informático, etc.)</span>
+            <div class="contenedor_opcionesrespuestapreguntaevaluaciondocente">
+                <input id="entrada121" class="entrada_opcionrespuesta" type="radio" name="<?= $encuesta[0]->epdoce?>" value="1" required="required"><span class="etiqueta_nombreopcionrespuesta" for="entrada121">1</span>
+                <input id="entrada122" class="entrada_opcionrespuesta" type="radio" name="<?= $encuesta[0]->epdoce?>" value="2"><span class="etiqueta_nombreopcionrespuesta" for="entrada122">2</span>
+                <input id="entrada123" class="entrada_opcionrespuesta" type="radio" name="<?= $encuesta[0]->epdoce?>" value="3" checked="checked"><span class="etiqueta_nombreopcionrespuesta" for="entrada123">3</span>
+                <input id="entrada124" class="entrada_opcionrespuesta" type="radio" name="<?= $encuesta[0]->epdoce?>" value="4"><span class="etiqueta_nombreopcionrespuesta" for="entrada124">4</span>
+            </div>
+        </div>
+        <div class="contenedor_tituloseccionevaluaciondocente">EVALUACION</div>
+        <div class="contenedor_preguntasevaluaciondocente">
+            <span class="etiqueta_preguntaevaluaciondocente">Realiza actividades evaluativas en forma continua y permanente</span>
+            <div class="contenedor_opcionesrespuestapreguntaevaluaciondocente">
+                <input id="entrada131" class="entrada_opcionrespuesta" type="radio" name="<?= $encuesta[0]->eptrece?>" value="1" required="required"><span class="etiqueta_nombreopcionrespuesta" for="entrada131">1</span>
+                <input id="entrada132" class="entrada_opcionrespuesta" type="radio" name="<?= $encuesta[0]->eptrece?>" value="2"><span class="etiqueta_nombreopcionrespuesta" for="entrada132">2</span>
+                <input id="entrada133" class="entrada_opcionrespuesta" type="radio" name="<?= $encuesta[0]->eptrece?>" value="3" checked="checked"><span class="etiqueta_nombreopcionrespuesta" for="entrada133">3</span>
+                <input id="entrada134" class="entrada_opcionrespuesta" type="radio" name="<?= $encuesta[0]->eptrece?>" value="4"><span class="etiqueta_nombreopcionrespuesta" for="entrada134">4</span>
+            </div>
+        </div>
+        <div class="contenedor_preguntasevaluaciondocente">
+            <span class="etiqueta_preguntaevaluaciondocente">Utiliza diferentes estrategias evaluativas (Exámenes, Ensayos, Socializaciones, Demostraciones, Talleres, etc.), acorde con la temática desarrollada</span>
+            <div class="contenedor_opcionesrespuestapreguntaevaluaciondocente">
+                <input id="entrada141" class="entrada_opcionrespuesta" type="radio" name="<?= $encuesta[0]->epcatorce?>" value="1" required="required"><span class="etiqueta_nombreopcionrespuesta" for="entrada141">1</span>
+                <input id="entrada142" class="entrada_opcionrespuesta" type="radio" name="<?= $encuesta[0]->epcatorce?>" value="2"><span class="etiqueta_nombreopcionrespuesta" for="entrada142">2</span>
+                <input id="entrada143" class="entrada_opcionrespuesta" type="radio" name="<?= $encuesta[0]->epcatorce?>" value="3" checked="checked"><span class="etiqueta_nombreopcionrespuesta" for="entrada143">3</span>
+                <input id="entrada144" class="entrada_opcionrespuesta" type="radio" name="<?= $encuesta[0]->epcatorce?>" value="4"><span class="etiqueta_nombreopcionrespuesta" for="entrada144">4</span>
+            </div>
+        </div>
+        <div class="contenedor_preguntasevaluaciondocente">
+            <span class="etiqueta_preguntaevaluaciondocente">Resuelve dudas, corrige errores, retroalimenta temáticas que no quedaron claras, después de cada momento evaluativo</span>
+            <div class="contenedor_opcionesrespuestapreguntaevaluaciondocente">
+                <input id="entrada151" class="entrada_opcionrespuesta" type="radio" name="<?= $encuesta[0]->epquince?>" value="1" required="required"><span class="etiqueta_nombreopcionrespuesta" for="entrada151">1</span>
+                <input id="entrada152" class="entrada_opcionrespuesta" type="radio" name="<?= $encuesta[0]->epquince?>" value="2"><span class="etiqueta_nombreopcionrespuesta" for="entrada152">2</span>
+                <input id="entrada153" class="entrada_opcionrespuesta" type="radio" name="<?= $encuesta[0]->epquince?>" value="3" checked="checked"><span class="etiqueta_nombreopcionrespuesta" for="entrada153">3</span>
+                <input id="entrada154" class="entrada_opcionrespuesta" type="radio" name="<?= $encuesta[0]->epquince?>" value="4"><span class="etiqueta_nombreopcionrespuesta" for="entrada154">4</span>
+            </div>
+        </div>
+        <div id="dv_enviarevaluaciondocente">
             <input type="submit" name="submit" value="Enviar">
         </div>
     </form>

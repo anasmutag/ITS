@@ -2,18 +2,38 @@
 <?//= json_encode($alumno)?>
 
 <? if($estado === 1): ?>
-    <div style="width: 100%">
-        <span><?= $alumno[0]->nombre_alumno . ' ' . $alumno[0]->apellido_alumno?></span>
-        <span><?= $alumno[0]->abreviatura_tipodocumento?>&nbsp;<?= $alumno[0]->identificacion_alumno?></span>
-        <span><?= $alumno[0]->nombre_programa?></span>
+    <div id="dv_datosalumnoencuestas">
+        <span class="etiqueta_datosalumnoencuestas"><?= $alumno[0]->nombre_alumno . ' ' . $alumno[0]->apellido_alumno?></span>
+        <span class="etiqueta_datosalumnoencuestas"><?= $alumno[0]->abreviatura_tipodocumento?>&nbsp;<?= $alumno[0]->identificacion_alumno?></span>
+        <span class="etiqueta_datosalumnoencuestas"><?= $alumno[0]->nombre_programa?></span>
     </div>
-    <div style="width: 100%">
-        <? foreach($encuestas as $encuesta): ?>
-            <div style="width: 100%">
-                <span><?= $encuesta[0]->nombre_docente . ' ' . $encuesta[0]->apellido_docente?></span>
-                <span class="etiqueta_evaluardocente" data-docente="<?= $encuesta[0]->id_docente?>" data-nomdocente="<?= $encuesta[0]->nombre_docente . ' ' . $encuesta[0]->apellido_docente?>" data-url="<?= $encuesta[0]->url_encuestadocente?>" data-puno="<?= $encuesta[0]->epuno_encuestadocente?>" data-pdos="<?= $encuesta[0]->epdos_encuestadocente?>" data-ptres="<?= $encuesta[0]->eptres_encuestadocente?>">Evaluar Docente</span>
-            </div>
-        <? endforeach; ?>
+    <div id="dv_encuestasalumno">
+        <? if(empty($encuestas)): ?>
+            <span id="sp_noencuestasdocentes">El sistema de evaluación docente ya no se encuentra activo</span>
+        <? else:
+            foreach($encuestas as $encuesta): ?>
+                <div class="contenedor_datosencuestadocente">
+                    <span class="etiqueta_marcaevaluardocente"><?= $encuesta[0]->nombre_docente . ' ' . $encuesta[0]->apellido_docente?></span>
+                    <span class="etiqueta_evaluardocente" data-docente="<?= $encuesta[0]->id_docente?>" data-nomdocente="<?= $encuesta[0]->nombre_docente . ' ' . $encuesta[0]->apellido_docente?>"
+                        data-url="<?= $encuesta[0]->url_encuestadocente?>"
+                        data-puno="<?= $encuesta[0]->epuno_encuestadocente?>"
+                        data-pdos="<?= $encuesta[0]->epdos_encuestadocente?>"
+                        data-ptres="<?= $encuesta[0]->eptres_encuestadocente?>"
+                        data-pcuatro="<?= $encuesta[0]->epcuatro_encuestadocente?>"
+                        data-pcinco="<?= $encuesta[0]->epcinco_encuestadocente?>"
+                        data-pseis="<?= $encuesta[0]->epseis_encuestadocente?>"
+                        data-psiete="<?= $encuesta[0]->epsiete_encuestadocente?>"
+                        data-pocho="<?= $encuesta[0]->epocho_encuestadocente?>"
+                        data-pnueve="<?= $encuesta[0]->epnueve_encuestadocente?>"
+                        data-pdiez="<?= $encuesta[0]->epdiez_encuestadocente?>"
+                        data-ponce="<?= $encuesta[0]->eponce_encuestadocente?>"
+                        data-pdoce="<?= $encuesta[0]->epdoce_encuestadocente?>"
+                        data-ptrece="<?= $encuesta[0]->eptrece_encuestadocente?>"
+                        data-pcatorce="<?= $encuesta[0]->epcatorce_encuestadocente?>"
+                        data-pquince="<?= $encuesta[0]->epquince_encuestadocente?>">Evaluar Docente</span>
+                </div>
+            <? endforeach;
+        endif; ?>
     </div>
 <? else: ?>
     <?= 'Código no existe'?>
@@ -32,7 +52,19 @@
             url: $(this).data('url'),
             epuno: $(this).data('puno'),
             epdos: $(this).data('pdos'),
-            eptres: $(this).data('ptres')
+            eptres: $(this).data('ptres'),
+            epcuatro: $(this).data('pcuatro'),
+            epcinco: $(this).data('pcinco'),
+            epseis: $(this).data('pseis'),
+            epsiete: $(this).data('psiete'),
+            epocho: $(this).data('pocho'),
+            epnueve: $(this).data('pnueve'),
+            epdiez: $(this).data('pdiez'),
+            eponce: $(this).data('ponce'),
+            epdoce: $(this).data('pdoce'),
+            eptrece: $(this).data('ptrece'),
+            epcatorce: $(this).data('pcatorce'),
+            epquince: $(this).data('pquince')
         });
         
         $.ajax({
@@ -56,6 +88,8 @@
 
                 $('#sec_contenidoalterno').html('');
                 $('#sec_contenidoalterno').html(data);
+                
+                rs();
             },
             error: function(){
                 //console.log('Ocurrio un error inesperado. Intenta nuevamente');

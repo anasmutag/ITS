@@ -33,7 +33,7 @@ class Matricula extends ActiveRecord {
                 "order: apellido_alumno");
     }*/
     
-    public function cargarNumeroAlumnosSemestre($materia) {
+    public function cargarNumeroAlumnosSemestre($sede, $materia) {
         return $this->find("columns: count(*) as resultado",
                 "join: join alumno on matricula.id_alumno = alumno.id_alumno
                     join alumnoprograma on alumno.id_alumno = alumnoprograma.id_alumno
@@ -45,6 +45,7 @@ class Matricula extends ActiveRecord {
                         from materiaprograma
                         where id_materia = $materia
                     )
+                    and id_sede = $sede
                     and materiaprograma.id_materia = $materia");
     }
     

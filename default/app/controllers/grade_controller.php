@@ -148,8 +148,8 @@ class GradeController extends AppController {
         $programa = Input::request('programa');
         $materia = Input::request('materia');
         
-        $this->tiponota = $nota->cargarTiposNotas($materia);
-        $this->numeroalumnos = $matricula->cargarNumeroAlumnosSemestre($materia);
+        $this->tiponota = $nota->cargarTiposNotas($sede, $materia);
+        $this->numeroalumnos = $matricula->cargarNumeroAlumnosSemestre($sede, $materia);
         $this->alumnos = $matricula->cargarAlumnosMateria($sede, $programa, $materia);
         $this->idmateria = $materia;
     }

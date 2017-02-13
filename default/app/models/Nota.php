@@ -1,8 +1,16 @@
 <?php
 
 class Nota extends ActiveRecord {
-    public function cargarTiposNotas($materia) {
-        return $this->find_by_sql("select count(*) as resultado from (select id_tiponota from nota where id_materia = $materia group by id_tiponota) as table1;");
+    public function cargarTiposNotas($sede, $materia) {
+        return $this->find_by_sql("select count(*) as resultado"
+                . " from ("
+                    . "select id_tiponota"
+                    . " from nota join alumno on nota.id_alumno = alumno.id_alumno"
+                        . " join matricula on alumno.id_alumno = matricula.id_alumno"
+                    . " where id_materia = $materia"
+                        . " and id_sede = $sede"
+                    . " group by id_tiponota"
+                . ") as table1");
     }
     
     public function cargarSemestresAlumno($id) {

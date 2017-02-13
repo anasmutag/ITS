@@ -71,18 +71,18 @@ function rs(){
     h = (hw - hb) / 2;
 
     if(hb <= hw){
-        $('html').addClass('contenido_admin');
-        $('body').addClass('cuerpo_admin');
+        $('html').addClass('contenido');
+        $('body').addClass('cuerpo_alterno');
         $('body').css({
             'margin-top': h.toString() + "px"
         });
-        $('#cab_admin').addClass('cabecera_admin');
-        $('#dv_infoinstitutoadmin').addClass('pie_admin');
+        $('#cab_alterno').addClass('cabecera_alterno');
+        $('#dv_informacion_instituto').addClass('pie_alterno');
     }else{
-        $('html').removeClass('contenido_admin');
-        $('body').removeClass('cuerpo_admin');
+        $('html').removeClass('contenido');
+        $('body').removeClass('cuerpo_alterno');
         $('body').removeAttr('style');
-        $('#cab_admin').removeClass('cabecera_admin');
-        $('#dv_infoinstitutoadmin').removeClass('pie_admin');
+        $('#cab_alterno').removeClass('cabecera_alterno');
+        $('#dv_informacion_instituto').removeClass('pie_alterno');
     }
 }
