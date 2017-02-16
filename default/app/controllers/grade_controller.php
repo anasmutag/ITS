@@ -57,16 +57,24 @@ class GradeController extends AppController {
     }
     
     public function registroNotas($tipo = 1) {
-        View::template('grade');
-        
-        if($tipo === 1){
-            $this->view = 2;
+        if(Auth::is_valid()){
+            if($tipo === 1){
+                Router::redirect("docentes/registro_notas/");
+            }else{
+                Router::redirect("docentes/registro_notas/validaciones/");
+            }
         }else{
-            $this->view = 3;
+            View::template('grade');
+            
+            if($tipo === 1){
+                $this->view = 2;
+            }else{
+                $this->view = 3;
+            }
+            
+            $this->titulosc = "REGISTRO DE CALIFICACIONES";
+            $this->tipo = $tipo;
         }
-        
-        $this->titulosc = "REGISTRO DE CALIFICACIONES";
-        $this->tipo = $tipo;
     }
     
     public function logearDocente() {
