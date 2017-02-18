@@ -20,8 +20,16 @@ class GradeController extends AppController {
         
         if($alumno->validarCodigo($codigo)){
             $this->estado = 1;
-            $this->datosAlumno = $alumno->cargarDatosAlumno($codigo);
-            $this->inactivos = $matricula->cargarSemestres($codigo, 2);
+            $datosAlumno = $alumno->cargarDatosAlumno($codigo);
+            $this->datosAlumno = $datosAlumno;
+            
+            if($matricula->validarConvalidacion($datosAlumno[0]->id_alumno)){
+                $this->semestrecv = $matricula->cargarSemestreConvalidacion($datosAlumno[0]->id_alumno)[0]->id_semestre;
+            }else{
+                $this->semestrecv = NULL;
+                $this->inactivos = $matricula->cargarSemestres($codigo, 2);
+            }
+            
             $this->activo = $matricula->cargarSemestres($codigo, 1);
         }else{
             $this->estado = 0;

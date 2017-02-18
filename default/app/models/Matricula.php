@@ -68,4 +68,18 @@ class Matricula extends ActiveRecord {
                     join semestre on matricula.id_semestre = semestre.id_semestre",
                 "conditions: alumno.identificacion_alumno = $codigo and id_estadomatricula = $estado");
     }
+    
+    public function validarConvalidacion($alumno) {
+        if($this->find("columns: convalidacion_matricula as resultado",
+                "conditions: id_alumno = $alumno")[0]->resultado != 0){
+            return true;
+        }else{
+            return false;
+        }
+    }
+    
+    public function cargarSemestreConvalidacion($alumno) {
+        return $this->find("columns: id_semestre",
+                "conditions: id_alumno = $alumno");
+    }
 }

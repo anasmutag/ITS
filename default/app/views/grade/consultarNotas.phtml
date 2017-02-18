@@ -1,4 +1,7 @@
 <?//= json_encode($datosAlumno)?>
+<?//= var_dump($inactivos)?>
+<?//= $semestrecv?>
+<?//= json_encode($activo)?>
 
 <? if($estado === 1): ?>
     <div class="contenedor_sistemacalificacion">
@@ -12,7 +15,19 @@
             <label>Periodo</label>
             <select id="slt_periodonotas">
                 <option value="0">Seleccionar Periodo</option>
-                <? if(!empty($inactivos)):
+                <? if(empty($inactivos)):
+                    switch ($semestrecv):
+                        case 2: ?>
+                            <option value="1" data-estado="2">Primer Semestre</option>
+                            
+                            <? break;
+                        case 3: ?>
+                            <option value="1" data-estado="2">Primer Semestre</option>
+                            <option value="2" data-estado="2">Segundo Semestre</option>
+                            
+                            <? break;
+                    endswitch;
+                else:
                     foreach ($inactivos as $inactivo): ?>
                         <option value="<?= $inactivo->id_semestre?>" data-estado="2"><?= $inactivo->nombre_semestre?></option>
                     <? endforeach;
@@ -22,7 +37,11 @@
                         <option value="<?= $a->id_semestre?>" data-estado="1"><?= $a->nombre_semestre?></option>
                     <? endforeach;
                 endif;
-                if(!empty($inactivos)): ?>
+                if(empty($inactivos)):
+                    if($semestrecv > 1): ?>
+                        <option value="-1" data-estado="2">Todos</option>
+                    <? endif;
+                else: ?>
                     <option value="-1" data-estado="2">Todos</option>
                 <? endif; ?>
             </select>
@@ -58,6 +77,8 @@
                 success: function(data){
                     $('.contenedor_notassemestresalumno').html('');
                     $('.contenedor_notassemestresalumno').html(data);
+                    
+                    rs();
                     
                     $('.contenedor_notasalumno').on('click', function (){
                         $(this).next('.contenedor_detallenotasalumno').toggleClass('displaynone');

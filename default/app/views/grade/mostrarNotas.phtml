@@ -3,112 +3,137 @@
 <?//= json_encode($notas)?>
 <?//= json_encode($validaciones)?>
 
-<? foreach($semestres as $semestre): ?>
-    <label class="etiqueta_semestre">
-        <? switch($semestre->semestre):
-        case 1: ?>
-            Primer Semestre
-            <?break;
-        case 2: ?>
-            Segundo Semestre
-            <?break;
-        case 3: ?>
-            Tercer Semestre
-            <?break;
-        endswitch; ?>
-    </label>
-    <? foreach($materias as $materia):
-        if($semestre->semestre === $materia->semestre): ?>
-            <div class="contenedor_notasmateriasalumno">
-                <div class="contenedor_notasalumno">
-                    <label><?= $materia->codigo_materia?></label>
-                    <label><?= $materia->nombre_materia?></label>
-                    
-                        <? $numnotas = 0;
-                        $faltas = 0;
-                        
-                        foreach($notas as $nota):
-                            if($materia->id_materia === $nota->id_materia):
-                                $numnotas += 1;
-                                $faltas += $nota->faltas_nota;
-                            endif;
-                        endforeach;
-                        
-                        if($estado == 2 || $numnotas === 3):
-                            $definitiva = 0;
-                            
+<? if(empty($semestres)):
+    echo 'Semestre activo pero aún no se registran notas para este semestre';
+else:
+    foreach($semestres as $semestre): ?>
+        <label class="etiqueta_semestre">
+            <? switch($semestre->semestre):
+            case 1: ?>
+                Primer Semestre
+                <?break;
+            case 2: ?>
+                Segundo Semestre
+                <?break;
+            case 3: ?>
+                Tercer Semestre
+                <?break;
+            endswitch; ?>
+        </label>
+        <? foreach($materias as $materia):
+            if($semestre->semestre === $materia->semestre): ?>
+                <div class="contenedor_notasmateriasalumno">
+                    <div class="contenedor_notasalumno">
+                        <label><?= $materia->codigo_materia?></label>
+                        <label><?= $materia->nombre_materia?></label>
+
+                            <? $numnotas = 0;
+                            $faltas = 0;
+
                             foreach($notas as $nota):
                                 if($materia->id_materia === $nota->id_materia):
-                                    switch($nota->id_tiponota):
-                                        case 1:
-                                            $definitiva += ($nota->valor_nota*0.3);
-                                            break;
-                                        case 2:
-                                            $definitiva += ($nota->valor_nota*0.3);
-                                            break;
-                                        case 3:
-                                            $definitiva += ($nota->valor_nota*0.4);
-                                            break;
-                                    endswitch;
+                                    if($nota->id_tiponota <= 3):
+                                        $numnotas += 1;
+                                        $faltas += $nota->faltas_nota;
+                                    endif;
                                 endif;
                             endforeach;
-                            
-                            if(round($definitiva, 1) < 3.5):
-                                $valor = 0;
-                                
-                                foreach($validaciones as $validacion):
-                                    if($validacion->id_alumno == $alumno && $validacion->id_materia == $materia->id_materia && $validacion->id_semestre == $semestre->semestre):
-                                        $valor = $validacion->valor_validacion;
-                                        
-                                        break;
+
+                            if($estado == 2 || $numnotas === 3):
+                                $definitiva = 0;
+
+                                foreach($notas as $nota):
+                                    if($materia->id_materia === $nota->id_materia):
+                                        switch($nota->id_tiponota):
+                                            case 1:
+                                                $definitiva += ($nota->valor_nota*0.3);
+                                                break;
+                                            case 2:
+                                                $definitiva += ($nota->valor_nota*0.3);
+                                                break;
+                                            case 3:
+                                                $definitiva += ($nota->valor_nota*0.4);
+                                                break;
+                                            case 4:
+                                                $definitiva += $nota->valor_nota;
+                                                break;
+                                        endswitch;
                                     endif;
                                 endforeach;
-                                
-                                if($valor > 0):
-                                    if($valor < 3.5):
-                                        echo '<label class="materianoaprobada">' . $valor . '</label>';
+
+                                if(round($definitiva, 1) < 3.5):
+                                    $valor = 0;
+
+                                    foreach($validaciones as $validacion):
+                                        if($validacion->id_alumno == $alumno && $validacion->id_materia == $materia->id_materia && $validacion->id_semestre == $semestre->semestre):
+                                            $valor = $validacion->valor_validacion;
+
+                                            break;
+                                        endif;
+                                    endforeach;
+
+                                    if($valor > 0):
+                                        if($valor < 3.5):
+                                            echo '<label class="materianoaprobada">' . $valor . '</label>';
+                                        else:
+                                            echo '<label class="materiaaprobada">' . $valor . '</label>';
+                                        endif;
                                     else:
-                                        echo '<label class="materiaaprobada">' . $valor . '</label>';
+                                        echo '<label class="materianoaprobada">' . round($definitiva, 1) . '</label>';
                                     endif;
                                 else:
-                                    echo '<label class="materianoaprobada">' . round($definitiva, 1) . '</label>';
+                                    $valor = 0;
+
+                                    echo '<label class="materiaaprobada">' . round($definitiva, 1) . '</label>';
                                 endif;
+                            elseif($estado == 1 && $numnotas === 0):
+                                $definitiva = 0;
+
+                                foreach($notas as $nota):
+                                    if($materia->id_materia === $nota->id_materia):
+                                        $definitiva += $nota->valor_nota;
+                                    endif;
+                                endforeach;
+
+                                $valor = 0;
+
+                                echo '<label class="materiaaprobada">' . round($definitiva, 1) . '</label>';
                             else:
                                 $valor = 0;
-                                
-                                echo '<label class="materiaaprobada">' . round($definitiva, 1) . '</label>';
-                            endif;
-                        else:
-                            $valor = 0;
-                            
-                            echo '-';
-                        endif; ?>
-                    
-                </div>
-                <div class="contenedor_detallenotasalumno <?= ($estado==2||$numnotas===3)?'displaynone':'';?>">
-                    <? if(empty($notas)): ?>
-                        <label class="etiqueta_sinnotas">No hay notas registradas para esta asignatura</label>
-                    <? else:
-                        foreach($notas as $nota):
-                            if($materia->id_materia === $nota->id_materia): ?>
-                                <label><?= $nota->nombre_tiponota . ': ' . $nota->valor_nota?></label>
+
+                                echo '-';
+                            endif; ?>
+
+                    </div>
+                    <div class="contenedor_detallenotasalumno <?= ($estado==2||$numnotas===3||$numnotas===0)?'displaynone':'';?>">
+                        <? if(empty($notas)): ?>
+                            <label class="etiqueta_sinnotas">No hay notas registradas para esta asignatura</label>
+                        <? else:
+                            foreach($notas as $nota):
+                                if($materia->id_materia === $nota->id_materia):
+                                    if($nota->id_tiponota > 3): ?>
+                                        <label><?= $nota->nombre_tiponota?></label>
+                                    <? else: ?>
+                                        <label><?= $nota->nombre_tiponota . ': ' . $nota->valor_nota?></label>
+                                    <? endif;
+                                endif;
+                            endforeach;
+                        endif;
+
+                        if($valor > 0):
+                            if($valor < 3.5): ?>
+                                <label class="etiqueta_notavalidacion">Validación No Aprobada</label>
+                            <? else: ?>
+                                <label class="etiqueta_notavalidacion">Validación Aprobada</label>
                             <? endif;
-                        endforeach;
-                    endif;
-                    
-                    if($valor > 0):
-                        if($valor < 3.5): ?>
-                            <label class="etiqueta_notavalidacion">Validación No Aprobada</label>
-                        <? else: ?>
-                            <label class="etiqueta_notavalidacion">Validación Aprobada</label>
-                        <? endif;
-                    endif;
-                    
-                    if($faltas != 0): ?>
-                        <label class="etiqueta_notavalidacion">Faltas:&nbsp;<?= $faltas?></label>
-                    <? endif; ?>
+                        endif;
+
+                        if($faltas != 0): ?>
+                            <label class="etiqueta_notavalidacion">Faltas:&nbsp;<?= $faltas?></label>
+                        <? endif; ?>
+                    </div>
                 </div>
-            </div>
-        <? endif;
-    endforeach; ?>
-<? endforeach; ?>
+            <? endif;
+        endforeach;
+    endforeach;
+endif; ?>
