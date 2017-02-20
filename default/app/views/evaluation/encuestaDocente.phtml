@@ -4,12 +4,12 @@
 <? if($estado === 1): ?>
     <div id="dv_datosalumnoencuestas">
         <span class="etiqueta_datosalumnoencuestas"><?= $alumno[0]->nombre_alumno . ' ' . $alumno[0]->apellido_alumno?></span>
-        <span class="etiqueta_datosalumnoencuestas"><?= $alumno[0]->abreviatura_tipodocumento?>&nbsp;<?= $alumno[0]->identificacion_alumno?></span>
+        <span class="etiqueta_datosalumnoencuestas"><?= $alumno[0]->abreviatura_tipodocumento?>&nbsp;<?= number_format($alumno[0]->identificacion_alumno, 0, '', '.')?></span>
         <span class="etiqueta_datosalumnoencuestas"><?= $alumno[0]->nombre_programa?></span>
     </div>
     <div id="dv_encuestasalumno">
         <? if(empty($encuestas)): ?>
-            <span id="sp_noencuestasdocentes">El sistema de evaluación docente ya no se encuentra activo</span>
+            <span id="sp_noencuestasdocentes">Evaluación de docente(s) finalizada</span>
         <? else:
             foreach($encuestas as $encuesta): ?>
                 <div class="contenedor_datosencuestadocente">
@@ -71,7 +71,8 @@
             type: 'POST',
             url: <?= PUBLIC_PATH?> + 'evaluation/encuesta/',
             data: {
-                encuesta: JSON.stringify(encuesta)
+                encuesta: JSON.stringify(encuesta),
+                codigo: <?= $codigo?>
             },
             beforeSend: function(){
                 //document.getElementById("btn_consultarnotas").disabled = true;

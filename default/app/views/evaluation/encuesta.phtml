@@ -1,5 +1,60 @@
 <? View::partial('encuesta', false, array('encuesta' => $encuesta)); ?>
 
+<div id="dv_dialogoconfirmacionenvioevaluaciondocente">
+    <? Flash::valid("Evaluacion docente enviada y registrada con exito") ?>
+</div>
+
 <script type="text/javascript">
+    $('#dv_dialogoconfirmacionenvioevaluaciondocente').dialog({
+        autoOpen: false,
+        modal: true,
+        resizable: false,
+        closeOnEscape: false,
+        buttons: {
+            "Continuar": function() {
+                window.location = "<?= PUBLIC_PATH?>estudiantes/evaluacion_docente/" + <?= $codigo?>;
+            }
+        },
+        close: function (){}
+    });
     
+    $('#frm_evaluaciondocente').submit(function (){
+        $.ajax({
+            type: 'POST',
+            url: <?= PUBLIC_PATH?> + 'evaluation/registroencuestaalumno/',
+            data: {
+                alumno: <?= $codigo?>,
+                docente: <?= $encuesta[0]->docente?>
+            },
+            dataType: 'json',
+            beforeSend: function(){
+                //document.getElementById("btn_consultarnotas").disabled = true;
+
+                $('body').addClass('menuopen');
+
+                $.blockUI({
+                    message: "Registrando evaluación..."
+                });
+            },
+            success: function(data) {
+                $('body').removeClass('menuopen');
+                //document.getElementById("frm_codigoestudiante").reset();
+
+                if(data !== null && data.res === 'ok'){
+                    submitted = true;
+                    
+                    console.log(data.res);
+                }else{
+                    console.log(data.msg);
+                }
+            },
+            error: function(){
+                //console.log('Ocurrio un error inesperado. Intenta nuevamente');
+            }
+        }).always(function(){
+            //*document.getElementById("btn_consultarnotas").disabled = false;
+
+            $.unblockUI();
+        });
+    });
 </script>

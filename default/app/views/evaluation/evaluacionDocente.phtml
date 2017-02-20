@@ -22,10 +22,8 @@
         if(codigo.length > 0){
             $.ajax({
                 type: 'POST',
-                url: window.public_path + 'evaluation/encuestaDocente/',
-                data: {
-                    codigo: codigo
-                },
+                url: window.public_path + 'evaluation/encuestaDocente/' + codigo,
+                data: {},
                 beforeSend: function(){
                     /*document.getElementById("btn_consultarnotas").disabled = true;*/
                     
@@ -36,10 +34,12 @@
                     });
                 },
                 success: function(data) {
-                    $('body').removeClass('menuopen');
-                    document.getElementById("frm_encuestadocente").reset();
+                    /*$('body').removeClass('menuopen');
+                    document.getElementById("frm_encuestadocente").reset();*/
                     
-                    $('#sec_contenidoalterno').html(data);
+                    /*$('#sec_contenidoalterno').html(data);*/
+                    
+                    window.location = "<?= PUBLIC_PATH?>estudiantes/evaluacion_docente/" + codigo;
                 },
                 error: function(){
                     console.log('Ocurrio un error inesperado. Intenta nuevamente');

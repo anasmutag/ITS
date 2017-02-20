@@ -11,8 +11,9 @@
     <span class="etiqueta_datoevaluaciondocente">1 (Malo) - 2 (Regular) - 3 (Bueno) - 4 (Excelente)</span>
 </div>
 <div id="dv_evaluaciondocente">
-    <iframe name="hidden_iframe" id="hidden_iframe" style="display: none;" onload="if(submitted){/*window.location = <?= PUBLIC_PATH?> + 'estudiantes/evaluacion_docente';*/ alert('Si'); }"></iframe>
-    <form id="frm_evaluaciondocente" name="evaluaciondocente" action="<?= $encuesta[0]->url?>" method="post" target="hidden_iframe" onsubmit="submitted = true;">
+    <iframe name="hidden_iframe" id="hidden_iframe" style="display: none;" onload="if(submitted){ $('#dv_dialogoconfirmacionenvioevaluaciondocente').dialog('open'); }"></iframe>
+    <?/*<form id="frm_evaluaciondocente" name="evaluaciondocente" action="<?= $encuesta[0]->url?>" method="post" target="hidden_iframe" onsubmit="submitted = true;">*/?>
+    <form id="frm_evaluaciondocente" name="evaluaciondocente" action="<?= $encuesta[0]->url?>" method="post" target="hidden_iframe">
         <div class="contenedor_tituloseccionevaluaciondocente">ORIENTACION ETICA</div>
         <div class="contenedor_preguntasevaluaciondocente">
             <span class="etiqueta_preguntaevaluaciondocente">En el desarrollo del módulo, el docente estimula la práctica de valores (Responsabilidad, Respeto, Compromiso)</span>
