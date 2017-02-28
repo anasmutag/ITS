@@ -59,7 +59,29 @@ class GradeController extends AppController {
         }else{
             $this->semestres = $nota->cargarSemestreAlumno($codigo, $semestre);
             $this->materias = $nota->cargarMateriasSemestreAlumno($codigo, $semestre);
-            $this->notas = $nota->cargarNotasSemestreAlumno($codigo, $semestre);
+            $notas = $nota->cargarNotasSemestreAlumno($codigo, $semestre);
+            
+            $materia = $notas[0]->id_materia;
+            $tiponota = $notas[0]->id_tiponota;
+            $count = 0;
+            
+            foreach ($notas as $key => $n) {
+                if($n->id_materia == $materia && $n->id_tiponota == $tiponota){
+                    $count += 1;
+                }else{
+                    
+                    if($count === 2){
+                        unset($notas[$key - 2]);
+                    }
+                    
+                    $materia = $notas[$key]->id_materia;
+                    $tiponota = $notas[$key]->id_tiponota;
+                    $count = 1;
+                }
+            }
+            
+            $this->notas = $notas;
+            //$this->notas = $nota->cargarNotasSemestreAlumno($codigo, $semestre);
             $this->validaciones = $validacion->cargarNotasValidcionesSemestreAlumno($codigo, $semestre);
         }
     }
@@ -165,9 +187,55 @@ class GradeController extends AppController {
         $materia = Input::request('materia');
         
         $this->tiponota = $nota->cargarTiposNotas($sede, $materia);
-        $this->numeroalumnos = $matricula->cargarNumeroAlumnosSemestre($sede, $materia);
-        $this->alumnos = $matricula->cargarAlumnosMateria($sede, $programa, $materia);
+        $numeroalumnos = (int) $matricula->cargarNumeroAlumnosSemestre($sede, $materia)[0]->resultado;
+        $alumnos = $matricula->cargarAlumnosMateria($sede, $programa, $materia);
+        
+        foreach ($alumnos as $key => $alumno) {
+            $notacv = new Nota();
+            
+            if($notacv->cargarNotasCv($alumno->id_alumno, $materia)){
+                unset($alumnos[$key]);
+                $numeroalumnos -= 1;
+            }
+        }
+        
+        /*$this->numeroalumnos = (int) $matricula->cargarNumeroAlumnosSemestre($sede, $materia)[0]->resultado;
+        $this->alumnos = $matricula->cargarAlumnosMateria($sede, $programa, $materia);*/
+        $this->numeroalumnos = $numeroalumnos;
+        $this->alumnos = $alumnos;
         $this->idmateria = $materia;
+        
+        $alumnosp = $matricula->cargarAlumnosMateriaPerdida($sede, $programa, $materia);
+        
+        foreach ($alumnosp as $key => $alumnop) {
+            $notap = new Nota();
+            
+            $notasp = $notap->cargarNotasMateria($alumnop->id_alumno, $materia);
+            $definitiva = 0;
+            
+            foreach ($notasp as $np) {
+                switch ($np->id_tiponota) {
+                    case 1:
+                        $definitiva += ($np->valor_nota*0.3);
+                        
+                        break;
+                    case 2:
+                        $definitiva += ($np->valor_nota*0.3);
+                        
+                        break;
+                    case 3:
+                        $definitiva += ($np->valor_nota*0.4);
+                        
+                        break;
+                }
+            }
+            
+            if($definitiva >= 3.5){
+                unset($alumnosp[$key]);
+            }
+        }
+        
+        $this->alumnosp = $alumnosp;
     }
     
     public function validaciones() {
@@ -195,6 +263,7 @@ class GradeController extends AppController {
         $tiponota = Input::request('tiponota');
         $materia = Input::request('idmateria');
         $notas = json_decode(stripslashes(Input::request('notas')));
+        $notasp = json_decode(stripslashes(Input::request('notasp')));
         $docente = Input::request('docente');
         $bannotas = 1;
         
@@ -218,7 +287,7 @@ class GradeController extends AppController {
             $nota->id_materia = $materia;
             $nota->docente_nota = $docente;
             $nota->faltas_nota = $n->faltas;
-
+            
             if($nota->save()){
                 if($tiponota == 3){
                     $notamateria = new Nota();

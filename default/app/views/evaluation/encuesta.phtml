@@ -24,7 +24,8 @@
             url: <?= PUBLIC_PATH?> + 'evaluation/registroencuestaalumno/',
             data: {
                 alumno: <?= $codigo?>,
-                docente: <?= $encuesta[0]->docente?>
+                docente: <?= $encuesta[0]->docente?>,
+                semestre: <?= $semestre?>
             },
             dataType: 'json',
             beforeSend: function(){

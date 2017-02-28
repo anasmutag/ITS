@@ -12,7 +12,26 @@ class Matricula extends ActiveRecord {
                     join programa on alumnoprograma.id_programa = programa.id_programa
                     join materiaprograma on programa.id_programa = materiaprograma.id_programa
                     join materia on materiaprograma.id_materia = materia.id_materia",
-                "conditions: matricula.id_sede = $sede and programa.id_programa = $programa and materia.id_materia = $materia and matricula.id_estadomatricula = 1 and matricula.id_semestre = materiaprograma.semestre",
+                "conditions: matricula.id_sede = $sede
+                    and programa.id_programa = $programa
+                    and materia.id_materia = $materia
+                    and matricula.id_estadomatricula = 1
+                    and matricula.id_semestre = materiaprograma.semestre",
+                "order: apellido_alumno");
+    }
+    
+    public function cargarAlumnosMateriaPerdida($sede, $programa, $materia) {
+        return $this->find("columns: alumno.id_alumno,alumno.identificacion_alumno,alumno.nombre_alumno,alumno.apellido_alumno,materia.id_materia",
+                "join: join alumno on matricula.id_alumno = alumno.id_alumno
+                    join alumnoprograma on alumno.id_alumno = alumnoprograma.id_alumno
+                    join programa on alumnoprograma.id_programa = programa.id_programa
+                    join materiaprograma on programa.id_programa = materiaprograma.id_programa
+                    join materia on materiaprograma.id_materia = materia.id_materia",
+                "conditions: matricula.id_sede = $sede
+                    and programa.id_programa = $programa
+                    and materia.id_materia = $materia
+                    and matricula.id_estadomatricula = 2
+                    and matricula.id_semestre = materiaprograma.semestre",
                 "order: apellido_alumno");
     }
     
@@ -81,5 +100,15 @@ class Matricula extends ActiveRecord {
     public function cargarSemestreConvalidacion($alumno) {
         return $this->find("columns: id_semestre",
                 "conditions: id_alumno = $alumno");
+    }
+    
+    public function cargarSemestreActivoAlumno($alumno) {
+        return $this->find("columns: id_semestre",
+                "conditions: id_estadomatricula = 1
+                    and id_alumno = (
+                        select id_alumno
+                        from alumno
+                        where identificacion_alumno = $alumno
+                    )");
     }
 }

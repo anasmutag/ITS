@@ -1,6 +1,6 @@
 <?php
 
-Load::models('Alumno', 'Docente', 'Encuestadocente', 'Encuesta');
+Load::models('Alumno', 'Docente', 'Encuestadocente', 'Encuesta', 'Matricula');
 
 class EvaluationController extends AppController {
     public function evaluacionDocente() {
@@ -37,24 +37,24 @@ class EvaluationController extends AppController {
                 
                 foreach ($profesores as $key => $profesor) {
                     foreach ($encuestasrealizadas as $er) {
-                        if ($profesor->id_docente == $er->docente_encuesta) {
+                        if ($profesor->id_docente == $er->docente_encuesta && $er->cantidad > 1) {
                             unset($profesores[$key]);
                         }
                     }
                 }
             }
             
-            $encuestaprofesor = Array();
+            $encuestasprofesores = Array();
             
             foreach($profesores as $profesor){
                 $encuestadocente = new Encuestadocente();
                 
                 $encuesta = $encuestadocente->cargarEncuestaDocente($profesor->id_docente);
                 
-                array_push($encuestaprofesor, $encuesta);
+                array_push($encuestasprofesores, $encuesta);
             }
             
-            $this->encuestas = $encuestaprofesor;
+            $this->encuestas = $encuestasprofesores;
         }else{
             $this->estado = 0;
             $this->codigo = 0;
@@ -64,11 +64,15 @@ class EvaluationController extends AppController {
     public function encuesta() {
         View::template(NULL);
         
+        $matricula = new Matricula();
+        
         $encuesta = json_decode(stripslashes(Input::request('encuesta')));
         $codigo = Input::request('codigo');
         
         $this->encuesta = $encuesta;
         $this->codigo = $codigo;
+        
+        $this->semestre = $matricula->cargarSemestreActivoAlumno($codigo)[0]->id_semestre;
     }
     
     public function registroencuestaalumno() {
@@ -79,6 +83,7 @@ class EvaluationController extends AppController {
         
         $codigo = Input::request('alumno');
         $docente = Input::request('docente');
+        $semestre = Input::request('semestre');
         
         $arr['res'] = 'fail';
         $arr['msg'] = '';
@@ -86,6 +91,7 @@ class EvaluationController extends AppController {
         $encuesta->begin();
         
         $encuesta->docente_encuesta = $docente;
+        $encuesta->semestre_encuesta = $semestre;
         $encuesta->id_alumno = $alumno->cargarIdAlumno($codigo)[0]->id_alumno;
         
         if($encuesta->save()){

@@ -2,15 +2,31 @@
 
 class Nota extends ActiveRecord {
     public function cargarTiposNotas($sede, $materia) {
-        return $this->find_by_sql("select count(*) as resultado"
+        /*return $this->find_by_sql("select count(*) as resultado"
                 . " from ("
                     . "select id_tiponota"
                     . " from nota join alumno on nota.id_alumno = alumno.id_alumno"
                         . " join matricula on alumno.id_alumno = matricula.id_alumno"
-                    . " where id_materia = $materia"
+                    . " where id_estadomatricula = 1"
+                        . " and id_materia = $materia"
                         . " and id_sede = $sede"
+                        . " and id_tiponota <> 4"
                     . " group by id_tiponota"
-                . ") as table1");
+                . ") as table1");*/
+        
+        return $this->find_by_sql("select count(*) as resultado"
+                . " from ("
+                    . "select id_tiponota"
+                . " from nota join alumno on nota.id_alumno = alumno.id_alumno"
+                    . " join matricula on alumno.id_alumno = matricula.id_alumno"
+                    . " join materia on nota.id_materia = materia.id_materia"
+                    . " join materiaprograma on materia.id_materia = materiaprograma.id_materia"
+                . " where id_estadomatricula = 1"
+                    . " and matricula.id_semestre = semestre"
+                    . " and nota.id_materia = $materia"
+                    . " and id_sede = $sede"
+                    . " and id_tiponota <> 4"
+                . " group by id_tiponota) as table1");
     }
     
     public function cargarSemestresAlumno($id) {
@@ -88,7 +104,7 @@ class Nota extends ActiveRecord {
                     from alumno
                     where identificacion_alumno = $id
                 ) and semestre = $semestre",
-                "order: nota.id_tiponota");
+                "order: nota.id_tiponota,id_nota");
     }
     
     public function cargarNotasMateria($id, $materia) {
@@ -99,5 +115,13 @@ class Nota extends ActiveRecord {
                 "conditions: id_alumno = $id
                     and materia.id_materia = $materia",
                 "order: nota.id_tiponota");
+    }
+    
+    public function cargarNotasCv($alumno, $materia) {
+        if ($this->exists("id_alumno = $alumno and id_materia = $materia and id_tiponota = 4")) {
+            return true;
+        } else {
+            return false;
+        }
     }
 }

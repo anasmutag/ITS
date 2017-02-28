@@ -29,7 +29,7 @@ else:
 
                             <? $numnotas = 0;
                             $faltas = 0;
-
+                            
                             foreach($notas as $nota):
                                 if($materia->id_materia === $nota->id_materia):
                                     if($nota->id_tiponota <= 3):
@@ -38,7 +38,7 @@ else:
                                     endif;
                                 endif;
                             endforeach;
-
+                            
                             if($estado == 2 || $numnotas === 3):
                                 $definitiva = 0;
 

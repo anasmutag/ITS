@@ -2,11 +2,13 @@
 <?//= json_encode($tiponota)?>
 <?//= json_encode($numeroalumnos)?>
 <?//= json_encode(count($alumnos))?>
+<?//= json_encode($alumnos)?>
+<?//= json_encode($alumnosp)?>
 
 <div id="dv_registrodenotas">
     <? if($tiponota->resultado === '3'): ?>
         <span class="etiqueta_estadonotasalumno">Notas de primer, segundo y tercer corte registradas</span>
-    <? elseif($numeroalumnos[0]->resultado === '0'): ?>
+    <? elseif($numeroalumnos === 0): ?>
         <span class="etiqueta_estadonotasalumno">No hay estudiantes matriculados en esta materia</span>
     <? else: ?>
         <div id="dv_cortesseestre">
@@ -34,6 +36,21 @@
                     <span class="etiqueta_faltascortealumno">Faltas</span>
                     <div class="contenedor_entradafaltacortesalumno displaynone">
                         <input id="num_faltasalumno<?= $alumno->id_alumno?>" class="texto_gradealumno" type="number" min="1" value="0" onkeyup="validarFaltas.call(this);">
+                        <span class="etiqueta_cerrarentradafaltascortealumno">X</span>
+                    </div>
+                </div>
+            </div>
+        <? endforeach;
+        
+        foreach($alumnosp as $alumnop): ?>
+            <div class="contenedor_registrodenotas">
+                <span class="etiqueta_idalumno"><?= $alumnop->identificacion_alumno?></span>
+                <span class="etiqueta_namealumno"><?= $alumnop->nombre_alumno . ' ' . $alumnop->apellido_alumno?></span>
+                <input id="txt_notaalumno<?= $alumnop->id_alumno?>" class="texto_gradealumno" type="number" data-idalumno="<?=$alumnop->id_alumno?>" maxlength="3" step="0.1" min="1" max="5" value="1" onkeyup="validarNota.call(this);">
+                <div class="contenedor_faltascortealumno">
+                    <span class="etiqueta_faltascortealumno">Faltas</span>
+                    <div class="contenedor_entradafaltacortesalumno displaynone">
+                        <input id="num_faltasalumno<?= $alumnop->id_alumno?>" class="texto_gradealumno" type="number" min="1" value="0" onkeyup="validarFaltas.call(this);">
                         <span class="etiqueta_cerrarentradafaltascortealumno">X</span>
                     </div>
                 </div>
@@ -93,6 +110,18 @@
                     valor: puntoporcoma(nota),
                     faltas: faltas,
                     idalumno: idalumno
+                });
+            <? endforeach;
+            
+            foreach($alumnosp as $alumnop): ?>
+                var notap = $('#txt_notaalumno' + <?= $alumnop->id_alumno?>).val(),
+                    faltasp = $('#num_faltasalumno' + <?= $alumnop->id_alumno?>).val(),
+                    idalumnop = $('#txt_notaalumno' + <?= $alumnop->id_alumno?>).data('idalumno');
+
+                notas.push({
+                    valor: puntoporcoma(notap),
+                    faltas: faltasp,
+                    idalumno: idalumnop
                 });
             <? endforeach; ?>
             
