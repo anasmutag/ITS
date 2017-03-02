@@ -86,3 +86,15 @@ function rs(){
         $('#dv_informacion_instituto').removeClass('pie_alterno');
     }
 }
+
+function alturamenu(){
+    var alturaoc = $('#dv_opcionesactivasmenu').height(),
+        altura = $('#dv_opcionesmenu').height() - alturaoc;
+    
+    if(altura > 0){
+        $('#dv_noopcionmenu').css({width: '100%', height: altura});
+        $('#dv_noopcionmenu div').css({width: '60px', height: '100%', 'background-color': '#00529B'});
+    }else{
+        $('#dv_noopcionmenu').css({width: '100%', height: '0'});
+    }
+}

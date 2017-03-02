@@ -1,5 +1,7 @@
 <div id="dv_menu" class="contenedor_opcionesmenu">
     <div id="dv_opcionesmenu">
+        <div id="dv_opcionesactivasmenu">
+            
         <a class="contenedor_opcionmenu" href="<?= PUBLIC_PATH?>">
             <span class="etiqueta_iconopcionmenu icon_home_white"></span>
             <span class="etiqueta_tituloopcionmenu">Inicio</span>
@@ -28,13 +30,22 @@
                     <a class="etiqueta_instituciontituloopcionmenu" href="<?= PUBLIC_PATH?>institucion/visitanos">Visítanos</a>
                 <? endif; ?>
             </div>
+            <div>
+                <span class="etiqueta_iconopcionmenu"></span>
+                <? if($banInstitucion > 0): ?>
+                    <span id="sp_institucionmanualc" class="etiqueta_instituciontituloopcionmenu">Manual de Convivencia</span>
+                <? else: ?>
+                    <!--a class="etiqueta_instituciontituloopcionmenu" href="<?= PUBLIC_PATH?>index/institucion/2">Visítanos</a-->
+                    <a class="etiqueta_instituciontituloopcionmenu" href="<?= PUBLIC_PATH?>files/manual_de_convivencia.pdf" target="_blank">Manual de Convivencia</a>
+                <? endif; ?>
+            </div>
         </div>
         <div id="dv_programasopcionmenu" class="contenedor_opcionmenu">
             <span class="etiqueta_iconopcionmenu icon_programs"></span>
             <span id="sp_programasmenu" class="etiqueta_tituloopcionmenu">Programas</span>
             <span id="sp_programasicondown" class="etiqueta_icondown icon_down"></span>
         </div>
-        <div id="dv_programasopcionesmenu" class="contenedor_opcionmenu contenedor_institucionopcionmenu">
+        <div id="dv_programasopcionesmenu" class="contenedor_opcionmenu contenedor_programasopcionmenu">
             <div id="dv_programasteclab">
                 <span class="etiqueta_iconopcionmenu"></span>
                 <? if($banProgramas > 0): ?>
@@ -64,14 +75,14 @@
                 <span class="etiqueta_iconopcionmenu"></span>
                 <a class="etiqueta_instituciontituloopcionmenu" href="<?= PUBLIC_PATH?>estudiantes/consulta_notas">Consulta de Notas</a>
             </div>
-            <div>
+            <?/* <div>
                 <span class="etiqueta_iconopcionmenu"></span>
                 <a class="etiqueta_instituciontituloopcionmenu" href="<?= PUBLIC_PATH?>docentes/inicio">Registro de Notas</a>
             </div>
             <div>
                 <span class="etiqueta_iconopcionmenu"></span>
                 <a class="etiqueta_instituciontituloopcionmenu" href="<?= PUBLIC_PATH?>docentes/inicio/validaciones/">Registro de Validaciones</a>
-            </div>
+            </div> */?>
             <div>
                 <span class="etiqueta_iconopcionmenu"></span>
                 <a class="etiqueta_instituciontituloopcionmenu" href="<?= PUBLIC_PATH?>estudiantes/evaluacion_docente">Evaluación Docente</a>
@@ -93,6 +104,8 @@
             <span class="etiqueta_iconopcionmenu icon_contact"></span>
             <span class="etiqueta_tituloopcionmenu">Contáctenos</span>
         </a>
+        
+        </div>
         <div id="dv_noopcionmenu"><div></div></div>
     </div>
     <div id="dv_cerrarmenu">
@@ -273,14 +286,7 @@
         });
 
         $(window).resize(function(){
-            var altura = $('#dv_opcionesmenu').height() - 305;
-
-            if(altura > 0){
-                $('#dv_noopcionmenu').css({width: '100%', height: altura});
-                $('#dv_noopcionmenu div').css({width: '60px', height: '100%', 'background-color': '#00529B'});
-            }else{
-                $('#dv_noopcionmenu').css({width: '100%', height: '0'});
-            }
+            alturamenu();
         });
 
         $('#dv_institucionopcionmenu').on('click', function(){
@@ -288,6 +294,10 @@
             $('#sp_institucionmenu').toggleClass('etiqueta_tituloopcionmenuseleccionada');
             $('#sp_institucionicondown').toggleClass('icon_up');
             $('#dv_institucionopcionmenu').toggleClass('contenedor_opcionmenuseleccionada');
+            
+            setTimeout(function (){
+                alturamenu();
+            }, 400);
         });
 
         $('#dv_programasopcionmenu').on('click', function(){
@@ -295,6 +305,10 @@
             $('#sp_programasmenu').toggleClass('etiqueta_tituloopcionmenuseleccionada');
             $('#sp_programasicondown').toggleClass('icon_up');
             $('#dv_programasopcionmenu').toggleClass('contenedor_opcionmenuseleccionada');
+            
+            setTimeout(function (){
+                alturamenu();
+            }, 400);
         });
         
         $('#dv_serviciosopcionmenu').on('click', function(){
@@ -302,6 +316,10 @@
             $('#sp_serviciosmenu').toggleClass('etiqueta_tituloopcionmenuseleccionada');
             $('#sp_serviciosicondown').toggleClass('icon_up');
             $('#dv_serviciosopcionmenu').toggleClass('contenedor_opcionmenuseleccionada');
+            
+            setTimeout(function (){
+                alturamenu();
+            }, 400);
         });
     });
 </script>

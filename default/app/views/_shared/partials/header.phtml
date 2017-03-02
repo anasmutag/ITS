@@ -24,10 +24,12 @@
             <div class="dropdown-content">
                 <? if($banInstitucion > 0): ?>
                     <span id="sp_institucionmv">Misión | Visión</span>
+                    <span id="sp_institucionmc">Manual de Convivencia</span>
                     <span id="sp_institucionv">Visítanos</span>
                 <? else: ?>
                     <!--a href="<?= PUBLIC_PATH?>index/institucion/1">Misión | Visión</a-->
                     <a href="<?= PUBLIC_PATH?>institucion/mision_vision">Misión | Visión</a>
+                    <a href="<?= PUBLIC_PATH?>files/manual_de_convivencia.pdf" target="_blank">Manual de Convivencia</a>
                     <!--a href="<?= PUBLIC_PATH?>index/institucion/2">Visítanos</a-->
                     <a href="<?= PUBLIC_PATH?>institucion/visitanos">Visítanos</a>
                 <? endif; ?>
@@ -51,8 +53,8 @@
             <span class="dropbtn">Servicios</span>
             <div id="prueba" class="dropdown-content">
                 <a href="<?= PUBLIC_PATH?>estudiantes/consulta_notas">Consulta de Notas</a>
-                <a href="<?= PUBLIC_PATH?>docentes/inicio">Registro de Notas</a>
-                <a href="<?= PUBLIC_PATH?>docentes/inicio/validaciones/">Registro de Validaciones</a>
+                <?/* <a href="<?= PUBLIC_PATH?>docentes/inicio">Registro de Notas</a>
+                <a href="<?= PUBLIC_PATH?>docentes/inicio/validaciones/">Registro de Validaciones</a> */?>
                 <a href="<?= PUBLIC_PATH?>estudiantes/evaluacion_docente">Evaluación Docente</a>
             </div>
         </div>
@@ -77,7 +79,7 @@
         <span class="icon_next etiqueta_next contendor_navegacionsecdn"></span>
         <span id="sp_programateclab" class="contendor_navegacionsecdn navsecactive"></span>
     </div>
-<? else:
+<? /*else:
     if($view > 1 && Auth::is_valid()): ?>
         <div id="dv_navregistronotas">
             <div>
@@ -90,7 +92,7 @@
                 <button onclick="window.location = '<?= PUBLIC_PATH?>grade/salirDocente'">Salir</button>
             <? endif; ?>
         </div>
-    <? endif;
+    <? endif;*/
 endif; ?>
 
 <script type="text/javascript">
