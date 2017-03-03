@@ -18,11 +18,24 @@
             scrollwheel: false,
             zoom: 18
         });
+        
+        var content = '';
+        
+        <? if($sede == 0): ?>
+            content = '<div style="color: green; font-size: 18px">Pasto</div>';
+        <? else: ?>
+            content = '<div style="color: green; font-size: 18px">Ipiales</div>';
+        <? endif; ?>
+        
+        var infowindow = new google.maps.InfoWindow({
+            content: content,
+            maxWidth: 100
+        });
 
         marker = new google.maps.Marker({
             map: map,
             position: myLatLng,
-            title: 'Instituto Técnico Surcolombiano'
+            title: 'Instituto Técnico Surcolombiano, Sede <?= ($sede==0)?'Pasto':'Ipiales';?>'
         });
 
         /*panorama = new google.maps.StreetViewPanorama(document.getElementById('dv_streetview'), {
@@ -35,6 +48,18 @@
         });
 
         map.setStreetView(panorama);*/
+        
+        google.maps.event.addListener(infowindow, 'domready', function(){
+            $(".gm-style-iw").next("div").hide();
+        });
+        
+        google.maps.event.addDomListener(marker, 'mouseover', function() {
+            infowindow.open(map, marker);
+        });
+        
+        google.maps.event.addDomListener(marker, 'mouseout', function() {
+            infowindow.close();
+        });
         
         google.maps.event.addDomListener(window, "resize", function() {
             var center = map.getCenter();

@@ -24,19 +24,19 @@
             <div>
                 <span class="etiqueta_iconopcionmenu"></span>
                 <? if($banInstitucion > 0): ?>
-                    <span id="sp_institucionvisitanos" class="etiqueta_instituciontituloopcionmenu">Visítanos</span>
+                    <span id="sp_institucionmanualc" class="etiqueta_instituciontituloopcionmenu">Manual de Convivencia</span>
                 <? else: ?>
                     <!--a class="etiqueta_instituciontituloopcionmenu" href="<?= PUBLIC_PATH?>index/institucion/2">Visítanos</a-->
-                    <a class="etiqueta_instituciontituloopcionmenu" href="<?= PUBLIC_PATH?>institucion/visitanos">Visítanos</a>
+                    <a class="etiqueta_instituciontituloopcionmenu" href="<?= PUBLIC_PATH?>files/manual_de_convivencia.pdf" target="_blank">Manual de Convivencia</a>
                 <? endif; ?>
             </div>
             <div>
                 <span class="etiqueta_iconopcionmenu"></span>
                 <? if($banInstitucion > 0): ?>
-                    <span id="sp_institucionmanualc" class="etiqueta_instituciontituloopcionmenu">Manual de Convivencia</span>
+                    <span id="sp_institucionvisitanos" class="etiqueta_instituciontituloopcionmenu">Visítanos</span>
                 <? else: ?>
                     <!--a class="etiqueta_instituciontituloopcionmenu" href="<?= PUBLIC_PATH?>index/institucion/2">Visítanos</a-->
-                    <a class="etiqueta_instituciontituloopcionmenu" href="<?= PUBLIC_PATH?>files/manual_de_convivencia.pdf" target="_blank">Manual de Convivencia</a>
+                    <a class="etiqueta_instituciontituloopcionmenu" href="<?= PUBLIC_PATH?>institucion/visitanos">Visítanos</a>
                 <? endif; ?>
             </div>
         </div>
@@ -153,6 +153,13 @@
             }).always(function(){
 
             });
+        });
+        
+        $('#sp_institucionmanualc').on('click', function (){
+            $('body').removeClass('menuopen');
+            drawer.removeClass('opcionesmenuopen');
+            
+            window.open("<?= PUBLIC_PATH?>files/manual_de_convivencia.pdf");
         });
         
         $('#sp_institucionvisitanos').on('click', function (){

@@ -326,6 +326,10 @@ endif; ?>
         });
     });
     
+    $('#sp_institucionmc').on('click', function (){
+        window.open("<?= PUBLIC_PATH?>files/manual_de_convivencia.pdf");
+    });
+    
     $('#sp_institucionv').on('click', function (){
         $.ajax({
             type: 'POST',
