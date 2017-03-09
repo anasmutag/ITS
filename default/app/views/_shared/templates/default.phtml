@@ -22,12 +22,21 @@
         <link rel="icon" type="img/ico" href="<?= PUBLIC_PATH . "img/favicon.ico "?>">
 
         <?= Tag::js('jquery/jquery-2.2.3.min') ?>
-        <?= Tag::js('jquery/jquery-ui') ?>
+        <?//= Tag::js('jquery/jquery-ui') ?>
+        <?= Tag::js('jquery/jquery-ui.min') ?>
+        <?//= Tag::js('jquery/jquery.blockUI') ?>
         <?= Tag::js('jquery/jquery.blockUI') ?>
         <?= Tag::js('slippry.min') ?>
-        <?= Tag::js('html5shiv') ?>
-        <?= Tag::js('funciones') ?>
-        <?= Tag::js('require') ?>
+        <?//= Tag::js('html5shiv') ?>
+        <?//= Tag::js('html5shiv.min') ?>
+        <?//= Tag::js('funciones') ?>
+        <?//= Tag::js('funciones.min') ?>
+        <?//= Tag::js('require.min') ?>
+        
+        <script async src="<?= PUBLIC_PATH?>javascript/html5shiv.min.js"></script>
+        <script async src="<?= PUBLIC_PATH?>javascript/funciones.min.js"></script>
+        
+        <?= Tag::js('require.min') ?>
 
         <script type="text/javascript">
             window.public_path = '<?= PUBLIC_PATH?>';
@@ -35,8 +44,7 @@
             window.navegacion = 0;
         </script>
 
-        <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAGNEEMBZbYE1T_R9tcKB2_E970FUUJ8wc">
-        </script>
+        <script async src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAGNEEMBZbYE1T_R9tcKB2_E970FUUJ8wc"></script>
 
         <? (isset($programas))?$banProgramas = $programas:$banProgramas = 0;
         (isset($tipoProg))?$tipoPrograma = $tipoProg:$tipoPrograma = 0;
