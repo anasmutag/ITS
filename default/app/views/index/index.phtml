@@ -2,7 +2,6 @@
     <ul id="ul_slider">
         <li>
             <a href="#slide3" onclick="return false;">
-                <!--img src="img/slider/talentohumano_768.jpg" alt="Técnico Laboral en Administración del Talento Humano"-->
                 <picture>
                     <source srcset="img/slider/talentohumano_320.jpg" media="(max-width: 320px)">
                     <source srcset="img/slider/talentohumano_554.jpg" media="(max-width: 554px)">
@@ -15,7 +14,6 @@
         </li>
         <li>
             <a href="#slide3" onclick="return false;">
-                <!--img src="img/slider/contabilidad.jpg" alt="Técnico Laboral en Gestión Contable y Financiera"-->
                 <picture>
                     <source srcset="img/slider/contabilidad_320.jpg" media="(max-width: 320px)">
                     <source srcset="img/slider/contabilidad_554.jpg" media="(max-width: 554px)">
@@ -28,7 +26,6 @@
         </li>
         <li>
             <a href="#slide2" onclick="return false;">
-                <!--img src="img/slider/deportes.jpg" alt="Técnico Laboral en Preparación Fisica y Entrenamiento Deportivo"-->
                 <picture>
                     <source srcset="img/slider/deportes_320.jpg" media="(max-width: 320px)">
                     <source srcset="img/slider/deportes_554.jpg" media="(max-width: 554px)">
@@ -41,7 +38,6 @@
         </li>
         <li>
             <a href="#slide1" onclick="return false;">
-                <!--img src="img/slider/sistemas.jpg" alt="Técnico Laboral en Sistemas"-->
                 <picture>
                     <source srcset="img/slider/sistemas_320.jpg" media="(max-width: 320px)">
                     <source srcset="img/slider/sistemas_554.jpg" media="(max-width: 554px)">
@@ -54,7 +50,6 @@
         </li>
         <li>
             <a href="#slide3" onclick="return false;">
-                <!--img src="img/slider/vigilancia.jpg" alt="Técnico Laboral en Vigilancia Seguridad y Control de Instalaciones"-->
                 <picture>
                     <source srcset="img/slider/vigilancia_320.jpg" media="(max-width: 320px)">
                     <source srcset="img/slider/vigilancia_554.jpg" media="(max-width: 554px)">
@@ -101,21 +96,17 @@
         $('#dv_slider').removeClass('displaynone');
     });
     
-    /*require([
-        window.public_path+'javascript/slippry.min.js'
-    ],function(){*/
-        $('#ul_slider').slippry({
-            slippryWrapper: '<div class="sy-box ul_slider" />',
-            //adaptiveHeight: false,
-            useCSS: false,
-            autoHover: false,
-            transition: 'fade',
-            //captions: false,
-            //preload: 'all',
-            controls: false,
-            speed: 1000,
-            //pager: false,
-            auto: true
-        });
-    //});
+    $('#ul_slider').slippry({
+        slippryWrapper: '<div class="sy-box ul_slider" />',
+        //adaptiveHeight: false,
+        useCSS: false,
+        autoHover: false,
+        transition: 'fade',
+        //captions: false,
+        //preload: 'all',
+        controls: false,
+        speed: 1000,
+        //pager: false,
+        auto: true
+    });
 </script>

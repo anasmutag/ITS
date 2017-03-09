@@ -32,11 +32,11 @@
         </div>
     </div>
 <? endif; ?>
-<div id="dv_informacion_instituto">
+<div id="dv_informacion_instituto" itemprop="address" itemscope itemtype="http://schema.org/PostalAddress">
     <div id="<?= ($view<=0)?'dv_contenido_informacion_instituto':'dv_contenidoinformacioninstitutoalterno';?>">
         <? if($view <= 0) : ?>
             <div>
-                <span>Cra. 24 No. 14-22. San Juan de Pasto - Colombia</span><span>.&nbsp;</span><span>Teléfono: (2)7208428 - Celular: 3178626794</span><span>.&nbsp;</span><span>Email: its.atencionusuario@gmail.com</span>
+                <span><label itemprop="streetAddress">Cra. 24 No. 14-22 B/ Santiago</label>. <label itemprop="addressLocality">San Juan de Pasto</label> - Colombia</span><span>.&nbsp;</span><span>Teléfono: <label itemprop="telephone">(2)7208428</label> - Celular: 3178626794</span><span>.&nbsp;</span><span>Email: <label itemprop="email">its.atencionusuario@gmail.com</label></span>
             </div>
             <div>
                 <span>Copyright &COPY; Instituto Técnico Surcolombiano</span><span>.&nbsp;</span><span>Todos los derechos reservados</span>

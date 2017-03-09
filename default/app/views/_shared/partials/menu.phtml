@@ -17,7 +17,6 @@
                 <? if($banInstitucion > 0): ?>
                     <span id="sp_institucionmisionvision" class="etiqueta_instituciontituloopcionmenu">Misión | Visión</span>
                 <? else: ?>
-                    <!--a class="etiqueta_instituciontituloopcionmenu" href="<?= PUBLIC_PATH?>index/institucion/1">Misión | Visión</a-->
                     <a class="etiqueta_instituciontituloopcionmenu" href="<?= PUBLIC_PATH?>institucion/mision_vision">Misión | Visión</a>
                 <? endif; ?>
             </div>
@@ -26,7 +25,6 @@
                 <? if($banInstitucion > 0): ?>
                     <span id="sp_institucionmanualc" class="etiqueta_instituciontituloopcionmenu">Manual de Convivencia</span>
                 <? else: ?>
-                    <!--a class="etiqueta_instituciontituloopcionmenu" href="<?= PUBLIC_PATH?>index/institucion/2">Visítanos</a-->
                     <a class="etiqueta_instituciontituloopcionmenu" href="<?= PUBLIC_PATH?>files/manual_de_convivencia.pdf" target="_blank">Manual de Convivencia</a>
                 <? endif; ?>
             </div>
@@ -35,7 +33,6 @@
                 <? if($banInstitucion > 0): ?>
                     <span id="sp_institucionvisitanos" class="etiqueta_instituciontituloopcionmenu">Visítanos</span>
                 <? else: ?>
-                    <!--a class="etiqueta_instituciontituloopcionmenu" href="<?= PUBLIC_PATH?>index/institucion/2">Visítanos</a-->
                     <a class="etiqueta_instituciontituloopcionmenu" href="<?= PUBLIC_PATH?>institucion/visitanos">Visítanos</a>
                 <? endif; ?>
             </div>
@@ -51,7 +48,6 @@
                 <? if($banProgramas > 0): ?>
                     <span id="sp_programasteclab" class="etiqueta_instituciontituloopcionmenu">Técnico Laborales</span>
                 <? else: ?>
-                    <!--a class="etiqueta_instituciontituloopcionmenu" href="<?= PUBLIC_PATH?>program/programas/1">Técnico Laborales</a-->
                     <a class="etiqueta_instituciontituloopcionmenu" href="<?= PUBLIC_PATH?>programas/tecnico_laborales">Técnico Laborales</a>
                 <? endif; ?>
             </div>
@@ -60,7 +56,6 @@
                 <? if($banProgramas > 0): ?>
                     <span id="sp_programascurso" class="etiqueta_instituciontituloopcionmenu">Cursos, Seminarios y Diplomados</span>
                 <? else: ?>
-                    <!--a class="etiqueta_instituciontituloopcionmenu" href="<?= PUBLIC_PATH?>program/programas/7">Cursos, Seminarios y Diplomados</a-->
                     <a class="etiqueta_instituciontituloopcionmenu" href="<?= PUBLIC_PATH?>programas/cursos_seminarios_diplomados">Cursos, Seminarios y Diplomados</a>
                 <? endif; ?>
             </div>
@@ -88,18 +83,6 @@
                 <a class="etiqueta_instituciontituloopcionmenu" href="<?= PUBLIC_PATH?>estudiantes/evaluacion_docente">Evaluación Docente</a>
             </div>
         </div>
-        <!--a class="contenedor_opcionmenu" href="#">
-            <span class="etiqueta_iconopcionmenu icon_campus"></span>
-            <span class="etiqueta_tituloopcionmenu">Campus Virtual</span>
-        </a-->
-        <!--a class="contenedor_opcionmenu" href="<?= PUBLIC_PATH?>registration/preinscripcion/">
-            <span class="etiqueta_iconopcionmenu icon_contact"></span>
-            <span class="etiqueta_tituloopcionmenu">Preinscripción</span>
-        </a-->
-        <!--a class="contenedor_opcionmenu" href="<?= PUBLIC_PATH?>index/contactenos/">
-            <span class="etiqueta_iconopcionmenu icon_contact"></span>
-            <span class="etiqueta_tituloopcionmenu">Contáctenos</span>
-        </a-->
         <a class="contenedor_opcionmenu" href="<?= PUBLIC_PATH?>institucion/contactenos">
             <span class="etiqueta_iconopcionmenu icon_contact"></span>
             <span class="etiqueta_tituloopcionmenu">Contáctenos</span>
@@ -264,13 +247,12 @@
         });
 
         drawer.on('click',function(e){
-            //e.stopPropagation();
+            
         });
 
         menu.on('click', function(e) {
             e.stopPropagation();
 
-            //var altura = $('#dv_opcionesmenu').height() - 305;
             var altura = $('#dv_opcionesmenu').height() - 305;
             
             var t = $('header').offset().top;

@@ -52,7 +52,7 @@
         (isset($tipoIns))?$tipoInstitucion = $tipoIns:$tipoInstitucion = 0;
         (isset($contactenos))?$banContactenos = $contactenos:$banContactenos = 0; ?>
     </head>
-    <body>
+    <body itemscope itemtype="http://schema.org/EducationalOrganization">
         <? View::partial("menu", false, array('banProgramas'=>$banProgramas, 'banInstitucion'=>$banInstitucion)); ?>
         <header>
             <? View::partial("header", false, array('view'=>0, 'banProgramas'=>$banProgramas, 'tipoPrograma'=>$tipoPrograma, 'banInstitucion'=>$banInstitucion, 'tipoInstitucion'=>$tipoInstitucion, 'banContactenos'=>$banContactenos)) ?>
@@ -63,13 +63,5 @@
         <footer>
             <? View::partial("footer", false, array('view'=>0)) ?>
         </footer>
-
-        <!--script type="text/javascript">
-            //alert(<?= (isset($programas))?$programas:0;?>);
-            //alert(<?= $banProgramas;?>);
-            //console.log('banProgramas: ' + <?= $banProgramas;?>);
-            //console.log('banInstitucion: ' + <?= $banInstitucion;?>);
-            //console.log('banContactenos: ' + <?= $banContactenos;?>);
-        </script-->
     </body>
 </html>

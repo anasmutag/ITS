@@ -1,23 +1,23 @@
-<!--div id="dv_fechahora">
+<?/* <div id="dv_fechahora">
     <? $dia = date("j");
     $anio = date("Y");
     $meses = array("Enero", "Febrero", "Marzo", "Abril", "Mayo", "Junio", "Julio", "Agosto", "Septiembre", "Octubre", "Noviembre", "Diciembre"); ?>
 
     San Juan de Pasto, <?= $meses[date('n')-1] . ' ' . $dia . ' del ' . $anio?>
-</div-->
+</div> */?>
 <div id="<?= ($view<=0)?'dv_logo':'dv_logoalterno';?>">
     <? if($view <= 0) : ?>
         <span id="sp_menu" class="icon_menu"></span>
     <? endif; ?>
-    <img src="<?= PUBLIC_PATH?>img/logo.png" alt="Logo Instituto Técnico Surcolombiano">
+    <img src="<?= PUBLIC_PATH?>img/logo.png" alt="Logo Instituto Técnico Surcolombiano" itemprop="logo">
 </div>
 <div id="<?= ($view<=0)?'dv_instituto':'dv_institutoalterno';?>">
-    <?= ($view<=0)?'<h1>INSTITUTO TÉCNICO SURCOLOMBIANO</h1>':'<h1>' . $titulosc . '</h1><span>INSTITUTO TÉCNICO SURCOLOMBIANO</span>';?>
+    <?= ($view<=0)?'<h1 itemprop="name">INSTITUTO TÉCNICO SURCOLOMBIANO</h1>':'<h1>' . $titulosc . '</h1><span>INSTITUTO TÉCNICO SURCOLOMBIANO</span>';?>
 </div>
 <? if($view <= 0) : ?>
     <div id="dv_navegacion">
         <div class="btn">
-            <a class="dropbtn" href="<?= PUBLIC_PATH?>">Inicio</a>
+            <a class="dropbtn" href="<?= PUBLIC_PATH?>" itemprop="url">Inicio</a>
         </div>
         <div class="btn dropdown">
             <span id="sp_instituciong" class="dropbtn active">Institución</span>
@@ -27,10 +27,8 @@
                     <span id="sp_institucionmc">Manual de Convivencia</span>
                     <span id="sp_institucionv">Visítanos</span>
                 <? else: ?>
-                    <!--a href="<?= PUBLIC_PATH?>index/institucion/1">Misión | Visión</a-->
                     <a href="<?= PUBLIC_PATH?>institucion/mision_vision">Misión | Visión</a>
                     <a href="<?= PUBLIC_PATH?>files/manual_de_convivencia.pdf" target="_blank">Manual de Convivencia</a>
-                    <!--a href="<?= PUBLIC_PATH?>index/institucion/2">Visítanos</a-->
                     <a href="<?= PUBLIC_PATH?>institucion/visitanos">Visítanos</a>
                 <? endif; ?>
             </div>
@@ -42,9 +40,7 @@
                     <span id="sp_teclab">Técnico Laborales</span>
                     <span id="sp_curso">Cursos, Seminarios y Diplomados</span>
                 <? else: ?>
-                    <!--a href="<?= PUBLIC_PATH?>program/programas/1">Técnico Laborales</a-->
                     <a href="<?= PUBLIC_PATH?>programas/tecnico_laborales">Técnico Laborales</a>
-                    <!--a href="<?= PUBLIC_PATH?>program/programas/7">Cursos, Seminarios y Diplomados</a-->
                     <a href="<?= PUBLIC_PATH?>programas/cursos_seminarios_diplomados">Cursos, Seminarios y Diplomados</a>
                 <? endif; ?>
             </div>
@@ -142,15 +138,6 @@ endif; ?>
     });
     
     $("document").ready(function($){
-        /*var header = $('header'),
-            logo = $('#dv_logo'),
-            imgLogo = $('#dv_logo img'),
-            its = $('#dv_instituto'),
-            nav = $('#dv_navegacion'),
-            itemNav = $('#dv_navegacion .btn'),
-            navSec = $('#dv_navegacionsec'),
-            contenido = $('#sec_contenido');*/
-        
         var navSec = $('#dv_navegacionsec'),
             contenido = $('#sec_contenido');
 
@@ -162,47 +149,6 @@ endif; ?>
             if ($(this).scrollTop() > (pos.top + alth - altns)) {
                 window.navegacion = 1;
                 
-                /*if (window.innerWidth > 768) {
-                    header.css({
-                        height: '40px',
-                        background: 'linear-gradient(to bottom, #00529B 0%, #2989d8 100%, #207cca 100%, #7db9e8 100%)',
-                        position: 'fixed',
-                        top: '0',
-                        left: pos.left,
-                        'z-index': '100',
-                        'max-width': '1024px',
-                        'justify-content': 'flex-end'
-                    });
-                    logo.css({
-                        width: '10%',
-                        height: '30px',
-                        padding: '5px 0'
-                    });
-                    imgLogo.css({
-                        width: '30px',
-                        height: '30px',
-                        margin: '0'
-                    });
-                    its.css({
-                        width: '40%',
-                        height: '40px',
-                        'font-size': '20px',
-                        'letter-spacing': '0',
-                        display: 'flex',
-                        'align-items': 'center',
-                        'justify-content': 'center'
-                    });
-                    nav.css({
-                        width: '50%'
-                    });
-                    itemNav.css({
-                        width: '25%'
-                    });
-                    contenido.css({
-                        padding: '40px 0 0 0'
-                    });
-                }*/
-                
                 if (window.innerWidth <= 768) {
                     navSec.css({
                         display: 'none'
@@ -211,18 +157,8 @@ endif; ?>
                         padding: '60px 0 0 0'
                     });
                 }
-                
-                //header.addClass("navegacion");
             } else {
                 window.navegacion = 0;
-
-                /*header.removeClass('navegacion');
-                header.removeAttr('style');
-                logo.removeAttr('style');
-                imgLogo.removeAttr('style');
-                its.removeAttr('style');
-                nav.removeAttr('style');
-                itemNav.removeAttr('style');*/
                 navSec.removeAttr('style');
                 contenido.removeAttr('style');
             }
