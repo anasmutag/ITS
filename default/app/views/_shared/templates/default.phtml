@@ -1,6 +1,7 @@
 <!DOCTYPE html>
 <html lang="es">
     <head>
+        <meta name="google-site-verification" content="ohCTGJrBGmnGw9PX1Iqy5-SUTgKszVeG_75-c2eZk2c" />
         <meta http-equiv="Content-type" content="text/html; charset=<?= APP_CHARSET ?>" />
         <meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1, maximum-scale=1">
 
@@ -11,10 +12,14 @@
         <? Tag::css("programa") ?>
         <? Tag::css("registro") ?>
         <? Tag::css("slippry") ?>
-        <? Tag::css("jquery/jquery-ui") ?>
-        <? Tag::css("jquery/jquery-ui.structure") ?>
-        <? Tag::css("jquery/jquery-ui.theme") ?>
-        <? Tag::css("slippry") ?>
+        <?// Tag::css("jquery/jquery-ui") ?>
+        <? Tag::css("jquery/jquery-ui.min") ?>
+        <?// Tag::css("jquery/jquery-ui.structure") ?>
+        <? Tag::css("jquery/jquery-ui.structure.min") ?>
+        <?// Tag::css("jquery/jquery-ui.theme") ?>
+        <? Tag::css("jquery/jquery-ui.theme.min") ?>
+        <?// Tag::css("slippry") ?>
+        <? Tag::css("slippry.min") ?>
         <? Tag::css("responsive") ?>
 
         <?= Html::includeCss() ?>
@@ -25,7 +30,8 @@
         <?//= Tag::js('jquery/jquery-ui') ?>
         <?= Tag::js('jquery/jquery-ui.min') ?>
         <?//= Tag::js('jquery/jquery.blockUI') ?>
-        <?= Tag::js('jquery/jquery.blockUI') ?>
+        <?//= Tag::js('jquery/jquery.blockUI') ?>
+        <?= Tag::js('jquery/jquery.blockUI.min') ?>
         <?= Tag::js('slippry.min') ?>
         <?//= Tag::js('html5shiv') ?>
         <?//= Tag::js('html5shiv.min') ?>
@@ -43,7 +49,7 @@
             window.tablocalizacion = 0;
             window.navegacion = 0;
         </script>
-
+        
         <script async src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAGNEEMBZbYE1T_R9tcKB2_E970FUUJ8wc"></script>
 
         <? (isset($programas))?$banProgramas = $programas:$banProgramas = 0;
